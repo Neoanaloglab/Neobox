@@ -12,7 +12,7 @@ The interior needs no paint: the white filament *is* the reflector. Prefer a mat
 |---|---|---|
 | `stl/white-pla/main-body.stl` | 208 × 273 × 92 | **Needs a bed of at least 280 × 300 mm.** The 190 mm span over the access opening needs support, or chamfer that edge to 45° first. |
 | `stl/white-pla/top-cover.stl` | 214.6 × 279.6 × 14 | Print skirt-up. Three posts underneath take M6 heat-set inserts. |
-| `stl/white-pla/access-panel.stl` | 200 × 78 × 16 | Print face-down. |
+| `stl/white-pla/access-panel.stl` | 200 × 78 × 16 | Print plug-face down; the face plate overhangs the plug 3–7 mm all round — supports for that rim. |
 
 Roughly 1–1.3 kg of filament for the three parts.
 

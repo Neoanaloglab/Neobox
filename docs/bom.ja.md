@@ -68,7 +68,7 @@
   - main-body.stl（208×273×92，需要 ≥280×300 打印床；
     正面开口上方 190mm 跨度请加支撑）
   - top-cover.stl（214.6×279.6 裙边盖）
-  - access-panel.stl
+  - access-panel.stl（塞面朝下打，面板悬挑圈开支撑）
 
 黑色 PLA 5 件：
   - film-holder-135-base / -lid、film-holder-120-base / -lid

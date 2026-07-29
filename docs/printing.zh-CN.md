@@ -12,7 +12,7 @@
 |---|---|---|
 | `stl/white-pla/main-body.stl` | 208 × 273 × 92 | **需要 ≥ 280 × 300 mm 打印床。** 抽口上方 190 mm 跨度需要支撑，或先把该边改成 45° 倒角 |
 | `stl/white-pla/top-cover.stl` | 214.6 × 279.6 × 14 | 裙边朝上打印。下方三个螺柱压入 M6 热熔铜螺母 |
-| `stl/white-pla/access-panel.stl` | 200 × 78 × 16 | 面板朝下打印 |
+| `stl/white-pla/access-panel.stl` | 200 × 78 × 16 | 塞面朝下打印；面板四周比塞大 3–7 mm，这圈悬挑开支撑 |
 
 三件约用料 1–1.3 kg。
 
