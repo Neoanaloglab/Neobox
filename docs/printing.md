@@ -24,9 +24,14 @@ These parts sit around the film and must not reflect stray light into the lens. 
 | `stl/black-pla/film-holder-135-lid.stl` | 0.12–0.16 mm layers |
 | `stl/black-pla/film-holder-120-base.stl` | as above |
 | `stl/black-pla/film-holder-120-lid.stl` | as above |
-| `stl/black-pla/film-stage-printed.stl` | 200 × 230 plate with ribs; ≥ 30 % infill for flatness |
-| `stl/black-pla/alignment-blocks-x4.stl` | four 5 × 6 × 30 blocks in one file |
-| `stl/black-pla/mask-6x6.stl` | reduces the 120 window for 6×4.5 / 6×6 |
+| `stl/black-pla/film-stage-printed.stl` | 200 × 230 × 5 solid plate, **alignment blocks printed on top**; ≥ 30 % infill or ≥ 5 perimeters for flatness |
+
+Optional extras, print only if you need them:
+
+| File | When you need it |
+|---|---|
+| `stl/black-pla/mask-6x6.stl` | shooting 6×4.5 / 6×6 in the 120 holder |
+| `stl/black-pla/alignment-blocks-x4.stl` | only with the **aluminium** stage upgrade, which has no printed blocks — glue these on |
 
 ## Settings
 
@@ -55,7 +60,7 @@ If you are having these printed for you (Taobao, JLCPCB, Craftcloud, a local sho
 
 > 10 STL files, millimetres, do not scale.
 > **White PLA ×3:** `main-body` (needs ≥ 280 × 300 mm bed; the 190 mm span above the front opening needs support), `top-cover`, `access-panel`.
-> **Black PLA ×7:** four film-holder parts (0.12–0.16 mm layers, bases printed with the channel face down on the plate), `film-stage-printed`, `alignment-blocks-x4`, `mask-6x6`.
+> **Black PLA ×5:** four film-holder parts (0.12–0.16 mm layers, bases printed with the channel face down on the plate), `film-stage-printed` (flat side down, ≥ 30 % infill).
 > Everything else: 0.2 mm layers, ≥ 3 perimeters, 15–25 % infill, matte filament preferred.
 
 A Chinese-language version of this text for Taobao vendors is in [bom.md](bom.md#taobao-scripts).

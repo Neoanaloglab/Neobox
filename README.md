@@ -7,7 +7,7 @@ A compact, 3D-printable flash light source for camera scanning (DSLR scanning) o
 A bare speedlight lies flat on the floor of the box and fires **horizontally** into an all-white cavity. The light never travels straight up — it reaches the film only after several diffuse bounces off the white walls, then passes through a single opal acrylic sheet directly beneath the film holder. Because the mixing distance runs horizontally instead of vertically, the height of the box is set by the *thickness* of the flash rather than its height, which is what makes the enclosure this small.
 
 ```
-208 × 273 × 96 mm   ·   ≈ 5.4 L   ·   10 printed parts + 1 acrylic sheet + 3 studs
+208 × 273 × 96 mm   ·   ≈ 5.4 L   ·   8 printed parts + 1 acrylic sheet + 3 studs
 ```
 
 | | |
@@ -45,7 +45,7 @@ docs/              design, printing, assembly, BOM, design log
 
 ## Quick start
 
-1. **Print** — 10 STLs in two colours. See [docs/printing.md](docs/printing.md) for settings; the main body needs a bed of at least 280 × 300 mm.
+1. **Print** — 8 STLs in two colours (plus two optional extras). See [docs/printing.md](docs/printing.md) for settings; the main body needs a bed of at least 280 × 300 mm.
 2. **Order** — one 110 × 130 × 2 mm opal acrylic sheet, three M6×35 studs with six nuts, three M6 heat-set inserts. Full list in [docs/bom.md](docs/bom.md).
 3. **Assemble** — heat-set three inserts, spray the outside matte black, stack the film stage on its studs, drop the flash in. Step by step in [docs/assembly.md](docs/assembly.md).
 4. **Calibrate** — photograph the bare lit surface, flat-field it, and confirm the corners fall within about ±0.1 EV.

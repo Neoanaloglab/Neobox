@@ -19,7 +19,7 @@ About 15 minutes once the parts are printed. There are no glued structural joint
 2. **Paint the outside.** Mask the interior and the aperture, then spray the outside of the main body and the top face of the cover matte black. The inside stays bare white filament.
 3. **Fit the cover** onto the main body. Add a strip of EVA foam along the wall top first if you want a tighter light seal.
 4. **Build the stage.** Screw the three M6×35 studs into the inserts. Run a nut down each one, drop the stage on through its Ø6.5 clearance holes, then add the upper nuts. Set the height with the lower nuts, level, and lock with the upper nuts.
-5. **Add the stage furniture.** Glue the four alignment blocks and the four steel washers to the top face. (Prototype shortcut: the washers and holder magnets can be skipped if you never stand the box on end.)
+5. **Add the stage furniture.** The alignment blocks are already part of the printed stage; just glue the four steel washers to the top face. (Prototype shortcut: the washers and holder magnets can be skipped if you never stand the box on end. With the aluminium stage, also glue on the printed alignment blocks.)
 6. **Diffuser and holder.** Lay the acrylic over the stage aperture; set the film holder on top of it, inside the alignment blocks.
 7. **Light source.** Lay the flash on the floor of the box with the head turned 90° toward the far wall, receiver on its foot. Tape a piece of white paper to the top face of the flash body — the black body sits right under the aperture and will otherwise print as a dark patch. Stick the LED strip to the side wall at about 50 mm and run its cable out through the Ø12 gland.
 8. **Close up.** Wrap EVA foam around the access panel plug and push it into the opening.

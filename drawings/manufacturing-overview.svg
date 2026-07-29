@@ -75,15 +75,15 @@
   <text x="270" y="470" font-size="12" fill="#06c">273 deep (208 wide)</text>
   <text x="553" y="352" font-size="12" fill="#06c">96 high</text>
 
-  <text x="30" y="512" font-size="14" font-weight="bold" fill="#7a2fbf">Printed parts — 10 STL, two colours, do not scale</text>
+  <text x="30" y="512" font-size="14" font-weight="bold" fill="#7a2fbf">Printed parts — 8 STL + 2 optional, two colours, do not scale</text>
   <g font-size="12.5" fill="#333">
     <text x="34" y="536"><tspan font-weight="bold">White PLA ×3</tspan> (the cavity is the reflector — matte filament, no interior paint)</text>
     <text x="46" y="556">main-body.stl — 208 × 273 × 92, floor 4 / walls 3, Ø12 gland, 190 × 76 opening. Needs a bed ≥ 280 × 300; support the 190 mm span.</text>
     <text x="46" y="574">top-cover.stl — 214.6 × 279.6 skirted lid, aperture 100 × 120, three M6 insert posts. No screws: it drops on.</text>
     <text x="46" y="592">access-panel.stl — face 200 × 78 + plug 186 × 72 × 4 + handle. Wrap the plug in EVA foam: friction fit and light trap.</text>
-    <text x="34" y="620"><tspan font-weight="bold">Black PLA ×7</tspan> (parts near the film — black filament means no masking or paint)</text>
+    <text x="34" y="620"><tspan font-weight="bold">Black PLA ×5</tspan> (parts near the film — black filament means no masking or paint)</text>
     <text x="46" y="640">film-holder-135-base / -lid, film-holder-120-base / -lid — 110 × 170, windows 24.5 × 36.5 and 56.5 × 84.5, channel 0.3 high.</text>
-    <text x="46" y="658">film-stage-printed.stl (≥ 30 % infill) · alignment-blocks-x4.stl · mask-6x6.stl</text>
+    <text x="46" y="658">film-stage-printed.stl — 200 × 230 × 5, alignment blocks integral, ≥ 30 % infill.  Optional: mask-6x6 · alignment-blocks-x4 (aluminium stage only)</text>
     <text x="46" y="676" fill="#7a2fbf">Holders at 0.12–0.16 mm layers, base printed with the channel face down. Print one holder and test-fit before running the rest.</text>
   </g>
 
@@ -93,7 +93,7 @@
     <text x="34" y="760">Only for use on end: Ø6 × 2 magnets ×24, Ø12 steel washers ×4.　Optional upgrade: aluminium stage from cad/film-stage-aluminium-3mm.dxf.</text>
     <text x="34" y="784">1. Heat-set three M6 inserts into the cover posts.　2. Spray the outside matte black, interior stays bare white.　3. Drop the cover on.</text>
     <text x="34" y="802">4. Studs into inserts → lower nut sets height → stage on through Ø6.5 clearance holes → upper nut locks. <tspan fill="#c00">Never tap the stage holes.</tspan></text>
-    <text x="34" y="820">5. Glue four alignment blocks (+ washers).　6. Acrylic on the aperture, holder on top.　7. Flash on the floor, white paper on its top face.　8. Panel in.</text>
+    <text x="34" y="820">5. Glue four washers (blocks are printed into the stage).　6. Acrylic on the aperture, holder on top.　7. Flash on the floor, white paper on its top face.　8. Panel in.</text>
     <text x="34" y="844" fill="#0a5">Calibrate: shoot the bare lit surface → flat-field → target ≈ ±0.1 EV corner to corner → centre the flash / white card at the far wall / attenuating dot last.</text>
     <text x="34" y="866" fill="#888">Neo Analog Lab Inc. · MIT License · github.com/Neoanaloglab/Neobox</text>
   </g>

@@ -12,7 +12,7 @@ All dimensions in millimetres. Everything here is derived from `cad/neobox.blend
    ├───────────────────────────────────────────┤
    │  opal acrylic diffuser 110 × 130 × 2      │  114 – 116
    ├───────────────────────────────────────────┤
-   │  film stage 200 × 230, aperture 100 × 120 │  110 – 114  (printed version ribbed to 107.2)
+   │  film stage 200 × 230, aperture 100 × 120 │  109 – 114  (integral blocks rise to 120)
    │           ↑ 3 × M6 studs, double-nutted   │
    ├═══════════════════════════════════════════┤
    │  top cover 4 mm, aperture 100 × 120       │   92 –  96   ← box height 96
@@ -40,8 +40,8 @@ The flash head is turned 90° so it points along the length of the box at the fa
 | White cavity headroom | 59 – 92 | 33 |
 | Top cover plate | 92 – 96 | 4 |
 | M6 studs (into inserts at 86) | 86 – 120 | 35 |
-| Lower nut (sets stage height) | 106 – 110 | 4 |
-| Film stage plate | 110 – 114 | 4 |
+| Lower nut (sets stage height) | 105 – 109 | 4 |
+| Film stage plate (integral blocks to 120) | 109 – 114 | 5 |
 | Upper nut (clamps stage) | 114 – 118 | 4 |
 | Diffuser | 114 – 116 | 2 |
 | Holder base / lid | 116 – 120.7 / 120.5 – 123.7 | |
@@ -88,7 +88,7 @@ Measure the flash **lying flat with the head rotated to 90°**, not standing. Do
 
 ## 4. Film stage
 
-Printed version: 200 × 230, 4 mm plate with two stiffening ribs underneath (overall 107.2 – 114). Production upgrade: 3 mm 5052 aluminium, black anodised, from `cad/film-stage-aluminium-3mm.dxf`. Both present their top face at z = 114, so they are interchangeable.
+Printed version: 200 × 230 × 5 solid plate with the four holder-alignment blocks printed directly on its top face (plate 109 – 114, blocks to 120) — one part, one flat print orientation, nothing to glue. Production upgrade: 3 mm 5052 aluminium, black anodised, from `cad/film-stage-aluminium-3mm.dxf`. Both present their top face at z = 114, so they are interchangeable.
 
 **Three-point levelling, positively connected.** Fully-threaded M6×35 studs screw into M6 heat-set inserts in the top cover posts. The stage drops onto the studs through **Ø6.5 clearance holes** and is clamped between a lower nut (which sets the height) and an upper nut. Levelling means loosening the upper nut and turning the lower one.
 
@@ -96,7 +96,7 @@ Printed version: 200 × 230, 4 mm plate with two stiffening ribs underneath (ove
 
 **Stud positions** (relative to stage centre): front `(0, −100)`, rear `(±70, +65)`. The front point is deliberately pushed outward so that all three studs and their nuts clear the 110 × 170 holder outline by at least 9 mm. **The holders therefore need no cut-outs for the hardware.**
 
-On top of the stage: four alignment blocks (5 × 6 × 30) locating the holder in X and Y, and four Ø12 steel washers acting as magnet seats.
+On top of the stage: the four alignment blocks (5 × 6 × 30) locating the holder in X and Y — integral on the printed stage, glued on (`alignment-blocks-x4.stl`) with the aluminium one — plus four Ø12 steel washers acting as magnet seats.
 
 ## 5. Film holders
 
