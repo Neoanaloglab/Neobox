@@ -6,3 +6,4 @@
 # slicer output
 *.gcode
 *.3mf
+.remember/
