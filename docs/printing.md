@@ -43,7 +43,7 @@ PETG is slightly tougher for the holders and copes better with being handled con
 
 ## Print one holder first
 
-The 0.4 mm film channel and 0.2 mm reliefs are the tightest features in the project — but every holder z-feature is an exact multiple of 0.2 mm (land 0.2, rail 0.8, channel 0.4), so they quantise cleanly at the default 0.2 mm layer height. 0.1 mm also divides them; 0.12 and 0.16 do not and will distort the steps — avoid those. Print the 135 base and lid first and check three things before committing to the rest:
+The 0.4 mm film channel and 0.4 mm reliefs are the tightest features in the project — and every holder z-feature is an exact multiple of 0.2 mm with no exposed step under two layers (relief 0.4, rail step 0.8, channel 0.4), so they quantise cleanly at the default 0.2 mm layer height. 0.1 mm also divides them; 0.12 and 0.16 do not and will distort the steps — avoid those. Print the 135 base and lid first and check three things before committing to the rest:
 
 1. Film slides through the channel smoothly, without slop and without binding.
 2. The magnet pockets accept Ø6 × 2 magnets (they should press in, then be glued).

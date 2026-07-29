@@ -10,7 +10,7 @@ All dimensions in millimetres. Everything here is derived from `cad/neobox.blend
 ```
                     film plane  ≈ 120.3
    ┌───────────────────────────────────────────┐
-   │  film holder (135 or 120), flat-bottomed  │  116 – 123.7
+   │  film holder (135 or 120), flat-bottomed  │  116 – 124
    ├───────────────────────────────────────────┤
    │  opal acrylic diffuser 110 × 130 × 2      │  114 – 116
    ├───────────────────────────────────────────┤
@@ -46,7 +46,7 @@ The flash head is turned 90° so it points along the length of the box at the fa
 | Film stage plate (integral blocks to 120) | 109 – 114 | 5 |
 | Upper nut (clamps stage) | 114 – 118 | 4 |
 | Diffuser | 114 – 116 | 2 |
-| Holder base / lid | 116 – 120.7 / 120.5 – 123.7 | |
+| Holder base / lid | 116 – 121 / 120.6 – 124 | |
 | **Film plane** | **≈ 120.3** | |
 
 Box height is therefore **96 mm**, and the exposed height above it — studs, stage, diffuser, holder — is set by the stage geometry, not by the flash.
@@ -104,7 +104,7 @@ On top of the stage: four **corner L-blocks** locating the holder in X and Y —
 
 ## 5. Film holders
 
-Sliding-channel sandwich, two printed parts. Film sits in a 0.4 mm channel and is advanced by pulling it sideways — the holder is never opened mid-roll. Only the non-image edges are supported; the image area floats with at least 0.2 mm of clearance above and below. The strip overhangs the open ends of the holder while scanning, passing over the stage with about 6 mm of clearance; the corridor beyond both ends is kept free of hardware (see §4). The windows are cut about 0.5 mm oversize per side — 25 × 37 against 135's nominal 24 × 36 frame — so the full image survives both camera-gate variance and printer XY tolerance; exact framing happens in post, by cropping.
+Sliding-channel sandwich, two printed parts. Film sits in a 0.4 mm channel and is advanced by pulling it sideways — the holder is never opened mid-roll. Only the non-image edges are supported; the image area floats with 0.4 mm of clearance below and about 0.25 mm above. The strip overhangs the open ends of the holder while scanning, passing over the stage with about 6 mm of clearance; the corridor beyond both ends is kept free of hardware (see §4). The windows are cut about 0.5 mm oversize per side — 25 × 37 against 135's nominal 24 × 36 frame — so the full image survives both camera-gate variance and printer XY tolerance; exact framing happens in post, by cropping.
 
 | | 135 | 120 |
 |---|---|---|
@@ -113,12 +113,12 @@ Sliding-channel sandwich, two printed parts. Film sits in a 0.4 mm channel and i
 | Window | 25 × 37 | 57 × 85 (covers 6×9) |
 | Edge support each side | 4.7 | 2.25 |
 | Channel height | 0.4 | 0.4 |
-| Base / lid thickness | 4 / 3 | 4 / 3 |
+| Base / lid plate thickness | 3.8 / 3 | 3.8 / 3 |
 | Magnets Ø6 × 2 | 12 per holder: 4+4 closure, 4 base-to-stage | same |
 
 The base is flat — it presses directly on the acrylic. X/Y location comes from the stage blocks; the four base magnets pull down onto the steel washers, which is what allows the box to be used stood on end. For 6×4.5 and 6×6, add the printed mask (`stl/black-pla/mask-6x6.stl`) over the 120 window.
 
-Every holder z-feature is an exact multiple of 0.2 mm — land 0.2, rail 0.8, channel 0.4 — so the parts print true at the default 0.2 mm layer height (0.1 also divides them; 0.12 and 0.16 do not — avoid). Print the base with the channel face down on the plate. Print one holder first and check that film slides without slop before committing to the rest.
+Every holder z-feature is an exact multiple of 0.2 mm and no exposed step is under two layers — land relief 0.4, rail step 0.8, channel 0.4 — so the parts print true at the default 0.2 mm layer height (0.1 also divides them; 0.12 and 0.16 do not — avoid). Print the base with the channel face down on the plate. Print one holder first and check that film slides without slop before committing to the rest.
 
 ## 6. Enclosure
 

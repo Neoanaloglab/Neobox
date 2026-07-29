@@ -39,7 +39,7 @@ Three constraints drive the whole design.
 
 **The white cavity is the diffuser.** There is no reflector plate, no baffle, no internal adjustment hardware. White PLA walls do the mixing by multiple diffuse reflection; the acrylic sheet only performs the final smoothing. This was validated against the author's existing workflow, where a single acrylic sheet close to the film already produced satisfactory evenness.
 
-**Nothing touches the image area.** The film sits in a 0.4 mm channel and only its non-image edges are supported; the image area floats with at least 0.2 mm of clearance above and below, which prevents scratching and Newton rings. Frames are advanced by sliding the film sideways through the channel — the holder never has to be opened mid-roll.
+**Nothing touches the image area.** The film sits in a 0.4 mm channel and only its non-image edges are supported; the image area floats with 0.4 mm of clearance below and about 0.25 mm above, which prevents scratching and Newton rings. Frames are advanced by sliding the film sideways through the channel — the holder never has to be opened mid-roll.
 
 ## Repository layout
 
