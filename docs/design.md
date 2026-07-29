@@ -1,0 +1,145 @@
+# Design
+
+Reference build: **NEEWER TT560** speedlight + **ZENIKO T1** 2.4 GHz receiver.
+All dimensions in millimetres. Everything here is derived from `cad/neobox.blend`, which is the authoritative source.
+
+## 1. Light path
+
+```
+                    film plane  ≈ 120.3
+   ┌───────────────────────────────────────────┐
+   │  film holder (135 or 120), flat-bottomed  │  116 – 123.7
+   ├───────────────────────────────────────────┤
+   │  opal acrylic diffuser 110 × 130 × 2      │  114 – 116
+   ├───────────────────────────────────────────┤
+   │  film stage 200 × 230, aperture 100 × 120 │  110 – 114  (printed version ribbed to 107.2)
+   │           ↑ 3 × M6 studs, double-nutted   │
+   ├═══════════════════════════════════════════┤
+   │  top cover 4 mm, aperture 100 × 120       │   92 –  96   ← box height 96
+   │                                           │
+   │  white cavity, 33 mm headroom             │   59 –  92
+   │                                           │
+   │  ← ← ←  flash fires horizontally  ← ← ←   │    4 –  59
+   │  [T1] [ TT560 lying flat ]  → far wall    │
+   └───────────────────────────────────────────┘
+      floor 4 mm                                     0 –   4
+```
+
+The flash head is turned 90° so it points along the length of the box at the far wall. Nothing is aimed at the film. Light fills the cavity by repeated diffuse reflection off the white PLA, exits through the 100 × 120 aperture in the top cover, and is smoothed by a single opal acrylic sheet resting on the film stage.
+
+**Do not fit the wide-angle diffuser panel** and do not point the head upward. Set the flash zoom to 35–50 mm so the beam lands on the far wall rather than spilling directly toward the aperture.
+
+## 2. Dimension chain
+
+### Height (from the outer bottom)
+
+| Layer | z range | Height |
+|---|---|---|
+| Floor | 0 – 4 | 4 |
+| Flash lying flat (TT560) | 4 – 59 | 55 |
+| White cavity headroom | 59 – 92 | 33 |
+| Top cover plate | 92 – 96 | 4 |
+| M6 studs (into inserts at 86) | 86 – 120 | 35 |
+| Lower nut (sets stage height) | 106 – 110 | 4 |
+| Film stage plate | 110 – 114 | 4 |
+| Upper nut (clamps stage) | 114 – 118 | 4 |
+| Diffuser | 114 – 116 | 2 |
+| Holder base / lid | 116 – 120.7 / 120.5 – 123.7 | |
+| **Film plane** | **≈ 120.3** | |
+
+Box height is therefore **96 mm**, and the exposed height above it — studs, stage, diffuser, holder — is set by the stage geometry, not by the flash.
+
+### Depth (267 interior + 2 × 3 walls = 273)
+
+```
+2.5  clearance at the access panel
+30   ZENIKO T1 receiver, sitting on the flash foot
+190  TT560 body
+44.5 reflection zone between the flash head and the far wall
+```
+
+### Width (202 interior + 2 × 3 walls = 208)
+
+The width is set by the 100 mm aperture plus the white-wall margin needed on either side for the cavity to fill evenly — roughly 50 mm per side. It is independent of the flash.
+
+### Generalising to another flash
+
+```
+height = flash thickness  + 41
+depth  = flash length + receiver length + 53
+width  = 208 (unchanged)
+```
+
+Measure the flash **lying flat with the head rotated to 90°**, not standing. Do not fix the enclosure height first and back-calculate the layers; that is exactly the mistake that made the first draft of this design physically unbuildable (see [design-log.md](design-log.md), entry 1).
+
+## 3. Optical decisions
+
+**One diffuser, not two.** A two-layer stack (scatter + mix + final surface) gives better uniformity but costs about 160 mm of height, because each layer needs its own mixing distance. Since a single sheet close to the film already produced satisfactory evenness in practice, the second layer and its cavity were removed. If a future 4×5 version needs more uniformity, restoring the mid-level diffuser and black chamber adds roughly 43 mm.
+
+**The diffuser sits above the film stage, not below the top cover.** It rests on the stage over the 100 × 120 aperture and is held flat by the weight of the film holder — no fixings at all. Lifting the holder exposes both faces for cleaning.
+
+**Film-to-diffuser distance is ≈ 4.3 mm.** This is the one deliberate compromise. At 0.43× and f/8 a dust particle on the diffuser projects as a soft blob roughly 0.2 mm across at the film plane: essentially invisible on inverted negatives, but noticeable on slides. The mitigation is procedural rather than mechanical — **blow off both faces of the acrylic and the film gate at the start of every session.** Increasing the gap would help, but only by re-introducing the height the design just eliminated.
+
+**Aperture margins.** The 100 × 120 aperture clears a 6×9 frame (56 × 84) by 22 mm on the short axis and 18 mm on the long axis, so no vignetting from the opening itself. A larger opening is not better: it lets more oblique stray light through the film base and lowers contrast.
+
+**All-white interior, matte only.** The white PLA *is* the mixing chamber; do not paint the inside and do not use glossy or silk filament — a specular surface reproduces the flash head as a hot spot instead of scattering it. The black flash body sits directly under the aperture and absorbs light, so **tape a piece of white paper to its top face** (not over the head).
+
+**No internal adjusters.** Earlier revisions included a 45° reflector plate and an anti-direct-light baffle. Both were removed: the far wall already performs the turn, and every internal part is one more thing to align. Evenness is trimmed from outside instead — see [assembly.md](assembly.md#calibration).
+
+## 4. Film stage
+
+Printed version: 200 × 230, 4 mm plate with two stiffening ribs underneath (overall 107.2 – 114). Production upgrade: 3 mm 5052 aluminium, black anodised, from `cad/film-stage-aluminium-3mm.dxf`. Both present their top face at z = 114, so they are interchangeable.
+
+**Three-point levelling, positively connected.** Fully-threaded M6×35 studs screw into M6 heat-set inserts in the top cover posts. The stage drops onto the studs through **Ø6.5 clearance holes** and is clamped between a lower nut (which sets the height) and an upper nut. Levelling means loosening the upper nut and turning the lower one.
+
+> **Do not tap the stage holes.** A threaded stage plus a threaded insert of the same pitch is a differential screw: turning the stud advances the stage and retracts it by the same amount, and the height never changes. The holes must be clearance holes.
+
+**Stud positions** (relative to stage centre): front `(0, −100)`, rear `(±70, +65)`. The front point is deliberately pushed outward so that all three studs and their nuts clear the 110 × 170 holder outline by at least 9 mm. **The holders therefore need no cut-outs for the hardware.**
+
+On top of the stage: four alignment blocks (5 × 6 × 30) locating the holder in X and Y, and four Ø12 steel washers acting as magnet seats.
+
+## 5. Film holders
+
+Sliding-channel sandwich, two printed parts. Film sits in a 0.3 mm channel and is advanced by pulling it sideways — the holder is never opened mid-roll. Only the non-image edges are supported; the image area floats with 0.2 mm clearance above and below.
+
+| | 135 | 120 |
+|---|---|---|
+| Outline (both parts) | 110 × 170 | 110 × 170 |
+| Channel width | 35.4 | 62.0 |
+| Window | 24.5 × 36.5 | 56.5 × 84.5 (covers 6×9) |
+| Edge support each side | 4.7 | 2.25 |
+| Channel height | 0.3 | 0.3 |
+| Base / lid thickness | 4 / 3 | 4 / 3 |
+| Magnets Ø6 × 2 | 12 per holder: 4+4 closure, 4 base-to-stage | same |
+
+The base is flat — it presses directly on the acrylic. X/Y location comes from the stage blocks; the four base magnets pull down onto the steel washers, which is what allows the box to be used stood on end. For 6×4.5 and 6×6, add the printed mask (`stl/black-pla/mask-6x6.stl`) over the 120 window.
+
+Print the four holder parts at 0.12–0.16 mm layer height, base with the channel face down on the plate. Print one holder first and check that film slides without slop before committing to the rest.
+
+## 6. Enclosure
+
+**Main body** — one piece: 4 mm floor, 3 mm walls, Ø12 cable gland hole in the right wall, 190 × 76 access opening at the front. No fasteners, no glued joints.
+
+**Top cover** — a skirted lid, 214.6 × 279.6, that drops over the walls with a 10 mm skirt and a nominal 0.3 mm side clearance. The skirt is the location feature *and* the light trap; there are no screws. Three posts underneath carry the M6 inserts.
+
+**Access panel** — face 200 × 78 with a 186 × 72 × 4 plug behind it and a handle. The plug enters the 190 × 76 opening with about 2 mm of clearance all round, which is taken up by a strip of EVA foam wrapped around it: friction holds it, foam blocks the light. Pull it to reach the flash for power changes or batteries. Its top edge clears the cover skirt by 2 mm, so the cover does not have to come off.
+
+**Ventilation** — none in the prototype. A speedlight at low duty cycle produces little heat; if a session runs hot, pull the access panel between rolls.
+
+## 7. Focus light
+
+A dimmable 5 V USB LED strip is stuck to the side wall at about z = 50, below the aperture and out of direct line to the film. Its inline dimmer stays outside the box; the cable exits through the Ø12 gland. Run it at low brightness continuously — flash exposure overwhelms it — and switch off at the end of a roll. Nothing mains-powered goes inside the enclosure.
+
+## 8. Flash operation
+
+Manual power only, fixed zoom, normal sync — no TTL, no HSS, shoot raw. Start metering at ISO 100, f/5.6–f/8 and adjust power for the enclosure's loss, empirically 3–5 stops. Trigger with the T1 receiver rather than a cable; a sync cable can use the same Ø12 gland if needed.
+
+The TT560 has eight full-stop steps, so fine exposure adjustment is done with the aperture in 1/3 stops. The T1 does not remote-control power, so a power change means pulling the access panel — in practice this is set once during calibration and left alone.
+
+## 9. Repositioning and repeatability
+
+The whole box moves ±20–30 mm in X and Y to centre the frame after the camera is levelled. Once satisfied, fit two locating pins to the base so it returns to the same place after being moved, and record the column height for each format.
+
+## 10. 4×5 reservation
+
+A 4×5 version needs an illuminated window around 180 × 230 and an enclosure around 400 × 400, with the height recalculated layer by layer from the flash used. At that frame size the single-diffuser structure is under real strain; plan on restoring the two-layer stack and consider two flashes or a bare-tube head.

@@ -1,0 +1,8 @@
+.DS_Store
+*.blend1
+*.blend2
+*.blend@
+
+# slicer output
+*.gcode
+*.3mf
