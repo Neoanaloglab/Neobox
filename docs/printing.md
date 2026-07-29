@@ -22,8 +22,8 @@ These parts sit around the film and must not reflect stray light into the lens. 
 
 | File | Notes |
 |---|---|
-| `stl/black-pla/film-holder-135-base.stl` | 0.12–0.16 mm layers, **channel face down on the plate** |
-| `stl/black-pla/film-holder-135-lid.stl` | 0.12–0.16 mm layers |
+| `stl/black-pla/film-holder-135-base.stl` | default 0.2 mm layers, **channel face down on the plate** |
+| `stl/black-pla/film-holder-135-lid.stl` | default 0.2 mm layers |
 | `stl/black-pla/film-holder-120-base.stl` | as above |
 | `stl/black-pla/film-holder-120-lid.stl` | as above |
 | `stl/black-pla/film-stage-printed.stl` | 200 × 230 × 5 solid plate, **alignment blocks printed on top**; ≥ 30 % infill or ≥ 5 perimeters for flatness |
@@ -34,7 +34,7 @@ One optional extra: `stl/black-pla/mask-6x6.stl`, only if you shoot 6×4.5 / 6×
 
 | | Enclosure | Holders |
 |---|---|---|
-| Layer height | 0.16–0.2 | 0.12–0.16 |
+| Layer height | 0.16–0.2 | 0.2 (or 0.1) |
 | Perimeters | ≥ 3 | ≥ 3 |
 | Infill | 15–25 % | 20–30 % |
 | Material | PLA (PETG also fine) | PLA or PETG |
@@ -43,7 +43,7 @@ PETG is slightly tougher for the holders and copes better with being handled con
 
 ## Print one holder first
 
-The 0.3 mm film channel and 0.2 mm clearances are the tightest features in the project and the only ones sensitive to printer calibration. Print the 135 base and lid first and check three things before committing to the rest:
+The 0.4 mm film channel and 0.2 mm reliefs are the tightest features in the project — but every holder z-feature is an exact multiple of 0.2 mm (land 0.2, rail 0.8, channel 0.4), so they quantise cleanly at the default 0.2 mm layer height. 0.1 mm also divides them; 0.12 and 0.16 do not and will distort the steps — avoid those. Print the 135 base and lid first and check three things before committing to the rest:
 
 1. Film slides through the channel smoothly, without slop and without binding.
 2. The magnet pockets accept Ø6 × 2 magnets (they should press in, then be glued).
@@ -57,14 +57,14 @@ If you are having these printed for you (Taobao, JLCPCB, Craftcloud, a local sho
 
 > 10 STL files, millimetres, do not scale.
 > **White PLA ×3:** `main-body` (needs ≥ 280 × 300 mm bed; the 190 mm span above the front opening needs support), `top-cover`, `access-panel`.
-> **Black PLA ×5:** four film-holder parts (0.12–0.16 mm layers, bases printed with the channel face down on the plate), `film-stage-printed` (flat side down, ≥ 30 % infill).
+> **Black PLA ×5:** four film-holder parts (default 0.2 mm layers, bases printed with the channel face down on the plate), `film-stage-printed` (flat side down, ≥ 30 % infill).
 > Everything else: 0.2 mm layers, ≥ 3 perimeters, 15–25 % infill, matte filament preferred.
 
 A Chinese-language version of this text for Taobao vendors is in [bom.md](bom.md#taobao-scripts).
 
-**If the shop insists on their default settings**, only two of the requests above are actually load-bearing — concede everything else:
+**If the shop insists on their default settings**, let them — the holder geometry is quantised to 0.2 mm layers precisely so that default profiles work. Only two requests are load-bearing:
 
-1. The four holder parts must be printed at 0.12–0.16 mm layers with the channel face down. The 0.3 mm channel and 0.2 mm reliefs quantise to garbage at 0.2 mm layers; this is non-negotiable.
+1. Holder bases print with the channel face down on the plate.
 2. The main body needs supports over the 190 mm access-opening span.
 
-Default layer height, infill and filament are all acceptable for everything else. If the shop will not change layer height even for the holders, split the order: send the four small holder files to a shop that will, and leave the big enclosure parts where they are.
+Layer height, infill and filament can all stay at the shop's defaults. (Earlier revisions required 0.12–0.16 mm layers for the holders; the 0.2-quantised redesign removed that requirement.)

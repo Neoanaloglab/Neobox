@@ -83,9 +83,9 @@
     <text x="46" y="574">top-cover.stl — 214.6 × 279.6 skirted lid, aperture 100 × 120, three M6 insert posts. No screws: it drops on.</text>
     <text x="46" y="592">access-panel.stl — face 200 × 78 + plug 186 × 72 × 4 + handle. Wrap the plug in EVA foam: friction fit and light trap.</text>
     <text x="34" y="620"><tspan font-weight="bold">Black PLA ×5</tspan> (parts near the film — black filament means no masking or paint)</text>
-    <text x="46" y="640">film-holder-135-base / -lid, film-holder-120-base / -lid — 110 × 170, windows 24.5 × 36.5 and 56.5 × 84.5, channel 0.3 high.</text>
+    <text x="46" y="640">film-holder-135-base / -lid, film-holder-120-base / -lid — 110 × 170, windows 25 × 37 and 57 × 85, channel 0.4 high.</text>
     <text x="46" y="658">film-stage-printed.stl — 200 × 230 × 5, corner L-blocks integral (film mouths open), ≥ 30 % infill.  Optional: mask-6x6</text>
-    <text x="46" y="676" fill="#7a2fbf">Holders at 0.12–0.16 mm layers, base printed with the channel face down. Print one holder and test-fit before running the rest.</text>
+    <text x="46" y="676" fill="#7a2fbf">Holders print at the default 0.2 mm layers (all z-steps are 0.2 multiples), base channel face down. Test-fit one holder first.</text>
   </g>
 
   <text x="30" y="716" font-size="14" font-weight="bold" fill="#0a5">Bought parts and assembly</text>

@@ -83,9 +83,9 @@
     <text x="46" y="574">top-cover.stl —— 214.6 × 279.6 裙边盖，开口 100 × 120，3 个 M6 螺柱。无螺丝：扣上即用。</text>
     <text x="46" y="592">access-panel.stl —— 面板 200 × 78 + 塞边 186 × 72 × 4 + 把手。塞边缠 EVA：摩擦固定兼遮光。</text>
     <text x="34" y="620"><tspan font-weight="bold">黑色 PLA ×5</tspan>（胶片周边件——黑色耗材免遮蔽免喷漆）</text>
-    <text x="46" y="640">film-holder-135-base / -lid、film-holder-120-base / -lid —— 110 × 170，窗 24.5 × 36.5 与 56.5 × 84.5，槽高 0.3。</text>
+    <text x="46" y="640">film-holder-135-base / -lid、film-holder-120-base / -lid —— 110 × 170，窗 25 × 37 与 57 × 85，槽高 0.4。</text>
     <text x="46" y="658">film-stage-printed.stl —— 200 × 230 × 5，四角 L 挡块一体（槽口全开），填充 ≥ 30%。可选：mask-6x6</text>
-    <text x="46" y="676" fill="#7a2fbf">夹子层高 0.12–0.16 mm，底座滑槽面朝下贴床。先打一副试装，再打其余。</text>
+    <text x="46" y="676" fill="#7a2fbf">夹子按默认 0.2 层高打即可（z 向全为 0.2 倍数），底座滑槽面朝下贴床。先打一副试装，再打其余。</text>
   </g>
 
   <text x="30" y="716" font-size="14" font-weight="bold" fill="#0a5">采购件与装配</text>

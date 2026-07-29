@@ -72,12 +72,12 @@ Copy-paste text for Chinese vendors. Reproduced in Chinese because that is the l
 
 黑色 PLA 5 件：
   - film-holder-135-base / -lid、film-holder-120-base / -lid
-    （这 4 件层高 0.12~0.16，底座请滑槽面朝下贴床打）
+    （这 4 件默认 0.2 层高即可，底座请滑槽面朝下贴床打）
   - film-stage-printed.stl（平面朝下，填充 ≥30%，挡块已一体）
 
 可选件（需要才加）：mask-6x6.stl（拍6×4.5/6×6时）
 
-其余参数：层高 0.2、壁 ≥3 层、填充 15~25%、哑光料优先。
+所有件层高 0.2 即可、壁 ≥3 层、填充 15~25%、哑光料优先。
 ```
 
 搜索词：`3D打印 代打 大尺寸 PLA`

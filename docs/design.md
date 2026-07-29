@@ -104,21 +104,21 @@ On top of the stage: four **corner L-blocks** locating the holder in X and Y —
 
 ## 5. Film holders
 
-Sliding-channel sandwich, two printed parts. Film sits in a 0.3 mm channel and is advanced by pulling it sideways — the holder is never opened mid-roll. Only the non-image edges are supported; the image area floats with 0.2 mm clearance above and below. The strip overhangs the open ends of the holder while scanning, passing over the stage with about 6 mm of clearance; the corridor beyond both ends is kept free of hardware (see §4).
+Sliding-channel sandwich, two printed parts. Film sits in a 0.4 mm channel and is advanced by pulling it sideways — the holder is never opened mid-roll. Only the non-image edges are supported; the image area floats with at least 0.2 mm of clearance above and below. The strip overhangs the open ends of the holder while scanning, passing over the stage with about 6 mm of clearance; the corridor beyond both ends is kept free of hardware (see §4). The windows are cut about 0.5 mm oversize per side — 25 × 37 against 135's nominal 24 × 36 frame — so the full image survives both camera-gate variance and printer XY tolerance; exact framing happens in post, by cropping.
 
 | | 135 | 120 |
 |---|---|---|
 | Outline (both parts) | 110 × 170 | 110 × 170 |
 | Channel width | 35.4 | 62.0 |
-| Window | 24.5 × 36.5 | 56.5 × 84.5 (covers 6×9) |
+| Window | 25 × 37 | 57 × 85 (covers 6×9) |
 | Edge support each side | 4.7 | 2.25 |
-| Channel height | 0.3 | 0.3 |
+| Channel height | 0.4 | 0.4 |
 | Base / lid thickness | 4 / 3 | 4 / 3 |
 | Magnets Ø6 × 2 | 12 per holder: 4+4 closure, 4 base-to-stage | same |
 
 The base is flat — it presses directly on the acrylic. X/Y location comes from the stage blocks; the four base magnets pull down onto the steel washers, which is what allows the box to be used stood on end. For 6×4.5 and 6×6, add the printed mask (`stl/black-pla/mask-6x6.stl`) over the 120 window.
 
-Print the four holder parts at 0.12–0.16 mm layer height, base with the channel face down on the plate. Print one holder first and check that film slides without slop before committing to the rest.
+Every holder z-feature is an exact multiple of 0.2 mm — land 0.2, rail 0.8, channel 0.4 — so the parts print true at the default 0.2 mm layer height (0.1 also divides them; 0.12 and 0.16 do not — avoid). Print the base with the channel face down on the plate. Print one holder first and check that film slides without slop before committing to the rest.
 
 ## 6. Enclosure
 
