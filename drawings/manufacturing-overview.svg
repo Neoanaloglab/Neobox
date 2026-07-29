@@ -75,7 +75,7 @@
   <text x="270" y="470" font-size="12" fill="#06c">273 deep (208 wide)</text>
   <text x="553" y="352" font-size="12" fill="#06c">96 high</text>
 
-  <text x="30" y="512" font-size="14" font-weight="bold" fill="#7a2fbf">Printed parts — 8 STL + 2 optional, two colours, do not scale</text>
+  <text x="30" y="512" font-size="14" font-weight="bold" fill="#7a2fbf">Printed parts — 8 STL + 1 optional, two colours, do not scale</text>
   <g font-size="12.5" fill="#333">
     <text x="34" y="536"><tspan font-weight="bold">White PLA ×3</tspan> (the cavity is the reflector — matte filament, no interior paint)</text>
     <text x="46" y="556">main-body.stl — 208 × 273 × 92, floor 4 / walls 3, Ø12 gland, 190 × 76 opening. Needs a bed ≥ 280 × 300; support the 190 mm span.</text>
@@ -83,7 +83,7 @@
     <text x="46" y="592">access-panel.stl — face 200 × 78 + plug 186 × 72 × 4 + handle. Wrap the plug in EVA foam: friction fit and light trap.</text>
     <text x="34" y="620"><tspan font-weight="bold">Black PLA ×5</tspan> (parts near the film — black filament means no masking or paint)</text>
     <text x="46" y="640">film-holder-135-base / -lid, film-holder-120-base / -lid — 110 × 170, windows 24.5 × 36.5 and 56.5 × 84.5, channel 0.3 high.</text>
-    <text x="46" y="658">film-stage-printed.stl — 200 × 230 × 5, corner L-blocks integral (film mouths open), ≥ 30 % infill.  Optional: mask-6x6 · alignment-blocks-x4 (aluminium stage only)</text>
+    <text x="46" y="658">film-stage-printed.stl — 200 × 230 × 5, corner L-blocks integral (film mouths open), ≥ 30 % infill.  Optional: mask-6x6</text>
     <text x="46" y="676" fill="#7a2fbf">Holders at 0.12–0.16 mm layers, base printed with the channel face down. Print one holder and test-fit before running the rest.</text>
   </g>
 

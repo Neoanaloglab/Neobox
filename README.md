@@ -45,7 +45,7 @@ docs/              design, printing, assembly, BOM, design log
 
 ## Quick start
 
-1. **Print** — 8 STLs in two colours (plus two optional extras). See [docs/printing.md](docs/printing.md) for settings; the main body needs a bed of at least 280 × 300 mm.
+1. **Print** — 8 STLs in two colours (plus an optional 6×6 mask). See [docs/printing.md](docs/printing.md) for settings; the main body needs a bed of at least 280 × 300 mm.
 2. **Order** — one 110 × 130 × 2 mm opal acrylic sheet, three M6×35 studs with six nuts, three M6 heat-set inserts. Full list in [docs/bom.md](docs/bom.md).
 3. **Assemble** — heat-set three inserts, spray the outside matte black, stack the film stage on its studs, drop the flash in. Step by step in [docs/assembly.md](docs/assembly.md).
 4. **Calibrate** — photograph the bare lit surface, flat-field it, and confirm the corners fall within about ±0.1 EV.

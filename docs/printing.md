@@ -26,12 +26,7 @@ These parts sit around the film and must not reflect stray light into the lens. 
 | `stl/black-pla/film-holder-120-lid.stl` | as above |
 | `stl/black-pla/film-stage-printed.stl` | 200 × 230 × 5 solid plate, **alignment blocks printed on top**; ≥ 30 % infill or ≥ 5 perimeters for flatness |
 
-Optional extras, print only if you need them:
-
-| File | When you need it |
-|---|---|
-| `stl/black-pla/mask-6x6.stl` | shooting 6×4.5 / 6×6 in the 120 holder |
-| `stl/black-pla/alignment-blocks-x4.stl` | only with the **aluminium** stage upgrade, which has no printed blocks — glue these on |
+One optional extra: `stl/black-pla/mask-6x6.stl`, only if you shoot 6×4.5 / 6×6 in the 120 holder.
 
 ## Settings
 

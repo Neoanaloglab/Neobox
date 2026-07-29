@@ -8,7 +8,7 @@ Prices are indicative, in CNY, from Chinese marketplaces (Taobao / 1688) as of J
 |---|---|---|---|
 | White PLA parts: main body, top cover, access panel | 3 | Print service, bed ≥ 280 × 300 mm | ¥150–280 |
 | Black PLA parts: 4 holder parts, film stage (alignment blocks integral) | 5 | Same order | included |
-| Optional black parts: 6×6 mask; alignment blocks (aluminium stage only) | 0–2 | Same order | included |
+| Optional black part: 6×6 mask | 0–1 | Same order | included |
 
 Filament use is roughly 1–1.3 kg. See [printing.md](printing.md) for settings.
 
@@ -73,8 +73,7 @@ Copy-paste text for Chinese vendors. Reproduced in Chinese because that is the l
     （这 4 件层高 0.12~0.16，底座请滑槽面朝下贴床打）
   - film-stage-printed.stl（平面朝下，填充 ≥30%，挡块已一体）
 
-可选件（需要才加）：mask-6x6.stl（拍6×4.5/6×6时）、
-alignment-blocks-x4.stl（只配铝制胶片台用）
+可选件（需要才加）：mask-6x6.stl（拍6×4.5/6×6时）
 
 其余参数：层高 0.2、壁 ≥3 层、填充 15~25%、哑光料优先。
 ```
