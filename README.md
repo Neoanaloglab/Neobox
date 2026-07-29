@@ -23,6 +23,14 @@ A bare speedlight lies flat on the floor of the box and fires **horizontally** i
 
 ---
 
+## Why a flash, and how the light works
+
+**The flash takes the picture — the shutter just lets it happen.** Inside the closed box, ambient light contributes nothing, so the exposure is defined entirely by the flash pulse: 1/1,000–1/20,000 s at working power. Copy-stand vibration, shutter shock and floor rumble all become irrelevant, because nothing moves measurably within the pulse. That is the core reason for a speedlight over an LED panel — and it also buys base-ISO, f/8 exposures with power to spare, identical output on every frame of a roll (one inversion profile fits all), from a xenon tube whose light is genuinely continuous daylight spectrum at ≈ 5600 K. Why the LED option was declined anyway is recorded in the [design log](docs/design-log.md#things-deliberately-not-done).
+
+![Optical path: the flash fires horizontally into a white integrating cavity; a single opal diffuser under the film smooths the result](drawings/optics.svg)
+
+The light is never aimed at the film. The flash fires horizontally at the far wall (1); the all-white cavity randomizes direction over several diffuse bounces, the way an integrating sphere does (2); a single opal sheet 4 mm under the film turns that into one evenly glowing surface (3). Everything above the diffuser is black, so stray light is absorbed instead of veiling the image (4), and the camera photographs the film against that uniform glow (5). Fully diffuse illumination also has a side benefit known from darkroom enlargers: fine scratches and grain render softer than under directional light.
+
 ## Why it is shaped like this
 
 Three constraints drive the whole design.
