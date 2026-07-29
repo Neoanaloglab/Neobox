@@ -1,5 +1,7 @@
 # Design
 
+**English** · [简体中文](design.zh-CN.md) · [日本語](design.ja.md)
+
 Reference build: **NEEWER TT560** speedlight + **ZENIKO T1** 2.4 GHz receiver.
 All dimensions in millimetres. Everything here is derived from `cad/neobox.blend`, which is the authoritative source.
 
@@ -126,7 +128,7 @@ Print the four holder parts at 0.12–0.16 mm layer height, base with the channe
 
 **Access panel** — face 200 × 78 with a 186 × 72 × 4 plug behind it and a handle. The plug enters the 190 × 76 opening with about 2 mm of clearance all round, which is taken up by a strip of EVA foam wrapped around it: friction holds it, foam blocks the light. Pull it to reach the flash for power changes or batteries. Its top edge clears the cover skirt by 2 mm, so the cover does not have to come off.
 
-**Ventilation** — none in the prototype. A speedlight at low duty cycle produces little heat; if a session runs hot, pull the access panel between rolls.
+**Ventilation** — none in the prototype. A speedlight at low duty cycle produces little heat; if a session runs hot, pull the access panel between rolls. (Why the lid is not fused into the body — a closed hollow box is unprintable on FDM — is in the [design log](design-log.md#things-deliberately-not-done).)
 
 ## 7. Focus light
 
@@ -134,7 +136,7 @@ A dimmable 5 V USB LED strip is stuck to the side wall at about z = 50, below th
 
 ## 8. Flash operation
 
-Manual power only, fixed zoom, normal sync — no TTL, no HSS, shoot raw. Start metering at ISO 100, f/5.6–f/8 and adjust power for the enclosure's loss, empirically 3–5 stops. Trigger with the T1 receiver rather than a cable; a sync cable can use the same Ø12 gland if needed.
+Manual power only, fixed zoom, normal sync — no TTL, no HSS, shoot raw. Start metering at ISO 100, f/5.6–f/8 and adjust power for the enclosure's loss, empirically 3–5 stops. Trigger with the T1 receiver rather than a cable; a sync cable can use the same Ø12 gland if needed. The camera sits at or below sync speed, but the *effective* exposure is the pulse itself — far shorter than any real shutter speed a continuous light would allow at these settings.
 
 The TT560 has eight full-stop steps, so fine exposure adjustment is done with the aperture in 1/3 stops. The T1 does not remote-control power, so a power change means pulling the access panel — in practice this is set once during calibration and left alone.
 

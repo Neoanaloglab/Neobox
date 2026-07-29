@@ -55,26 +55,26 @@
 
   <!-- legend -->
   <g font-size="12.5" fill="#333">
-    <text x="60" y="360">1  The flash lies flat and fires horizontally at the far wall — never toward the film.</text>
-    <text x="60" y="378">2  The all-white cavity works like an integrating chamber: diffuse bounces randomize direction.</text>
-    <text x="60" y="396">3  One opal acrylic sheet does the final smoothing, 4 mm under the film.</text>
-    <text x="60" y="414">4  Above the diffuser everything is black — stray light is absorbed, not reflected into the lens.</text>
-    <text x="60" y="432">5  The camera sees an evenly glowing surface through the film.</text>
+    <text x="60" y="360">1  闪光灯平躺、水平射向远端白壁——从不朝向胶片。</text>
+    <text x="60" y="378">2  全白内腔如同积分球：多次漫反射把方向彻底打乱。</text>
+    <text x="60" y="396">3  单层乳白亚克力完成最终匀光，位于胶片下方 4 mm。</text>
+    <text x="60" y="414">4  扩散板以上全部为黑色——杂光被吸收，而不是反射进镜头。</text>
+    <text x="60" y="432">5  相机隔着胶片拍摄一个均匀发光面。</text>
   </g>
 
   <!-- ===== right: why a flash ===== -->
   <rect x="610" y="135" width="545" height="210" fill="none" stroke="#e5e5e5" stroke-width="1"/>
-  <text x="626" y="162" font-size="14" font-weight="bold" fill="#111">Why a flash?</text>
-  <text x="626" y="184" font-size="11.5" fill="#555">shutter open, e.g. 1/60 s</text>
+  <text x="626" y="162" font-size="14" font-weight="bold" fill="#111">为什么用闪光灯？</text>
+  <text x="626" y="184" font-size="11.5" fill="#555">快门开启，例如 1/60 s</text>
   <rect x="626" y="190" width="505" height="14" fill="#e0e0e0"/>
   <rect x="830" y="186" width="4" height="22" fill="#e8a33d"/>
-  <text x="626" y="226" font-size="11.5" fill="#b97511">flash pulse, 1/1,000 – 1/20,000 s — the pulse IS the exposure</text>
+  <text x="626" y="226" font-size="11.5" fill="#b97511">闪光脉冲 1/1,000 – 1/20,000 s——脉冲才是真正的曝光</text>
   <g font-size="12" fill="#333">
-    <text x="626" y="250">· effective shutter 1/1,000 s+ — an LED panel would need 1/15–1/60 s</text>
-    <text x="626" y="270">· vibration and shutter shock cannot blur a microsecond exposure</text>
-    <text x="626" y="290">· base ISO and f/8 with power to spare</text>
-    <text x="626" y="310">· identical output every frame → one inversion profile</text>
-    <text x="626" y="330">· xenon: continuous daylight spectrum, ≈ 5600 K</text>
+    <text x="626" y="250">· 等效快门 1/1,000 s 以上——LED 灯板同参数需要 1/15–1/60 s</text>
+    <text x="626" y="270">· 微秒级曝光，振动与快门震动无法造成模糊</text>
+    <text x="626" y="290">· 底 ISO 与 f/8，功率大有富余</text>
+    <text x="626" y="310">· 每一张输出完全一致 → 一个反转配置通吃</text>
+    <text x="626" y="330">· 氙气管：连续光谱日光，≈ 5600 K</text>
   </g>
-  <text x="60" y="454" font-size="11" fill="#999">Schematic, not to scale. Full geometry: docs/design.md · why not an LED panel: docs/design-log.md</text>
+  <text x="60" y="454" font-size="11" fill="#999">示意图，非等比例。完整几何：docs/design.zh-CN.md · 为何不用 LED：docs/design-log.zh-CN.md</text>
 </svg>

@@ -1,5 +1,7 @@
 # Bill of materials and sourcing
 
+**English** · [简体中文](bom.zh-CN.md) · [日本語](bom.ja.md)
+
 Prices are indicative, in CNY, from Chinese marketplaces (Taobao / 1688) as of July 2026. The whole build outside the flash comes to roughly **¥250–420 / US$35–60 / ¥5,500–9,000 JPY**.
 
 ## Printed parts

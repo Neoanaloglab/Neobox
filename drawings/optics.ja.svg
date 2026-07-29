@@ -55,26 +55,26 @@
 
   <!-- legend -->
   <g font-size="12.5" fill="#333">
-    <text x="60" y="360">1  The flash lies flat and fires horizontally at the far wall — never toward the film.</text>
-    <text x="60" y="378">2  The all-white cavity works like an integrating chamber: diffuse bounces randomize direction.</text>
-    <text x="60" y="396">3  One opal acrylic sheet does the final smoothing, 4 mm under the film.</text>
-    <text x="60" y="414">4  Above the diffuser everything is black — stray light is absorbed, not reflected into the lens.</text>
-    <text x="60" y="432">5  The camera sees an evenly glowing surface through the film.</text>
+    <text x="60" y="360">1  ストロボは横置きで奥の白壁へ水平発光——フィルムへは向けない。</text>
+    <text x="60" y="378">2  白一色の内腔は積分球のように働き、拡散反射が方向をランダム化。</text>
+    <text x="60" y="396">3  乳白アクリル 1 枚が最終的に均す。フィルムの 4 mm 下。</text>
+    <text x="60" y="414">4  拡散板より上はすべて黒——迷光は反射されず吸収される。</text>
+    <text x="60" y="432">5  カメラは均一な発光面を透かしてフィルムを撮影する。</text>
   </g>
 
   <!-- ===== right: why a flash ===== -->
   <rect x="610" y="135" width="545" height="210" fill="none" stroke="#e5e5e5" stroke-width="1"/>
-  <text x="626" y="162" font-size="14" font-weight="bold" fill="#111">Why a flash?</text>
-  <text x="626" y="184" font-size="11.5" fill="#555">shutter open, e.g. 1/60 s</text>
+  <text x="626" y="162" font-size="14" font-weight="bold" fill="#111">なぜストロボか？</text>
+  <text x="626" y="184" font-size="11.5" fill="#555">シャッター開放（例：1/60 s）</text>
   <rect x="626" y="190" width="505" height="14" fill="#e0e0e0"/>
   <rect x="830" y="186" width="4" height="22" fill="#e8a33d"/>
-  <text x="626" y="226" font-size="11.5" fill="#b97511">flash pulse, 1/1,000 – 1/20,000 s — the pulse IS the exposure</text>
+  <text x="626" y="226" font-size="11.5" fill="#b97511">閃光パルス 1/1,000 – 1/20,000 s——パルスこそが露光</text>
   <g font-size="12" fill="#333">
-    <text x="626" y="250">· effective shutter 1/1,000 s+ — an LED panel would need 1/15–1/60 s</text>
-    <text x="626" y="270">· vibration and shutter shock cannot blur a microsecond exposure</text>
-    <text x="626" y="290">· base ISO and f/8 with power to spare</text>
-    <text x="626" y="310">· identical output every frame → one inversion profile</text>
-    <text x="626" y="330">· xenon: continuous daylight spectrum, ≈ 5600 K</text>
+    <text x="626" y="250">· 実効シャッター 1/1,000 s 以上——LED パネルなら 1/15–1/60 s 必要</text>
+    <text x="626" y="270">· マイクロ秒露光は振動でもシャッターショックでもブレない</text>
+    <text x="626" y="290">· ベース ISO と f/8 を余裕をもって使える</text>
+    <text x="626" y="310">· 全コマ同一出力 → 反転プロファイルは 1 つ</text>
+    <text x="626" y="330">· キセノン管：連続スペクトルのデイライト ≈ 5600 K</text>
   </g>
-  <text x="60" y="454" font-size="11" fill="#999">Schematic, not to scale. Full geometry: docs/design.md · why not an LED panel: docs/design-log.md</text>
+  <text x="60" y="454" font-size="11" fill="#999">模式図・縮尺なし。詳細：docs/design.ja.md · LED を使わない理由：docs/design-log.ja.md</text>
 </svg>

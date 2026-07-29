@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="920" viewBox="0 0 1180 920" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1180" height="920" fill="#ffffff"/>
+  <text x="30" y="40" font-size="21" font-weight="bold" fill="#111">NeoBox —— 制造总览</text>
+  <text x="30" y="61" font-size="12.5" fill="#555">胶片翻拍用闪光光源箱 · 208 × 273 × 96 mm · 参考配置：NEEWER TT560 + ZENIKO T1</text>
+  <text x="30" y="79" font-size="12.5" fill="#555">全部尺寸为毫米 · 权威几何源：cad/neobox.blend</text>
+
+  <text x="30" y="100" font-size="14" font-weight="bold" fill="#06c">纵向剖面（自右侧看）</text>
+
+  <!-- section drawing, scale 1.5 : 1 -->
+  <g stroke="#333" stroke-width="1.1">
+    <!-- floor -->
+    <rect x="95.25" y="414" width="409.5" height="6" fill="#f4f4f4"/>
+    <!-- back wall -->
+    <rect x="500.25" y="282" width="4.5" height="132.75" fill="#f4f4f4"/>
+    <!-- front column + upper front -->
+    <rect x="95.25" y="300" width="4.5" height="114.75" fill="#f4f4f4"/>
+    <rect x="95.25" y="282" width="4.5" height="18" fill="#f4f4f4"/>
+    <!-- top cover plate, split by aperture -->
+    <rect x="90.3" y="276" width="119.7" height="6" fill="#e6e6e6"/>
+    <rect x="390" y="276" width="119.7" height="6" fill="#e6e6e6"/>
+    <!-- skirt -->
+    <rect x="90.3" y="276" width="4.5" height="21" fill="#e6e6e6"/>
+    <rect x="505.2" y="276" width="4.5" height="21" fill="#e6e6e6"/>
+    <!-- flash -->
+    <rect x="148.5" y="331.5" width="285" height="82.5" fill="#4a4a52"/>
+    <rect x="433.5" y="338" width="6" height="69" fill="#ffe9a8"/>
+    <!-- T1 receiver -->
+    <rect x="103.5" y="345.75" width="45" height="58.5" fill="#7d8794"/>
+    <!-- LED strip -->
+    <rect x="99.75" y="351" width="6" height="12" fill="#5ec8dd"/>
+    <!-- stage -->
+    <rect x="127.5" y="249" width="82.5" height="6" fill="#2f3238"/>
+    <rect x="390" y="249" width="82.5" height="6" fill="#2f3238"/>
+    <!-- diffuser -->
+    <rect x="202.5" y="246" width="195" height="3" fill="#fff6d6"/>
+    <!-- holder base + lid -->
+    <rect x="172.5" y="238.95" width="255" height="7.05" fill="#3c424c"/>
+    <rect x="172.5" y="234.45" width="255" height="4.2" fill="#4d5563"/>
+    <!-- front stud -->
+    <rect x="147" y="240" width="6" height="51" fill="#9aa3ad"/>
+    <rect x="142" y="255" width="16" height="6" fill="#9aa3ad"/>
+    <rect x="142" y="243" width="16" height="6" fill="#9aa3ad"/>
+  </g>
+  <!-- rear studs, shown dashed: they lie at X = ±70, outside this section -->
+  <g stroke="#9aa3ad" stroke-width="1" stroke-dasharray="4 3" fill="none">
+    <rect x="394.5" y="240" width="6" height="51"/>
+  </g>
+  <!-- light path arrows -->
+  <g stroke="#e8a33d" stroke-width="2.4" fill="none" marker-end="url(#ar)">
+    <defs><marker id="ar" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 z" fill="#e8a33d"/></marker></defs>
+    <path d="M446,372 L492,372"/>
+    <path d="M494,362 L300,292"/>
+    <path d="M492,352 L410,288"/>
+    <path d="M300,272 L300,252"/>
+  </g>
+
+  <!-- callouts -->
+  <g font-size="11.5" fill="#333">
+    <text x="516" y="418">底板 4</text>
+    <text x="516" y="378">TT560 平躺，灯头掰 90° → 远端白壁</text>
+    <text x="516" y="310">全白内腔，净空 33</text>
+    <text x="516" y="281">顶盖 4（裙边 14，包壁 10）</text>
+    <text x="516" y="254">胶片台 200 × 230，开口 100 × 120</text>
+    <text x="516" y="240">扩散板 110 × 130 × 2 乳白亚克力</text>
+    <text x="516" y="222">胶片夹 110 × 170 · 胶片面 ≈ 120.3</text>
+    <text x="103" y="437" font-size="11">T1 接收器</text>
+    <text x="240" y="437" font-size="11">抽口 190 × 76，插塞式盖板</text>
+    <text x="50" y="368" font-size="10.5" fill="#0a8">LED</text>
+    <text x="118" y="232" font-size="10.5" fill="#666">前螺杆 (45, −100)</text>
+    <text x="330" y="210" font-size="10.5" fill="#666">后螺杆 (±70, +65)，不在本剖面内</text>
+  </g>
+  <g stroke="#06c" stroke-width="0.8" fill="none">
+    <path d="M90.3,455 L509.7,455"/><path d="M90.3,450 L90.3,460"/><path d="M509.7,450 L509.7,460"/>
+    <path d="M78,276 L78,420"/><path d="M73,276 L83,276"/><path d="M73,420 L83,420"/>
+  </g>
+  <text x="270" y="470" font-size="12" fill="#06c">深 273（宽 208）</text>
+  <text x="18" y="352" font-size="12" fill="#06c">高 96</text>
+
+  <text x="30" y="512" font-size="14" font-weight="bold" fill="#7a2fbf">打印件 —— 8 个 STL + 1 个可选件，两色，勿缩放</text>
+  <g font-size="12.5" fill="#333">
+    <text x="34" y="536"><tspan font-weight="bold">白色 PLA ×3</tspan>（内腔即反射面——哑光耗材，内部免漆）</text>
+    <text x="46" y="556">main-body.stl —— 208 × 273 × 92，底 4／壁 3，Ø12 过线孔，抽口 190 × 76。需 ≥ 280 × 300 打印床；190 mm 跨度加支撑。</text>
+    <text x="46" y="574">top-cover.stl —— 214.6 × 279.6 裙边盖，开口 100 × 120，3 个 M6 螺柱。无螺丝：扣上即用。</text>
+    <text x="46" y="592">access-panel.stl —— 面板 200 × 78 + 塞边 186 × 72 × 4 + 把手。塞边缠 EVA：摩擦固定兼遮光。</text>
+    <text x="34" y="620"><tspan font-weight="bold">黑色 PLA ×5</tspan>（胶片周边件——黑色耗材免遮蔽免喷漆）</text>
+    <text x="46" y="640">film-holder-135-base / -lid、film-holder-120-base / -lid —— 110 × 170，窗 24.5 × 36.5 与 56.5 × 84.5，槽高 0.3。</text>
+    <text x="46" y="658">film-stage-printed.stl —— 200 × 230 × 5，四角 L 挡块一体（槽口全开），填充 ≥ 30%。可选：mask-6x6</text>
+    <text x="46" y="676" fill="#7a2fbf">夹子层高 0.12–0.16 mm，底座滑槽面朝下贴床。先打一副试装，再打其余。</text>
+  </g>
+
+  <text x="30" y="716" font-size="14" font-weight="bold" fill="#0a5">采购件与装配</text>
+  <g font-size="12.5" fill="#333">
+    <text x="34" y="740">乳白亚克力 110 × 130 × 2 ×1 · M6×35 全牙螺杆 ×3 · M6 螺母 ×6 · M6 热熔铜螺母 ×3</text>
+    <text x="34" y="758">EVA 海绵条 · Ø12 橡胶过线圈 ×2 · USB 线控调光 LED 灯带（5 V，调光器在箱外）</text>
+    <text x="34" y="778">竖用才需要：Ø6 × 2 磁铁 ×24、Ø12 铁垫片 ×4。　可选升级：铝制胶片台（cad/film-stage-aluminium-3mm.dxf）。</text>
+    <text x="34" y="800">1. 三颗 M6 铜螺母热压入顶盖螺柱。　2. 外面喷哑光黑，内部保持白色原样。　3. 扣上顶盖。</text>
+    <text x="34" y="818">4. 螺杆入铜螺母 → 下螺母定高 → 台面经 Ø6.5 光孔落上 → 上螺母锁紧。 <tspan fill="#c00">切勿给台面孔攻丝。</tspan></text>
+    <text x="34" y="836">5. 粘四片铁垫片（挡块已打印在台面上）。　6. 亚克力盖开口，夹子放上。</text>
+    <text x="34" y="854">7. 灯躺箱底，灯身上面贴白纸。　8. 插上抽口盖板。</text>
+    <text x="34" y="874" fill="#0a5">校准：拍无胶片发光面 → flat-field → 目标四角差 ≈ ±0.1 EV → 灯居中／远壁立白卡／最后中心减光点。</text>
+    <text x="34" y="892" fill="#888">Neo Analog Lab Inc. · MIT License · github.com/Neoanaloglab/Neobox</text>
+  </g>
+</svg>

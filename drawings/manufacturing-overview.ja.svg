@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="920" viewBox="0 0 1180 920" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1180" height="920" fill="#ffffff"/>
+  <text x="30" y="40" font-size="21" font-weight="bold" fill="#111">NeoBox — 製造オーバービュー</text>
+  <text x="30" y="61" font-size="12.5" fill="#555">カメラスキャン用ストロボ光源 · 208 × 273 × 96 mm · 作例構成：NEEWER TT560 + ZENIKO T1</text>
+  <text x="30" y="79" font-size="12.5" fill="#555">寸法は mm · ジオメトリの正：cad/neobox.blend</text>
+
+  <text x="30" y="100" font-size="14" font-weight="bold" fill="#06c">縦断面（右側から見る）</text>
+
+  <!-- section drawing, scale 1.5 : 1 -->
+  <g stroke="#333" stroke-width="1.1">
+    <!-- floor -->
+    <rect x="95.25" y="414" width="409.5" height="6" fill="#f4f4f4"/>
+    <!-- back wall -->
+    <rect x="500.25" y="282" width="4.5" height="132.75" fill="#f4f4f4"/>
+    <!-- front column + upper front -->
+    <rect x="95.25" y="300" width="4.5" height="114.75" fill="#f4f4f4"/>
+    <rect x="95.25" y="282" width="4.5" height="18" fill="#f4f4f4"/>
+    <!-- top cover plate, split by aperture -->
+    <rect x="90.3" y="276" width="119.7" height="6" fill="#e6e6e6"/>
+    <rect x="390" y="276" width="119.7" height="6" fill="#e6e6e6"/>
+    <!-- skirt -->
+    <rect x="90.3" y="276" width="4.5" height="21" fill="#e6e6e6"/>
+    <rect x="505.2" y="276" width="4.5" height="21" fill="#e6e6e6"/>
+    <!-- flash -->
+    <rect x="148.5" y="331.5" width="285" height="82.5" fill="#4a4a52"/>
+    <rect x="433.5" y="338" width="6" height="69" fill="#ffe9a8"/>
+    <!-- T1 receiver -->
+    <rect x="103.5" y="345.75" width="45" height="58.5" fill="#7d8794"/>
+    <!-- LED strip -->
+    <rect x="99.75" y="351" width="6" height="12" fill="#5ec8dd"/>
+    <!-- stage -->
+    <rect x="127.5" y="249" width="82.5" height="6" fill="#2f3238"/>
+    <rect x="390" y="249" width="82.5" height="6" fill="#2f3238"/>
+    <!-- diffuser -->
+    <rect x="202.5" y="246" width="195" height="3" fill="#fff6d6"/>
+    <!-- holder base + lid -->
+    <rect x="172.5" y="238.95" width="255" height="7.05" fill="#3c424c"/>
+    <rect x="172.5" y="234.45" width="255" height="4.2" fill="#4d5563"/>
+    <!-- front stud -->
+    <rect x="147" y="240" width="6" height="51" fill="#9aa3ad"/>
+    <rect x="142" y="255" width="16" height="6" fill="#9aa3ad"/>
+    <rect x="142" y="243" width="16" height="6" fill="#9aa3ad"/>
+  </g>
+  <!-- rear studs, shown dashed: they lie at X = ±70, outside this section -->
+  <g stroke="#9aa3ad" stroke-width="1" stroke-dasharray="4 3" fill="none">
+    <rect x="394.5" y="240" width="6" height="51"/>
+  </g>
+  <!-- light path arrows -->
+  <g stroke="#e8a33d" stroke-width="2.4" fill="none" marker-end="url(#ar)">
+    <defs><marker id="ar" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 z" fill="#e8a33d"/></marker></defs>
+    <path d="M446,372 L492,372"/>
+    <path d="M494,362 L300,292"/>
+    <path d="M492,352 L410,288"/>
+    <path d="M300,272 L300,252"/>
+  </g>
+
+  <!-- callouts -->
+  <g font-size="11.5" fill="#333">
+    <text x="516" y="418">底板 4</text>
+    <text x="516" y="378">TT560 横置き、発光部 90° → 奥の白壁</text>
+    <text x="516" y="310">白い内腔、ヘッドルーム 33</text>
+    <text x="516" y="281">天板 4（スカート 14、壁に 10 被さる）</text>
+    <text x="516" y="254">ステージ 200 × 230、開口 100 × 120</text>
+    <text x="516" y="240">拡散板 110 × 130 × 2 乳白アクリル</text>
+    <text x="516" y="222">ホルダー 110 × 170 · フィルム面 ≈ 120.3</text>
+    <text x="103" y="437" font-size="11">T1 レシーバー</text>
+    <text x="240" y="437" font-size="11">アクセス開口 190 × 76、差し込みパネル</text>
+    <text x="50" y="368" font-size="10.5" fill="#0a8">LED</text>
+    <text x="118" y="232" font-size="10.5" fill="#666">前スタッド (45, −100)</text>
+    <text x="330" y="210" font-size="10.5" fill="#666">後スタッド (±70, +65)、この断面外</text>
+  </g>
+  <g stroke="#06c" stroke-width="0.8" fill="none">
+    <path d="M90.3,455 L509.7,455"/><path d="M90.3,450 L90.3,460"/><path d="M509.7,450 L509.7,460"/>
+    <path d="M78,276 L78,420"/><path d="M73,276 L83,276"/><path d="M73,420 L83,420"/>
+  </g>
+  <text x="270" y="470" font-size="12" fill="#06c">奥行 273（幅 208）</text>
+  <text x="18" y="352" font-size="12" fill="#06c">高さ 96</text>
+
+  <text x="30" y="512" font-size="14" font-weight="bold" fill="#7a2fbf">プリントパーツ — STL 8 点 + オプション 1 点、2 色、スケール禁止</text>
+  <g font-size="12.5" fill="#333">
+    <text x="34" y="536"><tspan font-weight="bold">白 PLA ×3</tspan>（内腔そのものが反射面——つや消し材、内側無塗装）</text>
+    <text x="46" y="556">main-body.stl — 208 × 273 × 92、底 4／壁 3、Ø12 グロメット、開口 190 × 76。プレート ≥ 280 × 300 必須、190 mm スパンにサポート。</text>
+    <text x="46" y="574">top-cover.stl — 214.6 × 279.6 スカート付き蓋、開口 100 × 120、M6 ポスト × 3。ネジなし：被せるだけ。</text>
+    <text x="46" y="592">access-panel.stl — 面板 200 × 78 + プラグ 186 × 72 × 4 + ハンドル。プラグに EVA を巻く：摩擦嵌合＋遮光。</text>
+    <text x="34" y="620"><tspan font-weight="bold">黒 PLA ×5</tspan>（フィルム周りの部品——黒材ならマスキングも塗装も不要）</text>
+    <text x="46" y="640">film-holder-135-base / -lid、film-holder-120-base / -lid — 110 × 170、窓 24.5 × 36.5 / 56.5 × 84.5、溝高 0.3。</text>
+    <text x="46" y="658">film-stage-printed.stl — 200 × 230 × 5、コーナー L ブロック一体（溝口は開放）、インフィル ≥ 30%。オプション：mask-6x6</text>
+    <text x="46" y="676" fill="#7a2fbf">ホルダーは積層 0.12–0.16 mm、底は溝面を下に。まず 1 台刷って勘合確認してから残りを。</text>
+  </g>
+
+  <text x="30" y="716" font-size="14" font-weight="bold" fill="#0a5">購入部品と組立</text>
+  <g font-size="12.5" fill="#333">
+    <text x="34" y="740">乳白アクリル 110 × 130 × 2 ×1 · M6×35 全ねじ寸切り ×3 · M6 ナット ×6 · M6 インサート ×3</text>
+    <text x="34" y="758">EVA フォームテープ · Ø12 ゴムグロメット ×2 · USB LED ストリップ（5 V、調光器は箱の外）</text>
+    <text x="34" y="778">縦置き時のみ：Ø6 × 2 磁石 ×24、Ø12 鉄ワッシャー ×4。　任意アップグレード：アルミステージ（cad/film-stage-aluminium-3mm.dxf）。</text>
+    <text x="34" y="800">1. M6 インサート 3 個を天板ポストへ熱圧入。　2. 外側をつや消し黒で塗装、内側は白のまま。　3. 天板を被せる。</text>
+    <text x="34" y="818">4. 寸切りをインサートへ → 下ナットで高さ決め → ステージを Ø6.5 バカ穴で落とす → 上ナットで固定。 <tspan fill="#c00">ステージ穴にタップ禁止。</tspan></text>
+    <text x="34" y="836">5. ワッシャー 4 枚を接着（ブロックはステージに一体）。　6. アクリルを開口へ、ホルダーをその上に。</text>
+    <text x="34" y="854">7. ストロボを底に寝かせ、上面に白紙を貼る。　8. アクセスパネルを差し込む。</text>
+    <text x="34" y="874" fill="#0a5">校正：素の発光面を撮影 → フラットフィールド → 目標は四隅差 ≈ ±0.1 EV → センタリング／奥壁に白カード／最後に減光ドット。</text>
+    <text x="34" y="892" fill="#888">Neo Analog Lab Inc. · MIT License · github.com/Neoanaloglab/Neobox</text>
+  </g>
+</svg>

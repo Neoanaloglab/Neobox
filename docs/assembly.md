@@ -1,5 +1,7 @@
 # Assembly, power and calibration
 
+**English** · [简体中文](assembly.zh-CN.md) · [日本語](assembly.ja.md)
+
 About 15 minutes once the parts are printed. There are no glued structural joints and no screws holding the enclosure together.
 
 ## What connects to what

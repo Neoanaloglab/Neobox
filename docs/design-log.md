@@ -1,5 +1,7 @@
 # Design log
 
+**English** · [简体中文](design-log.zh-CN.md) · [日本語](design-log.ja.md)
+
 Why the box ended up this way, and what was tried and rejected on the way there. Useful if you are considering modifying it — several of the obvious "improvements" below were already tested and thrown out.
 
 The design went through three phases: fixing an unbuildable first draft, collapsing a tall vertical box into a flat horizontal one, and then stripping out everything that turned out to be unnecessary.

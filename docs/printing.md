@@ -1,6 +1,8 @@
 # 3D printing
 
-Ten STL files in two colours. All models are 1:1 in millimetres — **do not scale**.
+**English** · [简体中文](printing.zh-CN.md) · [日本語](printing.ja.md)
+
+Nine STL files — eight for the default build plus an optional 6×6 mask — in two colours. All models are 1:1 in millimetres — **do not scale**.
 
 ## White filament (the light cavity)
 
@@ -59,3 +61,10 @@ If you are having these printed for you (Taobao, JLCPCB, Craftcloud, a local sho
 > Everything else: 0.2 mm layers, ≥ 3 perimeters, 15–25 % infill, matte filament preferred.
 
 A Chinese-language version of this text for Taobao vendors is in [bom.md](bom.md#taobao-scripts).
+
+**If the shop insists on their default settings**, only two of the requests above are actually load-bearing — concede everything else:
+
+1. The four holder parts must be printed at 0.12–0.16 mm layers with the channel face down. The 0.3 mm channel and 0.2 mm reliefs quantise to garbage at 0.2 mm layers; this is non-negotiable.
+2. The main body needs supports over the 190 mm access-opening span.
+
+Default layer height, infill and filament are all acceptable for everything else. If the shop will not change layer height even for the holders, split the order: send the four small holder files to a shop that will, and leave the big enclosure parts where they are.
