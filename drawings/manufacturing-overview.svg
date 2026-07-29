@@ -65,7 +65,7 @@
     <text x="103" y="437" font-size="11">T1 receiver</text>
     <text x="240" y="437" font-size="11">access opening 190 × 76, plug-in panel</text>
     <text x="60" y="352" font-size="10.5" fill="#0a8">LED</text>
-    <text x="118" y="232" font-size="10.5" fill="#666">front stud (0, −100)</text>
+    <text x="118" y="232" font-size="10.5" fill="#666">front stud (45, −100)</text>
     <text x="360" y="222" font-size="10.5" fill="#666">rear studs (±70, +65) — outside this section</text>
   </g>
   <g stroke="#06c" stroke-width="0.8" fill="none">
@@ -83,7 +83,7 @@
     <text x="46" y="592">access-panel.stl — face 200 × 78 + plug 186 × 72 × 4 + handle. Wrap the plug in EVA foam: friction fit and light trap.</text>
     <text x="34" y="620"><tspan font-weight="bold">Black PLA ×5</tspan> (parts near the film — black filament means no masking or paint)</text>
     <text x="46" y="640">film-holder-135-base / -lid, film-holder-120-base / -lid — 110 × 170, windows 24.5 × 36.5 and 56.5 × 84.5, channel 0.3 high.</text>
-    <text x="46" y="658">film-stage-printed.stl — 200 × 230 × 5, alignment blocks integral, ≥ 30 % infill.  Optional: mask-6x6 · alignment-blocks-x4 (aluminium stage only)</text>
+    <text x="46" y="658">film-stage-printed.stl — 200 × 230 × 5, corner L-blocks integral (film mouths open), ≥ 30 % infill.  Optional: mask-6x6 · alignment-blocks-x4 (aluminium stage only)</text>
     <text x="46" y="676" fill="#7a2fbf">Holders at 0.12–0.16 mm layers, base printed with the channel face down. Print one holder and test-fit before running the rest.</text>
   </g>
 

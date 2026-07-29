@@ -94,13 +94,13 @@ Printed version: 200 × 230 × 5 solid plate with the four holder-alignment bloc
 
 > **Do not tap the stage holes.** A threaded stage plus a threaded insert of the same pitch is a differential screw: turning the stud advances the stage and retracts it by the same amount, and the height never changes. The holes must be clearance holes.
 
-**Stud positions** (relative to stage centre): front `(0, −100)`, rear `(±70, +65)`. The front point is deliberately pushed outward so that all three studs and their nuts clear the 110 × 170 holder outline by at least 9 mm. **The holders therefore need no cut-outs for the hardware.**
+**Stud positions** (relative to stage centre): front `(45, −100)`, rear `(±70, +65)`. All three studs and their nuts clear the 110 × 170 holder outline by at least 9 mm, and — just as important — they stay outside the **film run-out corridor**: film slides out through both open ends of the holder, so nothing may rise near film height inside |x| < 31 (the width of 120 film) beyond the holder ends. The front stud originally sat at (0, −100), dead centre in that corridor; it was moved sideways for exactly this reason. The holders need no cut-outs for any of the hardware.
 
-On top of the stage: the four alignment blocks (5 × 6 × 30) locating the holder in X and Y — integral on the printed stage, glued on (`alignment-blocks-x4.stl`) with the aluminium one — plus four Ø12 steel washers acting as magnet seats.
+On top of the stage: four **corner L-blocks** locating the holder in X and Y — integral on the printed stage, glued on (`alignment-blocks-x4.stl`) with the aluminium one — plus four Ø12 steel washers acting as magnet seats. The blocks sit only at the corners (|x| = 40–60) so both channel mouths stay completely open; an earlier layout with a block centred on each end blocked the film path entirely.
 
 ## 5. Film holders
 
-Sliding-channel sandwich, two printed parts. Film sits in a 0.3 mm channel and is advanced by pulling it sideways — the holder is never opened mid-roll. Only the non-image edges are supported; the image area floats with 0.2 mm clearance above and below.
+Sliding-channel sandwich, two printed parts. Film sits in a 0.3 mm channel and is advanced by pulling it sideways — the holder is never opened mid-roll. Only the non-image edges are supported; the image area floats with 0.2 mm clearance above and below. The strip overhangs the open ends of the holder while scanning, passing over the stage with about 6 mm of clearance; the corridor beyond both ends is kept free of hardware (see §4).
 
 | | 135 | 120 |
 |---|---|---|

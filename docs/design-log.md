@@ -36,6 +36,8 @@ The first specification was a vertical box, 320 × 320 × 230 mm, with two diffu
 
 **16. Fasteners and internal parts deleted.** Six M3 posts holding the lid down became a skirted lid that simply drops on — the skirt is both the location feature and the light trap. The drawer tray was removed (the flash lies on the floor of the box), then its rails, then the strap that held the flash, then the 45° reflector plate itself: the far wall already performs the turn, and every internal part is one more thing to align. What remains is ten printed parts, one acrylic sheet, and three studs.
 
+**17. The film path itself.** First fit-check of the integrated stage found that two blocks sat centred on the holder ends — exactly across the channel mouths — with their tops 0.2 mm below the film plane. A strip could never be threaded. The same sweep found the front stud at (0, −100) rising to film height in the middle of the run-out corridor. The blocks became four corner Ls (|x| = 40–60, both mouths open) and the front stud moved to (45, −100); a per-vertex corridor scan (|x| < 31.5, both ends, above the stage surface) now runs clean. Lesson: checking part-to-part clearances is not enough — **the moving workpiece needs its own swept corridor treated as a part.**
+
 ---
 
 ## Things deliberately not done
