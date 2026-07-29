@@ -46,4 +46,6 @@ The first specification was a vertical box, 320 × 320 × 230 mm, with two diffu
 
 **A second diffuser for better evenness.** Costs about 43 mm of height. Worth reconsidering only for 4×5, or for slide film if the single-sheet result proves marginal.
 
+**Fusing the lid into the main body.** Considered and rejected on printability alone: a closed hollow box puts a 202 × 267 mm unsupported ceiling over the cavity, which FDM cannot bridge — it would need full internal supports that can only be extracted through the 190 × 76 access opening, leaving scars across the optical ceiling. Printing on any other face just moves the problem. And the saving is nil: the lid already attaches with no fasteners, and its skirt is the light trap. The one legitimate seam-free variant — printing top-plate-down with walls rising from it and moving the removable panel to the floor — would work, but trades a top seam for a bottom seam at the cost of remodelling everything. If the lid ever feels loose, two small self-tapping screws through the skirt beat fusing it.
+
 **Ventilation.** Omitted in the prototype: a speedlight at low duty cycle produces little heat, and every hole is a potential light leak. Pull the access panel between rolls if a session runs hot.
