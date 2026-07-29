@@ -7,3 +7,7 @@
 *.gcode
 *.3mf
 .remember/
+
+# local ordering package, not part of the release
+taobao-order/
+taobao-order.zip
