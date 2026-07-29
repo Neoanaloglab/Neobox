@@ -22,8 +22,8 @@ These parts sit around the film and must not reflect stray light into the lens. 
 
 | File | Notes |
 |---|---|
-| `stl/black-pla/film-holder-135-base.stl` | default 0.2 mm layers, **channel face down on the plate** |
-| `stl/black-pla/film-holder-135-lid.stl` | default 0.2 mm layers |
+| `stl/black-pla/film-holder-135-base.stl` | default 0.2 mm layers, **flat face down, rails up**, no supports |
+| `stl/black-pla/film-holder-135-lid.stl` | default 0.2 mm layers, flat top face down, strips up |
 | `stl/black-pla/film-holder-120-base.stl` | as above |
 | `stl/black-pla/film-holder-120-lid.stl` | as above |
 | `stl/black-pla/film-stage-printed.stl` | 200 × 230 × 5 solid plate, **alignment blocks printed on top**; ≥ 30 % infill or ≥ 5 perimeters for flatness |
@@ -57,14 +57,14 @@ If you are having these printed for you (Taobao, JLCPCB, Craftcloud, a local sho
 
 > 10 STL files, millimetres, do not scale.
 > **White PLA ×3:** `main-body` (needs ≥ 280 × 300 mm bed; the 190 mm span above the front opening needs support), `top-cover`, `access-panel`.
-> **Black PLA ×5:** four film-holder parts (default 0.2 mm layers, bases printed with the channel face down on the plate), `film-stage-printed` (flat side down, ≥ 30 % infill).
+> **Black PLA ×5:** four film-holder parts (default 0.2 mm layers, all flat face down, no supports), `film-stage-printed` (flat side down, ≥ 30 % infill).
 > Everything else: 0.2 mm layers, ≥ 3 perimeters, 15–25 % infill, matte filament preferred.
 
 A Chinese-language version of this text for Taobao vendors is in [bom.md](bom.md#taobao-scripts).
 
 **If the shop insists on their default settings**, let them — the holder geometry is quantised to 0.2 mm layers precisely so that default profiles work. Only two requests are load-bearing:
 
-1. Holder bases print with the channel face down on the plate.
-2. The main body needs supports over the 190 mm access-opening span.
+1. The main body needs supports over the 190 mm access-opening span.
+2. The access panel prints plug-face down, with supports under the face-plate rim.
 
 Layer height, infill and filament can all stay at the shop's defaults. (Earlier revisions required 0.12–0.16 mm layers for the holders; the 0.2-quantised redesign removed that requirement.)

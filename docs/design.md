@@ -118,7 +118,7 @@ Sliding-channel sandwich, two printed parts. Film sits in a 0.4 mm channel and i
 
 The base is flat — it presses directly on the acrylic. X/Y location comes from the stage blocks; the four base magnets pull down onto the steel washers, which is what allows the box to be used stood on end. For 6×4.5 and 6×6, add the printed mask (`stl/black-pla/mask-6x6.stl`) over the 120 window.
 
-Every holder z-feature is an exact multiple of 0.2 mm and no exposed step is under two layers — land relief 0.4, rail step 0.8, channel 0.4 — so the parts print true at the default 0.2 mm layer height (0.1 also divides them; 0.12 and 0.16 do not — avoid). Print the base with the channel face down on the plate. Print one holder first and check that film slides without slop before committing to the rest.
+Every holder z-feature is an exact multiple of 0.2 mm and no exposed step is under two layers — land relief 0.4, rail step 0.8, channel 0.4 — so the parts print true at the default 0.2 mm layer height (0.1 also divides them; 0.12 and 0.16 do not — avoid). Both parts print flat face down — rails and pressure strips grow upward; no supports anywhere. Print one holder first and check that film slides without slop before committing to the rest.
 
 ## 6. Enclosure
 

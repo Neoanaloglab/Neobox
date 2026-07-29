@@ -85,7 +85,7 @@
     <text x="34" y="620"><tspan font-weight="bold">黒 PLA ×5</tspan>（フィルム周りの部品——黒材ならマスキングも塗装も不要）</text>
     <text x="46" y="640">film-holder-135-base / -lid、film-holder-120-base / -lid — 110 × 170、窓 25 × 37 / 57 × 85、溝高 0.4。</text>
     <text x="46" y="658">film-stage-printed.stl — 200 × 230 × 5、コーナー L ブロック一体（溝口は開放）、インフィル ≥ 30%。オプション：mask-6x6</text>
-    <text x="46" y="676" fill="#7a2fbf">ホルダーはデフォルト積層 0.2 mm で OK（z は全て 0.2 の倍数）、底は溝面を下に。まず 1 台刷って勘合確認してから残りを。</text>
+    <text x="46" y="676" fill="#7a2fbf">ホルダーはデフォルト積層 0.2 mm で OK（z は全て 0.2 の倍数）、すべて平らな面を下に・サポート不要。まず 1 台刷って勘合確認してから残りを。</text>
   </g>
 
   <text x="30" y="716" font-size="14" font-weight="bold" fill="#0a5">購入部品と組立</text>

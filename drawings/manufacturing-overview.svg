@@ -85,7 +85,7 @@
     <text x="34" y="620"><tspan font-weight="bold">Black PLA ×5</tspan> (parts near the film — black filament means no masking or paint)</text>
     <text x="46" y="640">film-holder-135-base / -lid, film-holder-120-base / -lid — 110 × 170, windows 25 × 37 and 57 × 85, channel 0.4 high.</text>
     <text x="46" y="658">film-stage-printed.stl — 200 × 230 × 5, corner L-blocks integral (film mouths open), ≥ 30 % infill.  Optional: mask-6x6</text>
-    <text x="46" y="676" fill="#7a2fbf">Holders print at the default 0.2 mm layers (all z-steps are 0.2 multiples), base channel face down. Test-fit one holder first.</text>
+    <text x="46" y="676" fill="#7a2fbf">Holders print at the default 0.2 mm layers (all z-steps are 0.2 multiples), flat faces down, no supports. Test-fit one first.</text>
   </g>
 
   <text x="30" y="716" font-size="14" font-weight="bold" fill="#0a5">Bought parts and assembly</text>
