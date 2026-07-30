@@ -84,7 +84,7 @@
     <text x="46" y="592">access-panel.stl —— 面板 200 × 78 + 塞边 186 × 72 × 4 + 把手。塞边缠 EVA：摩擦固定兼遮光。</text>
     <text x="34" y="620"><tspan font-weight="bold">黑色 PLA ×5</tspan>（胶片周边件——黑色耗材免遮蔽免喷漆）</text>
     <text x="46" y="640">film-holder-135-base / -lid、film-holder-120-base / -lid —— 110 × 170，窗 25 × 37 与 57 × 85，槽高 0.4。</text>
-    <text x="46" y="658">film-stage-printed.stl —— 200 × 230 × 5，四角 L 挡块一体（槽口全开），填充 ≥ 30%。可选：mask-6x6</text>
+    <text x="46" y="658">film-stage-printed.stl —— 200 × 230 板厚 5，挡块高至 11，一体（槽口全开），填充 ≥ 30%。可选：mask-6x6</text>
     <text x="46" y="676" fill="#7a2fbf">夹子按默认 0.2 层高打即可（z 向全为 0.2 倍数），全部平面朝下、免支撑。先打一副试装，再打其余。</text>
   </g>
 
@@ -97,7 +97,7 @@
     <text x="34" y="818">4. 螺杆入铜螺母 → 下螺母定高 → 台面经 Ø6.5 光孔落上 → 上螺母锁紧。 <tspan fill="#c00">切勿给台面孔攻丝。</tspan></text>
     <text x="34" y="836">5. 粘四片铁垫片（挡块已打印在台面上）。　6. 亚克力盖开口，夹子放上。</text>
     <text x="34" y="854">7. 灯躺箱底，灯身上面贴白纸。　8. 插上抽口盖板。</text>
-    <text x="34" y="874" fill="#0a5">校准：拍无胶片发光面 → flat-field → 目标四角差 ≈ ±0.1 EV → 灯居中／远壁立白卡／最后中心减光点。</text>
+    <text x="34" y="874" fill="#0a5">校准：拍无胶片发光面 → 平场校正 → 目标四角差 ≈ ±0.1 EV → 灯居中／远壁立白卡／最后中心减光点。</text>
     <text x="34" y="892" fill="#888">Neo Analog Lab Inc. · MIT License · github.com/Neoanaloglab/Neobox</text>
   </g>
 </svg>
