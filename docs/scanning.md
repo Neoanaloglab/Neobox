@@ -130,7 +130,7 @@ The focus light stays on while you shoot if you like — run it low, because the
 | Mode | Manual | Nothing here should change frame to frame |
 | ISO | [Base ISO](glossary.md#base-iso) — usually 100 | The flash has power to spare, so take the clean option |
 | Aperture | Start at f/5.6–f/8 | The metering start point for this box |
-| Shutter | At or below your camera's [sync speed](glossary.md#sync-speed) | Above it the shutter curtain shades the frame |
+| Shutter | **1/125 s** — at or below your camera's [sync speed](glossary.md#sync-speed) | Above sync speed the curtain shades the frame. 1/125 s clears almost every camera and leaves margin for radio-trigger delay |
 | Shutter type | Mechanical, or EFCS if your camera still fires flash with it | See the warning below |
 | File | [Raw](glossary.md#raw) | Inversion needs the linear data |
 | White balance | Fixed, any value | You will set it off the film base in post |

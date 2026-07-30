@@ -289,8 +289,9 @@
 <text x="406.0" y="846.0" font-size="12.2" fill="#222" font-weight="bold">f/5.6–f/8</text>
 <text x="406.0" y="860.0" font-size="10.5" fill="#777">1/3 段で露出を追い込む</text>
 <rect x="562.0" y="828.0" width="156.0" height="50.0" fill="#ffffff" stroke="#e5e5e5" stroke-width="1.0" rx="4"/>
-<text x="574.0" y="846.0" font-size="12.2" fill="#222" font-weight="bold">≤ 同調速度</text>
-<text x="574.0" y="860.0" font-size="10.5" fill="#777">通常同調、HSS は不要</text>
+<text x="574.0" y="846.0" font-size="12.2" fill="#222" font-weight="bold">1/125 秒</text>
+<text x="574.0" y="860.0" font-size="10.5" fill="#777">同調速度以下——暗箱で</text>
+<text x="574.0" y="872.4" font-size="10.5" fill="#777">は遅くしても損はない</text>
 <rect x="730.0" y="828.0" width="156.0" height="50.0" fill="#ffffff" stroke="#e5e5e5" stroke-width="1.0" rx="4"/>
 <text x="742.0" y="846.0" font-size="12.2" fill="#222" font-weight="bold">raw</text>
 <text x="742.0" y="860.0" font-size="10.5" fill="#777">1 ロール 1 プロファイル</text>

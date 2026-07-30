@@ -206,7 +206,11 @@ Sacrificial printed scaffolding under an overhang, snapped off after the print.
 
 The fastest shutter speed at which the sensor is fully uncovered at one instant, so a flash can expose the whole frame rather than a band of it.
 
-**Why it matters:** stay at or below it. Inside the closed box ambient light contributes nothing, so the flash pulse itself is the exposure and a slower shutter costs you nothing at all.
+Most modern mirrorless and DSLR bodies sync at **1/160 – 1/250 s**; many older and medium-format bodies at 1/125 s or slower; a leaf shutter syncs at any speed. Your camera's own figure is in its manual and spec sheet, usually written "X-sync" or "flash sync".
+
+**Why it matters:** **set 1/125 s and leave it.** That is at or below almost every camera's limit, and it leaves margin for the delay a cheap 2.4 GHz radio trigger adds — the *usable* sync speed with one is often a step below the rated one. Going slower costs nothing here, because inside the closed box ambient light contributes nothing and the pulse is the whole exposure. Get it wrong and part of the frame is exposed while the rest is a clean dark band: the curtain was still crossing the sensor when the flash fired.
+
+Do not rely on the camera capping the shutter for you. Many bodies only do that when they recognise a flash on the hot shoe, and a radio transmitter often is not recognised as one.
 
 ### TTL
 
