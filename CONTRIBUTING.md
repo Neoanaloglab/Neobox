@@ -26,11 +26,14 @@ They are binary artefacts committed to the repository, so a diff never shows wha
 
 ## The export and verify gate
 
-Any pull request that touches geometry must show a clean run of the verifier, from the repository root:
+Any pull request that touches geometry regenerates the STLs with the committed exporter and then shows a clean run of the verifier, both from the repository root:
 
 ```
+blender --background cad/neobox.blend --python tools/export_stl.py
 python3 tools/verify_stl.py
 ```
+
+The exporter unions each part's deliberately overlapping shells into one watertight solid and writes it in assembly world space; a naive File → Export → STL produces multi-shell files that fail the verifier. Regenerated files may differ from the published ones byte for byte (triangulation is not stable across Blender versions) while being geometrically identical — the verifier is the referee.
 
 It walks every file under `stl/` and exits non-zero if any check fails, so it can gate a commit. Four invariants per file:
 

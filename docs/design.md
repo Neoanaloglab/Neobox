@@ -401,11 +401,28 @@ A slicer drops each file onto the build plate by its bounding box, which is why 
 
 ### Re-exporting
 
+One command regenerates all nine files. It is the committed form of the pipeline that produced the published STLs, and it is the only supported way to export:
+
+```
+blender --background cad/neobox.blend --python tools/export_stl.py
+```
+
+(`blender` is the binary inside your Blender installation; any 4.x/5.x build works. Run it from the repository root, then `python3 tools/verify_stl.py`.)
+
+The script matters because the printable parts are **modelled as overlapping shells** — the walls sink 0.5 mm into the floor, the corner blocks into the stage, the posts into the top cover. That is deliberate: it keeps the source parametric and easy to edit. For every output file the script copies the source objects, splits them into shells, boolean-unions the shells into one solid (EXACT solver), welds away the boolean slivers, checks the result is watertight, and exports it in assembly world space — the scene itself is never touched. A naive File → Export → STL of the raw objects produces multi-shell files whose internal faces fail the verifier's layer-grid check.
+
+Regenerated files may differ from the published ones **byte for byte** (triangulation is not stable across Blender versions) while being geometrically identical. The verifier is the referee: bounding box, watertightness, layer grid and minimum step must all pass.
+
+<details>
+<summary>Manual export, if you cannot run the script</summary>
+
 1. **Select the objects** for one output file, using the mapping table above. *Checkpoint:* the number of selected objects matches the table — seven for the main body, one for everything else.
-2. **For the main body only, make it one solid.** Join the seven objects and boolean-union them; the shipped file is a single connected shell of 198 triangles, not seven loose boxes. *Checkpoint:* the verify script reports no non-manifold edges.
+2. **Make it one solid — every part, not just the main body.** The single-object parts are still multi-shell inside (the top cover alone is eleven shells: plate, skirt strips, posts). Join what needs joining, separate by loose parts, boolean-union the shells, then merge vertices by distance (0.02 mm) and run a limited dissolve (1°) to remove the boolean slivers. *Checkpoint:* the part is one connected shell and the verify script reports no non-manifold edges.
 3. **Export.** File → Export → STL, with *Selection Only*, scale 1.00, forward Y, up Z. No axis conversion: the numbers in the file must be the numbers in Blender. *Checkpoint:* re-importing the file puts the part back exactly where it was.
 4. **Write it to the same path** under `stl/white-pla/` or `stl/black-pla/`, keeping the filename. *Checkpoint:* `git status` shows a modified file, not a new one.
 5. **Verify** before you commit anything. *Checkpoint:* `python3 tools/verify_stl.py` prints `all 9 files pass` and exits 0.
+
+</details>
 
 ```mermaid
 flowchart LR
