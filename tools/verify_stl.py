@@ -17,15 +17,15 @@ import sys
 
 # published bounding boxes, sorted descending, in millimetres
 EXPECTED = {
-    "main-body.stl": (273.0, 208.0, 92.0),
-    "top-cover.stl": (279.6, 214.6, 14.0),
-    "access-panel.stl": (200.0, 78.0, 16.0),
-    "film-holder-135-base.stl": (170.0, 110.0, 5.0),
-    "film-holder-135-lid.stl": (170.0, 110.0, 3.4),
-    "film-holder-120-base.stl": (170.0, 110.0, 5.0),
-    "film-holder-120-lid.stl": (170.0, 110.0, 3.4),
-    "film-stage-printed.stl": (230.0, 200.0, 11.0),
-    "mask-6x6.stl": (110.0, 80.0, 1.0),
+    "main-body.stl": (154.8, 124.8, 75.6),
+    "cover-stage.stl": (154.8, 124.8, 10.0),
+    "film-holder-135-base.stl": (120.0, 94.0, 5.0),
+    "film-holder-135-lid.stl": (120.0, 94.0, 3.0),
+    "film-holder-120-base.stl": (120.0, 94.0, 5.0),
+    "film-holder-120-lid.stl": (120.0, 94.0, 3.0),
+    "pressure-window-135.stl": (95.0, 64.0, 2.0),
+    "pressure-window-120.stl": (95.0, 64.0, 2.0),
+    "mask-6x6.stl": (94.0, 80.0, 1.0),
 }
 LAYER = 0.2
 MIN_STEP = 0.4

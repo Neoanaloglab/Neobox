@@ -30,17 +30,16 @@ import bpy
 # is a mock-up and must never be exported — see docs/design.md section 11.
 MAPPING = {
     "main-body.stl": ("white-pla", [
-        "主箱_底4mm", "主箱_左壁", "主箱_右壁", "主箱_后壁",
-        "主箱_前上段", "主箱_前柱L", "主箱_前柱R",
+        "主箱_底3mm", "主箱_左壁", "主箱_右壁", "主箱_后壁",
     ]),
-    "top-cover.stl": ("white-pla", ["顶盖_裙边式_开口100x120"]),
-    "access-panel.stl": ("white-pla", ["抽口盖板_插塞式"]),
-    "film-stage-printed.stl": ("black-pla", ["胶片台_打印版_角块一体_200x230x5"]),
-    "film-holder-135-base.stl": ("black-pla", ["135夹_底座_110x170_平底"]),
-    "film-holder-135-lid.stl": ("black-pla", ["135夹_上盖_110x170"]),
-    "film-holder-120-base.stl": ("black-pla", ["120夹_底座_110x170_平底"]),
-    "film-holder-120-lid.stl": ("black-pla", ["120夹_上盖_110x170"]),
-    "mask-6x6.stl": ("black-pla", ["6x6插片_80x110x1"]),
+    "cover-stage.stl": ("white-pla", ["顶盖台一体_窗62x95"]),
+    "film-holder-135-base.stl": ("black-pla", ["135夹_底座_94x120_平底"]),
+    "film-holder-135-lid.stl": ("black-pla", ["135夹_上盖_94x120"]),
+    "film-holder-120-base.stl": ("black-pla", ["120夹_底座_94x120_平底"]),
+    "film-holder-120-lid.stl": ("black-pla", ["120夹_上盖_94x120"]),
+    "pressure-window-135.stl": ("black-pla", ["压片窗插片_135_64x95x2"]),
+    "pressure-window-120.stl": ("black-pla", ["压片窗插片_120_64x95x2"]),
+    "mask-6x6.stl": ("black-pla", ["6x6插片_94x80x1"]),
 }
 
 WELD = 0.02          # weld distance for boolean slivers, mm
