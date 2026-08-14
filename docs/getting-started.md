@@ -10,31 +10,31 @@
 
 ## Is this project for you?
 
-NeoBox is a 3D-printable flash light source box that sits under your camera so you can photograph — [camera-scan](glossary.md#camera-scanning) — 35 mm and 120 negatives up to 6×9. The finished enclosure is 208 × 273 × 96 mm (width × depth × height), about 5.4 L.
+NeoBox is a 3D-printable flash light source box that sits under your camera so you can photograph — [camera-scan](glossary.md#camera-scanning) — 35 mm and 120 negatives up to 6×9. The assembled stack has a 124.8 × 154.8 mm footprint and stands 87 mm tall — it lives on a desk, not on the floor.
 
-A bare speedlight lies flat on the floor of the box and fires horizontally at the far wall. Nothing is aimed at the film. The light arrives only after several diffuse bounces inside the white [cavity](glossary.md#integrating-cavity), then passes through one [opal](glossary.md#opal) acrylic [diffuser](glossary.md#diffuser) directly under the film holder.
+A bare speedlight lies flat on the desk with its head against the box's fully open front, firing horizontally into the white [cavity](glossary.md#integrating-cavity). Nothing points at the film. The light bounces off the white walls several times, then leaves upward through a 62 × 95 mm window and one [opal](glossary.md#opal) acrylic [diffuser](glossary.md#diffuser) directly under the film. The open front also lets room light in: work in a dim room and keep ceiling lights from shining into the opening — the flash pulse is far stronger than anything the room adds.
 
 The whole build is smaller than it sounds:
 
-- **8 printed parts** for the default build, plus an optional 6×6 mask — 9 STL files in total.
-- **1 opal acrylic diffuser**, 110 × 130 × 2 mm, which simply rests on the film stage.
-- **3 M6 studs, 6 nuts and 3 heat-set inserts**, plus EVA foam, 2 grommets and a USB LED strip.
-- **No structural glue anywhere, and no screws hold the enclosure together** — the top cover drops on.
+- **9 printed parts** — two white, seven black — all nine STL files support-free, each printed with its flat face down.
+- **1 opal acrylic diffuser**, 68 × 118 × 2 mm, dropped into a pocket in the cover-stage.
+- **32 magnets and 4 steel washers** — Ø8 × 2 mm N35 discs press-fitted into the film holder parts, and 10 × 10 × 1 mm washers that sit flush in the cover-stage.
+- **No screws, no threads, no glue, no tools.** The box assembles by gravity and magnets, and levelling happens at the camera, not inside the box.
 
 > [!IMPORTANT]
 > This is a prototype release. The geometry is dimensionally verified in the Blender source, and all nine STL files are watertight single solids with every horizontal face on the 0.2 mm grid. But the box has **never been printed, photographed, measured or evenness-tested.** If you build one, you are the first.
 
-**Build it if you** already shoot film and already own a camera you can put on a stand; want [base-ISO](glossary.md#base-iso), f/8 captures where vibration is irrelevant; and are happy to print eight parts and turn six nuts.
+**Build it if you** already shoot film and already own a camera you can put on a stand; want [base-ISO](glossary.md#base-iso), f/8 captures where vibration is irrelevant; and are happy to print nine parts and press in some magnets — there is nothing to screw, solder or glue.
 
 **Do not start if you** have neither a 3D printer nor access to a print service — every structural part is printed and there is no alternative route in the released files. Also skip it if you need 4×5, or if your film is in slide mounts; neither is supported, see the [FAQ](#faq).
 
 > [!WARNING]
-> **Build-plate go/no-go.** The two largest parts need a printable area of at least 280 × 300 mm. As exported, `main-body.stl` has an STL bounding box of 273 × 208 × 92 mm and `top-cover.stl` 279.6 × 214.6 × 14 mm — the top cover, not the main body, is the binding constraint. On a 220 × 220 or 256 × 256 mm machine (Bambu X1C/P1S, Prusa MK4) **neither of those two parts can be printed.** Outsource those two, or print the other seven at home. Your [bed size](glossary.md#bed-size) decides this before anything else does.
+> **Build-plate go/no-go.** The two largest parts, `main-body.stl` and `cover-stage.stl`, share a 124.8 × 154.8 mm footprint, so a 160 × 160 mm [bed](glossary.md#bed-size) prints the entire set — any current desktop machine qualifies. Nothing needs supports; the one orientation rule is that the two holder lids print top face down while every other part prints flat bottom down. If you cannot reach a 160 × 160 mm bed, settle the outsourcing route before you spend anything else.
 
 Three things to settle before any money moves:
 
-- [ ] Can you print, or get printed, a part with a 279.6 × 214.6 mm footprint?
-- [ ] Do you own — or will you buy — a speedlight with **manual power control** and a head that turns 90°?
+- [ ] Can you print, or get printed, parts with a 124.8 × 154.8 mm footprint — is a 160 × 160 mm bed within reach?
+- [ ] Do you own — or will you buy — a hot-shoe speedlight with **manual power control**? Any brand; it sits outside the box.
 - [ ] Do you own a macro-capable lens and something that holds the camera square above the box?
 
 If all three are yes, continue to the [bill of materials](bom.md#tools-and-consumables). If the first is no, stop here.
@@ -51,43 +51,45 @@ NeoBox is only the light source half of that. It replaces the light pad, and it 
 
 ## What you must already own
 
-None of the following is included in the project, and none of it is inside the CNY 250–420 build cost.
+Nothing below is a printed part. The flash and the trigger appear in the [bill of materials](bom.md#tools-and-consumables) as reference picks; everything else you must already have, and none of it is costed by this project.
 
 | You need | Why | Cost |
 |---|---|---|
 | A camera with manual exposure and raw | The exposure is set by hand and never changes across a roll | not costed here |
-| A macro-capable lens | Filling a full-frame sensor with a 135 frame needs 1.0× [magnification](glossary.md#magnification-ratio); any 1:1 macro lens covers every format this box handles, at less than full magnification for the larger ones | not costed here |
-| A [copy stand](glossary.md#copy-stand), or a tripod with a horizontal or reversible column | The film plane sits about 120.3 mm above whatever the box stands on; the camera must hang above that, square to it | not costed here |
-| A speedlight with manual power and a 90° head | The light source. Reference build: NEEWER TT560, 190 × 75 × 55 mm, [GN38](glossary.md#guide-number), manual 1/1–1/128 in full stops | ≈ CNY 200–300 |
-| A radio trigger set | Transmitter on the camera hot shoe, receiver in the box. Reference build: ZENIKO T1, 39 × 38 × 29.5 mm | ≈ CNY 150–250 |
+| A macro-capable lens | Filling a full-frame sensor with a 135 frame needs 1:1 [magnification](glossary.md#magnification-ratio); any 1:1 macro lens covers every format this box handles, at less than full magnification for the larger ones | not costed here |
+| A [copy stand](glossary.md#copy-stand), or a tripod with a horizontal or reversible column | The film plane sits 83.2 mm above whatever the box stands on; the camera must hang above that, square to it | not costed here |
+| A hot-shoe speedlight with manual power control | The light source. It lies flat on the desk with its head at the open front and never enters the box — any brand fits, and the NEEWER TT560 is only the reference pick | see the bill of materials |
+| A radio trigger set | Transmitter on the camera hot shoe; the receiver stays outside with the flash, so the signal is never boxed in and batteries change without touching the box. Reference pick: ZENIKO T1 | see the bill of materials |
 | A remote release | Keeps your hand off the camera between frames | not costed here |
 | Inversion software | Turns the raw capture into a positive | not costed here |
-| Hand tools and consumables | Soldering iron, M6 spanner, hobby knife, glue, masking tape, matte black spray, rocket blower, a small flat mirror | listed in [bom](bom.md#tools-and-consumables) |
+| A rocket blower and a small flat mirror | The blower keeps film — and the optional glass — free of dust; the mirror is the levelling instrument: you centre the lens's own reflection in it | listed in [bom](bom.md#tools-and-consumables) |
 
 > [!NOTE]
 > The camera side is deliberately not priced. A macro lens and a stand can cost anything from nothing, if you already own them, to more than the rest of the project combined — quoting a figure would be inventing one. What matters is that you have them before you order parts.
 
-Only two things decide whether a flash is suitable: **manual power control** and a head that turns 90°. [TTL](glossary.md#ttl) and [HSS](glossary.md#hss) are useless inside a closed box — do not pay for them.
+Only one thing decides whether a flash is suitable: **manual power control**. No dimension of it matters and the head does not need to tilt or swivel — the flash simply lies at the opening. [TTL](glossary.md#ttl) and [HSS](glossary.md#hss) are useless here — do not pay for them.
 
 ## What it costs and how long it takes
 
+Prices live in one place, the [bill of materials](bom.md#tools-and-consumables); this page only sorts the spending into piles:
+
 | What you are buying | Cost |
 |---|---|
-| Everything in the bill of materials — printed parts, opal acrylic, studs, nuts, inserts, foam, grommets, LED strip, cells | ≈ CNY 250–420 / JPY 5,500–9,000 |
-| Speedlight (excluded from the figure above) | ≈ CNY 200–300 |
-| Trigger set (excluded from the figure above) | ≈ CNY 150–250 |
-| Aluminium film stage — optional upgrade, add it later | ≈ CNY 80–200 |
+| Everything structural — nine PLA parts, the opal acrylic sheet, 32 magnets, 4 steel washers | priced in the bill of materials |
+| A speedlight — any hot-shoe model with manual power control | reference pick priced in the bill of materials |
+| A radio trigger set | reference pick priced in the bill of materials |
+| Optional upgrades — anti-Newton glass, LED positioning strip, flocking sheet | priced in the bill of materials |
 | Camera, lens, stand, release, software | not costed here |
 
-Filament is the bulk of the printing line: about 1–1.3 kg for the whole build, roughly 0.7–0.95 kg white and 0.25–0.4 kg black.
+Printing is a small job: nothing is longer than 154.8 mm, plain PLA is fine, and every part goes down support-free — 0.2 mm layers, 15 % infill.
 
 | Stage | Typical elapsed time | Notes |
 |---|---|---|
-| 3D printing, ordered from a service | 2–5 days | Printing one 135 holder first splits this into two rounds |
-| Opal acrylic cut to size | 3–7 days | Order 2–3 sheets; they are cheap and easy to scratch |
-| Hardware — studs, nuts, inserts, foam, grommets | usually next day | Order this first, it arrives first |
-| Assembly | ≈ 15 minutes | Not counting paint curing |
-| First calibration | an evening | Parallelism, then evenness |
+| 3D printing, at home or from a service | days | usually the critical path; two colours, no supports to remove |
+| Opal acrylic cut to size | days | 68 × 118 × 2 mm custom cut; a v4-era 110 × 130 mm sheet can be cut down and reused |
+| Magnets and washers | usually the fastest order | stock sizes, nothing custom |
+| Assembly | minutes | no tools; pressing in the 32 magnets is most of the work |
+| First set-up | an evening | camera parallelism with the mirror, then an evenness check |
 
 > [!TIP]
 > The three orders have very different lead times, so place them on the same day rather than in sequence. The critical path is almost always the printing.
@@ -96,76 +98,76 @@ Filament is the bulk of the printing line: about 1–1.3 kg for the whole build,
 
 ```mermaid
 flowchart TD
-    A[Decide: can you print it] --> B[Buy parts, tools, consumables]
+    A[Decide: can you print it] --> B[Buy parts, acrylic, magnets]
     B --> C[Print or order the 9 files]
     C --> D[Check every part before you build]
-    D --> E[Assemble: inserts, paint, stage, flash]
-    E --> F[Level the film stage on three nuts]
-    F --> G[Calibrate: flat-field, aim for ±0.1 EV]
+    D --> E[Assemble: magnets, acrylic, stack]
+    E --> F[Align the camera with the mirror method]
+    F --> G[Calibrate: flat-field correction]
     G --> H[Scan your first roll]
 ```
 
 | Step | What actually happens | Written up in |
 |---|---|---|
-| Decide | Bed size, flash compatibility, what you already own | this page |
-| Buy | Parts, tools and consumables; vendor scripts; acceptance checks on arrival | [bom](bom.md#tools-and-consumables) |
-| Print | Nine STL files — eight for the default build plus one optional 6×6 mask; 0.2 mm layers everywhere | [printing](printing.md#ordering-from-a-print-service) |
+| Decide | Bed size — 160 × 160 mm is enough — flash on hand, what you already own | this page |
+| Buy | Parts and consumables; vendor scripts; acceptance checks on arrival | [bom](bom.md#tools-and-consumables) |
+| Print | Nine STL files in plain PLA — 0.2 mm [layers](glossary.md#layer-height), 15 % infill, no supports | [printing](printing.md#ordering-from-a-print-service) |
 | Check parts | Measure before you build; a wrong part found now costs a reprint, found later costs the build | [printing](printing.md#check-each-part-before-you-assemble) |
-| Assemble | Three [heat-set inserts](glossary.md#heat-set-insert), paint the outside, studs and nuts, flash on the floor | [assembly](assembly.md#assembly-steps) |
-| Level | Three nuts under the [film stage](design.md#4-film-stage): front sets pitch, rear pair sets roll | [assembly](assembly.md#levelling-the-stage) |
-| Calibrate | Photograph the bare lit surface, apply [flat-field correction](glossary.md#flat-field-correction) first, target about ±0.1 EV corner to corner | [assembly](assembly.md#calibration) |
+| Assemble | Press 32 magnets into the holder parts, drop the acrylic and washers into the cover-stage, stack everything — no tools | [assembly](assembly.md#assembly-steps) |
+| Align | A small mirror on the film plane; move the camera until its own lens reflection is centred — the camera levels, the box does not | [assembly](assembly.md#step-7--level-at-the-camera-the-mirror-method) |
+| Calibrate | Photograph the bare glowing window and apply [flat-field correction](glossary.md#flat-field-correction) before judging evenness | [scanning](scanning.md#flat-field-and-inversion) |
 | First roll | Camera height, focus, flash power, loading film, shooting, inverting | [scanning](scanning.md#loading-film) |
 | Something is wrong | Symptom → likely cause → fix, for every stage | [troubleshooting](troubleshooting.md#printing) |
 
 ## Skills you need
 
-Nothing exotic. If you can follow a slicer's default profile, use a spanner and keep your hands clean around film, you can build this. No CAD work is required unless you change the flash.
+Nothing exotic. If you can follow a slicer's default profile and keep your hands clean around film, you can build this. There is no screwdriver, spanner, soldering iron or glue anywhere in the build, and no CAD work at all — the design is not tied to any flash model.
 
 Two steps catch people out, and both are worth reading twice before you reach them:
 
-**Heat-set inserts.** Three M6 brass inserts go into the top-cover posts with a soldering iron at about 200–250 °C for PLA. They must go in straight; a crooked insert gives a crooked stud, and a crooked stud gives a film stage you cannot level. Stop when the flange is flush.
+**Magnet polarity.** Thirty-two Ø8 × 2 mm magnets go into the holder parts, eight per part, as press-fits. Every magnet must attract its partner in the mating part, and an interference fit is not meant to come back out — so dry-check the polarity of each magnet against its already-seated partners before pressing it home.
 
-**Parallelism.** The film plane must be parallel to the sensor, not merely horizontal. A flash freezes vibration but cannot fix a tilted film plane. The method is a small flat mirror laid on the film plane; you move the camera until its own reflection sits dead centre. Parallelism first, evenness second.
+**Parallelism.** The film plane must be parallel to the sensor, not merely horizontal — and in this design nothing on the box adjusts. Lay a small flat mirror where the film goes and move the camera until the reflection of its own lens sits dead centre in the frame. When it does, the sensor is parallel to the film plane, and every printed-part tolerance underneath has been absorbed in the same move. Parallelism first, evenness second.
 
 <details>
 <summary>Why the design is built around a flash and not a continuous LED panel</summary>
 
-Inside the closed box, ambient light contributes nothing, so the flash pulse **is** the exposure — 1/1,000 to 1/20,000 s at working power. That is an effective shutter one to three orders of magnitude shorter than the 1/15 to 1/60 s of real shutter time an LED panel needs at ISO 100 and f/8. Vibration, shutter shock and floor rumble stop mattering.
+The flash pulse **is** the exposure. In a dim room, its output through the cavity dwarfs anything ambient light adds through the open front, and the pulse is over in a small fraction of any real shutter time — vibration, shutter shock and floor rumble stop mattering.
 
-Three more consequences follow. You get base-ISO f/8 with power to spare; every frame receives identical output, so one inversion profile fits the whole roll; and a xenon tube gives a genuinely continuous daylight spectrum at about 5600 K.
+More consequences follow. Every frame receives identical output, so one inversion profile fits the whole roll; base-ISO, f/8 shooting is the design's working point; and a xenon tube gives a genuinely continuous, daylight-balanced spectrum.
 
-An LED panel would make the box smaller — about 100 mm tall and about 4 L — because it is already a surface emitter. It was declined for the reasons above, and the access panel is sized so a panel could be retrofitted later without moving the film plane or the camera height.
+The optional LED strip in the bill of materials does not change this argument: stuck to a wall inside the cavity, it is a positioning light — a steady glow for framing and advancing film — and plays no part in the exposure.
 
 </details>
 
 ## FAQ
 
-**Has anyone built one?** No. The design is dimensionally verified in CAD and the exported files are numerically verified, but no physical box exists yet. Treat every optical claim as reasoned, not measured.
+**Has anyone built one?** No. The v5 geometry is dimensionally verified in CAD and the exported files are numerically checked, but no physical box has ever been printed, photographed, measured or evenness-tested. Treat every optical claim as reasoned, not measured.
 
-**Can I use an LED panel instead of a flash?** Not with the released files — no LED variant is published. The argument against it is in the collapsed block above; the retrofit path exists in the geometry but not in the STLs.
+**Can I use an LED panel instead of a flash?** Not with the released files — no LED variant is published, and the argument against one is in the collapsed block above. The optional LED strip in the bill of materials is a positioning light only, never the exposure.
 
-**Will my flash fit?** The published STLs fit the NEEWER TT560 only. A substitute must have a head that rotates 90°, manual power control, a body no longer than 190 mm and no thicker than 55 mm lying flat. Anything else means re-deriving the enclosure and re-exporting from `cad/neobox.blend` — the formulas give you the new numbers, they do not resize the files. See [generalising to another flash](design.md#generalising-to-another-flash).
+**Will my flash fit?** Yes. The flash never enters the box — it lies flat on the desk with its head at the fully open front — so no dimension of it matters. Any hot-shoe speedlight with manual power control works; the NEEWER TT560 is only the reference the light path was drawn around.
 
-**Do I need the magnets?** Mostly yes. The 16 closure magnets — 8 per holder, in four attracting pairs — clamp each film holder shut and are recommended for every build; without them the holder lid is held only by its own weight, which is enough lying flat but not on end. The other 8 base-to-stage magnets and the 4 steel washers are only needed if you will stand the box on end.
+**Do I need the magnets?** Yes — all 32, plus the 4 steel washers. Eight magnets in each lid pull against eight in each base to clamp the holder shut, and the base magnets also grip the washers set flush in the cover-stage, which is what holds the holder to the stage and makes the five-second format swap possible. Without them, everything merely rests under its own weight.
 
-**Can I print this on a 220 × 220 mm build plate?** Not completely. The main body and the top cover exceed it — outsource those two and print the other seven at home. The printed film stage is 230 × 200 mm, so on a 220 × 220 mm plate measure your usable area before committing. See the warning at the top of this page.
+**Can I print this on a 220 × 220 mm build plate?** Yes — the entire set, with room to spare. Nothing exceeds a 124.8 × 154.8 mm footprint, so even a 160 × 160 mm bed is enough, and no part needs supports.
 
-**Do I need the aluminium film stage?** No. The printed stage and the aluminium one both present their top face at z = 114 mm, so they are interchangeable and you can upgrade later. The aluminium version is 3 mm 5052, black anodised, from `cad/film-stage-aluminium-3mm.dxf`.
+**Do I need the anti-Newton glass?** No. The default pressure element is a printed insert per format: the window edges are hard limits and the film cannot bow more than 0.28 mm — inside the roughly ±0.4 mm depth of field at 1:1, f/8. The anti-Newton glass (64 × 95 × 2 mm, one sheet shared by both formats) is an upgrade that caps the whole frame continuously; its matte face rests on the film's glossy base, so no [Newton rings](glossary.md#newton-rings), and the emulsion faces the open window below, touching nothing.
 
 > [!CAUTION]
-> Whichever stage you use, its three Ø6.5 mm holes are **clearance holes — never tap them.** A threaded plate combined with a same-pitch threaded insert forms a differential screw, and the stage height then cannot be adjusted at all.
+> In glass mode the underside of the glass sits 0.2 mm from the focal plane, so a dust speck there lands in the image. The element goes in once and stays — blow it clean before it goes in. Dust on the opal acrylic, by contrast, never images: it lies on the glowing surface itself, and an occasional wipe is enough.
 
-**Does it do 4×5?** No. The aperture is 100 × 120 mm and the film holders are 110 × 170 mm; nothing in the released files handles sheet film. A larger version is discussed in the design document as a reservation only.
+**Does it do 4×5?** No. The film windows are 25 × 37 mm for 135 and 57 × 85 mm for 120 — a full 6×9 — and the holders are 94 × 120 mm overall. Nothing in the released files handles sheet film.
 
-**Does it do mounted slides?** No. The 135 channel is 0.4 mm high and 35.4 mm wide, sized for bare film strips. A slide in its mount will not enter it. Unmounted transparencies are fine — but note that dust on the diffuser is visible on positives in a way it is not on inverted negatives.
+**Does it do mounted slides?** No. The 135 channel is 0.4 mm high, sized for bare film strips; a slide in its mount will not enter it. Unmounted transparencies are fine.
 
-**How many frames does a holder take at once?** The holder outline is 110 × 170 mm and film is advanced by sliding it sideways through the channel; the holder is never opened mid-roll. Loading, strip length and handling are covered in [scanning](scanning.md#loading-film).
+**How do I advance film, and switch formats?** Advance by pulling: grip the strip where it leaves the holder and draw it through — the pressure element flattens any arch as the film slides under it, and the holder is never opened mid-roll. To switch formats, lift one holder off and set the other down; the magnets locate it, about five seconds. For 6×6, lay the mask under the 120 base — the holder rides 1 mm higher, which is normal; 6×4.5 has no dedicated mask, so crop in post. A long strip's tail rests on the tray flange just below the film plane — give its far end a hand. Loading and handling are covered in [scanning](scanning.md#loading-film).
 
 ## Where to look things up
 
 This project uses a lot of vocabulary from three different trades — film photography, optics and FDM printing — and mixes them in single sentences. Every term is defined once, in one line, in the [glossary](glossary.md#camera-scanning).
 
-Start there whenever a word stops you: [integrating cavity](glossary.md#integrating-cavity), [flat-field correction](glossary.md#flat-field-correction), [sync speed](glossary.md#sync-speed), [guide number](glossary.md#guide-number), [heat-set insert](glossary.md#heat-set-insert), [supports](glossary.md#supports), [layer height](glossary.md#layer-height), [working distance](glossary.md#working-distance), [Newton rings](glossary.md#newton-rings), [base ISO](glossary.md#base-iso), [EV](glossary.md#ev).
+Start there whenever a word stops you: [integrating cavity](glossary.md#integrating-cavity), [flat-field correction](glossary.md#flat-field-correction), [sync speed](glossary.md#sync-speed), [guide number](glossary.md#guide-number), [supports](glossary.md#supports), [layer height](glossary.md#layer-height), [working distance](glossary.md#working-distance), [Newton rings](glossary.md#newton-rings), [base ISO](glossary.md#base-iso), [EV](glossary.md#ev).
 
 For the reasoning behind a dimension rather than the dimension itself, the [design](design.md#3-optical-decisions) document holds the engineering, and the design log records what was tried and rejected.
 

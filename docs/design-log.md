@@ -2,9 +2,9 @@
 
 **English** · [简体中文](design-log.zh-CN.md) · [日本語](design-log.ja.md)
 
-> Why NeoBox ended up this shape: twenty decisions in the order they were taken, and the four ideas that were considered and turned down. Read it before you modify anything.
+> Why NeoBox ended up this shape: twenty-four decisions in the order they were taken, and the four ideas that were considered and turned down. Read it before you modify anything.
 
-**Contents:** [How to read this log](#how-to-read-this-log) · [Phase 1: the first draft did not close](#phase-1-the-first-draft-did-not-close) · [Phase 2: from 32 litres to about 5](#phase-2-from-32-litres-to-about-5) · [Phase 3: removing everything unnecessary](#phase-3-removing-everything-unnecessary) · [Things deliberately not done](#things-deliberately-not-done)
+**Contents:** [How to read this log](#how-to-read-this-log) · [Phase 1: the first draft did not close](#phase-1-the-first-draft-did-not-close) · [Phase 2: from 32 litres to about 5](#phase-2-from-32-litres-to-about-5) · [Phase 3: removing everything unnecessary](#phase-3-removing-everything-unnecessary) · [Phase 4: the flash leaves the box](#phase-4-the-flash-leaves-the-box) · [Things deliberately not done](#things-deliberately-not-done)
 
 ## How to read this log
 
@@ -58,7 +58,7 @@ A speedlight lying down does not place its head on the centreline of the box, an
 
 ### 5. A top that could carry the levelling load
 
-The draft carried the levelling screws directly on a thin sheet top, which they would have crushed. The top became a thicker panel with metal load points. The released top cover keeps the principle: the three [heat-set inserts](glossary.md#heat-set-insert) sit in dedicated posts underneath, not in the 4 mm cover plate itself.
+The draft carried the levelling screws directly on a thin sheet top, which they would have crushed. The top became a thicker panel with metal load points. The released top cover keeps the principle: the three heat-set inserts sit in dedicated posts underneath, not in the 4 mm cover plate itself.
 
 **Lesson: a levelling point is a load path. Put material behind it.**
 
@@ -142,7 +142,7 @@ That is a dust trade. A particle on the diffuser projects as a soft blob about 0
 
 For the box to work stood on end, every gravity-located part had to become positively held: four magnets in each holder base pulling onto steel washers on the film stage, and the film stage itself clamped between a lower nut and an upper nut on three studs screwed into the top cover's heat-set inserts.
 
-This is where a real error was caught. The stage holes had been specified as threaded. A threaded plate on a stud of the same pitch is a [differential screw](glossary.md#differential-screw): the plate and the stud advance together, so the height cannot be set at all. They became Ø6.5 mm clearance holes.
+This is where a real error was caught. The stage holes had been specified as threaded. A threaded plate on a stud of the same pitch is a differential screw: the plate and the stud advance together, so the height cannot be set at all. They became Ø6.5 mm clearance holes.
 
 > [!CAUTION]
 > Never tap the three film-stage holes. Ø6.5 mm clearance holes are mandatory — a tapped plate cannot be levelled, and re-drilling one afterwards usually ruins the plate.
@@ -196,6 +196,67 @@ The vendor asked which face the drawings' orientation note — a first-revision 
 The correct orientation for every holder part is flat face down with the features growing upward and no supports at all — but a slicer will not get there by itself: `film-holder-*-lid.stl` loads with the pressure strips down and must be rotated 180° about X after import. Every vendor script now places parts by a feature the operator can see ("the face with the two long ridges goes up") and states support locations explicitly. The per-part cards in [printing.md](printing.md#the-nine-parts) follow the same rule.
 
 **Lesson: an instruction that names a face the reader cannot see is not an instruction. Name a feature they can point at.**
+
+## Phase 4: the flash leaves the box
+
+Phase 3 closed a three-phase history at the released 208 × 273 × 96 mm box. Then the box got built: a vendor printed v4 for about CN¥1,200, and hand-held experiments with that unit reopened the design. The four entries below, added 2026-08-14, take it to **v5**.
+
+> [!NOTE]
+> The note in [How to read this log](#how-to-read-this-log) predates these entries and now needs one amendment: **v4 has been printed and handled. v5 has not.** v5 has never been printed, photographed or evenness-tested; apart from the hand-held v4 observations reported below, every v5 figure is CAD and arithmetic (`cad/neobox.blend`).
+
+*Entries: [21](#21-the-flash-moved-outside-and-the-front-opened-fully) · [22](#22-flattening-converged-on-an-insert-platform) · [23](#23-the-design-went-screwless) · [24](#24-the-cover-absorbed-the-film-stage-and-the-print-thinned)*
+
+### 21. The flash moved outside and the front opened fully
+
+Everything about v4's footprint assumed the flash lived inside: the depth was the TT560 body, the trigger receiver and the reflection zone lying end to end ([entry 11](#11-smaller-flashes-do-not-help)), and the access panel existed to reach them. Then a hand-held test with the printed v4 unit showed that a flash merely held at the opening, firing into the white cavity, lit the film aperture just as evenly by eye. Not a calibrated measurement — the flat-field discipline of [entry 7](#7-flat-field-before-judging-evenness) still applies — but enough to condemn the flash bay: the mixing happens at the white walls, not around the flash body.
+
+In v5 the flash never enters the box. It lies on the desk with its head against a **fully open front** — the front wall simply does not exist — and the ZENIKO T1 receiver stays outside with it, where the radio signal is better and a battery change opens nothing. What used to be a garage for one specific flash is now a mixing cavity and nothing else:
+
+- The main box shrinks from 208 × 273 × 96 mm to **124.8 × 154.8 × 73 mm** — about 65% less printed material.
+- The access panel is deleted; there is nothing inside left to reach.
+- **Any hot-shoe flash fits.** The STLs no longer encode the TT560's dimensions; it is now just the reference model.
+- The largest part is 154.8 mm long, so a 160 × 160 mm bed prints everything. The old 220 mm bed warning is obsolete.
+
+The price is that the open front admits ambient light. Accepted, because the flash pulse dwarfs room light: work in a dim room, and keep ceiling lights from shining into the opening.
+
+**Lesson: a part that only has to point into the box does not have to live in the box.**
+
+### 22. Flattening converged on an insert platform
+
+v4 flattened film with pressure strips under the holder lid and a 0.4 mm channel ([entries 18](#18-layer-quantised-holders) and [19](#19-no-single-layer-steps)). v5 reopened the question from scratch, and it took three answers that did not survive to reach the one that did:
+
+- **Pressure strips, carried over.** They constrain the film only at the window edges, and a glass upgrade path towards full-frame flatness kept suggesting itself.
+- **A glass lid you lift.** An optional sheet laid over the window and removed to advance the film. Rejected on cadence: [entry 13](#13-the-diffuser-moved-above-the-film-stage) accepted a cost that lands once per session; lifting glass lands the cost once **per frame**, and over a 36-exposure roll it becomes the slowest step in the whole workflow.
+- **Foam suspension.** The flattening element pressed down by a foam pad in the lid. Rejected on lifetime: foam ages, and the preload decays with it.
+- **The insert platform.** The holder bases' outer rails carry a **4.6 mm element ledge**, and onto it drops an interchangeable flattening element — the printed **pressure-window insert** by default, a single sheet of **anti-Newton glass** as the upgrade. The element seats once and is never touched again: the film rides the lands at 4.2 mm, the element's underside sits at 4.6 mm, so a **0.4 mm channel** runs under all four edges and right across the frame, and the film advances by pulling the leader — no lid opened, no element lifted, the curl pressed flat as it slides through.
+
+The numbers, from CAD: with the insert the film can rise at most about 0.28 mm inside the window, within the roughly ±0.4 mm depth of field at 1:1 and f/8; with the glass the cap is continuous across the whole frame. One **64 × 95 × 2 mm** sheet serves both formats, because the 135 base carries two rail sets — inner rails to guide the narrow film, outer rails sharing the same ledge as the 120 base. The insert exists per format; the glass is one part.
+
+**Lesson: budget the operator's motions per frame, not per session. The part you never move is the part that stays put.**
+
+### 23. The design went screwless
+
+v4 clamped its film stage between locknuts on three M6 studs screwed into heat-set inserts, and was levelled by turning them ([entry 14](#14-positive-fastening-for-use-on-end)). v5 deletes all of it — the three studs, the six nuts, the inserts, and with them every threaded interface in the machine. Two convictions drove the deletion:
+
+- **Plastic should not carry threads.** Even with brass inserts, the thread's load ends up in the plastic around it; every threaded joint in a printed machine is a wear point plus a tolerance stack (the posts of [entry 5](#5-a-top-that-could-carry-the-levelling-load) were machinery that existed only to serve one).
+- **Levelling belongs at the camera, not the box.** Set a small mirror on the film stage and look through the viewfinder: when the reflection of the lens sits centred, the sensor is parallel to the film plane. That one check aligns the pair that actually matters and absorbs the box's print tolerances on the way — something no amount of stud-turning could do, because the studs could only ever adjust the box, never see the camera above it.
+
+With screws gone, assembly is gravity and magnets. The cover-stage seats on the wall tops, located by four **tenons** on the walls dropping into **notches** in its corners — one way to sit, nothing to tighten, no tool anywhere in the build. The CAUTION in entry 14 still stands for v4 hardware; v5 has no stage holes to tap.
+
+**Lesson: put the adjustment where the error is visible. A screw at the box guesses; a mirror at the film plane sees.**
+
+### 24. The cover absorbed the film stage and the print thinned
+
+The invoice for the v4 prototype — about CN¥1,200 — was the sharpest review the design ever received: a print vendor charges for volume, so every wall is a line item. v5 goes after the grams directly:
+
+- **Walls 2.4 mm, floor 3.0 mm** (down from 3 and 4). With every threaded interface gone ([entry 23](#23-the-design-went-screwless)), no wall or plate carries a fastener load any more; the shell only has to stand, stay white and locate the cover-stage.
+- **The top cover and the film stage merged into one part — the cover-stage:** a single plate seated on the walls that carries the holder tray, the light window and the diffuser recess. One of the largest parts in the build simply no longer exists, and neither does the seam between the two.
+- **The diffuser shrank to 68 × 118 mm** (v4: 110 × 130 — a v4 sheet can be cut down by the acrylic shop and reused).
+- **The steel washers became four 10 × 10 mm shims**, sunk flush into counterbores in the cover-stage deck.
+
+Everything still prints support-free, flat face down. The whole nine-file set is estimated at **300–350 g** of filament — an estimate from CAD like every other v5 figure, but one the next invoice will check.
+
+**Lesson: printed volume is a specification, not an outcome. Give it a budget like any other dimension.**
 
 ## Things deliberately not done
 

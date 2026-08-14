@@ -8,16 +8,16 @@
 
 ## Before you start
 
-NeoBox is a light source for [camera scanning](glossary.md#camera-scanning) — photographing film with a digital camera instead of feeding it through a scanner. The box is designed to light a 100 × 120 mm aperture evenly — the target is about ±0.1 [EV](glossary.md#ev) corner to corner — with a film strip held flat above it. Everything that turns that into a file happens on the camera side, and none of it ships with the project.
+NeoBox is a light source for [camera scanning](glossary.md#camera-scanning) — photographing film with a digital camera instead of feeding it through a scanner. The box lights a 62 × 95 mm window evenly through an opal-acrylic diffuser, with the film strip held flat 4.6 mm above it. Everything that turns that into a file happens on the camera side, and none of it ships with the project.
 
 Work through this list before you set a camera up:
 
-- [ ] The box is assembled, the film stage is levelled, and the upper nuts are locked.
-- [ ] The opal acrylic diffuser sits over the aperture with the protective film peeled from **both** faces.
-- [ ] The flash lies on the floor of the main body, head turned 90° to the far wall, white paper taped to its top face.
-- [ ] The access panel is plugged in and the top cover is seated.
-- [ ] The focus light — the 5 V USB LED strip at about z = 50 on the side wall — works, with its dimmer outside the box.
-- [ ] You have blown both faces of the diffuser and the [film gate](glossary.md#film-gate) with a rocket blower.
+- [ ] The main body stands on the desk and the cover-stage sits on the wall tenons, with the opal acrylic in its recess and the protective film peeled from **both** faces.
+- [ ] The four steel shims sit flush in their pockets in the cover-stage.
+- [ ] The flash lies flat on the desk with its head at the fully open front, firing into the cavity — any hot-shoe flash works here. The T1 receiver stays with the flash, outside the box.
+- [ ] The film holder for your format sits inside the tray flange, with its flattening element — the pressure-window insert by default, the AN glass for badly curled rolls — seated in its ledge.
+- [ ] The room is dim, and no ceiling light shines straight into the open front.
+- [ ] You have blown the channel and the flattening element with a rocket blower — and, in glass mode, both faces of the glass before it went in.
 
 > [!NOTE]
 > This design has not been printed or built, so nothing below is a measured result. Exposure figures are starting points to bracket from, not predictions.
@@ -28,18 +28,18 @@ Work through this list before you set a camera up:
 |---|---|---|
 | Camera body | Records the frame | Manual exposure, raw files, live view with magnification, a hot shoe, and a **mechanical shutter** (or [EFCS](glossary.md#efcs) that still fires flash) |
 | Macro-capable lens | Fills the sensor with the frame | Enough magnification for your format — see the table below |
-| [Copy stand](glossary.md#copy-stand), or a tripod with a horizontal or reversible column | Holds the camera square, still, and directly over the aperture | Rigidity first, then enough column height |
-| Trigger transmitter | Fires the receiver inside the box | Must pair with the receiver you bought; goes on the camera hot shoe |
+| [Copy stand](glossary.md#copy-stand), or a tripod with a horizontal or reversible column | Holds the camera square, still, and directly over the light window | Rigidity first, then enough column height |
+| Trigger transmitter | Fires the receiver on the flash, outside the box | Must pair with the receiver you bought; goes on the camera hot shoe |
 | Remote release, or the self-timer | Keeps your hand off the camera | Anything that trips the shutter without touching the body |
 | Inversion software | Turns a raw negative into a positive | Covered in [Flat-field and inversion](#flat-field-and-inversion) |
 | Small flat mirror, about 30 mm | Squares the sensor to the film plane | Flat and small enough to sit on the holder |
 | Rocket blower · cotton gloves or clean hands | Dust and fingerprints | Listed with the other consumables |
 
-None of this is inside the CNY 250–420 build cost, and neither is the flash. See [what you must already own](getting-started.md#what-you-must-already-own) for the wider list, and [tools and consumables](bom.md#tools-and-consumables) for the mirror, blower and gloves.
+None of this is inside the build cost, and neither is the flash. See [what you must already own](getting-started.md#what-you-must-already-own) for the wider list, and [tools and consumables](bom.md#tools-and-consumables) for the mirror, blower and gloves.
 
-The transmitter goes on the camera's hot shoe; the receiver stays inside the box with the flash. Both must be on the same channel and both need charge — an unpaired channel and a flat receiver battery are both common causes of a black frame. Check the shutter type first, though: see [Exposure](#exposure).
+The transmitter goes on the camera's hot shoe; the receiver stays on the desk with the flash, outside the box. Both must be on the same channel and both need charge — an unpaired channel and a flat receiver battery are both common causes of a black frame. Check the shutter type first, though: see [Exposure](#exposure).
 
-![Capture setup: the NeoBox standing on a desk with the film plane 120.3 mm above the desk surface, a camera on a copy stand directly above the aperture, the trigger transmitter on the camera hot shoe, and the focus-light dimmer outside the box](../drawings/capture-setup.svg)
+![Capture setup: the NeoBox standing on a desk with the flash lying at its open front, a camera on a copy stand directly above the light window, the trigger transmitter on the camera hot shoe, and the receiver with the flash outside the box](../drawings/capture-setup.svg)
 
 ## Magnification and lens choice
 
@@ -57,28 +57,28 @@ Magnification needed to fill the sensor with the frame — approximate, for choo
 
 Any 1:1 macro lens covers every row in this table — for the larger formats you simply use less than full magnification. The demanding case is 135 on full frame, which needs the full 1.0×.
 
-The 0.43× that appears in the dust argument in [Design](design.md#3-optical-decisions) is the 6×6-on-full-frame case. It is quoted there because film sits only about 4.3 mm above the diffuser: a dust particle on the diffuser projects as a soft blob about 0.2 mm across at the film plane at 0.43× and f/8 — invisible once a negative is inverted, visible on slides. The mitigation is procedural, not optical: blow both acrylic faces and the film gate every session.
+Dust sorts by surface, not by magnification. A particle on the acrylic diffuser does not image at all — the diffuser is itself the glowing surface, so anything sitting on it just becomes part of the light; wipe it now and then. What does image is dust at or near the film plane: on the film itself, always, and in glass mode on the underside of the AN glass, which sits only 0.2 mm from the film. That is why the glass gets blown before it goes in, and why the [film gate](glossary.md#film-gate) and channel get blown before every strip. The optical reasoning is in [Design](design.md#3-optical-decisions).
 
 ## Camera height and the stand
 
-The film plane sits at **about 120.3 mm above whatever surface the box stands on**. That height is fixed by the design and is the same for 135 and 120 — both holders present the film at the same level, so you do not re-level anything when you change format.
+The film plane sits at **83.2 mm above whatever surface the box stands on**. That height is fixed by the design and is the same for 135 and 120 — both holders present the film at the same level, so you do not re-level anything when you change format. The one exception is the 6×6 mask, which lifts the 120 holder by 1 mm — normal; refocus and carry on.
 
 Camera height follows from two numbers:
 
 ```
-lens front to desk = 120.3 mm + the lens's working distance at the magnification you need
+lens front to desk = 83.2 mm + the lens's working distance at the magnification you need
 ```
 
 [Working distance](glossary.md#working-distance) is a property of your lens, not of the box. Look it up or measure it, then check the stand:
 
 | Check before you buy or commit | Why |
 |---|---|
-| Column travel reaches 120.3 mm + working distance, measured from the baseboard | A macro lens at 1:1 can want far more height than a copy stand's normal range |
+| Column travel reaches 83.2 mm + working distance, measured from the baseboard | A macro lens at 1:1 can want far more height than a copy stand's normal range |
 | The head does not sag when you let go | Sag shows up as a slow focus drift across a roll |
-| The baseboard is comfortably larger than the box footprint of 208 × 273 mm | The box has to sit square, with room for your hands |
-| The lens axis can reach the centre of the aperture without the column fouling the box | A reversible-column tripod often puts a leg exactly where the box wants to be |
+| The baseboard is comfortably larger than the box footprint of 124.8 × 154.8 mm, with clear desk in front for the flash | The box has to sit square, the flash has to lie at the open front, and your hands still need room |
+| The lens axis can reach the centre of the light window without the column fouling the box | A reversible-column tripod often puts a leg exactly where the box wants to be |
 
-Once the height is right, register it so you can return to it: mark the box's footprint on the desk or mat — two locating pins, or simply tape — and write down the column height for each format. Only magnification changes between formats; the film plane does not move.
+Once the height is right, register it so you can return to it: mark the box's footprint on the desk or mat — two locating pins, or simply tape — and write down the column height for each format. Only magnification changes between formats; the film plane does not move. And if you have to move the box, lift it level — the assembled stack is held together by gravity and magnets, not fasteners.
 
 ## Parallelism
 
@@ -93,24 +93,24 @@ Use a mirror, not your eye:
    *Checkpoint:* you can see the lens and the front of the camera reflected back at you.
 3. Move the camera until that reflection sits exactly in the centre of the frame and looks symmetrical.
    *Checkpoint:* the reflected lens barrel is concentric, not an oval pushed to one side. When the reflection of the lens is dead centre, the sensor is parallel to the film plane.
-4. Trim the three stage nuts — front nut for pitch, rear pair for roll — and re-check. Two passes converge.
+4. Correct at the camera, not the box: tilt the copy-stand head — or shim its mount if it has no tilt adjustment — and re-check. Two passes converge. The box has no levelling hardware; the mirror method absorbs its printing tolerances along the way.
    *Checkpoint:* the reflection stays centred after you take your hands off everything.
 
 <details>
 <summary>Why the mirror works, and why a spirit level does not</summary>
 
-A spirit level references gravity. What you actually need is the sensor plane parallel to the film plane, and the camera can be perfectly level while still tilted relative to the stage — or the stage can be level while the camera hangs off a sagging arm.
+A spirit level references gravity. What you actually need is the sensor plane parallel to the film plane, and the camera can be perfectly level while still tilted relative to the box — or the box can be level while the camera hangs off a sagging arm.
 
 The mirror removes gravity from the problem. A mirror reflects the lens back along the optical axis only when the mirror is perpendicular to that axis. Centred and symmetrical reflection means perpendicular; perpendicular to the axis means parallel to the sensor. It is a null test, so it gets more sensitive as you get closer to correct.
 </details>
 
-Re-check parallelism whenever the box or the camera has been moved. The rest of the [session routine](assembly.md#session-routine) assumes it is already right.
+Re-check parallelism whenever the box or the camera has been moved. The rest of the [session routine](assembly.md#formats-and-everyday-handling) assumes it is already right.
 
 ## Focus
 
-1. Switch on the focus light at low brightness. Its dimmer stays outside the box.
-   *Checkpoint:* the aperture is lit well enough to see film detail, and the dimmer is still in reach outside the box.
-2. Load one frame and slide it into the window.
+1. Switch on the optional LED strip if you fitted one — the 5 V USB positioning light on the inside wall. Without it, give the room just enough light to see film detail, keeping every lamp out of the open front's line of sight.
+   *Checkpoint:* you can see film detail in the window.
+2. Load a strip and pull the first frame into the window.
    *Checkpoint:* the frame sits centred in the window, with no rebate line intruding.
 3. Go to live view and magnify to 100 %.
    *Checkpoint:* the magnified view is steady and shows one small patch of the frame, not the whole frame.
@@ -121,7 +121,7 @@ Re-check parallelism whenever the box or the camera has been moved. The rest of 
 6. Switch the lens to manual focus, or tape the focus ring, and do not touch it again for the rest of the session.
    *Checkpoint:* nudging the focus ring does nothing, or the tape holds it fast.
 
-The focus light stays on while you shoot if you like — run it low, because the flash overwhelms it. It is there so you can see, not to expose anything.
+The LED strip can stay on while you shoot — the flash overwhelms it completely. It is there so you can see, not to expose anything.
 
 ## Exposure
 
@@ -130,19 +130,19 @@ The focus light stays on while you shoot if you like — run it low, because the
 | Mode | Manual | Nothing here should change frame to frame |
 | ISO | [Base ISO](glossary.md#base-iso) — usually 100 | The flash has power to spare, so take the clean option |
 | Aperture | Start at f/5.6–f/8 | The metering start point for this box |
-| Shutter | **1/125 s** — at or below your camera's [sync speed](glossary.md#sync-speed) | Above sync speed the curtain shades the frame. 1/125 s clears almost every camera and leaves margin for radio-trigger delay |
+| Shutter | **1/125 s** — at or below your camera's [sync speed](glossary.md#sync-speed) | Above sync speed the curtain shades the frame — a focal-plane shutter tops out at 1/160–1/250, and a cheap 2.4G trigger eats about a stop of that. 1/125 s clears almost every camera and leaves margin |
 | Shutter type | Mechanical, or EFCS if your camera still fires flash with it | See the warning below |
 | File | [Raw](glossary.md#raw) | Inversion needs the linear data |
 | White balance | Fixed, any value | You will set it off the film base in post |
 | Stabilisation | Off | On a stand it hunts and softens frames |
-| Flash | Manual power, zoom 35–50 mm, **no** wide-angle diffuser panel fitted | [TTL](glossary.md#ttl) and [HSS](glossary.md#hss) do nothing useful here |
+| Flash | Manual power | [TTL](glossary.md#ttl) and [HSS](glossary.md#hss) do nothing useful here |
 
 > [!WARNING]
 > A fully electronic shutter will usually not fire a flash at all. If your first frame is black, check the shutter-type menu before you check anything else.
 
 Finding the working power:
 
-1. Set the flash to 1/8 power as a starting point. The TT560 offers [manual power](glossary.md#manual-power-fraction) from 1/1 to 1/128 in full stops — eight steps, nothing in between.
+1. Set the flash to 1/8 power as a starting point. Any hot-shoe flash with manual power works here; the reference TT560 offers [manual power](glossary.md#manual-power-fraction) from 1/1 to 1/128 in full stops — eight steps, nothing in between.
    *Checkpoint:* the flash's ready lamp lights.
 2. Shoot one test frame with film in the holder.
    *Checkpoint:* the frame is not black — the flash fired and the trigger is paired.
@@ -151,17 +151,17 @@ Finding the working power:
 4. Adjust coarsely with flash power, finely with the aperture in 1/3 stops. The flash only moves in full stops, so the aperture does the fine work.
    *Checkpoint:* the clear film base sits just below the right-hand edge of the histogram, with no clipping warning.
 5. Lock it and leave it for the whole roll.
-   *Checkpoint:* flash power and aperture are written down, and the access panel is back in.
+   *Checkpoint:* flash power and aperture are written down.
 
-Expect to add roughly **3–5 stops** of flash power over a bare-source reading to pay for the enclosure. That range is an estimate of the cavity's loss, not a measurement.
+Expect to pay several stops of flash power over a bare-source reading for the bounce path through the box. No loss figure exists for this design — it has not been built — so treat 1/8 as nothing more than a start, and bracket.
 
 > [!TIP]
-> Changing flash power means pulling the access panel — the ZENIKO T1 cannot set power remotely. Settle power once during calibration and then work with the aperture. Keep two sets of NiMH cells in rotation; see the [power table](assembly.md#power).
+> The flash and its T1 receiver sit on the desk in front of the box, so changing flash power never touches the box, and changing the receiver's batteries never opens anything. Settle power once during calibration and then do the fine work with the aperture. Keep two sets of NiMH cells in rotation.
 
 <details>
 <summary>Why the flash pulse is the exposure, and why that lets you shoot at base ISO</summary>
 
-Inside a closed box, ambient light contributes nothing. The shutter is open in the dark, the flash fires, the shutter closes — so the **flash pulse is the exposure**, and its duration is 1/1,000 to 1/20,000 s at working power.
+The front of the box is open, but in a dim room that changes nothing: the flash pulse is orders of magnitude brighter than anything the room leaks in through the opening. The shutter opens in near-darkness, the flash fires, the shutter closes — so the **flash pulse is the exposure**, and its duration is 1/1,000 to 1/20,000 s at working power.
 
 That is an effective shutter one to three orders of magnitude shorter than the 1/15 to 1/60 s of real shutter time a continuous LED panel would need at ISO 100 and f/8. Vibration, shutter shock and floor rumble stop mattering.
 
@@ -174,41 +174,53 @@ Two further consequences you will feel while working:
 ## Loading film
 
 > [!CAUTION]
-> Blow the channel, both faces of the diffuser, and the film gate before every strip. The channel is 0.4 mm high — a grain of grit trapped in it scratches every frame you slide across it, and a scratched negative cannot be un-scratched.
+> Blow the channel mouths and the flattening element before every strip — and in glass mode, blow both faces of the glass before it goes in. The film runs through a 0.4 mm space; a grain of grit trapped in it scratches every frame you pull across it, and a scratched negative cannot be un-scratched.
 
 | Holder feature (mm) | 135 | 120 |
 |---|---|---|
 | Channel width | 35.4 | 62.0 |
 | Channel height | 0.4 | 0.4 |
-| Window | 25 × 37 | 57 × 85 (covers 6×9) |
-| Outline, both parts | 110 × 170 | 110 × 170 |
+| Window | 25 × 37 | 57 × 85 (a full 6×9 frame) |
+| Outline, both parts | 94 × 120 | 94 × 120 |
 
-Procedure:
+Two flattening modes share the same holder, and the film handling is identical in both:
 
-1. Lift the holder lid off the holder base and blow both.
-   *Checkpoint:* the channel and the lands are visibly clean under a light.
-2. Lay the film strip into the channel with the **dull emulsion side down** toward the diffuser and the shiny base up toward the camera.
-   *Checkpoint:* the edge markings read the right way round in live view. If they read mirrored, the strip is upside down.
-3. Feed from whichever end suits you — both channel mouths stay fully open, because the corner blocks sit only at |x| = 40–60 mm from the stage centre.
+- **Pressure-window insert — the default.** A printed 64 × 95 × 2 frame, one per format, that hard-limits the film at all four edges of the window. Residual ripple stays within about 0.28 mm, inside the roughly ±0.4 mm depth of field at 1:1 and f/8.
+- **AN glass — the upgrade for badly curled rolls.** One 64 × 95 × 2 sheet of anti-Newton glass serves both formats and caps the whole frame continuously, holding any point of it within the same 0.28 mm. The matte AN face goes **down**, riding on the shiny film base — a pairing that does not form [Newton rings](glossary.md#newton-rings) — while the emulsion faces the open window below and touches nothing.
+
+Set up once per mode, not per strip:
+
+1. Blow the element — in glass mode especially the underside, which sits only 0.2 mm from the film plane, so any dust on it lands in the image — and seat it in the 4.6 mm ledge on the holder base.
+   *Checkpoint:* the element lies flat in the ledge and does not rock.
+2. Close the holder lid. The closure magnets pull the sandwich shut, and the lid's cavity holds the element captive with a little float.
+   *Checkpoint:* the lid sits down flat.
+3. Set the holder into the tray flange on the cover-stage; the magnets in its base seat against the steel shims let into the stage.
+   *Checkpoint:* the holder sits inside the flange without rocking.
+
+Then, per strip:
+
+1. Blow the channel from both mouths.
+   *Checkpoint:* the channel is visibly clean under a light.
+2. Feed the strip into either channel mouth and push gently until the leader emerges from the far side. Emulsion — the dull face — goes down by default, shiny base up; the guide rails lead the strip under the element, and the holder stays closed.
    *Checkpoint:* the strip slides with finger pressure alone. Never force it.
-4. Close the holder lid. The closure magnets pull the sandwich shut.
-   *Checkpoint:* the holder lid sits down flat, with no film pinched at the edge.
-5. Set the film holder on the film stage inside the corner blocks, base flat on the diffuser.
-   *Checkpoint:* the holder does not rock, and the diffuser is held flat under it.
+3. Mind the bow. A strip with a pronounced curl goes bow **down** in insert mode and bow **up** in glass mode. If that puts the emulsion up, the edge markings will read mirrored in live view — flip the image in post rather than fighting the film.
+   *Checkpoint:* the strip lies in the channel without lifting at the mouths.
+4. Pinch the leader where it protrudes from the holder and pull until the first frame is centred in the window.
+   *Checkpoint:* the frame sits centred, with no rebate line intruding.
 
 Handling notes:
 
-- **Strips or a whole roll.** Anything longer than the 170 mm holder simply overhangs both open ends. That is what the run-out corridor is for: keep the space beyond the holder ends clear of anything that rises to film height within |x| < 31 mm of the centreline — 31 is the half-width, and 120 film is about 62 mm wide.
-- **Advance by sliding sideways.** The holder is never opened mid-roll. Opening it is how film gets fingerprinted and dropped.
+- **Strips or a whole roll.** Anything longer than the holder overhangs the open ends and drapes onto the tray flange, which runs 0.2 mm below the film plane exactly so it can act as a support. With a long strip, carry the far end in your free hand so it does not drag across the flange edge.
+- **Advance by pulling the leader.** The holder is never opened mid-roll — pinch the protruding end and pull, the same motion in insert and glass mode alike. Any bowed patch is pressed flat against the element's underside as it slides through.
+- **Changing format = changing the holder.** Lift the whole holder off the stage against its magnets and set the other one in — a few seconds, and nothing needs re-levelling.
 - **Handle by the edges**, with clean hands or cotton gloves.
-- **Curl.** 120 film often keeps a curl across its width. Let a strongly curled strip relax flat in its sleeve before loading rather than fighting it into the channel; the holder lid's pressure strips flatten what remains.
-- **6×4.5 and 6×6** use the 120 holder with `mask-6x6.stl` laid over the window.
+- **6×6** uses the 120 holder with `mask-6x6.stl` laid **under** the base, in the tray; the holder rides 1 mm higher — normal, just refocus. **6×4.5** has no dedicated mask: frame it in the 120 window and crop in post.
 - **Mounted slides do not fit.** The channel is 0.4 mm; a slide mount is not.
 
 <details>
-<summary>Why nothing touches the image, and why you always crop in post</summary>
+<summary>Why the film comes out flat, and why you always crop in post</summary>
 
-The film's edges rest on the lands and the holder lid's pressure strips bear on the same edges. The image area itself floats — about 0.4 mm of clearance below and about 0.25 mm above. Nothing presses on it, which is also why [Newton rings](glossary.md#newton-rings) cannot form here: those interference fringes need film in optical contact with glass, and there is no contact.
+The film's edges ride on the perch of the holder base, 0.4 mm below the underside of the flattening element — a hard-limited channel on all four sides and across the full width of the frame. With the insert, nothing touches the image area at all, and it can ripple by at most about 0.28 mm — which the roughly ±0.4 mm depth of field at 1:1 and f/8 covers. With the AN glass, the whole frame is capped continuously and any point of it is held within the same 0.28 mm, and still nothing touches the emulsion: the glass's matte face rides on the shiny base — a pairing that does not form [Newton rings](glossary.md#newton-rings) — while the emulsion faces the open window below.
 
 The windows are deliberately about 0.5 mm oversize per side against the nominal frame (135 nominal 24 × 36, 120 nominal 56 × 84). That absorbs camera-gate variance between film bodies and printer XY tolerance between holders. The cost is that you see a sliver of rebate around the frame and crop it off in post. Full geometry is in [Design](design.md#5-film-holders).
 </details>
@@ -217,20 +229,20 @@ The windows are deliberately about 0.5 mm oversize per side against the nominal 
 
 ```mermaid
 flowchart TD
-    A[Blow diffuser and channel] --> B[Load the strip, emulsion down]
-    B --> C[Slide the first frame into the window]
+    A[Blow the channel and element] --> B[Feed the strip, leader through]
+    B --> C[Pull the first frame into the window]
     C --> D[Focus once on the grain]
     D --> E[Test frame: check the histogram]
     E --> F{Base just below clipping?}
     F -- no --> G[Aperture in 1/3 stops]
     G --> E
     F -- yes --> H[Shoot the frame, raw]
-    H --> I[Slide sideways]
+    H --> I[Pull to the next frame]
     I -->|more frames| H
     I -->|strip finished| J[Shoot one flat frame]
 ```
 
-Per frame, the whole job is: slide until the frame is centred in the window, take your hands off, trip the shutter with the remote release, repeat.
+Per frame, the whole job is: pull the leader until the next frame is centred in the window, take your hands off, trip the shutter with the remote release, repeat.
 
 *Checkpoint per frame:* no frame edge or rebate line intrudes into the window before you fire.
 
@@ -238,7 +250,7 @@ Habits worth forming on the first roll:
 
 - **Slate the roll.** Shoot one frame of a card with the roll's ID before the first image. Files then group by roll without renaming.
 - **Shoot the flat frame at the end of the session too**, not just the start, so you can tell whether anything shifted.
-- **Do not change flash power mid-roll.** Doing so means opening the access panel, and it breaks the one-profile-per-roll advantage.
+- **Do not change flash power mid-roll.** The flash sits on the open desk where it is easy to nudge — resist, because one power change breaks the one-profile-per-roll advantage.
 - **Blow between strips**, every time.
 
 Throughput is set by the flash's recycle time at whatever power you settled on and by how carefully you check each frame. No frames-per-hour figure exists for this design, because it has not been built. Two sets of NiMH cells in rotation is the practical arrangement for a long session.
@@ -251,7 +263,7 @@ Do these in order. [Flat-field correction](glossary.md#flat-field-correction) fi
 
 **Apply it.** Dividing every frame by the flat frame removes both at once. What is left is what the source itself is doing.
 
-**Check it.** Sample a small patch in each of the four corners and one in the centre of a corrected flat frame and compare them. The design target for the source is about ±0.1 EV corner to corner, measured after flat-field correction. That band is 0.2 EV wide end to end, a linear ratio of 2^0.2 ≈ 1.15 — so you are looking for under about 15 % spread between the brightest and the darkest sample in the linear raw values. If it misses, the remedies are in the calibration sequence, not in the camera.
+**Check it.** Sample a small patch in each of the four corners and one in the centre of a corrected flat frame and compare them. A practical acceptance band for the source is about ±0.1 [EV](glossary.md#ev) corner to corner, measured after flat-field correction. That band is 0.2 EV wide end to end, a linear ratio of 2^0.2 ≈ 1.15 — so you are looking for under about 15 % spread between the brightest and the darkest sample in the linear raw values. If it misses, the remedy is at the light end — how the flash lies against the open front — not in the camera.
 
 Software that does these two jobs — named because they exist and are in common use, not as endorsements:
 
@@ -281,10 +293,11 @@ Then invert:
 | Symptom | Look here first |
 |---|---|
 | The frame is completely black | Shutter type (electronic shutter will not fire the flash), sync speed, receiver battery, trigger channel |
+| A clean dark band across the frame | Shutter above the effective sync speed — focal-plane shutters top out at 1/160–1/250, and a cheap 2.4G trigger eats about a stop of that. Drop to 1/125 s |
 | Soft along one edge only | [Parallelism](#parallelism) — not focus |
-| Soft blobs that stay put frame to frame | Dust on the diffuser; blow both faces and re-shoot the flat frame |
-| Exposure drifts across the roll | Flash power was changed, or the cells are flat |
-| Corners still uneven after flat-field correction | The source, not the lens — go back to calibration |
+| Soft blobs that stay put frame to frame | Dust at the film plane — on the film, or in glass mode on the glass underside. Blow and re-shoot the flat frame; dust on the diffuser itself does not image |
+| Exposure drifts across the roll | Flash power got nudged — the flash sits on the open desk — or the cells are flat |
+| Corners still uneven after flat-field correction | The source, not the lens — re-seat the flash head against the open front and re-shoot the flat frame |
 
 The full symptom-cause-fix tables, including the printing and assembly faults that show up as capture problems, are in [Troubleshooting](troubleshooting.md#capture).
 

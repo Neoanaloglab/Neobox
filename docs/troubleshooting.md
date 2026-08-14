@@ -14,11 +14,11 @@
 Check these before you go looking for anything exotic. Most symptoms on this page trace back to one of them:
 
 - [ ] Every part passed [the acceptance checks](printing.md#check-each-part-before-you-assemble) — nothing was scaled by a slicer.
-- [ ] The film stage is levelled on its three studs and both nuts are locked at each one.
 - [ ] The protective film is off **both** faces of the opal acrylic diffuser.
-- [ ] White paper is taped to the top face of the flash body, and not over the head.
-- [ ] The flash lies flat with its head turned 90° to the far wall, zoom 35–50 mm, wide-angle diffuser panel **not** fitted.
-- [ ] Both faces of the diffuser and the [film gate](glossary.md#film-gate) have been blown this session.
+- [ ] The flash lies flat on the desk with its head centred on the open front, zoom at its widest setting.
+- [ ] The room is dim, and no ceiling light shines straight into the open front.
+- [ ] The camera has been squared to the film plane with the mirror method — a small mirror on the stage, the lens's own reflection centred in live view.
+- [ ] Glass mode only: the underside of the anti-Newton glass was blown clean before the glass went into its ledge this session.
 
 ```mermaid
 flowchart TD
@@ -37,21 +37,14 @@ flowchart TD
 
 | Symptom | Likely cause | Fix |
 |---|---|---|
-| A part measures smaller than its card in [The nine parts](printing.md#the-nine-parts) | The slicer scaled it to fit the build plate | Reslice at 100 %, millimetres, and reprint. Re-run the acceptance checks — the first four exist to catch exactly this. |
-| A corner of the main body has lifted off the build plate | 208 × 273 mm of PLA with 3 mm walls, on a cold or draughty machine | Reprint on a clean plate, out of the draught, with whatever adhesion aid your machine likes. A lifted corner is not cosmetic: a warped rim eats the whole 0.3 mm cover clearance. |
-| A film strip binds or will not enter the channel | Burrs at the channel mouths, or the 0.4 mm channel came out undersize | Deburr both mouths with a hobby knife first — that fixes most cases. If it still binds, reprint one holder with a small negative XY compensation. Values and slicer names: [tight or loose](printing.md#if-it-came-out-tight-or-loose). |
-| The film rattles in the channel | The channel came out oversize | Reprint with a small positive XY compensation. Some clearance is intended: the film is about 0.14 mm thick in a 0.4 mm channel. |
-| A holder has no usable channel — the lands are ragged and the rails are crushed | The part was printed with the ridged side against the build plate | Reprint it flat face down, with the two long rails pointing up. Nothing recovers the part as printed. |
-| A holder lid arrived with its pressure strips buried in support | `film-holder-135-lid.stl` and `film-holder-120-lid.stl` load strips-down and were not rotated | Rotate 180° about X after import, then reprint. |
-| The access panel came out as a tall thin slab, rough down one long face | The file loads standing on edge — STL bounding box 200 × 16 × 78 — and was sliced as loaded | Lay it down: the raised rectangular plug face on the build plate, handle up, support under the overhanging rim only. |
-| The ceiling of the access opening has drooped into the opening | No support under the 190 mm lintel, the one real [bridge](glossary.md#bridging) in the build | Reprint with support at that single location. |
-| The film stage arrived without its corner blocks | A print service removed them, taking them for support | They are integral geometry. Reprint, and say so in the order — the vendor text in [Ordering from a print service](printing.md#ordering-from-a-print-service) already does. |
-| The film stage is bowed | [Infill](glossary.md#infill) below 30 % under a 200 × 230 plate | Reprint at ≥ 30 % infill. PLA prints flatter than PETG at this size, and flatness is what the stage is for. |
-| The white parts came back shiny or silky | Silk or glossy filament | They have to be reprinted in matte. The bare white interior *is* the reflector; a glossy one reproduces the flash head as a hot spot, and you cannot correct it afterwards because painting the inside is not allowed. |
-| Steps appear at heights that do not match the part cards | 0.12 mm or 0.16 mm [layers](glossary.md#layer-height) | Reprint at 0.2 mm — 0.1 mm is the only alternative. Neither 0.12 nor 0.16 divides the holder's 0.4 mm features ([design log entry 18](design-log.md#18-layer-quantised-holders)). |
+| A part measures smaller than its card in [The nine parts](printing.md#the-nine-parts) | The slicer scaled it to fit the build plate | Reslice at 100 %, millimetres, and reprint. The largest part is 154.8 mm across and fits a 160 × 160 plate without scaling — so any scaling was an accident. Re-run the acceptance checks. |
+| A corner of the main body or the cover-stage has lifted off the build plate | A cold or draughty machine, or a dirty plate | Reprint on a clean plate, out of the draught, with whatever adhesion aid your machine likes. A lifted corner is not cosmetic: the cover-stage rests on the wall tops and the film plane stands on the cover-stage, so warp at either face rocks everything above it. |
+| A part has drooped, ragged overhangs | It was sliced in the wrong orientation | Every part prints support-free, but only one way up: flat base down for the holder bases, the inserts, the main body and the cover-stage — and **top face down** for the two holder lids. Reorient and reprint; nothing recovers the part as printed. |
+| The white parts came back shiny or silky | Silk or glossy filament | They have to be reprinted in matte. The bare white interior *is* the reflector; a glossy one reproduces the flash head as a hot spot, and painting the inside is not the fix. |
+| Steps and ledges sit at heights that do not match the part cards | A [layer height](glossary.md#layer-height) that does not divide the design's 0.2 mm grid | Print the holder parts at 0.2 mm. The 0.4 mm step between the film lands and the element ledge is what sets the film clearance, and it only comes out right on the grid ([design log entry 18](design-log.md#18-layer-quantised-holders)). |
 
 > [!CAUTION]
-> Never print a holder base or lid with the ridged side down. It stands the part on its rail crests, leaves the film lands hanging over air, and the 0.4 mm channel does not form. The flat face always goes down. This is why orientation in this project is always described by a feature you can see.
+> Never add support to force a different orientation. Every part in this build is support-free by design — in its stated orientation only. The two holder lids go top face down; everything else goes flat base down. Orientation in this project is always described by a feature you can see.
 
 ---
 
@@ -59,35 +52,24 @@ flowchart TD
 
 | Symptom | Likely cause | Fix |
 |---|---|---|
-| A [heat-set insert](glossary.md#heat-set-insert) went in leaning | The iron was below temperature, or pushed off-axis | Reheat until the brass sinks freely, straighten it, then let it cool untouched. Stop when the flange is flush with the post. About 200–250 °C for PLA. |
-| An insert turns in its post | You tried it while the plastic was still warm, or the bore was over-melted | Let it cool fully first — brass in warm PLA always turns. If it still turns cold, a drop of cyanoacrylate at the flange is worth trying before you reprint the top cover. |
-| The top cover will not drop onto the main body | The fit is a nominal 0.3 mm per side, the tightest in the build; [elephant foot](glossary.md#elephant-foot), warp or paint thickness has eaten it | Keep spray paint off the mating faces. Scrape the first two layers from the inside of the rim; if that is not enough, reprint with elephant-foot compensation. Never force it — the cover must seat under its own weight. |
-| The cover seats, but light escapes the seam | Nothing clamps it. No screws hold the enclosure together and the cover is held by gravity alone | Run the optional EVA foam strip along the top of the wall before dropping the cover on. |
-| The access panel falls out | The plug is 186 × 72 × 4 in a 190 × 76 access opening — about 2 mm all round, and the foam is what takes it up | Add another wrap of EVA foam. If the box will stand on end, tape the panel as well so it cannot drop out. |
-| The access panel will not push in | Too much foam | Trim the EVA thinner. The panel is a friction fit and the foam is the adjustment; do not reprint the panel for this. |
-| An M6 stud will not pass through a film-stage hole | The Ø6.5 [clearance hole](glossary.md#clearance-hole-vs-tapped-hole) printed undersize | Ream it by hand with a 6.5 mm drill until the stud falls through under its own weight. |
-| Turning a nut no longer changes the stage height | The stage holes have been tapped | Fit a stage with plain Ø6.5 clearance holes. Nothing else recovers it — see the caution below. |
-| The film stage rocks and cannot be settled | Something is touching the plate besides the three studs, or the plate itself is bowed | Clear everything else away from underneath, and check the plate for bow. Three points define a plane; a fourth support does not help. |
-| Levelling will not converge | The upper nuts are not locked, or pitch and roll are being chased at the same time | Run all three lower nuts to the same thread count first. Then the front nut for pitch, the rear pair for roll. Two passes converge. Lock the upper nuts. |
-| The holder lid lifts off the holder base | The closure magnets were skipped, or a pair repels instead of attracting | Eight closure magnets per holder, in four attracting pairs. Offer each pair up to check polarity **before** gluing. Lying flat, the lid's own weight is enough; on end it is not. |
-| A magnet will not hold on a steel washer | The washers are stainless, which is not magnetic | Replace them with carbon-steel or zinc-plated washers. Test any new batch with a magnet the day it arrives. |
-| The diffuser has gone cloudy or is covered in fine cracks | Alcohol, or an ammonia-based glass cleaner | Fit a new sheet. This is why the bill of materials says to buy two or three 110 × 130 × 2 sheets rather than one. |
+| The cover-stage rocks on the main body, or sits proud at one corner | The four locating tenons are not all seated in their notches, or [elephant foot](glossary.md#elephant-foot) at a tenon or notch edge | Lift the cover-stage and set it down again so all four tenons drop home under its own weight. If it still rocks, a light knife pass on the first layer of the tenons usually clears it. Never force or shim it. |
+| The holder lid pushes itself away instead of snapping shut | One or more magnet pairs repel — a magnet was pressed in flipped | Find the repelling spot by holding a spare magnet over each position in turn. The flipped one has to come out, be turned over and pressed back in. Next time, mark the same face of every magnet while they are still in one stack — mark up in the bases, mark down in the lids — before pressing any of them. |
+| Lifting the lid — or the holder — brings the whole stage up with it | A straight vertical pull fights every magnet pair at once, and nothing in this build is screwed down | Peel, don't pull: tip the lid (or the holder) up from one corner so the pairs release one at a time. |
+| The holder will not snap down onto the stage, or slides around on it | The four steel washers are stainless — which is not magnetic — or missing from their counterbores | Fit carbon-steel or zinc-plated washers, one in each counterbore, flush with the deck. Test any new batch with a magnet the day it arrives. |
+| A magnet drops into its pocket loose instead of press-fitting | The pocket printed oversize | A drop of cyanoacrylate, and seat it to the pocket's full depth — a proud magnet changes the closing gap. |
+| The whole holder sits about 1 mm high with the 6 × 6 mask fitted | The mask goes underneath the 120 base | Not a fault — the design does exactly this. |
+| The diffuser has gone cloudy or is covered in fine cracks | Alcohol, or an ammonia-based glass cleaner | Fit a new sheet — 68 × 118 × 2 mm is a cheap custom cut, and a v4-size 110 × 130 sheet can be cut down to it. |
 | The diffuser looks dull and milky all over, straight out of the packet | Protective film still on one face | Peel both faces. It is easy to remove one and miss the other. |
 
 > [!CAUTION]
-> Never tap the three film-stage holes, and never let a machinist "improve" them into threads. A threaded plate riding on a stud that is also threaded into the [heat-set insert](glossary.md#heat-set-insert) below forms a [differential screw](glossary.md#differential-screw): turning the nut moves the plate by the difference between two identical pitches, which is zero. Levelling stops working and the only fix is a new plate.
-
-> [!CAUTION]
-> Never clean the opal acrylic diffuser with alcohol, ammonia or glass cleaner. It crazes the surface permanently, and the sheet sits about 4.3 mm below the film where every defect is nearly in focus. A rocket blower and a dry microfibre cloth, nothing else.
+> Never clean the opal acrylic diffuser with alcohol, ammonia or glass cleaner. It crazes the surface permanently, and a crazed sheet is no longer an even source. A rocket blower and a dry microfibre cloth, nothing else.
 
 <details>
-<summary>Why a fourth support point makes the stage worse, not better</summary>
+<summary>Why nothing in this box screws down — and what that means for a fix</summary>
 
-Three points define a plane exactly. Add a fourth and the plate is over-constrained: either it rocks between two diagonal pairs, or you tighten the fourth point and bend the plate to reach it.
+There is not a single thread in the build. The stack is located by gravity, tenons and magnets, and the tolerances that fasteners would normally fight are absorbed at the camera end instead: a small mirror on the stage, the lens's own reflection centred in live view, and the sensor is parallel to the film plane whatever small errors the plastic carries.
 
-Bending is the worse outcome, because flatness is the whole reason the stage exists. A dished plate tilts the diffuser, and the film sits about 4.3 mm above the diffuser — so the error arrives at the film plane almost undiminished.
-
-The three studs are placed asymmetrically for the same reason the front hole in the aluminium stage is off-centre: front nut for pitch, rear pair for roll, one axis per hand. Full argument in [Design](design.md#4-film-stage).
+So mechanical fixes here are always *reseat, peel, deburr* — never tighten, shim or glue the stack. If something rocks, find the seat it is not sitting in; do not clamp it down.
 
 </details>
 
@@ -99,19 +81,15 @@ Judge all of this on a flat frame — the bare lit surface, no film, shot raw at
 
 | Symptom | Likely cause | Fix |
 |---|---|---|
-| A dark rectangle in the middle of the frame, roughly aperture-shaped | The flash's black body sits directly under the 100 × 120 aperture with nothing white on it | Tape white paper to the top face of the flash body. Not over the head. |
-| The corners look uneven, but you have not flat-fielded | Lens vignetting and source unevenness are being read as one thing | Correct first, judge second. The target for the source alone is about ±0.1 [EV](glossary.md#ev) corner to corner. |
-| One end of the frame is brighter, after correction | Flash placement first, then the far-wall bounce | In this order: centre the flash and check the white paper patch; then, if the far end is still brighter, stand a white card at the far wall and change its angle. |
-| The centre is still hot after both of those | Residual non-uniformity | The last resort in the calibration sequence: a small translucent attenuating dot at the centre of the diffuser underside. Last, never first. |
+| The corners are uneven after correction | The flash head is not centred on the open front, the zoom is not at its widest, or room light is mixing in | In this order: centre the head on the mouth of the box; set the zoom to its widest; dim the room. |
+| The corners look uneven, but you have not flat-fielded | Lens vignetting and source unevenness are being read as one thing | Correct first, judge second. |
 | A bright patch that reproduces the shape of the flash head | Glossy or silk white filament, or an interior that has been sanded, polished or painted | The [cavity](glossary.md#integrating-cavity) must be bare matte white filament. There is no fix short of new parts. |
-| Everything is several stops darker than the meter suggested | The cavity costs light; or the wide-angle diffuser panel is fitted; or the zoom is wrong | Remove the panel, set flash zoom 35–50 mm, and add power. Start at ISO 100 and f/5.6–f/8; the enclosure loss is estimated at 3–5 stops, not measured. |
-| Veiling flare, worst near the frame edges | Light escaping the cover seam or the access panel and reaching the lens from outside | EVA foam along the top of the wall and around the panel plug. This design has no ventilation holes for the same reason: every hole is a light leak. |
-| A rim of raw light around the film holder | The holder is not sitting inside the corner blocks | Set it down inside them, holder base flat on the diffuser. Everything above the diffuser is black so stray light is absorbed — a holder in a light-coloured filament defeats that. |
-| The focus light shows in the frame, or tints it | Run too bright, or stuck where it has a direct line to the film | Run it low and keep it on the side wall at about z = 50 mm, below the aperture and out of direct line to the film. The inline dimmer stays outside the box. |
-| Evenness has changed since last session | The flash has moved | Draw a line on the floor of the cavity around the flash so it always returns to the same place. |
+| Everything is darker than the meter suggested | The bounce cavity costs light — that is the price of evenness | Add flash power before you add ISO. |
+| The image is grey and veiled, low in contrast | The white deck reflecting stray light up around the holder, or a ceiling light shining into the open front | Stick the optional black flocking sheet onto the deck, and keep overhead light off the mouth of the box. The flash overwhelms ambient light — but only in a dim room. |
+| Evenness has changed since last session | The flash has moved on the desk | Tape or trace its footprint so the head always returns to the same spot against the front opening. |
 
 > [!IMPORTANT]
-> Fix parallelism before you chase evenness. A flash freezes vibration, but nothing in the box can rescue a film plane that is not parallel to the sensor — and a tilted plane can read as a brightness gradient once you start pixel-peeping corners.
+> Fix parallelism before you chase evenness. A flash freezes vibration, but nothing in the box can rescue a film plane that is not parallel to the sensor — the whole adjustment lives at the camera end, in the mirror method — and a tilted plane can read as a brightness gradient once you start pixel-peeping corners.
 
 ---
 
@@ -119,32 +97,31 @@ Judge all of this on a flat frame — the bare lit surface, no film, shot raw at
 
 | Symptom | Likely cause | Fix |
 |---|---|---|
-| The frame is completely black | In descending likelihood: a fully electronic shutter, a shutter faster than [sync speed](glossary.md#sync-speed), a flat receiver battery, a channel mismatch, a transmitter not seated in the hot shoe | Work down that list before touching anything else. An electronic shutter usually will not fire a flash at all; [EFCS](glossary.md#efcs) sometimes does. |
-| Part of the frame is exposed, the rest is a clean dark band | The shutter was faster than sync speed, so the curtain shaded the frame | Shoot at or below your camera's sync speed. Settings table in [Exposure](scanning.md#exposure). |
+| The frame is completely black | In descending likelihood: a fully electronic shutter, a shutter faster than [sync speed](glossary.md#sync-speed), a flat receiver battery, a channel mismatch, a transmitter not seated in the hot shoe | Work down that list before touching anything else — flash, receiver and transmitter all live outside the box, so none of it means opening anything. An electronic shutter usually will not fire a flash at all; [EFCS](glossary.md#efcs) sometimes does. |
+| Part of the frame is exposed, the rest is a clean dark band | The shutter beat the flash: a speed above the real sync limit. Focal-plane shutters sync at 1/160–1/250 on paper, and a budget 2.4G trigger costs about a stop of that | Start at 1/125 s. If the band goes, walk the speed back up until it returns, then stay one step below. Settings table in [Exposure](scanning.md#exposure). |
 | One edge of every frame is soft, the rest is sharp | The film plane is not parallel to the sensor | The mirror method in [Parallelism](scanning.md#parallelism). This is never a focus problem. |
-| Sharpness drifts across a roll | The focus ring moved, or the stand head is sagging under the camera | Focus once on the grain at 100 % live view, then lock or tape the ring. Check the stand for sag before the next roll. |
-| Soft blobs in the same place in every frame | Dust on the diffuser, about 4.3 mm below the film | Blow both acrylic faces and the film gate, then re-shoot the flat frame. A particle there projects as a soft blob about 0.2 mm across at the film plane at 0.43× and f/8 — invisible on an inverted negative, visible on a slide. |
+| The frame edges or corners are soft, and it varies frame to frame | The film is not lying flat — curl the pressure element has not fully tamed | In order: stop down to f/8–f/11 — at 1:1 and f/8 the depth of field is about ±0.4 mm, against rises of at most 0.28 mm with the insert; check the loading direction — bow **down** under the pressure-window insert, bow **up** under the glass; and if a stubborn film still shows it, the anti-Newton glass is the upgrade — it caps the whole frame continuously. |
+| Soft dark blobs in the same place in every frame | Glass mode: dust on the underside of the glass, 0.2 mm from the film plane — close enough to image | Take the glass out and blow its underside before it goes back in; make that the habit at every session start. Dust on the acrylic does *not* image — it sits on the diffuse source itself — so a periodic wipe there is enough. |
 | Exposure varies frame to frame | Flash power was changed mid-roll, or the cells are running down and the flash is firing before it has recycled | Settle power once during calibration and do the fine work with the aperture in 1/3 stops. Wait for the ready lamp. Keep two sets of NiMH cells in rotation. |
-| Interference rings across the image | Not the holder. Nothing here touches the image area — it floats 0.4 mm clear below and about 0.25 mm above | Remove whatever was added between the film and the camera, or the film and the diffuser. See the note below. |
-| A scratch runs the length of a strip | Grit in the 0.4 mm channel | Blow the channel before every strip, and deburr the mouths once with a hobby knife. |
-| The strip will not feed in from one end | Something is standing in the film [run-out corridor](glossary.md#run-out-corridor) beyond the holder end | Keep the corridor clear: nothing may rise to film height within 31 mm either side of the centreline. 31 is the half-width — 120 film is about 62 mm wide. |
-| 120 film lifts out of the channel while you slide it | Curl across the width of the strip | Let a strongly curled strip relax flat in its sleeve before loading, and never force it. The lid's pressure strips flatten what remains. Never open the holder mid-roll. |
-| Edge markings read mirrored in live view | The strip is in upside down | Dull emulsion side down toward the diffuser, shiny base up toward the camera. Full sequence in [Loading film](scanning.md#loading-film). |
-| A sliver of rebate shows around the frame | The windows are deliberately about 0.5 mm oversize per side, to absorb camera-gate variance and printer tolerance | Not a fault. Crop it off in post. |
-| A mounted slide will not go in | The channel is 0.4 mm high | The holders take film strips only. Mounted slides are outside the scope of this design. |
-| The frame does not fill the sensor | Not enough magnification for your format and sensor | The table in [Magnification and lens choice](scanning.md#magnification-and-lens-choice). Any 1:1 macro lens covers every format the box handles. |
+| Interference rings across the image | Glass mode with the glass in flipped — the frosted anti-Newton face must be **down**, against the film's shiny base — or a plain glass substituted for the AN one | Refit the glass frosted face down. In insert mode rings cannot form at all — see the note below — so rings there mean something extra is lying on the film. |
+| A scratch runs the length of a strip | Grit under the pressure element — the film slides through beneath it with 0.4 mm of clearance | Blow the channel and the underside of the element before every strip. |
+| The strip drags or jams while being pulled through | A curled edge catching at the break in the inner rails, or the tail of a long strip hanging off and dragging | Back the strip out and re-feed it straight — the rail ends carry 12 mm guides for exactly this. Support the tail of a long strip with your free hand; the flange top helps, 0.2 mm below the film plane, but a long overhang still wants a hand under it. |
+| Edge markings read mirrored in live view | The strip is in upside down | Dull emulsion side down toward the light, shiny base up toward the camera. Full sequence in [Loading film](scanning.md#loading-film). |
+| A sliver of rebate shows around the frame | The windows are deliberately oversize — 25 × 37 for a 24 × 36 frame, about 0.5 mm per side — to absorb camera-gate variance and printer tolerance | Not a fault. Crop it off in post. |
+| A mounted slide will not go in | The holders take film strips only | Mounted slides are outside the scope of this design. |
+| The frame does not fill the sensor | Not enough [magnification](glossary.md#magnification-ratio) for your format and sensor | The table in [Magnification and lens choice](scanning.md#magnification-and-lens-choice). Any 1:1 macro lens covers every format the box handles. |
 
 > [!CAUTION]
-> Blow the channel before every strip. It is 0.4 mm high, film is advanced by sliding sideways through it, and a single trapped grain of grit will scratch every frame that passes. A scratched negative cannot be un-scratched.
+> Blow before every strip. Film is advanced by pulling it sideways beneath the pressure element, and a single trapped grain of grit will scratch every frame that passes. A scratched negative cannot be un-scratched.
 
 <details>
-<summary>Why Newton rings cannot form in this holder — and what you are seeing if they appear</summary>
+<summary>Where Newton rings can and cannot form in this holder</summary>
 
-[Newton rings](glossary.md#newton-rings) are interference fringes that appear where film is in near-contact with a hard, flat surface — a glass carrier, a scanner platen, an anti-newton plate on the wrong side.
+[Newton rings](glossary.md#newton-rings) are interference fringes that appear where film is in near-contact with a smooth, hard surface.
 
-This holder never touches the image. The film's edges rest on the lands, the lid's pressure strips bear on the same edges, and the image area floats with 0.4 mm of clearance below and about 0.25 mm above. There is no optical contact anywhere, so the mechanism has nothing to work with.
+With the pressure-window insert, the image area touches nothing: the film rides on its edges with 0.4 mm of clearance to the insert above, so there is no optical contact and the mechanism has nothing to work with. Rings in insert mode mean something has been added to the stack — a sleeve left on, a loose glass laid over the film.
 
-If you see rings, something has been added to the stack — a glass flattener over the film, a sleeve left in place, a filter with a damaged coating. Take it out.
+With the glass, contact is the point — the film's shiny base rests against the glass — and the frosted anti-Newton face is what breaks the interference up. Frosted face down against the base, emulsion facing the open window below, and rings cannot assemble. Rings in glass mode therefore mean the glass is in flipped, or a plain glass was substituted for the anti-Newton one.
 
 </details>
 
@@ -153,7 +130,7 @@ If you see rings, something has been added to the stack — a glass flattener ov
 ## Still stuck
 
 1. **Prove which half is at fault.** Shoot a flat frame — no film, everything else untouched. If the corrected flat frame is clean, the box is fine and the problem is on the camera side. If it is not, stay in [Light and evenness](#light-and-evenness).
-2. **Re-run the acceptance checks.** [Check each part before you assemble](printing.md#check-each-part-before-you-assemble) catches scaling, warp and undersized holes, and those three are the faults that make everything downstream unbuildable.
+2. **Re-run the acceptance checks.** [Check each part before you assemble](printing.md#check-each-part-before-you-assemble) catches scaling, warp and tight fits — the faults that make everything downstream unbuildable.
 3. **Change one thing at a time**, and re-shoot the flat frame after each. The calibration remedies are deliberately ordered; applying the last one first hides what the first one would have told you.
 4. **Report it.** This design has never been built, so the failures of a real first build are new information for everyone. The repository is public: <https://github.com/Neoanaloglab/Neobox>.
 

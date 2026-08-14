@@ -2,294 +2,184 @@
 
 **English** · [简体中文](assembly.zh-CN.md) · [日本語](assembly.ja.md)
 
-> How to turn a box of printed parts and a bag of hardware into a working light source: the three inserts, the paint, the magnets, the stage and its three-point levelling, and the mirror method that makes the film plane parallel to your sensor.
+> How to turn nine printed parts, thirty-two magnets, four steel washers and a sheet of opal acrylic into a working light source — with no tools at all: magnets pressed in with paired polarity, a gravity stack from main body to cover-stage to film holder, and the mirror method that makes the film plane parallel to your sensor.
 
-**Contents:** [Before you start](#before-you-start) · [Tools and safety](#tools-and-safety) · [What connects to what](#what-connects-to-what) · [Assembly steps](#assembly-steps) · [Levelling the stage](#levelling-the-stage) · [Calibration](#calibration) · [Power](#power) · [Session routine](#session-routine) · [Using the box on end](#using-the-box-on-end) · [If something is wrong](#if-something-is-wrong)
+**Contents:** [Before you start](#before-you-start) · [Tools and safety](#tools-and-safety) · [What connects to what](#what-connects-to-what) · [Assembly steps](#assembly-steps) · [Formats and everyday handling](#formats-and-everyday-handling) · [If something is wrong](#if-something-is-wrong)
 
 ## Before you start
 
-The headline figure is **about 15 minutes**, and it is honest — but it is hands-on time across the mechanical steps only, and it excludes every wait. Setting the inserts, painting the outside and gluing the magnets and the washers each come with a cool, cure or dry time that you cannot rush, so plan the build across two sessions rather than one.
+There is not a single screw, thread, drop of glue or coat of paint in this build, and therefore not a single tool. Every joint is a magnet, a locating feature or gravity, and every step is reversible — parts lift apart the same way they went together. Nothing cures and nothing dries, so the whole assembly is one sitting; the only part worth doing slowly is the magnets, because they are the one thing that is hard to undo.
 
-Nothing in the enclosure is held by screws, and no structural glue is used anywhere. The only adhesive in the whole build is a drop of cyanoacrylate under each magnet and each steel washer.
+Check the parts before you start. The full per-part list is in [printing.md](printing.md#check-each-part-before-you-assemble), and the purchased parts are in [bom.md](bom.md); these four checks are the ones that stop the build:
 
-Check the parts before you commit to any of it. The full per-part list is in [printing.md](printing.md#check-each-part-before-you-assemble); these four are the ones that stop the build dead:
-
-- [ ] The **top cover** drops onto the **main body** under its own weight and sits flat. The nominal side clearance is 0.3 mm — the tightest fit in the build.
-- [ ] An M6 × 35 **stud** falls through each of the three Ø6.5 holes in the **film stage** without being pushed. These are [clearance holes, not tapped holes](glossary.md#clearance-hole-vs-tapped-hole).
-- [ ] A **steel washer** sticks to a magnet. A stainless washer will not, and the box-on-end feature fails silently at the last step.
-- [ ] A **film strip** slides into the **holder** channel without being forced, and the **holder lid** closes without rocking.
+- [ ] The **cover-stage** drops onto the **main body** with its four corner notches over the locating tenons on the wall tops, and sits flat without rocking.
+- [ ] A **Ø8 × 2 magnet** starts in its counterbore by hand and needs a firm push to seat. It is an interference fit — snug is correct.
+- [ ] A **steel washer** sticks to a magnet. A stainless one will not, and nothing later ever warns you.
+- [ ] A **film strip** slides through the **holder base** channel without being forced, and the **holder lid** sits on the base without rocking.
 
 ## Tools and safety
 
-Every tool and consumable is listed with what it is for and its specification in [bom.md](bom.md#tools-and-consumables). The short version for this document: a soldering iron, two M6 spanners or a spanner and pliers, a hobby knife, cyanoacrylate glue, low-tack masking tape, PLA-safe matte black spray paint, a rocket blower, and a small flat mirror about 30 mm across.
+There is no tool list, because there are no tools: no iron, no spanners, no knife, no glue, no paint. The two useful extras are a blower for dust and a small flat mirror about 30 mm across for the last step. If a magnet is too stiff for a thumb, set the magnet on the tabletop and press the part down over it — the table is as close to a tool as this build gets.
 
 > [!WARNING]
-> Three parts of this build can hurt you.
-> - **The iron runs at 200–250 °C** and PLA gives off fumes when it softens. Work near an open window, park the iron in its stand every time, and let parts cool before you pick them up.
-> - **Spray paint** goes on outdoors or in real ventilation, never in the room where you will later handle film.
-> - **The Ø6 × 2 magnets** are small, strong and a genuine swallowing hazard — keep them away from children and pets. They will also pinch skin between two magnets, and they will wipe cards and disturb drives.
+> - The **Ø8 × 2 magnets** are small, strong and a genuine swallowing hazard — keep them away from children and pets. A pair snapping together pinches skin, and they will wipe cards and disturb drives.
+> - A pressed-in magnet is hard to get back out. Check polarity **before** you press, every single time.
 >
-> Charge NiMH cells outside the enclosure. Nothing mains-powered ever goes inside the box.
+> Nothing electrical ever goes inside the box: the flash lies outside at the open front and fires in, and the receiver stays out there with it.
 
 ## What connects to what
 
-![Exploded view of NeoBox: the main body at the bottom, the top cover dropping over it, three M6 studs rising from heat-set inserts in the cover posts, the lower nuts, the film stage with its four corner blocks, the opal acrylic diffuser lying over the aperture, and the holder base and holder lid on top](../drawings/exploded.svg)
+![Exploded view of the NeoBox assembly stack](../drawings/exploded.svg)
 
 | Interface | Method |
 |---|---|
 | Main body | One printed piece — nothing to assemble |
-| Top cover → main body | Drops on. The 10 mm skirt laps the wall, locates the cover and traps light. No screws. |
-| Film stage → top cover | Three M6 × 35 studs into [heat-set inserts](glossary.md#heat-set-insert), the stage clamped between a lower nut and an upper nut |
-| Diffuser → film stage | Rests on the aperture, held flat by the weight of the film holder. No fixings. |
-| Film holder → film stage | Four corner blocks locate it in X and Y; four base magnets onto steel washers hold it down |
-| Holder lid → holder base | Four pairs of closure magnets |
-| Access panel → main body | Plug wrapped in EVA foam tape, friction fit |
+| Cover-stage → main body | Rests on the wall tops, four corner notches over the locating tenons. Gravity only, no screws |
+| Steel washers → cover-stage | Dropped into four counterbores, flush with the deck (the stage's top face). No glue — the counterbores and the magnets above them do the holding |
+| Opal acrylic → cover-stage | Lies in its recess over the light window, top face 0.4 mm below the deck. Loose |
+| Holder base → cover-stage | The tray flange locates it; its base magnets pull it down onto the steel washers |
+| Pressure element → holder base | The insert or the AN glass rests on the 4.6 mm element ledge. Deliberately loose |
+| Holder lid → holder base | Eight magnet pairs |
+| Flash → box | Never inside. It lies on the table at the open front with its head firing into the cavity |
 
 ## Assembly steps
 
-### Step 1 — Set the three heat-set inserts
+### Step 1 — Press in the magnets
 
-**You need:** the top cover, three M6 heat-set inserts, a soldering iron at 200–250 °C with a conical or insert tip.
+**You need:** the four clamp parts (two holder bases, two holder lids), the 32 Ø8 × 2 magnets, a marker pen.
 
-1. Rest the top cover on the bench **with its three round posts pointing up**. The large flat face lies on the bench.
-2. Dry-fit an insert into a post by hand. It should start in the bore and stand square without being pushed.
-3. Sit the insert on the post, bring the iron down onto it, and let it sink under the weight of the iron alone. Keep the iron vertical — the insert follows wherever the iron leans.
-4. Stop the moment the flange is flush with the top of the post. Lift the iron away and leave the part alone until it is cold.
+Every clamp part takes eight magnets: bases from **above**, into the counterbores in the top face; lids from **below**, into the underside. Polarity is the whole game — each base magnet must attract the lid magnet that will face it — and it has to be right before pressing, because pressing is the nearest thing to permanent in this build.
 
-**Checkpoint:** all three flanges are flush and square, and an M6 × 35 stud starts by hand in each one. Sight across the three studs — they should stand parallel.
+1. Keep the magnets as one stack and peel them off one end without flipping any, so every magnet leaves the stack the same way up.
+2. Lay a holder base flat and press its eight magnets in from the top face, all the same way up, each to the bottom of its pocket. Thumb pressure usually seats them; if not, put the magnet on the table and press the part down over it.
+3. Turn a holder lid underside-up. For each pocket, first touch the loose magnet to the pressed base magnet it will face — it snaps on in the attracting orientation. Mark the exposed face with the pen, pull it off, and press it into the lid pocket **marked face first**, leaving the unmarked, attracting face showing.
+4. Repeat for the other format's base and lid.
 
-**Failure mode:** an insert pressed in crooked leaves the stud leaning, and the lower nut then seats on an angle that levelling cannot fully take out. Too much heat or too much push slumps the post. Both are hard to undo on the largest white part in the build.
+**Checkpoint:** each lid snaps shut onto its base and stays shut when you hold the closed holder by one end. The lid magnets finish flush with the lid's underside; the base magnets stand 0.4 mm proud of the base's plate face — that is the design, not a bad press, so do not try to sink them.
 
-> [!NOTE]
-> The insert's outside diameter and the matching post bore are not published with the design, and M6 heat-set inserts ship in several diameters. Dry-fit yours before you heat anything. If the insert will not start in the bore cold, do not force it hot — check the size against your supplier's drawing first.
-
-### Step 2 — Paint the outside
-
-**You need:** the main body and the top cover only — the access panel is not painted, so leave it aside. Also low-tack masking tape and PLA-safe matte black spray paint (acrylic or enamel).
-
-1. Mask the whole cavity and the 100 × 120 aperture. The interior stays **bare white filament** — it is the light source, not a surface to be decorated.
-2. Mask the clearance-critical fit as well: the inside of the cover skirt with the top edge of the walls it laps (0.3 mm per side nominal). Paint has thickness, and that fit can absorb all of it.
-3. Spray the **outside of the main body** and the **top face of the top cover** matte black, in thin coats. Those two surfaces are the entire paint job. The **outside of the cover skirt** and the **access panel** are not sprayed — they stay bare white, and both fits keep their full clearance.
-4. Cure as the can instructs before handling. Fresh paint transfers onto everything it touches.
-
-**Checkpoint:** the two sprayed surfaces are uniformly matte with no gloss anywhere, the cavity is still bare white, and the cover still drops onto the body under its own weight.
-
-**Failure mode:** overspray into the cavity cannot be undone, and it costs you the part that does the optical work — see the caution below. The other one is paint in the skirt fit: 0.3 mm per side nominal is all the clearance there is, and a coat on each mating face can swallow it, leaving a cover that has to be forced on.
-
-**Why:** the box is sealed and has no ventilation holes precisely because every hole is a light leak. Black on the outside stops room light entering through thin walls and stops the box glowing back into your working space. White on the inside is what makes the cavity work.
-
-> [!CAUTION]
-> Do not paint the inside, and do not sand or polish it either. The diffuse white filament surface is the optical component that turns one flash pop into an even field.
-
-### Step 3 — Fit the top cover
-
-**You need:** the main body, the painted top cover, optionally a strip of 2 mm EVA foam tape.
-
-1. Optional, for a tighter light seal: run a strip of EVA foam tape along the top edge of the walls — about 2 × (208 + 273) = 962 mm. It has to go on before the cover does.
-2. Drop the cover onto the body. It locates on the skirt.
-
-**Checkpoint:** the cover seats fully, does not rock, and shows no gap at any corner.
-
-**Failure mode:** if the cover will not go on, the fit has been eaten by paint thickness, by [elephant foot](glossary.md#elephant-foot) — the outward bulge of a print's first few layers — or by warp. See the remedies in [printing.md](printing.md#if-it-came-out-tight-or-loose) before you take a knife to anything.
-
-### Step 4 — Build the film stage
-
-**You need:** three M6 × 35 studs, six M6 nuts, the film stage, two spanners.
-
-1. Screw the three studs into the inserts, finger tight, then a gentle nip.
-2. Run one **lower nut** down each stud, all three to the same thread count. This nut sets the height of the stage.
-3. Drop the film stage over the three studs, through its Ø6.5 clearance holes.
-4. Fit the three **upper nuts** finger tight. Do not lock them yet — levelling comes next.
-
-**Checkpoint:** the stage drops on under its own weight and rests on all three lower nuts, with its top face at z = 114 and the four corner blocks pointing up.
-
-**Failure mode:** a stud that will not drop through its Ø6.5 hole is the one that tempts people into cutting a thread — hand-ream to 6.5 mm instead, and read the caution below first. The quieter one is three lower nuts run down to different thread counts: the stage starts out tilted, and levelling then has to absorb an error that costs nothing to avoid at this point.
-
-> [!CAUTION]
-> Never tap the three holes in the film stage. A threaded plate on a threaded stud makes a [differential screw](glossary.md#differential-screw): both threads advance together and the height stops responding to the nuts. Ø6.5 clearance holes are mandatory. If a stud will not drop through, hand-ream to 6.5 mm — do not cut a thread.
-
-The three studs are deliberately not symmetric:
-
-| Stud | Position from the stage centre (X, Y) | Adjusts |
-|---|---|---|
-| Front | (45, −100) | Pitch |
-| Rear left | (−70, +65) | Roll |
-| Rear right | (+70, +65) | Roll |
-
-The front stud is offset in X so that it stays clear of the film run-out corridor — the strip has to be able to pass right through the holder. It is not an error; do not "correct" it, and note that the stage therefore only goes on one way round.
-
-### Step 5 — Fit the holder magnets
-
-**You need:** Ø6 × 2 neodymium magnets, cyanoacrylate glue, a marker pen.
-
-| Role | Pockets | Per holder | Needed? |
-|---|---|---|---|
-| Closure | 4 in the holder base at (±45, ±75), 4 facing them in the holder lid | 8 | Recommended for every build |
-| Base-to-stage | 4 in the holder base at (±25, ±75) | 4 | Only if you will stand the box on end |
-
-1. **Check polarity before any glue.** Drop the four closure magnets loosely into the base pockets, then offer a lid magnet up to each one in turn. Each pair must attract. Mark the up-face of every magnet with the pen while you can still move it.
-2. Put one drop of glue in the pocket — not on the mating face — and press the magnet home. It should finish flush with the surface, neither proud nor sunk.
-3. Do the base-to-stage magnets the same way. Their polarity does not matter: they pull on plain steel washers, which have no poles of their own.
-4. Let the glue cure fully before you bring the two halves together.
-
-**Checkpoint:** base and lid snap shut and stay shut when you hold the closed holder by one end. Nothing stands proud of either face — a proud magnet lifts the holder off the diffuser and tilts the film plane.
-
-**Failure mode:** one reversed pair pushes the lid open at that corner, and cured cyanoacrylate is not reversible. If you close the holder before the glue sets, the magnets jump across and pull themselves out of their pockets.
+**Failure mode:** one reversed magnet pushes its corner of the lid open, and a pressed-in magnet does not come out willingly. The touch-and-mark check in sub-step 3 costs seconds per magnet; skipping it can cost the part.
 
 > [!IMPORTANT]
-> The closure magnets are what hold the sandwich shut. Without them the holder lid is held by its own weight alone — enough with the box lying flat, not enough on end, and not enough if you ever knock the stand. Treat the 16 closure magnets (8 per holder) as part of every build; only the 8 base-to-stage magnets and the 4 washers are genuinely optional.
+> The eight magnet pairs are all that holds the sandwich shut — there are no clips or screws behind them. Every base and every lid gets its full eight; no magnet in v5 is optional.
 
-### Step 6 — Glue the four steel washers
+### Step 2 — Drop the steel washers into the cover-stage
 
-Skip this step entirely if you will never stand the box on end.
+**You need:** the cover-stage, the four steel washers (10 × 10 × 1 mm squares or Ø10 × 1 discs).
 
-**You need:** four Ø12 steel washers, cyanoacrylate glue.
+1. Drop one washer into each of the four counterbores in the deck.
 
-1. Drop a washer onto each of the four base-to-stage magnets in the holder base.
-2. Lower the holder onto the film stage, inside the four corner blocks, so the washers land where they belong — at (±25, ±75) from the holder centre.
-3. Mark round each washer, lift the holder off, and glue the washers to the top face of the stage.
+That is the whole step. No glue: each counterbore locates its washer flush with the deck, and in use the holder-base magnets above press it home.
 
-**Checkpoint:** with the glue cured, the holder pulls down onto the stage with a definite click and cannot be slid sideways out of the corner blocks by hand.
+**Checkpoint:** a fingertip drawn across the deck feels no edge at any washer, and a spare magnet lifts each one straight back out. If the magnet will not lift a washer, that washer is stainless — swap it now, because nothing later will tell you.
 
-**Failure mode:** a stainless washer is not magnetic. The holder never clicks down, nothing warns you, and the box-on-end feature fails at the last step. A washer glued away from its mark misses the magnet above it, and by then the glue has cured.
+**Failure mode:** a stainless washer looks identical and fails silently: the holder base never gets pulled into register. A washer riding proud of the deck tilts the base above it.
+
+### Step 3 — Acrylic into its recess
+
+**You need:** the 68 × 118 × 2 mm [opal](glossary.md#opal) acrylic, a blower.
+
+1. **Peel the protective film off both faces.** Sheet acrylic ships masked on both sides.
+2. Blow both faces clean.
+3. Lay the sheet into the recess over the light window, in the middle of the tray floor. It drops in and stops with its top face 0.4 mm below the deck.
+
+**Checkpoint:** the sheet sits below deck level all round and can be nudged slightly in its recess. Loose is correct — nothing fixes it, and the 0.4 mm step means even the holder above never touches it.
+
+**Failure mode:** protective film left on a face changes the diffusion, and on opal sheet it hides well. Look for a peel edge at the corners before the sheet goes in.
 
 > [!NOTE]
-> The corner blocks are printed integral to the printed film stage, so there is nothing to fit. The aluminium film stage is a flat plate — it carries the aperture and the three clearance holes but no corner blocks, and the current file set contains no separate block part to add. Both stages present their top face at z = 114, so they are otherwise interchangeable.
+> Dust on the acrylic never shows in a frame: the sheet is itself the diffuse glowing surface, not something the lens images. An occasional wipe is all it needs — with a dry cloth, never with alcohol, ammonia or glass cleaner, all of which craze acrylic.
 
-### Step 7 — Diffuser and holder
+### Step 4 — Cover-stage onto the main body
 
-**You need:** the 110 × 130 × 2 [opal](glossary.md#opal) acrylic diffuser, the film holder, a blower.
+**You need:** the main body, the cover-stage with its washers and acrylic in place.
 
-1. **Peel the protective film off both faces.** Sheet acrylic ships masked on both sides, and a film left on the underside changes the diffusion and collects static dust 4.3 mm from your negatives.
-2. Blow both faces clean.
-3. Lay the diffuser over the aperture. It is not fixed to anything — 110 × 130 over a 100 × 120 aperture leaves 5 mm of overlap all round, and the holder's weight keeps it flat.
-4. Set the film holder on top of it, inside the four corner blocks.
+1. Hold the cover-stage by the tray flange, line up its four corner notches with the locating tenons on the wall tops, and lower it straight down. It seats under its own weight.
+2. If it stands high or rocks, a tenon is riding beside its notch: lift straight off and re-seat. Never press, never twist.
 
-**Checkpoint:** the diffuser covers the aperture with even overlap, the holder sits flat on it and does not rock, and the holder base is in contact with the diffuser across its whole area.
+**Checkpoint:** the stage sits flat on the wall tops with no gap and no rocking — and lifts straight back off just as freely.
 
-**Failure mode:** the protective film left on the underside is the one that hides — it changes the diffusion and sits 4.3 mm from your negatives collecting static dust, and you will read the result as uneven light. The other is permanent: a diffuser cleaned with the wrong thing crazes, as the caution below explains.
+**Failure mode:** a notch that will not take its tenon is a printing artefact — [elephant foot](glossary.md#elephant-foot) on the first layers of either part — not something to force. See [printing.md](printing.md#if-it-came-out-tight-or-loose).
 
-> [!CAUTION]
-> Never clean the diffuser with alcohol, ammonia or household glass cleaner. All three craze acrylic, and a crazed diffuser is a permanently textured one. A blower, and at most a dry microfibre cloth, is the entire cleaning kit. This is why the bill of materials tells you to buy two or three sheets.
+### Step 5 — Holder base into the tray
 
-### Step 8 — Light source
+**You need:** the cover-stage in place, the holder base for your format — and the 6×6 mask if that is your frame.
 
-**You need:** the flash, the trigger receiver, white paper, tape, the USB LED strip, a Ø12 grommet.
+1. Lower the base inside the tray flange. At 0.3 mm of clearance per side it goes in without play worth noticing.
+2. Let it settle: the base magnets find the steel washers in the deck and pull the base flat into register.
 
-1. Lay the flash flat on the floor of the box with its **head rotated 90°** so it fires horizontally at the far wall. Nothing is aimed at the film; the light reaches it only after several diffuse bounces.
-2. Do not fit the flash's own wide-angle diffuser panel. Set the zoom to 35–50 mm.
-3. Put the flash foot toward the access opening and mate the receiver with it there. The depth budget reserves 30 mm between the flash body and the access panel for the receiver, so it lies in line with the flash, not on top of it.
-4. **Tape a piece of white paper to the top face of the flash body** — not over the head. That black body sits directly under the aperture and otherwise reproduces as a dark patch in the middle of every frame.
-5. Reach in through the 190 × 76 access opening and stick the LED strip to the side wall at about z = 50, which is 50 mm above the outside of the floor — beside the flash body, below the aperture and out of direct line to the film. Run the cable out through the Ø12 gland in the right wall, fitted with a rubber grommet. The inline dimmer stays **outside** the box.
+**Checkpoint:** the base lies flat on the tray floor and does not rock, and you should feel the magnets take it as it lands. Lift it out and drop it again — it should land the same way every time.
 
-**Checkpoint:** with the box closed, the flash fires from the transmitter, and in a dark room no light escapes at the cover seam. Run the LED strip low — the flash overwhelms it, and it is only there so you can focus.
+**Failure mode:** a base that stays indifferent — no settle, no grip — means Step 2's washers are stainless or missing. A base that will not enter the flange without force is elephant foot again, not a reason to push.
 
-**Failure mode:** no white paper on the flash body, and that black body sitting directly under the aperture reproduces as a dark patch in the middle of every frame. A head left facing up fires at the film instead of at the far wall, and the diffuse bounces the cavity exists to produce never happen.
+> [!NOTE]
+> For 6×6 frames, lay the **6×6 mask** in the tray first and the 120 base on top of it. The whole clamp then rides 1 mm higher — that is normal. There is no 6×4.5 mask: shoot through the 120 window and crop afterwards.
 
-Once the flash is where you want it, draw a line on the floor of the box around it so it goes back in the same place every time.
+### Step 6 — Pressure element in, lid on
 
-### Step 9 — Close up
+**You need:** the pressure-window insert for your format — or the 64 × 95 × 2 mm AN glass, one sheet serving both formats — the matching holder lid, a blower.
 
-**You need:** the access panel, 2 mm self-adhesive EVA foam tape.
+1. Set the element down on the 4.6 mm element ledge in the outer rails. The ledge holds it 0.4 mm above the film path, and that 0.4 mm is the whole pressure design: film advances by sliding underneath, and any bow in the strip is smoothed flat against the element's underside on the way through. The element is fitted once and then left alone.
+2. If it is the glass: **matte (AN) face down**, toward the film — the matte face against the film base's glossy side is what prevents Newton's rings. Blow the underside just before it goes in: it will sit 0.2 mm from the focal plane, and dust *there* does image.
+3. Set the lid on. The eight magnet pairs snap it down.
 
-1. Wrap the tape around the 186 × 72 × 4 plug — 2 × (186 + 72) = 516 mm of it, one lap.
-2. Push the plug into the 190 × 76 access opening. The foam takes up the roughly 2 mm of clearance all round and the panel is held by friction alone.
+**Checkpoint:** the lid seats all round with no corner standing open, and the element keeps a whisper of float under the closed lid — the lid cavity leaves it 0.4 mm, and floating is correct. An element clamped rigid means something is proud somewhere; open up and look rather than pressing harder.
 
-**Checkpoint:** the panel stays put when you tip the box, and shows no line of light at its edge in a dark room with the LED strip on.
+**Failure mode:** the glass put in glossy face down invites Newton's rings against the film base. A corner that will not close is a reversed magnet from Step 1, reporting late.
 
-**Failure mode:** the foam is the whole fit. Too thin for the roughly 2 mm of clearance all round and the panel falls out when you tip the box; too thick, or wrapped twice, and it will not seat — and a panel standing proud fouls the cover skirt it is meant to clear by 2 mm.
+### Step 7 — Level at the camera: the mirror method
 
-The panel's top edge clears the cover skirt by 2 mm, so you never have to lift the top cover to reach the flash — battery changes and power changes go through this opening.
+The box has no levelling hardware, and none is missing: only one relationship matters — **the film plane parallel to the sensor** — and the camera end is the right end to set it, because one adjustment there corrects the whole chain at once, printed tolerances included.
 
-## Levelling the stage
+**You need:** the assembled box under your camera, a small flat mirror about 30 mm across.
 
-Two different things are often confused here, and only one of them matters. You are not levelling against gravity. You are making the **film plane parallel to the sensor**, which is a relationship between the stage and the camera — a spirit level cannot see it. A flash freezes vibration, but nothing in the box can rescue a film plane that is tilted relative to the sensor, so parallelism comes first and evenness second.
-
-### The mirror method
-
-1. Lay a small flat mirror on the film plane, on top of the film holder.
-2. Look at the mirror through the camera in live view.
-3. You will see the lens and the camera reflected back. Move the camera until that reflection sits exactly in the centre of the frame and looks symmetrical.
-4. When the reflection of the lens is dead centre, the sensor is parallel to the film plane.
-5. Then trim the three stage nuts — front nut for pitch, rear pair for roll — and re-check.
-
-Two passes converge. Lock the upper nuts when you are happy, then look once more: tightening moves things.
+1. Lay the mirror flat on the closed holder, centred over the film window.
+2. Watch live view. You will see the lens and the camera reflected back.
+3. Tilt and shift **the camera — not the box —** until the reflection of the lens sits dead centre in the frame and looks symmetrical.
+4. When the reflection is centred, the sensor is parallel to the mirror, and the mirror is lying on the film plane. Done.
+5. Lock the head, then look once more — tightening moves things.
 
 ```mermaid
 flowchart TD
-    A[Three lower nuts to the same thread count] --> B[Stage on, upper nuts finger tight]
-    B --> C[Mirror on the film plane, camera in live view]
+    A[Assemble the stack and close the holder] --> B[Mirror flat on the holder, centred on the window]
+    B --> C[Camera in live view over the box]
     C --> D{Lens reflection centred and symmetrical?}
-    D -- No --> E[Move the camera to centre the reflection]
-    E --> F[Trim the nuts: front = pitch, rear pair = roll]
-    F --> C
-    D -- Yes --> G[Lock the upper nuts, then re-check]
+    D -- No --> E[Tilt or shift the camera, never the box]
+    E --> C
+    D -- Yes --> F[Lock the head, then check once more]
 ```
 
-The same method is used from the camera's side of the setup, with the stand geometry spelled out, in [scanning.md](scanning.md#parallelism).
+**Checkpoint:** with the head locked, the reflection is still centred. Repeat the check whenever the box or the camera has moved — it costs seconds.
 
 <details>
-<summary>Why three points and not four</summary>
+<summary>Why the camera, and why a mirror</summary>
 
-Three points define a plane. Three adjusters can put a rigid plate into any orientation you ask for, and exactly one combination of heights produces each orientation — the constraint is exact.
+A spirit level measures against gravity, and gravity is not in the optical chain — a stage perfectly level to the floor can still be tilted relative to the sensor. The mirror measures the one relationship that matters, and doubles it: any angle between the sensor's axis and the mirror shows up twice over in where the reflection lands, which makes centring the lens's own reflection a sensitive null test.
 
-A fourth adjuster over-constrains it. There is no longer a single solution, so the plate either rocks between two diagonals or, once you tighten everything down, bends to meet all four. Bending is the worse outcome: it destroys the flatness you added the fourth point to protect.
-
-This is the same reason surveying instruments and optical tables use three feet, and it is why the levelling is split into one front nut for pitch and a rear pair for roll — the two axes stay independent, so the two passes converge instead of chasing each other.
+Adjusting at the camera rather than the box also absorbs everything below the mirror in the same move — wall-top flatness, tenon seating, the stack of printed tolerances. Shimming the box could only ever correct the box. That is why v5 deleted the box-side levelling hardware instead of refining it.
 
 </details>
 
-## Calibration
+The camera side of the setup — the stand is in [parallelism](scanning.md#parallelism), and the height for each format in [camera height and the stand](scanning.md#camera-height-and-the-stand).
 
-1. Photograph the bare lit surface, with no film in the holder, in [raw](glossary.md#raw), at the aperture you will actually use.
-2. Apply [flat-field correction](glossary.md#flat-field-correction) **first**. It separates your lens's vignetting from genuine unevenness in the source, and without it you will spend an evening chasing a dark corner that belongs to the lens. The target for the source itself is about **±0.1 [EV](glossary.md#ev) corner to corner**. The procedure and the software options are in [scanning.md](scanning.md#flat-field-and-inversion).
-3. If it misses that target, work in this order and change one thing at a time:
-   - Centre the flash on its outline and check the white paper patch on its body.
-   - If the far end reads brighter than the near end, stand a white card at the far wall and change its angle.
-   - As a last resort, stick a small translucent attenuating dot at the centre of the underside of the diffuser.
-4. Make the setup repeatable. Mark where the box sits on the baseboard so it returns to the same place, and write down the camera height for each format.
+## Formats and everyday handling
 
-The film plane does not move: it stays at about 120.3 mm above whatever the box is standing on, for both 135 and 120. The camera height changes between formats only because the [magnification](glossary.md#magnification-ratio) does — how large the frame lands on the sensor relative to its real size — so see the table in [scanning.md](scanning.md#camera-height-and-the-stand).
+- **Changing format is changing the clamp.** Lift the whole clamp off — it is held by magnets alone — and drop the other format's clamp in. Each clamp keeps its own insert fitted; if you use the AN glass, that one sheet serves both formats, so only the glass moves across to the other clamp's ledge.
+- **Advancing film:** pinch the leader where it sticks out of the clamp and pull. The tail rides on the top of the tray flange, 0.2 mm below the film plane, which supports it on the way; with a long strip, steady the far end with your free hand.
+- **Loading direction:** with the glass, load the strip curl-up; with the insert, curl-down.
+- **Getting the acrylic out:** lift the clamp off, reach in through the open front, and push the sheet up through the light window.
+- **The cover-stage comes off as one piece** — grip it by the tray flange and lift straight up.
+- **The flash never moves in:** it lies at the open front with its head firing into the cavity, and the receiver stays outside where its signal is clean and its batteries are reachable. Work in a dim room and keep ceiling light out of the box mouth.
 
-## Power
-
-Nothing mains-powered goes inside the enclosure.
-
-| Device | Power |
-|---|---|
-| TT560 | 4 × AA, no external port. Two sets of NiMH cells in rotation is the practical setup. |
-| ZENIKO T1 | Own battery — USB-C or coin cell depending on the unit |
-| LED strip | USB 5 V from a power bank or charger, inline dimmer outside the box |
-| Camera | Batteries; a dummy battery is worth it for long sessions |
-
-The receiver cannot change flash power remotely. In practice you set the power once during calibration and leave it; if you do need to change it, pull the access panel rather than lifting the top cover.
-
-## Session routine
-
-- Blow both faces of the diffuser and the [film gate](glossary.md#film-gate) before you start, every time.
-- Check that the flash is on its outline and the access panel is seated.
-- Handle film by the edges, with clean hands or cotton gloves.
-
-The film sits about 4.3 mm above the diffuser, so a dust particle there projects as a soft blob about 0.2 mm across at the film plane at f/8 and 0.43× (a 6×6 frame on a full-frame sensor) — invisible once a negative is inverted, visible on a slide. There is no mechanical fix for this in the current design; the mitigation is the blower, used every session.
-
-## Using the box on end
-
-The design supports standing the enclosure vertically.
-
-| Part | What holds it |
-|---|---|
-| Film holder | Four base magnets onto the steel washers, plus the four corner blocks. **If you skipped the magnets, do not stand the box on end.** |
-| Film stage | Studs into inserts, clamped by the lower and upper nuts — rigid in any orientation |
-| Access panel | Add a strip of tape so it cannot fall out, and a piece of foam beside the flash so the flash cannot shift |
-| Diffuser | Held by the holder |
+> [!IMPORTANT]
+> The assembled box is a gravity stack — no part is fastened to any other. Never tilt it, and never carry it assembled: take the clamp and the cover-stage off and move the pieces separately.
 
 ## If something is wrong
 
 | Symptom at this stage | Where to look |
 |---|---|
-| Cover will not seat, stud will not pass, stage rocks | [Assembly problems](troubleshooting.md#assembly) |
-| A bright corner, a dark patch under the aperture, or a light leak at a seam | [Light and evenness](troubleshooting.md#light-and-evenness) |
-| The channel is too tight or too loose, or a part came out warped | [printing.md](printing.md#if-it-came-out-tight-or-loose) |
+| The cover-stage stands high or rocks, or the holder will not settle in the tray | [Assembly problems](troubleshooting.md#assembly) |
+| A dark patch, a bright side, or a clean dark band across frames | [Light and evenness](troubleshooting.md#light-and-evenness) |
+| The film channel is too tight or too loose, or a part came out warped | [printing.md](printing.md#if-it-came-out-tight-or-loose) |
 
 ---
 

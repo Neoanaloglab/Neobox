@@ -4,238 +4,194 @@
 
 > The engineering reference: where every dimension comes from, which numbers are optical and which are structural, what happens if you change one, and how to open, edit, re-export and verify the CAD source.
 
-**Contents:** [1. Light path](#1-light-path) · [2. Dimension chain](#2-dimension-chain) · [3. Optical decisions](#3-optical-decisions) · [4. Film stage](#4-film-stage) · [5. Film holders](#5-film-holders) · [6. Enclosure](#6-enclosure) · [7. Focus light](#7-focus-light) · [8. Flash operation](#8-flash-operation) · [9. Repositioning and repeatability](#9-repositioning-and-repeatability) · [10. 4×5 reservation](#10-45-reservation) · [11. Working with the source](#11-working-with-the-source)
+**Contents:** [1. Light path](#1-light-path) · [2. Dimension chain](#2-dimension-chain) · [3. Optical decisions](#3-optical-decisions) · [4. Cover-stage](#4-cover-stage) · [5. Film holders](#5-film-holders) · [6. Enclosure](#6-enclosure) · [7. Focus light](#7-focus-light) · [8. Flash operation](#8-flash-operation) · [9. Repositioning and repeatability](#9-repositioning-and-repeatability) · [10. 4×5 reservation](#10-45-reservation) · [11. Working with the source](#11-working-with-the-source)
 
-Reference build: a **NEEWER TT560** speedlight with a **ZENIKO T1** 2.4 GHz trigger set.
+Reference flash: a **NEEWER TT560** speedlight with a **ZENIKO T1** 2.4 GHz trigger set — a reference, not a requirement. The flash lies on the desk *outside* the box, so no dimension in this document depends on it; any speedlight with manual power control works.
 
 | Convention | What it means here |
 |---|---|
 | Dimensions | Millimetres, written width × depth × height (X × Y × Z) |
-| `z` | Absolute height above the **outer bottom** of the main body |
-| XY positions | Measured from the centre of the box, which is also the centre of the film stage |
+| `z` | Absolute height above the desk. The box stands directly on the desk, so this is also the height above the outer bottom of the main body |
+| Part-local z | The layer-quantisation tables in [§2](#2-dimension-chain) measure each part from its own print-bed face instead — stated where used |
+| XY positions | Measured from the centre of the box, which is also the centre of the light window |
 | STL bounding box | Quoted only where it is labelled as such — it is sorted largest first and is often not in X × Y × Z order |
 | Source | Every number below is read from `cad/neobox.blend` or from the exported STL files. [§11](#11-working-with-the-source) explains how to read them yourself |
 
 > [!IMPORTANT]
-> The geometry is verified dimensionally in Blender and numerically in the exported STL files. **The box has never been printed, built, photographed or measured.** Every performance figure in this document is a design target, not a result: the ±0.1 [EV](glossary.md#ev) evenness figure, the 3–5 stop enclosure loss, the dust-blur estimate. Flash recycle time, frames per hour and pops per set of AA cells are unknown, and nothing here claims otherwise.
+> The geometry is verified dimensionally in Blender and numerically in the exported STL files. **The box has never been printed, built, photographed or measured.** Every performance figure in this document is a design target, not a result: the mixing margins, the ≤ 0.28 mm flatness bound, the depth-of-field coverage. No evenness has been measured, and nothing here claims otherwise.
 
 ---
 
 ## 1. Light path
 
-![Cross-section through the width of the box: the TT560 lying flat in the white cavity firing sideways, the 100 × 120 aperture in the top cover, the film stage carried on three M6 studs, the opal diffuser and the two-part film holder above it with the film plane at z = 120.3, plus a 33× detail of the 0.4 mm film channel](../drawings/cross-section.svg)
+![Cross-section drawing of the NeoBox](../drawings/cross-section.svg)
 
-The stack, bottom to top:
+*The drawing set has not yet been regenerated for v5 — it still shows the previous, closed-box revision. The text below is the authority.*
 
-**floor 4 → flash lying flat 55 → white cavity headroom 33 → top cover 4** (that is the 96 mm box) **→ film stage → diffuser 2 → film holder → film plane at about 120.3.**
+The stack, desk upward:
 
-The flash head is turned 90° so it fires along the length of the box at the far wall. **Nothing is aimed at the film.** Light reaches the aperture only after several diffuse bounces off the bare white PLA, which is what makes the interior an [integrating cavity](glossary.md#integrating-cavity) rather than a lamp with a shade.
+**flash lying flat on the desk → the fully open front → white cavity 120 × 150 × 70 → light window 62 × 95 in the cover-stage → opal acrylic 68 × 118 × 2, top face at 78.6 → 4.6 mm of air → film plane at z = 83.2.**
 
-It leaves through the 100 × 120 aperture in the top cover and gets its final smoothing from one [opal](glossary.md#opal) acrylic diffuser resting on the film stage.
+The flash is not inside the box. It lies flat on the same desk the box stands on, its head against the **open front** — the front face of the box has no wall at all — and fires horizontally into the cavity. The TT560's emitting face is 60 × 45 with its centre 31 mm above the desk, well inside the 70 mm-tall opening.
 
-> [!WARNING]
-> **Do not fit the flash's wide-angle diffuser panel, and do not point the head upward.** Set the flash zoom to 35–50 mm so the beam lands on the far wall instead of spilling straight at the aperture. A beam that reaches the diffuser without bouncing puts the shape of the flash head into the picture.
+**Nothing is aimed at the film.** The light window is in the ceiling of the cavity, at right angles to the beam, so light reaches it only after several diffuse bounces off the bare white PLA — which is what makes the interior an [integrating cavity](glossary.md#integrating-cavity) rather than a lamp with a shade. It leaves through the 62 × 95 window and gets its final smoothing from one [opal](glossary.md#opal) acrylic sheet recessed into the cover-stage directly above.
+
+The open front is the whole v5 architecture in one move. The v4 box sealed the flash inside, and everything difficult about v4 followed from that: the box height was derived from the flash's thickness, an access panel was needed to reach the power dial, a cable gland to pass wires, and the published STLs fitted one flash model and no other. With the flash outside, all of it disappears — any brand of flash works, the receiver stays on the desk where its radio signal is clean and its batteries are reachable, and there is no panel, gland or ventilation question left to answer ([§6](#6-enclosure)). The price is that ambient light can enter the cavity. That trade is accepted, not ignored: the flash pulse is far brighter than room ambient at sync speed ([§8](#8-flash-operation)).
+
+> [!NOTE]
+> **Work in a dim room, and keep ceiling lamps from shining straight into the opening.** The pulse overwhelms ambient light by design, but a bright lamp aimed into the open front is the one geometry that erodes that margin for free.
 
 ---
 
 ## 2. Dimension chain
 
+In v4 the box was derived from the flash, and its numbers died with it. v5 severs the link: the flash never enters the box, so the chain no longer starts at a product's datasheet. It starts at the desk and runs upward, part stacked on part, by gravity.
+
+### The printed parts
+
+Nine STL files — two white, seven black, all printed without supports:
+
+| STL | Colour | Overall (mm) | What it is |
+|---|---|---|---|
+| `main-body.stl` | white | 124.8 × 154.8 × 75.6 | Main box: 3.0 floor, 2.4 left/right/rear walls, front fully open; four locating tenons 2.4 × 12 × 2.6 on the side-wall tops |
+| `cover-stage.stl` | white | 124.8 × 154.8 × 10.0 | Cover-stage: 6 mm plate seated on the walls, with light window, acrylic recess, washer pockets and holder tray ([§4](#4-cover-stage)) |
+| `film-holder-135-base.stl` | black | 94 × 120 × 5 | 135 holder base: 25 × 37 window, inner guide rails, outer rails with the 4.6 element ledge ([§5](#5-film-holders)) |
+| `film-holder-135-lid.stl` | black | 94 × 120 × 3 | 135 holder lid: 25 × 37 window, element cavity, 8 magnet pockets |
+| `film-holder-120-base.stl` | black | 94 × 120 × 5 | 120 holder base: 57 × 85 window (full 6×9), 62 channel, same outer rails and ledge as the 135 |
+| `film-holder-120-lid.stl` | black | 94 × 120 × 3 | 120 holder lid: 57 × 85 window, otherwise identical to the 135 lid |
+| `pressure-window-135.stl` | black | 64 × 95 × 2 | Pressure-window insert, 135 (window 25 × 37) |
+| `pressure-window-120.stl` | black | 64 × 95 × 2 | Pressure-window insert, 120 (window 57 × 85) |
+| `mask-6x6.stl` | black | 94 × 80 × 1 | 6×6 mask (window 56.5 × 56.5), laid in the tray under the 120 base |
+
+Every part prints flat face down; the two lids print top face down. The largest part is 154.8 mm long, so a 160 × 160 print bed is enough. Layer heights, orientation cards and slicer settings are in [printing.md](printing.md).
+
 ### Height
 
-The 96 mm box is a sum of four layers, in order from the bottom:
-
-| Layer | z range | Height |
-|---|---|---|
-| Floor | 0 – 4 | 4 |
-| Flash lying flat (TT560) | 4 – 59 | 55 |
-| White cavity headroom | 59 – 92 | 33 |
-| Top cover plate | 92 – 96 | 4 |
-| **Box height** | **0 – 96** | **96** |
-
-Above the cover, the optical stack:
+The whole assembly is one gravity stack. World z, desk = 0:
 
 | Layer | z range | Note |
 |---|---|---|
-| Film stage plate | 109 – 114 | top face at 114 in both stage versions |
-| Diffuser | 114 – 116 | 2 mm opal acrylic, resting on the stage |
-| Holder base | 116 – 121 | flat bottom, pressing on the diffuser |
-| **Film plane** | **≈ 120.3** | land tops at 120.2 plus about 0.14 of film |
-| Holder lid | 120.6 – 124 | pressure strips reach down to 120.6 |
+| Desk | 0 | the flash and the box stand on the same surface |
+| Main-body floor | 0 – 3.0 | |
+| Cavity | 3.0 – 73.0 | interior 120 × 150 × 70, open at the front |
+| Cover-stage plate | 73.0 – 79.0 | 6 mm plate seated on the wall tops; deck face at 79.0 |
+| Opal acrylic | 76.6 – 78.6 | in its recess, top face 0.4 below the deck |
+| Steel washers | 78.0 – 79.0 | in their pockets, flush with the deck |
+| Tray flange | 79.0 – 83.0 | rim around the holder seat, 4 high |
+| Holder base | 79.0 – 84.0 | stands on the deck inside the flange |
+| **Film plane** | **83.2** | land top — the same height for both formats |
+| Pressure element | 83.6 – 85.6 | insert or AN glass on the 4.6 ledge |
+| Holder lid | 84.0 – 87.0 | total assembled height 87 |
 
-And the mounting hardware that holds it there:
+### Width and depth
 
-| Item | z range | Note |
-|---|---|---|
-| M6 [heat-set insert](glossary.md#heat-set-insert) | at 86 | one in each of the three top-cover posts |
-| M6 × 35 stud | 86 – 120 | fully threaded, screwed into the insert |
-| Lower nut | 105 – 109 | sets the stage height — this is the levelling adjustment |
-| Upper nut | 114 – 118 | clamps the stage down onto the lower nut |
-| Corner blocks | 114 – 120 | printed integral with the film stage |
-
-The film plane therefore sits about 24.3 mm above the top face of the cover. That offset is fixed by the stage geometry and does not change with the flash — but the box height underneath it does, so a different flash moves the film plane and the camera has to be re-set. See [scanning.md](scanning.md#camera-height-and-the-stand).
-
-### Depth
-
-| Term | mm | Set by |
-|---|---|---|
-| Clearance at the access panel | 2.5 | structural |
-| ZENIKO T1 receiver | 30 | this trigger |
-| TT560 body | 190 | this flash |
-| Reflection zone, flash head to far wall | 44.5 | **optical** |
-| **Interior depth** | **267** | |
-| Two walls at 3 | 6 | structural |
-| **Outer depth** | **273** | |
-
-The receiver stands on the box floor on its own foot, in front of the flash, and takes those 30 mm out of the chain. It is not carried on the flash.
-
-### Width
-
-| Term | mm | Set by |
-|---|---|---|
-| Aperture | 100 | film format |
-| White wall margin, about 50 each side | 102 | **optical** |
-| **Interior width** | **202** | |
-| Two walls at 3 | 6 | structural |
-| **Outer width** | **208** | |
-
-Width is set by the aperture plus the white margin the cavity needs to fill evenly on either side. It is independent of the flash, which is why it stays at 208 in the formulas below.
+The main body is 124.8 × 154.8 outside; the walls are 2.4, the front is open, so the interior cavity is **120 × 150 × 70** and the open front is the cavity's full 120 × 70 cross-section. The 62 × 95 light window is centred, which leaves **29 mm of white wall in x and 27.5 mm in y** between the window edge and the nearest wall — the mixing margin. It is deliberately generous by design; no minimum has been established, and nothing has been measured.
 
 ### Generalising to another flash
 
-```
-height = flash thickness + 41        (measure it LYING FLAT, head at 90°)
-depth  = flash length + receiver length + 53
-width  = 208                         (fixed)
-```
+There is nothing to re-derive. The v4 formulas that turned a flash datasheet into a box height are gone because the input is gone: **no dimension of the v5 box encodes any dimension of any flash.** A substitute flash needs manual power control and a head that can lie flat and fire level into the open front — the TT560's emitting face, 60 × 45 with its centre 31 above the desk, is the reference, not a limit. The receiver stays outside too, so the trigger model is equally free. Swapping flashes touches neither `cad/neobox.blend` nor the STLs ([§11](#11-working-with-the-source)).
 
-Neither constant is magic. Both are sums of rows from the tables above:
+### Layer quantisation
 
-| Constant | Decomposes into | Optical terms |
-|---|---|---|
-| `+41` | 4 floor + 33 cavity headroom + 4 top cover plate | 33 |
-| `+53` | 2.5 access clearance + 44.5 reflection zone + 2 × 3 walls | 44.5 |
+**Every printed z-feature in this design is an exact multiple of 0.2 mm, and no exposed horizontal step is under 0.4 mm — two layers.** Each part is quantised in its own print orientation, measured from its own print-bed face:
 
-The structural terms (4, 4, 2.5, 2 × 3) are wall and plate thicknesses; shrink them and you lose stiffness or light-tightness, nothing more.
+| Part (datum = print-bed face) | z stations |
+|---|---|
+| Main body | 0 · 3.0 floor top · 73.0 wall top · 75.6 tenon top |
+| Cover-stage | 0 · 2.8 notch ceiling · 3.6 acrylic-recess floor · 5.0 washer-pocket floor · 6.0 deck · 10.0 flange top |
+| Holder bases (both formats) | 0 · 2.2 magnet-pocket floor · 3.8 plate face · **4.2 land** · **4.6 element ledge** · 5.0 rail top |
+| Holder lids (printed top face down) | 0 · 1.0 element-cavity ceiling · 3.0 lid underside — assembly-local 8.0 / 7.0 / 5.0 |
+| Inserts / mask | flat plates, 2.0 / 1.0 |
 
-**The two optical terms, 33 and 44.5, are the numbers that decide whether a re-derived box still mixes evenly.** No minimum has been established for either, and neither has been tested.
-
-Treat them as this build's values, not as general rules: if you cut into them, budget for re-doing the evenness calibration, and be ready to restore the second diffuser at a cost of about 43 mm ([§3](#3-optical-decisions)).
-
-Measure the flash lying flat with its head already rotated to 90°, not standing. **Never fix the outer height first and back-calculate the layers** — that is precisely the error that made the first draft physically unbuildable ([design log entry 1](design-log.md#1-the-height-was-arithmetically-impossible)).
-
-> [!WARNING]
-> **The published STL files fit the TT560 and nothing else.** The formulas give you the new numbers; they do not resize the files. A different flash means editing `cad/neobox.blend` and re-exporting ([§11](#11-working-with-the-source)).
->
-> A substitute flash needs: a head that rotates 90°, manual power control, a body no longer than 190 mm and no thicker than 55 mm lying flat. Outside that, the enclosure has to be re-derived.
+The point of the grid: at a 0.2 mm [layer height](glossary.md#layer-height) every one of those stations lands exactly on a layer boundary, so a printed 0.4 step is a true 0.4 step, not a slicer rounding. 0.1 mm also divides the grid; 0.12 and 0.16 do not. The reasoning dates from the v4 holders and carries over unchanged ([design log entry 18](design-log.md#18-layer-quantised-holders)); what is new in v5 is that the whole design obeys it, not just the holders. The print order spec pins every file at 0.2 ([printing.md](printing.md)). The verifier enforces the grid and the minimum step on every export ([§11](#11-working-with-the-source)).
 
 ---
 
 ## 3. Optical decisions
 
-**One diffuser, not two.** A two-layer stack — scatter, mix, final surface — gives better uniformity, but each layer needs its own mixing distance. In the current design, restoring the second diffuser and its chamber costs **about 43 mm** of height. It was dropped because a single opal sheet close to the film is what the author's existing light-pad workflow already delivers; that is the validation, not a test of this box ([design log entry 9](design-log.md#9-two-diffusers-became-one)).
+**One opal sheet, recessed into the cover-stage, is the final diffuser.** The acrylic (a bought part, 68 × 118 × 2) drops into a 69 × 119 recess 2.4 deep: 0.5 mm of side clearance, top face 0.4 below the deck. Because the holder stands on the deck, **nothing ever touches the acrylic** — it is an optical layer, not a structural one, and the film plane is referenced through printed plastic, never through it. To lift it out, take the holder off and push the sheet up through the light window from inside the box.
 
-**The diffuser sits above the film stage, not under the top cover.** It rests on the stage over the aperture and is held flat by the weight of the film holder — no fixings at all. Lifting the holder exposes both faces for cleaning, which matters because of the next paragraph.
+**Dust on the acrylic does not image.** The acrylic is itself the diffuse emitting surface: a particle sitting on it is part of the source, not an object between the source and the lens, so it cannot project an outline onto the film. Wipe the sheet periodically and move on — no per-session ritual. (Dust on the optional glass is the opposite case; see [§5](#5-film-holders).)
 
-**Film-to-diffuser distance is about 4.3 mm.** This is the design's one deliberate compromise.
+**Mixing margins.** The window-to-wall margins — 29 in x, 27.5 in y — are the numbers that decide how well the cavity fills the window evenly. They are design margins, chosen generous, with no established minimum and no measurement behind them.
 
-At 0.43× — the 6×6-on-full-frame case from the [magnification](glossary.md#magnification-ratio) table in [scanning.md](scanning.md#magnification-and-lens-choice) — and f/8, a dust particle on the diffuser projects as a soft blob about 0.2 mm across at the film plane. That is essentially invisible on an inverted negative and noticeable on a slide.
+**All-white cavity, matte only.** The white PLA *is* the mixing surface. Do not paint the inside, and do not print the white parts in silk or glossy filament — a specular wall reproduces the flash head as a hot spot instead of scattering it.
 
-The mitigation is procedural, not mechanical: **blow both faces of the diffuser and the [film gate](glossary.md#film-gate) at the start of every session.** Opening the gap would work, and would give back exactly the height the design just removed.
+**Everything above the acrylic is black.** The holders, inserts and mask print in black so stray light above the diffuser is absorbed, not bounced back into the film. An optional A5 black flocking sticker on the deck kills the last of the glare ([bom.md](bom.md)).
 
-**Aperture margins.** The 100 × 120 aperture clears a 6×9 frame (56 × 84) by 22 mm on the short axis and 18 mm on the long axis, so the opening itself cannot vignette. Bigger is not better: a larger opening lets more oblique stray light through the film base and lowers contrast.
+**Ambient light is tolerated, not sealed out.** The open front admits room light; the design answer is operational — dim room, no lamp aimed into the opening, camera at sync speed — because the pulse dwarfs what remains ([§8](#8-flash-operation)).
 
-**All-white interior, matte only.** The white PLA *is* the mixing surface. Do not paint the inside, and do not use silk or glossy filament — a specular wall reproduces the flash head as a hot spot instead of scattering it. The black flash body sits directly under the aperture and would otherwise print as a dark patch, so **tape a piece of white paper to the top face of the flash body**, not over the head.
-
-**Everything above the diffuser is black** so that stray light is absorbed rather than bounced back into the film.
-
-**No internal adjusters.** Earlier revisions carried a 45° reflector plate and an anti-direct-light baffle. Both are gone: the far wall already performs the turn, and every internal part is one more thing to align and one more thing to knock out of place. Evenness is trimmed from outside instead — see [assembly.md](assembly.md#calibration). The target is **±0.1 EV corner to corner, measured after [flat-field correction](glossary.md#flat-field-correction)**, which separates lens vignetting from real source unevenness.
+**No internal adjusters.** No reflector plates, no baffles, no levelling hardware anywhere in the light path — the cavity is bare white walls and nothing else. Every internal part would be one more thing to align and one more thing to knock out of place. Verify evenness with a [flat-field-corrected](glossary.md#flat-field-correction) test frame, which separates lens vignetting from real source unevenness ([assembly.md](assembly.md)).
 
 ---
 
-## 4. Film stage
+## 4. Cover-stage
 
-The film stage is the levelled plate that carries everything optical above the box.
+The cover-stage is v4's top cover and film stage merged into a single white plate — one printed part where there used to be a cover, a stage, three studs, six nuts and three heat-set inserts. It seats directly on the wall tops and carries everything optical above the cavity.
 
-| Version | Material | Geometry | File |
-|---|---|---|---|
-| Printed | Black PLA or PETG | 200 × 230 plate, 5 mm thick, with the four corner blocks printed integral on top, rising to 11 mm overall. STL bounding box 230 × 200 × 11 | `stl/black-pla/film-stage-printed.stl` |
-| Upgrade | 3 mm 5052 aluminium, black anodised | Outline 200 × 230, aperture 100 × 120, 3 × Ø6.5 clearance holes | `cad/film-stage-aluminium-3mm.dxf` |
+What the one part carries:
 
-Both present their top face at **z = 114**, so they are interchangeable. The aluminium plate is 2 mm thinner, so its lower nuts are set 2 mm higher; the top face still lands at 114 and nothing above it moves.
+- **The plate** — 124.8 × 154.8, 10 overall: a 6 mm structural plate whose deck face lands at z = 79.0. Four corner notches, 2.8 deep, drop over the main body's 2.6 tenons with 0.2 of vertical clearance — the plate seats on the wall tops, never on the tenons; the tenons only pin it in XY.
+- **The light window** — 62 × 95, centred, straight through the plate.
+- **The acrylic recess** — 69 × 119, 2.4 deep, floor at 76.6, open to the deck. The opal sheet drops in from above and sits 0.4 below the deck ([§3](#3-optical-decisions)).
+- **The tray** — a flange rim around a 94.6 × 120.6 seat, 4 high, top at 83.0. It locates the holder with 0.3 mm per side and its top face catches the film tail 0.2 below the film plane ([§5](#5-film-holders)).
+- **The washer pockets** — four, 10.6 square and 1.0 deep, at (±41, ±12). A 10 × 10 × 1 steel washer (or a Ø10 × 1 disc) drops into each, flush with the deck: ferrous seats for the holder-base magnets, so the holder snaps down onto the tray and stays put — the same job v4's glued washers did, now without glue.
 
-In the DXF the three holes are at (145, 15), (30, 180) and (170, 180), with the plate centre at (100, 115) — the same pattern as the printed part. **The front hole is deliberately off-centre**; see the run-out corridor below.
+To move it, pinch the flange and lift — the whole cover-stage comes off the box in one piece.
 
-> [!CAUTION]
-> **Never tap the stage holes.** A threaded plate on a threaded stud of the same pitch is a [differential screw](glossary.md#differential-screw): turning the stud advances the plate and retracts it by the same amount, and the height never changes at all. The holes must stay [clearance holes](glossary.md#clearance-hole-vs-tapped-hole) at Ø6.5. If a printed hole comes out tight, open it out — do not cut a thread in it. This was a real specification error, caught before release ([design log entry 14](design-log.md#14-positive-fastening-for-use-on-end)).
-
-**Three-point levelling, positively connected.** Fully threaded M6 × 35 studs screw into the M6 heat-set inserts in the top-cover posts. The stage drops over the studs through its Ø6.5 clearance holes and is clamped between a lower nut, which sets the height, and an upper nut. Levelling means slackening the upper nut and turning the lower one: **front nut = pitch, rear pair = roll.** The full procedure is in [assembly.md](assembly.md#levelling-the-stage).
+**There is no levelling hardware, and that is the design, not an omission.** v4 levelled its film stage against the box on three M6 studs; v5 deletes the studs, the nuts, the inserts and the procedure.
 
 <details>
-<summary>Why three points and not four, and why the front stud is off-centre</summary>
+<summary>Why levelling moved to the camera end</summary>
 
-Three points define a plane exactly. Whatever the three nut heights are, the stage is fully determined, all three studs carry load, and nothing rocks.
+Plastic never carries a thread in this design. FDM-printed threads are weak and creep under load; v4 already avoided them with brass inserts and steel studs, and v5 removes the need for even those.
 
-A fourth point over-constrains it. Unless all four are perfectly coplanar — they never are — a rigid plate touches only three of them, and forcing the fourth into contact means bending the plate. Bending is exactly the flatness you were trying to protect. Four-legged tables wobble; tripods do not.
+The deeper reason: the only parallelism that matters is **film plane to sensor**, and levelling the stage against the box never delivered that directly — after v4's three-nut ritual you still had to square the camera to the stage. v5 keeps only the step that matters. Lay a small mirror on the film stage, look through the viewfinder, and move the camera until the reflection of its own lens is centred: when it is, the sensor is parallel to the mirror, and therefore to the film plane the mirror is lying on ([assembly.md](assembly.md#step-7--level-at-the-camera-the-mirror-method)).
 
-Symmetry is irrelevant to the adjustment itself. The front nut rotates the stage about the rear pair, which is pitch. The rear pair turned against each other is roll. The off-centre front stud only adds a little cross-coupling when a single rear nut is moved, and one more pass converges it.
-
-Because the stage is clamped between two nuts rather than resting on one, hand pressure anywhere on it while threading film cannot tip it — which is also what allows the box to be stood on end.
+Because the mirror lies on the *result* of the whole printed stack — floor, walls, plate, holder — every print tolerance underneath it is absorbed in that single alignment. The box does not need to be flat to a target; the camera meets the film plane wherever it actually is.
 
 </details>
-
-**Stud positions**, relative to the stage centre: front **(45, −100)**, rear **(±70, +65)**. All three studs and their nuts clear the 110 × 170 holder outline by at least 9 mm, and — just as important — they stay out of the [film run-out corridor](glossary.md#run-out-corridor).
-
-Film slides out through both open ends of the holder, so nothing may rise near film height inside **|x| < 31** beyond the holder ends. That is the *half*-width of 120 film, which is about 62 mm wide, so the corridor is 62 mm across. The front stud originally sat at (0, −100), dead centre in that corridor, and was moved sideways for exactly this reason ([design log entry 17](design-log.md#17-the-film-run-out-corridor)). As a result the holders need no cut-outs for any of the hardware.
-
-On top of the stage:
-
-- **Four corner blocks**, at |x| = 40–60 and |y| = 70–90, locating the holder in X and Y. They sit only at the corners so both channel mouths stay completely open — an earlier layout with a block centred on each end blocked the film path entirely.
-- **Four Ø12 steel washers** at (±25, ±75), glued on as magnet seats. Only needed if you will stand the box on end.
-
-The aluminium plate has no printed-in blocks, and there is no separate block STL to export — in `cad/neobox.blend` the blocks are fused into the single stage object. Either separate that geometry in Blender (select the block faces, **P → Selection**) and export it on its own, or cut four L-pieces from 6 mm scrap — the modelled blocks run z 114 – 120, so 5 mm stock leaves them 1 mm short — and glue them at the coordinates above.
 
 ---
 
 ## 5. Film holders
 
-A sliding-channel sandwich in two printed parts. The film strip sits in a 0.4 mm [channel](glossary.md#channel) and is advanced by sliding it sideways; the holder is never opened mid-roll. Only the non-image edges are supported — the image area floats, with 0.4 mm of air below it and about 0.25 mm above. Nothing touches the picture.
+One holder set per format — a base and a lid, both 94 × 120, standing in the cover-stage tray. Changing format means lifting one set off and dropping the other in: the magnets release and re-seat in about five seconds, and nothing else moves. The film is advanced by pulling the strip through the closed holder — it is never opened mid-roll.
 
 | Feature | 135 holder | 120 holder |
 |---|---|---|
-| Outline, both parts | 110 × 170 | 110 × 170 |
-| [Channel](glossary.md#channel) width — the gap the film slides in | 35.4 | 62.0 |
-| [Window](glossary.md#window) — the hole you photograph through | 25 × 37 | 57 × 85 (covers 6×9) |
-| [Land](glossary.md#land) — the ledge each film edge rests on, per side | 4.7 | 2.25 |
-| Channel height | 0.4 | 0.4 |
-| Base plate / lid plate thickness | 3.8 / 3 | 3.8 / 3 |
-| Magnets Ø6 × 2 | 12 per holder | 12 per holder |
-
-The z chain, measured from the **bottom of the holder base** — this is the datum that fixes the film plane:
-
-| Feature | Height above the base bottom |
-|---|---|
-| Base plate top | 3.8 |
-| Land top — **this is the film plane** | 4.2 (0.4 of relief above the plate) |
-| [Rail](glossary.md#rail) top — the 0.8 side wall the lid sits on | 5.0 (0.8 step above the land) |
-| Lid pressure strips, underside | 4.6 → **channel = 0.4** |
-| Lid plate | 5.0 – 8.0 |
-
-The pressure strips have 0.3 mm of side clearance to the rails so the lid cannot wedge.
+| Outline, base and lid | 94 × 120 | 94 × 120 |
+| Base / lid thickness | 5 / 3 | 5 / 3 |
+| [Window](glossary.md#window) — base, lid and insert | 25 × 37 | 57 × 85 (covers 6×9) |
+| Film guide width | 35.4 between the inner rails | 62.0 between the channel walls |
+| Element ledge ([§ below](#the-flattening-system)) | 4.6 high, at x 31 – 32.2 | identical |
+| Magnets Ø8 × 2 | 8 in the base + 8 in the lid | same |
 
 **Windows are deliberately about 0.5 mm oversize per side** against the nominal frame — 135 is nominally 24 × 36, 120 is nominally 56 × 84 — to absorb camera-gate variance between bodies and printer XY tolerance. You crop to the frame in post; see [scanning.md](scanning.md#loading-film).
 
-**Magnets, 12 per holder, in two roles.** The classification matters because only one of them is optional:
+### The flattening system
 
-| Role | Count per holder | Pockets | Needed when |
-|---|---|---|---|
-| Closure | 8 — four attracting pairs | (±45, ±75) in the base, four matching in the lid | **Every build.** Without them the lid is held only by its own weight, which is enough lying flat and not enough on end |
-| Base-to-stage | 4 | (±25, ±75) in the base, pulling onto the steel washers | Only if you will stand the box on end |
+The film plane is the top of the [land](glossary.md#land) — a ledge framing the window **on all four sides** — at 4.2 above the base bottom. Film is 0.12 – 0.18 thick, so its top face lies at 4.32 – 4.38. The next 0.2-grid station above that is **4.6**, and 4.6 is exactly where the element ledge places the underside of whatever rests on it. Those three numbers are the whole system:
 
-**Every holder z-feature is an exact multiple of 0.2 mm and no exposed step is under two layers** — land relief 0.4, rail step 0.8, channel 0.4. The parts therefore print true at the default 0.2 mm [layer height](glossary.md#layer-height); 0.1 mm also divides them, 0.12 and 0.16 do not. The reasoning is [design log entry 18](design-log.md#18-layer-quantised-holders).
+**land 4.2 → film top 4.32 – 4.38 → element underside 4.6.**
 
-Both parts print flat face down with the ridges growing upward, no [supports](glossary.md#supports) anywhere. The base is flat because it presses directly on the diffuser; X and Y location comes from the stage corner blocks, not from the base.
+That makes a 0.4 mm channel over the land on all four sides of the window, and 0.22 – 0.28 mm of free lift for the film anywhere under the element. The element is whatever 64 × 95 × 2 plate you set on the ledge — that is what makes the system interchangeable:
 
-For 6×4.5 and 6×6, add `stl/black-pla/mask-6x6.stl` — 80 × 110 in plan, 1 mm thick — over the 120 window.
+- **Default — the printed pressure-window insert**, one per format. A hard ceiling all round the window perimeter holds lift to ≤ 0.28 there; over the open window the film is unconstrained, but at 1:1 and f/8 the depth of field is about ±0.4 mm, which covers the residual bow.
+- **Upgrade — one anti-Newton glass, 64 × 95 × 2, shared by both formats.** A continuous ceiling over the full frame: ≤ 0.28 mm at any position. Its matte (AN) face goes down, against the glossy film base, so no [Newton rings](glossary.md#newton-rings) form; the emulsion faces the open window below and touches nothing.
+
+**Why a single glass completes the sandwich:** a classical glass carrier needs two glasses because nothing else defines the bottom of the stack. Here the bottom is printed — the land frame supports the film on all four sides at 4.2 — so one glass on top closes the sandwich, with half the glass surfaces to keep clean and no glass at all under the emulsion.
+
+**Why one glass fits both formats:** both bases carry an identical outer-rail profile — the element ledge at x 31 – 32.2, 4.6 high, and an outer step at 32.2 – 33.5, 5.0 high, which locates the element sideways. The same 64 × 95 seat therefore exists in both. In the 135 base, the inner guide rails at ±17.7 – 19.7 that steer the narrow strip would foul a 64-wide plate, so their middle is omitted over |y| < 48, leaving 12 mm guide stubs at each end: the glass drops through the gap onto the ledge, and the stubs bracket it lengthwise.
+
+The element is seated once and then never handled. Advancing film means gripping the leader where it protrudes from the holder and pulling; a bowed section is ironed flat as it slides under the element. The lid's cavity — 64.8 × 96, ceiling at 7.0 — captures the element with 0.4 of float: the lid locates it but never presses on it, so the element's height remains the ledge's printed 4.6, not a force fit. Loading advice: **glass mode, bow up** (the glass flattens it); **insert mode, bow down**. Film that leaves the holder drapes onto the tray flange, whose top sits 0.2 below the film plane — a support, not a pinch; hand-support the tail of a long strip.
+
+> [!CAUTION]
+> **The glass underside sits 0.2 mm from the focal plane, so dust on it lands essentially in focus.** Blow both faces of the glass before seating it — it is the one surface in the box where dust images. The acrylic, by contrast, is self-forgiving ([§3](#3-optical-decisions)).
+
+**Magnets.** Ø8 × 2 N35, press-fitted — no glue anywhere — 8 per part, 32 across both sets. The base magnets stand 0.4 proud of the plate face; the lid magnets sit flush with the lid underside; closed, the faces are 0.8 apart and **never touch**, so the lid always seats on the printed rail tops and the channel height stays a printed number, not a magnet stack-up. Polarity must be paired so that every base–lid position attracts: check each magnet against its mate before pressing it home — a press-fitted magnet does not come back out.
+
+**6×6 and 6×4.5.** For 6×6, lay `mask-6x6.stl` — 94 × 80 × 1, window 56.5 × 56.5 — in the tray *under* the 120 base: the whole set rides 1 mm higher, which is normal; refocus and carry on. 6×4.5 has no dedicated mask — crop in post.
 
 > [!NOTE]
 > **Mounted slides are out of scope.** A cardboard or plastic slide mount is many times thicker than the 0.4 mm channel and cannot enter the holder. NeoBox takes bare film strips only, up to 6×9.
@@ -244,110 +200,105 @@ For 6×4.5 and 6×6, add `stl/black-pla/mask-6x6.stl` — 80 × 110 in plan, 1 m
 
 ## 6. Enclosure
 
-**Main body** — one printed piece. 4 mm floor, 3 mm walls, a Ø12 cable-gland hole in the right wall, and a 190 × 76 access opening in the front wall.
+**Main body** — one printed piece: a 3.0 floor, three 2.4 walls (left, right, rear), and no front wall at all. Four locating tenons, 2.4 × 12 × 2.6, stand on the side-wall tops and engage the cover-stage's corner notches.
 
-**Top cover** — drops over the walls on a 10 mm skirt (the downstand rim around its edge) with a nominal 0.3 mm side clearance per side. The skirt is the location feature *and* the light trap. Three posts underneath carry the M6 heat-set inserts. No screws.
+**What the open front deleted.** v4 needed an access panel because the flash's power dial lived inside a sealed box, a cable gland because wires had to cross a light-tight wall, and a ventilation answer because heat had nowhere to go. In v5 there is nothing inside to reach: flash, receiver and their batteries all sit on the desk, a power change is a fingertip away, the focus light's cable simply walks out through the opening, and the cavity is open air. All three problems left with the front wall.
 
-**Access panel** — a 200 × 78 face with a 186 × 72 × 4 plug behind it and a handle, 16 mm deep overall. The plug enters the 190 × 76 opening with about 2 mm of clearance all round, taken up by a strip of EVA foam wrapped around it: friction holds it, foam blocks the light. Pull it to reach the flash for a power change or new cells. Its top edge clears the cover skirt by 2 mm, so the cover never has to come off.
-
-**Ventilation** — none in the prototype. A speedlight at low duty cycle produces little heat, and every hole is a light leak. If a session runs hot, pull the access panel between rolls. Why the cover is not simply fused into the body is in the [design log](design-log.md#things-deliberately-not-done).
+**No screws, no glue, no tools.** No thread engages plastic anywhere in the design. Every joint is a tenon in a notch, gravity, or a magnet: the cover-stage locates on tenons and holds by weight, the holder holds by magnets on washers, the lid by magnets on the base, the element by gravity in its ledge. The magnets press-fit; the washers drop in loose. Assembly is stacking, in order, and is over in minutes ([assembly.md](assembly.md)).
 
 > [!NOTE]
-> **No screws and no structural glue hold this box together.** The only adhesive anywhere in the build is cyanoacrylate on the holder magnets and, if you fit them, the four steel washers. Nothing structural is glued.
+> **The fastener inventory of the entire build is: zero screws, zero adhesive.** Even v4's two glue points — holder magnets and steel washers — are gone: v5's magnets are interference-fitted and its washers sit in pockets.
+
+> [!WARNING]
+> **A gravity stack must not be carried tilted.** Assembled, the box is aligned, not attached: move it flat across the desk, or move the pieces separately — the cover-stage lifts off by its flange in one motion.
 
 ### Feature location schedule
 
-XY from the centre of the box; z from the outer bottom. Read from `cad/neobox.blend`.
+XY from the centre of the box; z from the desk. Read from `cad/neobox.blend`.
 
-| Feature | XY | z range | Size |
+| Feature | XY | z | Size |
 |---|---|---|---|
-| Aperture, top cover | centred | 92 – 96 | 100 × 120 |
-| Aperture, film stage | centred | 109 – 114 | 100 × 120 |
-| Top-cover posts, 3 | (45, −100), (±70, +65) | 84 – 92 | Ø14 boss, bored for the M6 heat-set insert |
-| Stage clearance holes, 3 | same three positions | 109 – 114 | Ø6.5 |
-| Corner blocks, 4 | \|x\| 40–60, \|y\| 70–90 | 114 – 120 | L-shaped |
-| Steel washers, 4 | (±25, ±75) | on the stage top at 114 | Ø12 |
-| Access opening, front wall | x ±95 | 4 – 80 | 190 × 76 |
-| Cable gland, right wall | y −60 | centred at z 25 | Ø12 |
+| Open front | front face | 3.0 – 73.0 | full cavity cross-section, 120 × 70 |
+| Locating tenons, 4 | side-wall tops | 73.0 – 75.6 | 2.4 × 12 × 2.6 |
+| Corner notches, 4 | cover-stage underside | 2.8 deep | 0.2 vertical clearance over the tenons |
+| Light window | centred | through the plate, 73.0 – 79.0 | 62 × 95 |
+| Acrylic recess | centred | floor 76.6, open to the deck at 79.0 | 69 × 119, 2.4 deep |
+| Washer pockets, 4 | (±41, ±12) | 78.0 – 79.0 | 10.6 square, 1.0 deep |
+| Tray flange | around the 94.6 × 120.6 seat | 79.0 – 83.0 | rim, 4 high |
 
 > [!TIP]
-> The cover's 0.3 mm side clearance is inside normal FDM error: elephant foot, XY expansion and warp all eat into it. If the cover binds or rattles, the remedy is a slicer setting, not a file edit — see [printing.md](printing.md#if-it-came-out-tight-or-loose).
+> The tenon-and-notch fit is sized inside normal FDM error: elephant foot, XY expansion and warp all eat into it. If the cover-stage binds or rattles, the remedy is a slicer setting, not a file edit — see [printing.md](printing.md#if-it-came-out-tight-or-loose).
 
 ---
 
 ## 7. Focus light
 
-A dimmable 5 V USB LED strip, stuck to the inside of a side wall at about **z = 50** — below the aperture and out of the direct line to the film, so it lights the cavity without appearing in it. Fit it by reaching in through the access opening, so you never have to lift the cover and disturb the levelled stage above it.
+Optional: two 120 mm segments of dimmable 5 V USB LED strip, stuck to the inside of the side walls — a dim, always-on positioning light so you can see the frame between pops. The flash overwhelms it completely, so it never needs switching off between frames; switch it off at the end of a roll.
 
-The inline dimmer stays **outside** the box, and the cable leaves through the Ø12 gland. Run it at low brightness continuously while you work: the flash pulse overwhelms it completely, so it does not need switching off between frames. Switch it off at the end of a roll.
-
-**Nothing mains-powered goes inside the enclosure.** Power the strip from a USB power bank or charger.
+The cable leaves through the open front, and the inline dimmer stays outside with it. **Nothing mains-powered goes inside the enclosure** — power the strip from a USB power bank or charger.
 
 ---
 
 ## 8. Flash operation
 
-Manual power only, fixed zoom, normal sync, shoot [raw](glossary.md#raw). [TTL](glossary.md#ttl) metering and [HSS](glossary.md#hss) are useless in a closed box — do not pay for them. The camera stays at or below its [sync speed](glossary.md#sync-speed).
+Manual power only, normal sync, shoot [raw](glossary.md#raw). [TTL](glossary.md#ttl) metering is useless here — the scene never changes, so power is set once, manually — and [HSS](glossary.md#hss) solves a problem that does not exist at or below [sync speed](glossary.md#sync-speed). Do not pay for either.
 
-Inside the closed box ambient light contributes nothing, so **the flash pulse *is* the exposure**: 1/1,000 – 1/20,000 s at working power. That is an effective shutter one to three orders of magnitude shorter than the 1/15 – 1/60 s of real shutter time a continuous LED panel would need at [base ISO](glossary.md#base-iso) 100 and f/8. Vibration, shutter shock and floor rumble stop mattering.
+**The pulse is the exposure.** Even with the open front, in a dim room the ambient light a sync-speed exposure collects is negligible next to the pulse, so the flash's own duration acts as the effective shutter — orders of magnitude shorter than any tripod-safe continuous-light exposure. Vibration, shutter shock and floor rumble stop mattering.
+
+**Shutter speed: 1/125 s is the recommendation.** Focal-plane shutters typically sync at 1/160 – 1/250, and a cheap 2.4 GHz trigger's latency costs about one stop of that — hence 1/125. The symptom of pushing past the real limit is unmistakable: a clean-edged dark band across the frame.
 
 > [!IMPORTANT]
 > **An electronic shutter will usually not fire a flash at all.** If nothing happens when you press the button, that is the first thing to check. Details in [scanning.md](scanning.md#exposure).
 
-Metering start point: ISO 100, f/5.6–f/8, then add 3–5 stops of flash power for the enclosure's loss. **That range is an estimate, not a measurement** — nobody has metered this box. Work from a test frame.
-
-The TT560 has eight full-stop steps of [manual power](glossary.md#manual-power-fraction), 1/1 to 1/128, so fine exposure adjustment is done with the aperture in 1/3 stops, not with the flash. The T1 cannot remote-control power, so a power change means pulling the access panel — in practice it is set once during calibration and left alone. Trigger with the receiver rather than a cable; a sync cable can share the Ø12 gland if you prefer one.
-
-Power sources for the flash, trigger, focus light and camera are tabulated in [assembly.md](assembly.md#power).
+Power changes are a fingertip away — the flash is on the desk in front of you, nothing to open, nothing to disturb. The receiver sits beside it, outside the box, where its radio path is clean and a battery swap touches nothing. In practice power is set once, from a test frame, and left alone; exposure procedure is in [scanning.md](scanning.md#exposure).
 
 ---
 
 ## 9. Repositioning and repeatability
 
-The film plane is fixed at about 120.3 mm for **both** formats. What changes between 135 and 120 is the magnification you need, and therefore the camera height — not the height of the film. Work the camera height out from the film plane plus your lens's [working distance](glossary.md#working-distance); the arithmetic is in [scanning.md](scanning.md#camera-height-and-the-stand).
+The film plane is fixed at z = 83.2 for **both** formats (the 6×6 mask lifts the 120 set by 1 mm — refocus, nothing else changes). What changes between 135 and 120 is the magnification you need, and therefore the camera height — not the height of the film. Work the camera height out from the film plane plus your lens's [working distance](glossary.md#working-distance); the arithmetic is in [scanning.md](scanning.md#camera-height-and-the-stand).
 
-Once the camera is levelled, the box itself is what moves: slide it on the baseboard to centre the frame, rather than re-aiming the camera. When you are satisfied, make the position repeatable — two locating pins on the baseboard, or a pencil outline of the box footprint, either works — and write down the column height you used for each format.
+**Parallelism is one alignment: the mirror method.** Lay a small mirror on the film stage and centre the reflection of your own lens in the viewfinder — the sensor is then parallel to the film plane, and every print tolerance in the stack below has been absorbed in the same move ([assembly.md](assembly.md#step-7--level-at-the-camera-the-mirror-method), and the reasoning in [§4](#4-cover-stage)). This is why the box carries no levelling hardware at all.
 
-**Parallelism first, evenness second.** A flash freezes vibration; it cannot fix a film plane that is not parallel to the sensor. Level the stage on its three nuts, then square the camera to it with the mirror method in [assembly.md](assembly.md#the-mirror-method), then calibrate evenness.
+Once the camera is set, the box is what moves: slide it on the desk to centre the frame rather than re-aiming the camera — the flash just gets nudged back against the opening. When you are satisfied, make the position repeatable — two locating pins on the baseboard or a pencil outline of the footprint, either works — and write down the column height you used for each format.
+
+**Parallelism first, evenness second.** A flash freezes vibration; it cannot fix a film plane that is not parallel to the sensor. Mirror method first, then a [flat-field-corrected](glossary.md#flat-field-correction) test frame to check evenness.
 
 ---
 
 ## 10. 4×5 reservation
 
-**No 4×5 geometry has been derived.** This section is a method, not a specification; earlier drafts carried window and enclosure figures that could not be traced to any source, and they have been removed rather than repeated.
+**No 4×5 geometry has been derived.** This section is a method, not a specification.
 
 If you want to build one:
 
-1. Choose the flash first and recount the height layer by layer from it, exactly as in [§2](#2-dimension-chain). Never fix the outer height and work backwards.
-2. Size the aperture from the frame plus the same clearance the 100 × 120 aperture gives 6×9, then set the interior width from the aperture plus about 50 mm of white wall on each side.
-3. Assume the single-diffuser structure is under real strain at that frame size, and budget the second diffuser and its chamber back in — about 43 mm of height.
-4. Expect to need two flashes or a bare-tube head to fill a cavity that size evenly.
-
-The film-plane offset above the cover, the stage hardware and the levelling scheme all carry over unchanged. The holders do not: a 4×5 sheet needs a different sandwich, derived against the z chain in [§5](#5-film-holders) — land top at 4.2 above the base bottom, channel 0.4, every z-feature a multiple of 0.2, no exposed step under 0.4.
+1. Size the light window from the sheet plus clearance, then the cavity from the window plus a mixing margin on every side. v5's margins — 29 and 27.5 — are this build's values, not established minima; at 4×5 scale expect to iterate, and expect a bigger flash to be needed to fill the larger cavity. Nothing about evenness at that size has been tested.
+2. Keep the flattening sandwich: a four-sided land at 0.4 above the plate face, an element ledge exactly 0.4 above the land, every z-feature on the 0.2 grid, no exposed step under 0.4 ([§5](#5-film-holders)). Sheets load one at a time, so the strip-feed details — pull-through advance, guide stubs — do not carry over; the land-plus-element principle does.
+3. The open-front architecture and the screwless gravity stack carry over unchanged: derive a bigger box, not a different kind of box.
 
 ---
 
 ## 11. Working with the source
 
-`cad/neobox.blend` is the only source of geometry in this repository. The nine STL files and the drawings are generated from it, and a change that reaches the STLs without going through the blend file is lost the next time anyone re-exports.
+`cad/neobox.blend` is the only source of geometry in this repository. The nine STL files are generated from it (the drawing set is pending regeneration for v5), and a change that reaches the STLs without going through the blend file is lost the next time anyone re-exports.
 
 ### Opening the file
 
 | Property | Value |
 |---|---|
-| Blender version | **3.0 or newer.** The file is Zstandard-compressed, which pre-3.0 Blender cannot read at all. The file header records **Blender 5.2 LTS** as the version it was last saved with |
+| Blender version | **3.0 or newer.** The file is Zstandard-compressed, which pre-3.0 Blender cannot read at all. The file header records **Blender 5.2** as the version it was last saved with |
 | Unit system | Metric, unit scale 0.001, length unit millimetres — **one Blender unit is one millimetre** |
-| Scene layout | The whole assembly is modelled in place, on the same z datum this document uses: the outer bottom of the box is z = 0 |
+| Scene layout | The assembly is modelled in place, on the same z datum this document uses: the desk — the outer bottom of the box — is z = 0. The 120 holder set is parked beside the assembly at x = 200 and the 6×6 mask at x = 350 |
 
 ### The collection tree
 
 ```
 Scene Collection
-├── 焦点                       an empty at z 58, used as a view target
+├── 焦点                       an empty, used as a view target
 ├── Collection                 Camera, Light — render scaffolding
-├── NeoBox_混光箱_TT560定稿     34 objects: the enclosure, the stage, the hardware and the mock-ups
-├── 胶片夹_135                  135 holder base + lid, and a film strip mock-up
-├── 胶片夹_120                  120 holder base + lid, parked beside the assembly at x = 200
+├── NeoBox_混光箱_TT560定稿     the enclosure, the cover-stage and the mock-ups
+├── 胶片夹_135                  the 135 holder set, assembled in place
+├── 胶片夹_120                  the 120 holder set, parked at x = 200
 └── 打印小件                    the 6×6 mask, parked at x = 350
 ```
 
@@ -355,33 +306,22 @@ Scene Collection
 
 | STL file | Blender object(s) | Gloss |
 |---|---|---|
-| `main-body.stl` | `主箱_底4mm`, `主箱_左壁`, `主箱_右壁`, `主箱_后壁`, `主箱_前上段`, `主箱_前柱L`, `主箱_前柱R` | **seven objects**: floor, left wall, right wall, rear wall, the lintel over the access opening, and the two front posts beside it |
-| `top-cover.stl` | `顶盖_裙边式_开口100x120` | top cover, skirted, aperture 100 × 120 |
-| `access-panel.stl` | `抽口盖板_插塞式` | access panel, plug type |
-| `film-stage-printed.stl` | `胶片台_打印版_角块一体_200x230x5` | film stage, corner blocks integral — the name says `x5`, the part is 11 mm overall |
-| `film-holder-135-base.stl` | `135夹_底座_110x170_平底` | 135 holder base, flat-bottomed |
-| `film-holder-135-lid.stl` | `135夹_上盖_110x170` | 135 holder lid |
-| `film-holder-120-base.stl` | `120夹_底座_110x170_平底` | 120 holder base, flat-bottomed |
-| `film-holder-120-lid.stl` | `120夹_上盖_110x170` | 120 holder lid |
-| `mask-6x6.stl` | `6x6插片_80x110x1` | optional 6×6 mask |
+| `main-body.stl` | `主箱_底3mm`, `主箱_左壁`, `主箱_右壁`, `主箱_后壁` | **four objects**: floor, left wall, right wall, rear wall — the open front needs no lintel or posts |
+| `cover-stage.stl` | `顶盖台一体_窗62x95` | cover-stage, one piece, window 62 × 95 |
+| `film-holder-135-base.stl` | `135夹_底座_94x120_平底` | 135 holder base, flat-bottomed |
+| `film-holder-135-lid.stl` | `135夹_上盖_94x120` | 135 holder lid |
+| `film-holder-120-base.stl` | `120夹_底座_94x120_平底` | 120 holder base, flat-bottomed |
+| `film-holder-120-lid.stl` | `120夹_上盖_94x120` | 120 holder lid |
+| `pressure-window-135.stl` | `压片窗插片_135_64x95x2` | pressure-window insert, 135 |
+| `pressure-window-120.stl` | `压片窗插片_120_64x95x2` | pressure-window insert, 120 |
+| `mask-6x6.stl` | `6x6插片_94x80x1` | 6×6 mask |
 
 ### What is a mock-up and must never be exported
 
-Twenty-four of the 34 objects in the main collection are there to show fit and light path. None of them is printed:
-
-- `闪光灯_TT560平躺75x190x55` and `闪光灯_发光面` — the flash body and its emitting face
-- `ZENIKO_T1接收器` — the receiver
-- `M6x35全牙螺杆_1…3`, `M6下锁紧螺母_1…3`, `M6锁紧螺母_1…3` — studs, lower nuts, upper nuts
-- `磁吸铁垫片_1…4` — the four steel washers
-- `扩散板_110x130x2_胶片台上` — the opal acrylic diffuser (a bought part, 110 × 130 × 2)
-- `LED灯带_左` and `LED灯带_右` — candidate focus-light positions on either side wall; the BOM buys one strip
-- `光路1…4` — the four light-path arrows
-- `标签_定稿` — a text label
-
-The other ten objects in that collection are the printed parts listed in the mapping table above. One further mock-up sits outside it: `胶片示意_135负片`, a 135 film strip, lives in the `胶片夹_135` collection beside the holder base and lid, and is not exported either.
+Everything else in the scene is a mock-up, there to show fit and light path, and none of it is printed or exported: the flash body and its emitting face, the T1 receiver, the two LED-strip candidates, the four light-path arrows, the 135 and 120 film-strip mock-ups, the opal acrylic, the AN glass, the four steel washers, a text label, and the camera/light/view-target scaffolding.
 
 > [!CAUTION]
-> **Material names do not tell you the filament colour.** The film stage and both holder bases carry `NB_flash`; `NB_black` and `NB_stage` are not assigned to anything; `NB_wood` and `NB_drawer` are left over from sub-assemblies that were deleted. Take colours from [printing.md](printing.md#the-nine-parts), never from the material slot.
+> **Material names do not tell you the filament colour.** The material slots exist for the renders — `NB_alu`, for one, survives from the deleted v4 aluminium stage. Take colours from [printing.md](printing.md#the-nine-parts), never from the material slot.
 
 ### The export convention
 
@@ -389,15 +329,15 @@ Every STL is exported **in assembly world space** — nothing is re-zeroed or re
 
 | File | Where it sits inside the exported file |
 |---|---|
-| `main-body.stl` | z 0 – 92, centred on XY |
-| `top-cover.stl` | z 82 – 96, skirt bottom to plate top |
-| `access-panel.stl` | in the front wall, standing on edge: y −148.5 – −132.5, z 2 – 80 |
-| `film-stage-printed.stl` | z 109 – 120 |
-| `film-holder-135-base.stl` / `-lid.stl` | z 116 – 121 / 120.6 – 124 |
-| `film-holder-120-base.stl` / `-lid.stl` | parked at x 145 – 255, z 0 – 8 |
-| `mask-6x6.stl` | parked at x 310 – 390, z 0 – 1 |
+| `main-body.stl` | z 0 – 75.6, centred on XY |
+| `cover-stage.stl` | z 73 – 83, centred on XY |
+| `film-holder-135-base.stl` / `-lid.stl` | z 79 – 84 / 84 – 87, in place on the assembly |
+| `pressure-window-135.stl` | z 83.6 – 85.6, in place |
+| `film-holder-120-base.stl` / `-lid.stl` | parked at x 153 – 247, z 0 – 5 / 5 – 8 |
+| `pressure-window-120.stl` | parked at x 168 – 232, z 4.6 – 6.6 |
+| `mask-6x6.stl` | parked at x 303 – 397, z 0 – 1 |
 
-A slicer drops each file onto the build plate by its bounding box, which is why four of the nine files — the top cover, the access panel and both holder lids — do not arrive in their print orientation and have to be reoriented after import. The top cover and both lids load upside down; the access panel loads standing on edge (bounding box 200 × 16 × 78) and has to be laid flat. The required rotation is on each part card in [printing.md](printing.md#the-nine-parts).
+A slicer drops each file onto the build plate by its bounding box. Seven of the nine files arrive lying on their print face already; the two holder lids do not — they print **top face down** and have to be flipped after import. The required rotation is on each part card in [printing.md](printing.md#the-nine-parts).
 
 ### Re-exporting
 
@@ -409,15 +349,15 @@ blender --background cad/neobox.blend --python tools/export_stl.py
 
 (`blender` is the binary inside your Blender installation; any 4.x/5.x build works. Run it from the repository root, then `python3 tools/verify_stl.py`.)
 
-The script matters because the printable parts are **modelled as overlapping shells** — the walls sink 0.5 mm into the floor, the corner blocks into the stage, the posts into the top cover. That is deliberate: it keeps the source parametric and easy to edit. For every output file the script copies the source objects, splits them into shells, boolean-unions the shells into one solid (EXACT solver), welds away the boolean slivers, checks the result is watertight, and exports it in assembly world space — the scene itself is never touched. A naive File → Export → STL of the raw objects produces multi-shell files whose internal faces fail the verifier's layer-grid check.
+The script matters because the printable parts are **modelled as overlapping shells** — interpenetrating by 0.2 – 0.5 mm on purpose: the walls sink into the floor, the flange into the cover-stage plate, the rails into the holder bases. That keeps the source parametric and easy to edit. For every output file the script copies the source objects, splits them into shells, boolean-unions the shells into one solid (EXACT solver), welds away the boolean slivers, checks the result is watertight, and exports it in assembly world space — the scene itself is never touched. A naive File → Export → STL of the raw objects produces multi-shell files whose internal faces fail the verifier's layer-grid check.
 
 Regenerated files may differ from the published ones **byte for byte** (triangulation is not stable across Blender versions) while being geometrically identical. The verifier is the referee: bounding box, watertightness, layer grid and minimum step must all pass.
 
 <details>
 <summary>Manual export, if you cannot run the script</summary>
 
-1. **Select the objects** for one output file, using the mapping table above. *Checkpoint:* the number of selected objects matches the table — seven for the main body, one for everything else.
-2. **Make it one solid — every part, not just the main body.** The single-object parts are still multi-shell inside (the top cover alone is eleven shells: plate, skirt strips, posts). Join what needs joining, separate by loose parts, boolean-union the shells, then merge vertices by distance (0.02 mm) and run a limited dissolve (1°) to remove the boolean slivers. *Checkpoint:* the part is one connected shell and the verify script reports no non-manifold edges.
+1. **Select the objects** for one output file, using the mapping table above. *Checkpoint:* the number of selected objects matches the table — four for the main body, one for everything else.
+2. **Make it one solid — every part, not just the main body.** Single-object parts can still be multi-shell inside. Join what needs joining, separate by loose parts, boolean-union the shells, then merge vertices by distance (0.02 mm) and run a limited dissolve (1°) to remove the boolean slivers. *Checkpoint:* the part is one connected shell and the verify script reports no non-manifold edges.
 3. **Export.** File → Export → STL, with *Selection Only*, scale 1.00, forward Y, up Z. No axis conversion: the numbers in the file must be the numbers in Blender. *Checkpoint:* re-importing the file puts the part back exactly where it was.
 4. **Write it to the same path** under `stl/white-pla/` or `stl/black-pla/`, keeping the filename. *Checkpoint:* `git status` shows a modified file, not a new one.
 5. **Verify** before you commit anything. *Checkpoint:* `python3 tools/verify_stl.py` prints `all 9 files pass` and exits 0.
@@ -453,7 +393,7 @@ It walks every `.stl` under `stl/` and checks four invariants per file:
 Horizontal faces smaller than 1 mm² are ignored when hunting for steps, so modelling slivers do not raise false alarms. Output is one line per file plus a total, and the exit status is non-zero if anything fails, so the script can gate a commit:
 
 ```
-ok    film-holder-135-base.stl  [110.0, 170.0, 5.0]  1124 triangles
+ok    film-holder-120-base.stl  [94.0, 120.0, 5.0]  256 triangles
 ...
 all 9 files pass
 ```
@@ -462,17 +402,11 @@ The published bounding boxes live in the `EXPECTED` table at the top of the scri
 
 ### Changing the flash
 
-Work in this order, and re-derive rather than nudge:
-
-- [ ] Measure the new flash lying flat with the head at 90°, and the receiver.
-- [ ] Recompute height, depth and width with the formulas in [§2](#2-dimension-chain).
-- [ ] Resize the floor, the three full walls and the three front-wall pieces to the new interior; the cover, its posts and the access panel follow.
-- [ ] Leave everything above z = 96 alone — the stage, diffuser and holders do not change.
-- [ ] Re-export, verify, and re-check the camera height, because the film plane has moved with the box height.
+In v4 this heading introduced a re-derivation checklist. In v5 there is nothing to change: **no dimension of the box encodes the flash**, so a different flash — or a different trigger — touches neither `cad/neobox.blend` nor the STLs. The new flash needs manual power control and a head that can lie flat and fire level into the open front; after swapping, redo the metering test frame and carry on ([§8](#8-flash-operation)).
 
 ### Other files in `cad/`
 
-- `film-stage-aluminium-3mm.dxf` — the aluminium stage outline, aperture and three holes. Maintained by hand, not exported from the blend file, so a change to the stage has to be applied to both.
+- `film-stage-aluminium-3mm.dxf` — the v4 aluminium film stage, kept for history only. v5 has no film stage: the part was merged into the cover-stage, and nothing in the current design is cut from this file.
 - `legacy-plywood/` — DXFs from the plywood revision, kept for history only. Between them the two files do not describe a complete shell, and nothing in the current design is cut from them.
 
 Contribution rules — what is source, what is generated, and the three-language requirement — are in [CONTRIBUTING.md](../CONTRIBUTING.md#source-of-truth-vs-generated-files).
