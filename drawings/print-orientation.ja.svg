@@ -1,290 +1,91 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="812" viewBox="0 0 1280 812" font-family="Helvetica, Arial, sans-serif">
-<rect width="1280" height="812" fill="#ffffff"/>
-<defs><marker id="up" markerWidth="8" markerHeight="8" refX="4" refY="7" orient="auto"><path d="M4,0 L8,8 L0,8 z" fill="#9aa0a8"/></marker><marker id="sd" markerWidth="8" markerHeight="8" refX="4" refY="7" orient="auto"><path d="M4,8 L8,0 L0,0 z" fill="#e8901f"/></marker></defs>
-<text x="40" y="46" font-size="19" font-weight="bold" fill="#111">プリント方向——どの面をビルドプレートに置くか</text>
-<text x="40" y="70" font-size="12.5" fill="#777">側面図：各パーツを実際に印刷すべき姿勢でプレートに置いた図。サポートが必要なのは 2 点だけ、残りはサポート不要です。</text>
-<line x1="40" y1="98" x2="1240" y2="98" stroke="#ececec"/>
-<rect x="40" y="140" width="396" height="292" fill="none" stroke="#e5e5e5" rx="5"/>
-<circle cx="60" cy="165" r="6" fill="#ffffff" stroke="#8d939c"/>
-<text x="74" y="169" font-size="12.6" font-weight="bold" fill="#111">main-body.stl</text>
-<rect x="115.9" y="188.0" width="10.6" height="108.0" fill="#dfe3e8" stroke="#5c6470" stroke-width="1"/>
-<rect x="349.5" y="188.0" width="10.6" height="108.0" fill="#dfe3e8" stroke="#5c6470" stroke-width="1"/>
-<rect x="126.5" y="188.0" width="223.0" height="18.8" fill="#dfe3e8" stroke="#5c6470" stroke-width="1"/>
-<line x1="54.0" y1="296.0" x2="422.0" y2="296.0" stroke="#b9bec6" stroke-width="3"/>
-<line x1="54" y1="299.0" x2="62" y2="307.0" stroke="#b9bec6" stroke-width="1.4"/>
-<line x1="66" y1="299.0" x2="74" y2="307.0" stroke="#b9bec6" stroke-width="1.4"/>
-<line x1="78" y1="299.0" x2="86" y2="307.0" stroke="#b9bec6" stroke-width="1.4"/>
-<line x1="90" y1="299.0" x2="98" y2="307.0" stroke="#b9bec6" stroke-width="1.4"/>
-<line x1="102" y1="299.0" x2="110" y2="307.0" stroke="#b9bec6" stroke-width="1.4"/>
-<line x1="114" y1="299.0" x2="122" y2="307.0" stroke="#b9bec6" stroke-width="1.4"/>
-<line x1="126" y1="299.0" x2="134" y2="307.0" stroke="#b9bec6" stroke-width="1.4"/>
-<line x1="138" y1="299.0" x2="146" y2="307.0" stroke="#b9bec6" stroke-width="1.4"/>
-<line x1="150" y1="299.0" x2="158" y2="307.0" stroke="#b9bec6" stroke-width="1.4"/>
-<line x1="162" y1="299.0" x2="170" y2="307.0" stroke="#b9bec6" stroke-width="1.4"/>
-<line x1="174" y1="299.0" x2="182" y2="307.0" stroke="#b9bec6" stroke-width="1.4"/>
-<line x1="186" y1="299.0" x2="194" y2="307.0" stroke="#b9bec6" stroke-width="1.4"/>
-<line x1="198" y1="299.0" x2="206" y2="307.0" stroke="#b9bec6" stroke-width="1.4"/>
-<line x1="210" y1="299.0" x2="218" y2="307.0" stroke="#b9bec6" stroke-width="1.4"/>
-<line x1="222" y1="299.0" x2="230" y2="307.0" stroke="#b9bec6" stroke-width="1.4"/>
-<line x1="234" y1="299.0" x2="242" y2="307.0" stroke="#b9bec6" stroke-width="1.4"/>
-<line x1="246" y1="299.0" x2="254" y2="307.0" stroke="#b9bec6" stroke-width="1.4"/>
-<line x1="258" y1="299.0" x2="266" y2="307.0" stroke="#b9bec6" stroke-width="1.4"/>
-<line x1="270" y1="299.0" x2="278" y2="307.0" stroke="#b9bec6" stroke-width="1.4"/>
-<line x1="282" y1="299.0" x2="290" y2="307.0" stroke="#b9bec6" stroke-width="1.4"/>
-<line x1="294" y1="299.0" x2="302" y2="307.0" stroke="#b9bec6" stroke-width="1.4"/>
-<line x1="306" y1="299.0" x2="314" y2="307.0" stroke="#b9bec6" stroke-width="1.4"/>
-<line x1="318" y1="299.0" x2="326" y2="307.0" stroke="#b9bec6" stroke-width="1.4"/>
-<line x1="330" y1="299.0" x2="338" y2="307.0" stroke="#b9bec6" stroke-width="1.4"/>
-<line x1="342" y1="299.0" x2="350" y2="307.0" stroke="#b9bec6" stroke-width="1.4"/>
-<line x1="354" y1="299.0" x2="362" y2="307.0" stroke="#b9bec6" stroke-width="1.4"/>
-<line x1="366" y1="299.0" x2="374" y2="307.0" stroke="#b9bec6" stroke-width="1.4"/>
-<line x1="378" y1="299.0" x2="386" y2="307.0" stroke="#b9bec6" stroke-width="1.4"/>
-<line x1="390" y1="299.0" x2="398" y2="307.0" stroke="#b9bec6" stroke-width="1.4"/>
-<line x1="402" y1="299.0" x2="410" y2="307.0" stroke="#b9bec6" stroke-width="1.4"/>
-<line x1="414" y1="299.0" x2="422" y2="307.0" stroke="#b9bec6" stroke-width="1.4"/>
-<text x="422.0" y="319.0" font-size="10.5" fill="#a4aab2" text-anchor="end">ビルドプレート</text>
-<line x1="238.0" y1="206.8" x2="238.0" y2="293.0" stroke="#e8901f" stroke-width="2" stroke-dasharray="3 3"/>
-<circle cx="238.0" cy="206.8" r="4" fill="none" stroke="#e8901f" stroke-width="2"/>
-<line x1="66" y1="210" x2="66" y2="190" stroke="#9aa0a8" stroke-width="1.2" marker-end="url(#up)"/>
-<text x="75" y="204" font-size="10.5" fill="#9aa0a8">上</text>
-<text x="58" y="336" font-size="11.6" fill="#555">正面図。床を平らにプレートへ、腔の開口を上に。280 × 300 mm 以上のプレートが必要。</text>
-<text x="58" y="361" font-size="11.4" font-weight="bold" fill="#e8901f">▲ サポート必須</text>
-<text x="58" y="379" font-size="11.2" fill="#e8901f">開口上の 190 mm のまぐさは無支持ブリッジです。</text>
-<text x="58" y="395" font-size="11.2" fill="#e8901f">サポートを入れるか、スライス前に 45° 面取りへ改修を。</text>
-<rect x="452" y="140" width="396" height="292" fill="none" stroke="#e5e5e5" rx="5"/>
-<circle cx="472" cy="165" r="6" fill="#ffffff" stroke="#8d939c"/>
-<text x="486" y="169" font-size="12.6" font-weight="bold" fill="#111">top-cover.stl</text>
-<rect x="472.0" y="273.4" width="356.0" height="22.6" fill="#dfe3e8" stroke="#5c6470" stroke-width="1"/>
-<rect x="472.0" y="217.0" width="16.6" height="56.4" fill="#4d5563" stroke="#2b3038" stroke-width="1"/>
-<rect x="811.4" y="217.0" width="16.6" height="56.4" fill="#4d5563" stroke="#2b3038" stroke-width="1"/>
-<rect x="568.2" y="228.3" width="16.6" height="45.1" fill="#c8a24a" stroke="#5c6470" stroke-width="1"/>
-<rect x="641.2" y="228.3" width="16.6" height="45.1" fill="#c8a24a" stroke="#5c6470" stroke-width="1"/>
-<rect x="714.2" y="228.3" width="16.6" height="45.1" fill="#c8a24a" stroke="#5c6470" stroke-width="1"/>
-<line x1="466.0" y1="296.0" x2="834.0" y2="296.0" stroke="#b9bec6" stroke-width="3"/>
-<line x1="466" y1="299.0" x2="474" y2="307.0" stroke="#b9bec6" stroke-width="1.4"/>
-<line x1="478" y1="299.0" x2="486" y2="307.0" stroke="#b9bec6" stroke-width="1.4"/>
-<line x1="490" y1="299.0" x2="498" y2="307.0" stroke="#b9bec6" stroke-width="1.4"/>
-<line x1="502" y1="299.0" x2="510" y2="307.0" stroke="#b9bec6" stroke-width="1.4"/>
-<line x1="514" y1="299.0" x2="522" y2="307.0" stroke="#b9bec6" stroke-width="1.4"/>
-<line x1="526" y1="299.0" x2="534" y2="307.0" stroke="#b9bec6" stroke-width="1.4"/>
-<line x1="538" y1="299.0" x2="546" y2="307.0" stroke="#b9bec6" stroke-width="1.4"/>
-<line x1="550" y1="299.0" x2="558" y2="307.0" stroke="#b9bec6" stroke-width="1.4"/>
-<line x1="562" y1="299.0" x2="570" y2="307.0" stroke="#b9bec6" stroke-width="1.4"/>
-<line x1="574" y1="299.0" x2="582" y2="307.0" stroke="#b9bec6" stroke-width="1.4"/>
-<line x1="586" y1="299.0" x2="594" y2="307.0" stroke="#b9bec6" stroke-width="1.4"/>
-<line x1="598" y1="299.0" x2="606" y2="307.0" stroke="#b9bec6" stroke-width="1.4"/>
-<line x1="610" y1="299.0" x2="618" y2="307.0" stroke="#b9bec6" stroke-width="1.4"/>
-<line x1="622" y1="299.0" x2="630" y2="307.0" stroke="#b9bec6" stroke-width="1.4"/>
-<line x1="634" y1="299.0" x2="642" y2="307.0" stroke="#b9bec6" stroke-width="1.4"/>
-<line x1="646" y1="299.0" x2="654" y2="307.0" stroke="#b9bec6" stroke-width="1.4"/>
-<line x1="658" y1="299.0" x2="666" y2="307.0" stroke="#b9bec6" stroke-width="1.4"/>
-<line x1="670" y1="299.0" x2="678" y2="307.0" stroke="#b9bec6" stroke-width="1.4"/>
-<line x1="682" y1="299.0" x2="690" y2="307.0" stroke="#b9bec6" stroke-width="1.4"/>
-<line x1="694" y1="299.0" x2="702" y2="307.0" stroke="#b9bec6" stroke-width="1.4"/>
-<line x1="706" y1="299.0" x2="714" y2="307.0" stroke="#b9bec6" stroke-width="1.4"/>
-<line x1="718" y1="299.0" x2="726" y2="307.0" stroke="#b9bec6" stroke-width="1.4"/>
-<line x1="730" y1="299.0" x2="738" y2="307.0" stroke="#b9bec6" stroke-width="1.4"/>
-<line x1="742" y1="299.0" x2="750" y2="307.0" stroke="#b9bec6" stroke-width="1.4"/>
-<line x1="754" y1="299.0" x2="762" y2="307.0" stroke="#b9bec6" stroke-width="1.4"/>
-<line x1="766" y1="299.0" x2="774" y2="307.0" stroke="#b9bec6" stroke-width="1.4"/>
-<line x1="778" y1="299.0" x2="786" y2="307.0" stroke="#b9bec6" stroke-width="1.4"/>
-<line x1="790" y1="299.0" x2="798" y2="307.0" stroke="#b9bec6" stroke-width="1.4"/>
-<line x1="802" y1="299.0" x2="810" y2="307.0" stroke="#b9bec6" stroke-width="1.4"/>
-<line x1="814" y1="299.0" x2="822" y2="307.0" stroke="#b9bec6" stroke-width="1.4"/>
-<line x1="826" y1="299.0" x2="834" y2="307.0" stroke="#b9bec6" stroke-width="1.4"/>
-<text x="834.0" y="319.0" font-size="10.5" fill="#a4aab2" text-anchor="end">ビルドプレート</text>
-<text x="832" y="169" font-size="10" fill="#b6bcc4" text-anchor="end">縦スケール ×3</text>
-<line x1="478" y1="210" x2="478" y2="190" stroke="#9aa0a8" stroke-width="1.2" marker-end="url(#up)"/>
-<text x="487" y="204" font-size="10.5" fill="#9aa0a8">上</text>
-<text x="470" y="336" font-size="11.6" fill="#555">使用時とは上下逆：平らな外面をプレートに、スカートと 3 本のポストを上に向けます。</text>
-<text x="470" y="361" font-size="11.4" fill="#3f9268">✓ サポート不要</text>
-<rect x="864" y="140" width="396" height="292" fill="none" stroke="#e5e5e5" rx="5"/>
-<circle cx="884" cy="165" r="6" fill="#ffffff" stroke="#8d939c"/>
-<text x="898" y="169" font-size="12.6" font-weight="bold" fill="#111">access-panel.stl</text>
-<rect x="896.5" y="271.8" width="331.1" height="24.2" fill="#dfe3e8" stroke="#5c6470" stroke-width="1"/>
-<rect x="884.0" y="253.6" width="356.0" height="18.2" fill="#dfe3e8" stroke="#5c6470" stroke-width="1"/>
-<rect x="1012.2" y="199.2" width="99.7" height="54.5" fill="#4d5563" stroke="#2b3038" stroke-width="1"/>
-<line x1="878.0" y1="296.0" x2="1246.0" y2="296.0" stroke="#b9bec6" stroke-width="3"/>
-<line x1="878" y1="299.0" x2="886" y2="307.0" stroke="#b9bec6" stroke-width="1.4"/>
-<line x1="890" y1="299.0" x2="898" y2="307.0" stroke="#b9bec6" stroke-width="1.4"/>
-<line x1="902" y1="299.0" x2="910" y2="307.0" stroke="#b9bec6" stroke-width="1.4"/>
-<line x1="914" y1="299.0" x2="922" y2="307.0" stroke="#b9bec6" stroke-width="1.4"/>
-<line x1="926" y1="299.0" x2="934" y2="307.0" stroke="#b9bec6" stroke-width="1.4"/>
-<line x1="938" y1="299.0" x2="946" y2="307.0" stroke="#b9bec6" stroke-width="1.4"/>
-<line x1="950" y1="299.0" x2="958" y2="307.0" stroke="#b9bec6" stroke-width="1.4"/>
-<line x1="962" y1="299.0" x2="970" y2="307.0" stroke="#b9bec6" stroke-width="1.4"/>
-<line x1="974" y1="299.0" x2="982" y2="307.0" stroke="#b9bec6" stroke-width="1.4"/>
-<line x1="986" y1="299.0" x2="994" y2="307.0" stroke="#b9bec6" stroke-width="1.4"/>
-<line x1="998" y1="299.0" x2="1006" y2="307.0" stroke="#b9bec6" stroke-width="1.4"/>
-<line x1="1010" y1="299.0" x2="1018" y2="307.0" stroke="#b9bec6" stroke-width="1.4"/>
-<line x1="1022" y1="299.0" x2="1030" y2="307.0" stroke="#b9bec6" stroke-width="1.4"/>
-<line x1="1034" y1="299.0" x2="1042" y2="307.0" stroke="#b9bec6" stroke-width="1.4"/>
-<line x1="1046" y1="299.0" x2="1054" y2="307.0" stroke="#b9bec6" stroke-width="1.4"/>
-<line x1="1058" y1="299.0" x2="1066" y2="307.0" stroke="#b9bec6" stroke-width="1.4"/>
-<line x1="1070" y1="299.0" x2="1078" y2="307.0" stroke="#b9bec6" stroke-width="1.4"/>
-<line x1="1082" y1="299.0" x2="1090" y2="307.0" stroke="#b9bec6" stroke-width="1.4"/>
-<line x1="1094" y1="299.0" x2="1102" y2="307.0" stroke="#b9bec6" stroke-width="1.4"/>
-<line x1="1106" y1="299.0" x2="1114" y2="307.0" stroke="#b9bec6" stroke-width="1.4"/>
-<line x1="1118" y1="299.0" x2="1126" y2="307.0" stroke="#b9bec6" stroke-width="1.4"/>
-<line x1="1130" y1="299.0" x2="1138" y2="307.0" stroke="#b9bec6" stroke-width="1.4"/>
-<line x1="1142" y1="299.0" x2="1150" y2="307.0" stroke="#b9bec6" stroke-width="1.4"/>
-<line x1="1154" y1="299.0" x2="1162" y2="307.0" stroke="#b9bec6" stroke-width="1.4"/>
-<line x1="1166" y1="299.0" x2="1174" y2="307.0" stroke="#b9bec6" stroke-width="1.4"/>
-<line x1="1178" y1="299.0" x2="1186" y2="307.0" stroke="#b9bec6" stroke-width="1.4"/>
-<line x1="1190" y1="299.0" x2="1198" y2="307.0" stroke="#b9bec6" stroke-width="1.4"/>
-<line x1="1202" y1="299.0" x2="1210" y2="307.0" stroke="#b9bec6" stroke-width="1.4"/>
-<line x1="1214" y1="299.0" x2="1222" y2="307.0" stroke="#b9bec6" stroke-width="1.4"/>
-<line x1="1226" y1="299.0" x2="1234" y2="307.0" stroke="#b9bec6" stroke-width="1.4"/>
-<line x1="1238" y1="299.0" x2="1246" y2="307.0" stroke="#b9bec6" stroke-width="1.4"/>
-<text x="1246.0" y="319.0" font-size="10.5" fill="#a4aab2" text-anchor="end">ビルドプレート</text>
-<line x1="890.2" y1="271.8" x2="890.2" y2="293.0" stroke="#e8901f" stroke-width="2" stroke-dasharray="3 3"/>
-<circle cx="890.2" cy="271.8" r="4" fill="none" stroke="#e8901f" stroke-width="2"/>
-<line x1="1233.8" y1="271.8" x2="1233.8" y2="293.0" stroke="#e8901f" stroke-width="2" stroke-dasharray="3 3"/>
-<circle cx="1233.8" cy="271.8" r="4" fill="none" stroke="#e8901f" stroke-width="2"/>
-<text x="1244" y="169" font-size="10" fill="#b6bcc4" text-anchor="end">縦スケール ×3</text>
-<line x1="890" y1="210" x2="890" y2="190" stroke="#9aa0a8" stroke-width="1.2" marker-end="url(#up)"/>
-<text x="899" y="204" font-size="10.5" fill="#9aa0a8">上</text>
-<text x="882" y="336" font-size="11.6" fill="#555">プラグ面を下にしてプレートへ、ハンドルを上に。</text>
-<text x="882" y="361" font-size="11.4" font-weight="bold" fill="#e8901f">▲ サポート必須</text>
-<text x="882" y="379" font-size="11.2" fill="#e8901f">面板はプラグより全周 3–7 mm 張り出します。その庇の下にサポートが必要。</text>
-<rect x="40" y="452" width="396" height="292" fill="none" stroke="#e5e5e5" rx="5"/>
-<circle cx="60" cy="477" r="6" fill="#3c424c" stroke="#8d939c"/>
-<text x="74" y="481" font-size="12.6" font-weight="bold" fill="#111">film-holder-135 / -120 · 底と蓋</text>
-<rect x="209.2" y="511.0" width="25.6" height="35.0" fill="#f4f6f8" stroke="#c3c9d1" stroke-width="1" stroke-dasharray="4 3"/>
-<rect x="165.8" y="511.0" width="43.4" height="35.0" fill="#dfe3e8" stroke="#5c6470" stroke-width="1"/>
-<rect x="234.8" y="511.0" width="43.4" height="35.0" fill="#dfe3e8" stroke="#5c6470" stroke-width="1"/>
-<rect x="203.9" y="507.4" width="4.8" height="3.7" fill="#4d5563" stroke="#2b3038" stroke-width="1"/>
-<rect x="235.3" y="507.4" width="4.8" height="3.7" fill="#4d5563" stroke="#2b3038" stroke-width="1"/>
-<rect x="201.9" y="500.0" width="2.0" height="11.0" fill="#4d5563" stroke="#2b3038" stroke-width="1"/>
-<rect x="240.1" y="500.0" width="2.0" height="11.0" fill="#4d5563" stroke="#2b3038" stroke-width="1"/>
-<line x1="155.8" y1="546.0" x2="288.2" y2="546.0" stroke="#b9bec6" stroke-width="3"/>
-<line x1="155" y1="549.0" x2="163" y2="557.0" stroke="#b9bec6" stroke-width="1.4"/>
-<line x1="167" y1="549.0" x2="175" y2="557.0" stroke="#b9bec6" stroke-width="1.4"/>
-<line x1="179" y1="549.0" x2="187" y2="557.0" stroke="#b9bec6" stroke-width="1.4"/>
-<line x1="191" y1="549.0" x2="199" y2="557.0" stroke="#b9bec6" stroke-width="1.4"/>
-<line x1="203" y1="549.0" x2="211" y2="557.0" stroke="#b9bec6" stroke-width="1.4"/>
-<line x1="215" y1="549.0" x2="223" y2="557.0" stroke="#b9bec6" stroke-width="1.4"/>
-<line x1="227" y1="549.0" x2="235" y2="557.0" stroke="#b9bec6" stroke-width="1.4"/>
-<line x1="239" y1="549.0" x2="247" y2="557.0" stroke="#b9bec6" stroke-width="1.4"/>
-<line x1="251" y1="549.0" x2="259" y2="557.0" stroke="#b9bec6" stroke-width="1.4"/>
-<line x1="263" y1="549.0" x2="271" y2="557.0" stroke="#b9bec6" stroke-width="1.4"/>
-<line x1="275" y1="549.0" x2="283" y2="557.0" stroke="#b9bec6" stroke-width="1.4"/>
-<line x1="287" y1="549.0" x2="295" y2="557.0" stroke="#b9bec6" stroke-width="1.4"/>
-<text x="294.2" y="542.0" font-size="11" fill="#8d939c">base</text>
-<rect x="205.7" y="566.7" width="32.7" height="35.3" fill="#f4f6f8" stroke="#c3c9d1" stroke-width="1" stroke-dasharray="4 3"/>
-<rect x="150.1" y="566.7" width="55.6" height="35.3" fill="#dfe3e8" stroke="#5c6470" stroke-width="1"/>
-<rect x="238.3" y="566.7" width="55.6" height="35.3" fill="#dfe3e8" stroke="#5c6470" stroke-width="1"/>
-<rect x="199.3" y="562.0" width="5.8" height="4.7" fill="#4d5563" stroke="#2b3038" stroke-width="1"/>
-<rect x="239.0" y="562.0" width="5.8" height="4.7" fill="#4d5563" stroke="#2b3038" stroke-width="1"/>
-<line x1="140.1" y1="602.0" x2="303.9" y2="602.0" stroke="#b9bec6" stroke-width="3"/>
-<line x1="140" y1="605.0" x2="148" y2="613.0" stroke="#b9bec6" stroke-width="1.4"/>
-<line x1="152" y1="605.0" x2="160" y2="613.0" stroke="#b9bec6" stroke-width="1.4"/>
-<line x1="164" y1="605.0" x2="172" y2="613.0" stroke="#b9bec6" stroke-width="1.4"/>
-<line x1="176" y1="605.0" x2="184" y2="613.0" stroke="#b9bec6" stroke-width="1.4"/>
-<line x1="188" y1="605.0" x2="196" y2="613.0" stroke="#b9bec6" stroke-width="1.4"/>
-<line x1="200" y1="605.0" x2="208" y2="613.0" stroke="#b9bec6" stroke-width="1.4"/>
-<line x1="212" y1="605.0" x2="220" y2="613.0" stroke="#b9bec6" stroke-width="1.4"/>
-<line x1="224" y1="605.0" x2="232" y2="613.0" stroke="#b9bec6" stroke-width="1.4"/>
-<line x1="236" y1="605.0" x2="244" y2="613.0" stroke="#b9bec6" stroke-width="1.4"/>
-<line x1="248" y1="605.0" x2="256" y2="613.0" stroke="#b9bec6" stroke-width="1.4"/>
-<line x1="260" y1="605.0" x2="268" y2="613.0" stroke="#b9bec6" stroke-width="1.4"/>
-<line x1="272" y1="605.0" x2="280" y2="613.0" stroke="#b9bec6" stroke-width="1.4"/>
-<line x1="284" y1="605.0" x2="292" y2="613.0" stroke="#b9bec6" stroke-width="1.4"/>
-<line x1="296" y1="605.0" x2="304" y2="613.0" stroke="#b9bec6" stroke-width="1.4"/>
-<text x="303.9" y="625.0" font-size="10.5" fill="#a4aab2" text-anchor="end">ビルドプレート</text>
-<text x="309.9" y="598.0" font-size="11" fill="#8d939c">lid</text>
-<text x="420" y="481" font-size="10" fill="#b6bcc4" text-anchor="end">縦スケール ×9</text>
-<line x1="66" y1="522" x2="66" y2="502" stroke="#9aa0a8" stroke-width="1.2" marker-end="url(#up)"/>
-<text x="75" y="516" font-size="10.5" fill="#9aa0a8">上</text>
-<text x="58" y="648" font-size="11.6" fill="#555">ホルダー 4 点すべて同じ向き：大きな平面をプレートに、</text>
-<text x="58" y="665" font-size="11.6" fill="#555">レールと押さえ条を上へ。溝面を下にしては絶対にいけません。</text>
-<text x="58" y="690" font-size="11.4" fill="#3f9268">✓ サポート不要</text>
-<rect x="452" y="452" width="396" height="292" fill="none" stroke="#e5e5e5" rx="5"/>
-<circle cx="472" cy="477" r="6" fill="#3c424c" stroke="#8d939c"/>
-<text x="486" y="481" font-size="12.6" font-weight="bold" fill="#111">film-stage-printed.stl</text>
-<rect x="472.0" y="581.7" width="356.0" height="26.3" fill="#dfe3e8" stroke="#5c6470" stroke-width="1"/>
-<rect x="487.5" y="550.1" width="31.0" height="31.6" fill="#4d5563" stroke="#2b3038" stroke-width="1"/>
-<rect x="781.6" y="550.1" width="31.0" height="31.6" fill="#4d5563" stroke="#2b3038" stroke-width="1"/>
-<line x1="466.0" y1="608.0" x2="834.0" y2="608.0" stroke="#b9bec6" stroke-width="3"/>
-<line x1="466" y1="611.0" x2="474" y2="619.0" stroke="#b9bec6" stroke-width="1.4"/>
-<line x1="478" y1="611.0" x2="486" y2="619.0" stroke="#b9bec6" stroke-width="1.4"/>
-<line x1="490" y1="611.0" x2="498" y2="619.0" stroke="#b9bec6" stroke-width="1.4"/>
-<line x1="502" y1="611.0" x2="510" y2="619.0" stroke="#b9bec6" stroke-width="1.4"/>
-<line x1="514" y1="611.0" x2="522" y2="619.0" stroke="#b9bec6" stroke-width="1.4"/>
-<line x1="526" y1="611.0" x2="534" y2="619.0" stroke="#b9bec6" stroke-width="1.4"/>
-<line x1="538" y1="611.0" x2="546" y2="619.0" stroke="#b9bec6" stroke-width="1.4"/>
-<line x1="550" y1="611.0" x2="558" y2="619.0" stroke="#b9bec6" stroke-width="1.4"/>
-<line x1="562" y1="611.0" x2="570" y2="619.0" stroke="#b9bec6" stroke-width="1.4"/>
-<line x1="574" y1="611.0" x2="582" y2="619.0" stroke="#b9bec6" stroke-width="1.4"/>
-<line x1="586" y1="611.0" x2="594" y2="619.0" stroke="#b9bec6" stroke-width="1.4"/>
-<line x1="598" y1="611.0" x2="606" y2="619.0" stroke="#b9bec6" stroke-width="1.4"/>
-<line x1="610" y1="611.0" x2="618" y2="619.0" stroke="#b9bec6" stroke-width="1.4"/>
-<line x1="622" y1="611.0" x2="630" y2="619.0" stroke="#b9bec6" stroke-width="1.4"/>
-<line x1="634" y1="611.0" x2="642" y2="619.0" stroke="#b9bec6" stroke-width="1.4"/>
-<line x1="646" y1="611.0" x2="654" y2="619.0" stroke="#b9bec6" stroke-width="1.4"/>
-<line x1="658" y1="611.0" x2="666" y2="619.0" stroke="#b9bec6" stroke-width="1.4"/>
-<line x1="670" y1="611.0" x2="678" y2="619.0" stroke="#b9bec6" stroke-width="1.4"/>
-<line x1="682" y1="611.0" x2="690" y2="619.0" stroke="#b9bec6" stroke-width="1.4"/>
-<line x1="694" y1="611.0" x2="702" y2="619.0" stroke="#b9bec6" stroke-width="1.4"/>
-<line x1="706" y1="611.0" x2="714" y2="619.0" stroke="#b9bec6" stroke-width="1.4"/>
-<line x1="718" y1="611.0" x2="726" y2="619.0" stroke="#b9bec6" stroke-width="1.4"/>
-<line x1="730" y1="611.0" x2="738" y2="619.0" stroke="#b9bec6" stroke-width="1.4"/>
-<line x1="742" y1="611.0" x2="750" y2="619.0" stroke="#b9bec6" stroke-width="1.4"/>
-<line x1="754" y1="611.0" x2="762" y2="619.0" stroke="#b9bec6" stroke-width="1.4"/>
-<line x1="766" y1="611.0" x2="774" y2="619.0" stroke="#b9bec6" stroke-width="1.4"/>
-<line x1="778" y1="611.0" x2="786" y2="619.0" stroke="#b9bec6" stroke-width="1.4"/>
-<line x1="790" y1="611.0" x2="798" y2="619.0" stroke="#b9bec6" stroke-width="1.4"/>
-<line x1="802" y1="611.0" x2="810" y2="619.0" stroke="#b9bec6" stroke-width="1.4"/>
-<line x1="814" y1="611.0" x2="822" y2="619.0" stroke="#b9bec6" stroke-width="1.4"/>
-<line x1="826" y1="611.0" x2="834" y2="619.0" stroke="#b9bec6" stroke-width="1.4"/>
-<text x="834.0" y="631.0" font-size="10.5" fill="#a4aab2" text-anchor="end">ビルドプレート</text>
-<text x="832" y="481" font-size="10" fill="#b6bcc4" text-anchor="end">縦スケール ×3</text>
-<line x1="478" y1="522" x2="478" y2="502" stroke="#9aa0a8" stroke-width="1.2" marker-end="url(#up)"/>
-<text x="487" y="516" font-size="10.5" fill="#9aa0a8">上</text>
-<text x="470" y="648" font-size="11.6" fill="#555">平面を下に、四隅の L ブロックを上に。ブロックはモデルの一部で欠陥ではありません。</text>
-<text x="470" y="673" font-size="11.4" fill="#3f9268">✓ サポート不要</text>
-<rect x="864" y="452" width="396" height="292" fill="none" stroke="#e5e5e5" rx="5"/>
-<circle cx="884" cy="477" r="6" fill="#3c424c" stroke="#8d939c"/>
-<text x="898" y="481" font-size="12.6" font-weight="bold" fill="#111">mask-6x6.stl</text>
-<rect x="884.0" y="578.9" width="356.0" height="29.1" fill="#dfe3e8" stroke="#5c6470" stroke-width="1"/>
-<line x1="878.0" y1="608.0" x2="1246.0" y2="608.0" stroke="#b9bec6" stroke-width="3"/>
-<line x1="878" y1="611.0" x2="886" y2="619.0" stroke="#b9bec6" stroke-width="1.4"/>
-<line x1="890" y1="611.0" x2="898" y2="619.0" stroke="#b9bec6" stroke-width="1.4"/>
-<line x1="902" y1="611.0" x2="910" y2="619.0" stroke="#b9bec6" stroke-width="1.4"/>
-<line x1="914" y1="611.0" x2="922" y2="619.0" stroke="#b9bec6" stroke-width="1.4"/>
-<line x1="926" y1="611.0" x2="934" y2="619.0" stroke="#b9bec6" stroke-width="1.4"/>
-<line x1="938" y1="611.0" x2="946" y2="619.0" stroke="#b9bec6" stroke-width="1.4"/>
-<line x1="950" y1="611.0" x2="958" y2="619.0" stroke="#b9bec6" stroke-width="1.4"/>
-<line x1="962" y1="611.0" x2="970" y2="619.0" stroke="#b9bec6" stroke-width="1.4"/>
-<line x1="974" y1="611.0" x2="982" y2="619.0" stroke="#b9bec6" stroke-width="1.4"/>
-<line x1="986" y1="611.0" x2="994" y2="619.0" stroke="#b9bec6" stroke-width="1.4"/>
-<line x1="998" y1="611.0" x2="1006" y2="619.0" stroke="#b9bec6" stroke-width="1.4"/>
-<line x1="1010" y1="611.0" x2="1018" y2="619.0" stroke="#b9bec6" stroke-width="1.4"/>
-<line x1="1022" y1="611.0" x2="1030" y2="619.0" stroke="#b9bec6" stroke-width="1.4"/>
-<line x1="1034" y1="611.0" x2="1042" y2="619.0" stroke="#b9bec6" stroke-width="1.4"/>
-<line x1="1046" y1="611.0" x2="1054" y2="619.0" stroke="#b9bec6" stroke-width="1.4"/>
-<line x1="1058" y1="611.0" x2="1066" y2="619.0" stroke="#b9bec6" stroke-width="1.4"/>
-<line x1="1070" y1="611.0" x2="1078" y2="619.0" stroke="#b9bec6" stroke-width="1.4"/>
-<line x1="1082" y1="611.0" x2="1090" y2="619.0" stroke="#b9bec6" stroke-width="1.4"/>
-<line x1="1094" y1="611.0" x2="1102" y2="619.0" stroke="#b9bec6" stroke-width="1.4"/>
-<line x1="1106" y1="611.0" x2="1114" y2="619.0" stroke="#b9bec6" stroke-width="1.4"/>
-<line x1="1118" y1="611.0" x2="1126" y2="619.0" stroke="#b9bec6" stroke-width="1.4"/>
-<line x1="1130" y1="611.0" x2="1138" y2="619.0" stroke="#b9bec6" stroke-width="1.4"/>
-<line x1="1142" y1="611.0" x2="1150" y2="619.0" stroke="#b9bec6" stroke-width="1.4"/>
-<line x1="1154" y1="611.0" x2="1162" y2="619.0" stroke="#b9bec6" stroke-width="1.4"/>
-<line x1="1166" y1="611.0" x2="1174" y2="619.0" stroke="#b9bec6" stroke-width="1.4"/>
-<line x1="1178" y1="611.0" x2="1186" y2="619.0" stroke="#b9bec6" stroke-width="1.4"/>
-<line x1="1190" y1="611.0" x2="1198" y2="619.0" stroke="#b9bec6" stroke-width="1.4"/>
-<line x1="1202" y1="611.0" x2="1210" y2="619.0" stroke="#b9bec6" stroke-width="1.4"/>
-<line x1="1214" y1="611.0" x2="1222" y2="619.0" stroke="#b9bec6" stroke-width="1.4"/>
-<line x1="1226" y1="611.0" x2="1234" y2="619.0" stroke="#b9bec6" stroke-width="1.4"/>
-<line x1="1238" y1="611.0" x2="1246" y2="619.0" stroke="#b9bec6" stroke-width="1.4"/>
-<text x="1246.0" y="631.0" font-size="10.5" fill="#a4aab2" text-anchor="end">ビルドプレート</text>
-<text x="1244" y="481" font-size="10" fill="#b6bcc4" text-anchor="end">縦スケール ×9</text>
-<line x1="890" y1="522" x2="890" y2="502" stroke="#9aa0a8" stroke-width="1.2" marker-end="url(#up)"/>
-<text x="899" y="516" font-size="10.5" fill="#9aa0a8">上</text>
-<text x="882" y="648" font-size="11.6" fill="#555">1 mm の平板、表裏どちらでも可。オプション——6×4.5 / 6×6 のときだけ。</text>
-<text x="882" y="673" font-size="11.4" fill="#3f9268">✓ サポート不要</text>
-<text x="40" y="768" font-size="11.8" fill="#777">グレー＝プリント部品　·　ハッチ＝ビルドプレート　·　オレンジ＝サポートが必要な箇所。</text>
-<text x="40" y="788" font-size="11.8" fill="#777">全パーツ積層 0.2 mm。外壁 ≥ 3。インフィル 15–25%（ステージ ≥ 30%）。つや消しフィラメント——白パーツにシルク／光沢は厳禁。</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="724" viewBox="0 0 960 724">
+<rect x="0.0" y="0.0" width="960.0" height="724.0" fill="#ffffff"/>
+<text x="24.0" y="40.0" font-family="Helvetica, Arial, sans-serif" font-size="21" fill="#111" text-anchor="start" font-weight="bold">プリント方向</text>
+<text x="24.0" y="60.0" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#444" text-anchor="start">NeoBox v5 — 9 点の印刷パーツをビルドプレートに置く向き</text>
+<rect x="24.0" y="72.0" width="912.0" height="30.0" fill="#fbf0dd" stroke="#e8a33d" stroke-width="1.2" rx="5"/>
+<text x="38.0" y="91.0" font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#111" text-anchor="start" font-weight="bold">全 9 パーツともサポート不要 · 積層ピッチは必ず 0.2 mm · 拡大縮小禁止（単位 mm）</text>
+<text x="922.0" y="91.0" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#444" text-anchor="end">黒 PLA</text>
+<circle cx="871.7" cy="87.0" r="5" fill="#3a3a3a" stroke="#444" stroke-width="1"/>
+<text x="851.7" y="91.0" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#444" text-anchor="end">白 PLA</text>
+<circle cx="801.4" cy="87.0" r="5" fill="#ffffff" stroke="#444" stroke-width="1"/>
+<rect x="24.0" y="116.0" width="293.0" height="182.0" fill="#ffffff" stroke="#cccccc" stroke-width="1" rx="6"/>
+<circle cx="42.0" cy="132.0" r="5" fill="#ffffff" stroke="#444" stroke-width="1"/>
+<text x="52.0" y="136.0" font-family="SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#111" text-anchor="start">main-body.stl</text>
+<rect x="42.0" y="244.0" width="257.0" height="6.0" fill="#d9d9d9" stroke="#444" stroke-width="1"/>
+<line x1="89.5" y1="184.0" x2="89.5" y2="233.0" stroke="#e8a33d" stroke-width="2.5"/>
+<polygon points="84.5,232.0 94.5,232.0 89.5,242.0" fill="#e8a33d" stroke="none" stroke-width="0" stroke-linejoin="round"/>
+<polygon points="107.5,244.0 107.5,153.0 109.0,153.0 109.0,149.0 114.0,149.0 114.0,153.0 115.5,153.0 115.5,235.0 249.5,235.0 249.5,153.0 251.0,153.0 251.0,149.0 256.0,149.0 256.0,153.0 257.5,153.0 257.5,244.0" fill="#f2f2f2" stroke="#444" stroke-width="2" stroke-linejoin="round"/>
+<text x="170.5" y="269.0" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#111" text-anchor="middle">平らな底を下、開口を上</text>
+<text x="170.5" y="286.0" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#111" text-anchor="middle">（壁が一面ないのは設計どおり）</text>
+<rect x="333.0" y="116.0" width="293.0" height="182.0" fill="#ffffff" stroke="#cccccc" stroke-width="1" rx="6"/>
+<circle cx="351.0" cy="132.0" r="5" fill="#ffffff" stroke="#444" stroke-width="1"/>
+<text x="361.0" y="136.0" font-family="SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#111" text-anchor="start">cover-stage.stl</text>
+<rect x="351.0" y="244.0" width="257.0" height="6.0" fill="#d9d9d9" stroke="#444" stroke-width="1"/>
+<line x1="398.5" y1="184.0" x2="398.5" y2="233.0" stroke="#e8a33d" stroke-width="2.5"/>
+<polygon points="393.5,232.0 403.5,232.0 398.5,242.0" fill="#e8a33d" stroke="none" stroke-width="0" stroke-linejoin="round"/>
+<polygon points="416.5,244.0 416.5,230.0 430.7,230.0 430.7,221.0 438.7,221.0 438.7,230.0 544.3,230.0 544.3,221.0 552.3,221.0 552.3,230.0 566.5,230.0 566.5,244.0" fill="#f2f2f2" stroke="#444" stroke-width="2" stroke-linejoin="round"/>
+<text x="479.5" y="276.0" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#111" text-anchor="middle">大きな平面を下、枠フランジを上</text>
+<rect x="642.0" y="116.0" width="293.0" height="182.0" fill="#ffffff" stroke="#cccccc" stroke-width="1" rx="6"/>
+<circle cx="660.0" cy="132.0" r="5" fill="#3a3a3a" stroke="#444" stroke-width="1"/>
+<text x="670.0" y="136.0" font-family="SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#111" text-anchor="start">film-holder-135-base.stl</text>
+<rect x="660.0" y="244.0" width="257.0" height="6.0" fill="#d9d9d9" stroke="#444" stroke-width="1"/>
+<line x1="726.1" y1="184.0" x2="726.1" y2="233.0" stroke="#e8a33d" stroke-width="2.5"/>
+<polygon points="721.1,232.0 731.1,232.0 726.1,242.0" fill="#e8a33d" stroke="none" stroke-width="0" stroke-linejoin="round"/>
+<polygon points="744.1,244.0 744.1,233.0 758.8,233.0 758.8,227.0 764.8,227.0 764.8,233.0 775.6,233.0 775.6,229.0 780.6,229.0 780.6,233.0 820.4,233.0 820.4,229.0 825.4,229.0 825.4,233.0 836.2,233.0 836.2,227.0 842.2,227.0 842.2,233.0 856.9,233.0 856.9,244.0" fill="#3a3a3a" stroke="#444" stroke-width="2" stroke-linejoin="round"/>
+<text x="788.5" y="276.0" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#111" text-anchor="middle">平面を下、細長いレールを上</text>
+<rect x="24.0" y="312.0" width="293.0" height="182.0" fill="#ffffff" stroke="#e8a33d" stroke-width="2" rx="6"/>
+<circle cx="42.0" cy="328.0" r="5" fill="#3a3a3a" stroke="#444" stroke-width="1"/>
+<text x="52.0" y="332.0" font-family="SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#111" text-anchor="start">film-holder-135-lid.stl</text>
+<circle cx="295.0" cy="332.0" r="10" fill="#e8a33d"/>
+<text x="295.0" y="337.0" font-family="Helvetica, Arial, sans-serif" font-size="14" fill="#ffffff" text-anchor="middle" font-weight="bold">!</text>
+<rect x="42.0" y="440.0" width="257.0" height="6.0" fill="#d9d9d9" stroke="#444" stroke-width="1"/>
+<line x1="108.1" y1="380.0" x2="108.1" y2="429.0" stroke="#e8a33d" stroke-width="2.5"/>
+<polygon points="103.1,428.0 113.1,428.0 108.1,438.0" fill="#e8a33d" stroke="none" stroke-width="0" stroke-linejoin="round"/>
+<polygon points="126.1,440.0 126.1,427.0 143.6,427.0 143.6,434.0 221.4,434.0 221.4,427.0 238.9,427.0 238.9,440.0" fill="#3a3a3a" stroke="#444" stroke-width="2" stroke-linejoin="round"/>
+<text x="170.5" y="465.0" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#111" text-anchor="middle" font-weight="bold">つるつるの大平面を下、</text>
+<text x="170.5" y="482.0" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#111" text-anchor="middle" font-weight="bold">浅い四角のくぼみを上</text>
+<rect x="333.0" y="312.0" width="293.0" height="182.0" fill="#ffffff" stroke="#cccccc" stroke-width="1" rx="6"/>
+<circle cx="351.0" cy="328.0" r="5" fill="#3a3a3a" stroke="#444" stroke-width="1"/>
+<text x="361.0" y="332.0" font-family="SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#111" text-anchor="start">film-holder-120-base.stl</text>
+<rect x="351.0" y="440.0" width="257.0" height="6.0" fill="#d9d9d9" stroke="#444" stroke-width="1"/>
+<line x1="417.1" y1="380.0" x2="417.1" y2="429.0" stroke="#e8a33d" stroke-width="2.5"/>
+<polygon points="412.1,428.0 422.1,428.0 417.1,438.0" fill="#e8a33d" stroke="none" stroke-width="0" stroke-linejoin="round"/>
+<polygon points="435.1,440.0 435.1,429.0 449.8,429.0 449.8,423.0 455.8,423.0 455.8,429.0 466.6,429.0 466.6,425.0 471.6,425.0 471.6,429.0 511.4,429.0 511.4,425.0 516.4,425.0 516.4,429.0 527.2,429.0 527.2,423.0 533.2,423.0 533.2,429.0 547.9,429.0 547.9,440.0" fill="#3a3a3a" stroke="#444" stroke-width="2" stroke-linejoin="round"/>
+<text x="479.5" y="472.0" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#111" text-anchor="middle">平面を下、細長いレールを上</text>
+<rect x="642.0" y="312.0" width="293.0" height="182.0" fill="#ffffff" stroke="#e8a33d" stroke-width="2" rx="6"/>
+<circle cx="660.0" cy="328.0" r="5" fill="#3a3a3a" stroke="#444" stroke-width="1"/>
+<text x="670.0" y="332.0" font-family="SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#111" text-anchor="start">film-holder-120-lid.stl</text>
+<circle cx="913.0" cy="332.0" r="10" fill="#e8a33d"/>
+<text x="913.0" y="337.0" font-family="Helvetica, Arial, sans-serif" font-size="14" fill="#ffffff" text-anchor="middle" font-weight="bold">!</text>
+<rect x="660.0" y="440.0" width="257.0" height="6.0" fill="#d9d9d9" stroke="#444" stroke-width="1"/>
+<line x1="726.1" y1="380.0" x2="726.1" y2="429.0" stroke="#e8a33d" stroke-width="2.5"/>
+<polygon points="721.1,428.0 731.1,428.0 726.1,438.0" fill="#e8a33d" stroke="none" stroke-width="0" stroke-linejoin="round"/>
+<polygon points="744.1,440.0 744.1,427.0 761.6,427.0 761.6,434.0 839.4,434.0 839.4,427.0 856.9,427.0 856.9,440.0" fill="#3a3a3a" stroke="#444" stroke-width="2" stroke-linejoin="round"/>
+<text x="788.5" y="465.0" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#111" text-anchor="middle" font-weight="bold">つるつるの大平面を下、</text>
+<text x="788.5" y="482.0" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#111" text-anchor="middle" font-weight="bold">浅い四角のくぼみを上</text>
+<rect x="24.0" y="508.0" width="293.0" height="182.0" fill="#ffffff" stroke="#cccccc" stroke-width="1" rx="6"/>
+<circle cx="42.0" cy="524.0" r="5" fill="#3a3a3a" stroke="#444" stroke-width="1"/>
+<text x="52.0" y="528.0" font-family="SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#111" text-anchor="start">pressure-window-135.stl</text>
+<rect x="42.0" y="636.0" width="257.0" height="6.0" fill="#d9d9d9" stroke="#444" stroke-width="1"/>
+<line x1="126.1" y1="576.0" x2="126.1" y2="625.0" stroke="#e8a33d" stroke-width="2.5"/>
+<polygon points="121.1,624.0 131.1,624.0 126.1,634.0" fill="#e8a33d" stroke="none" stroke-width="0" stroke-linejoin="round"/>
+<rect x="144.1" y="629.0" width="76.8" height="7.0" fill="#3a3a3a" stroke="#444" stroke-width="2"/>
+<text x="170.5" y="668.0" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#111" text-anchor="middle">平置き（薄板）</text>
+<rect x="333.0" y="508.0" width="293.0" height="182.0" fill="#ffffff" stroke="#cccccc" stroke-width="1" rx="6"/>
+<circle cx="351.0" cy="524.0" r="5" fill="#3a3a3a" stroke="#444" stroke-width="1"/>
+<text x="361.0" y="528.0" font-family="SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#111" text-anchor="start">pressure-window-120.stl</text>
+<rect x="351.0" y="636.0" width="257.0" height="6.0" fill="#d9d9d9" stroke="#444" stroke-width="1"/>
+<line x1="435.1" y1="576.0" x2="435.1" y2="625.0" stroke="#e8a33d" stroke-width="2.5"/>
+<polygon points="430.1,624.0 440.1,624.0 435.1,634.0" fill="#e8a33d" stroke="none" stroke-width="0" stroke-linejoin="round"/>
+<rect x="453.1" y="629.0" width="76.8" height="7.0" fill="#3a3a3a" stroke="#444" stroke-width="2"/>
+<text x="479.5" y="668.0" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#111" text-anchor="middle">平置き（薄板）</text>
+<rect x="642.0" y="508.0" width="293.0" height="182.0" fill="#ffffff" stroke="#cccccc" stroke-width="1" rx="6"/>
+<circle cx="660.0" cy="524.0" r="5" fill="#3a3a3a" stroke="#444" stroke-width="1"/>
+<text x="670.0" y="528.0" font-family="SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#111" text-anchor="start">mask-6x6.stl</text>
+<rect x="660.0" y="636.0" width="257.0" height="6.0" fill="#d9d9d9" stroke="#444" stroke-width="1"/>
+<line x1="726.1" y1="576.0" x2="726.1" y2="625.0" stroke="#e8a33d" stroke-width="2.5"/>
+<polygon points="721.1,624.0 731.1,624.0 726.1,634.0" fill="#e8a33d" stroke="none" stroke-width="0" stroke-linejoin="round"/>
+<rect x="744.1" y="631.0" width="112.8" height="5.0" fill="#3a3a3a" stroke="#444" stroke-width="2"/>
+<text x="788.5" y="668.0" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#111" text-anchor="middle">平置き（薄板）</text>
+<text x="936.0" y="714.0" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#444" text-anchor="end">NeoBox v5 — 2026-08</text>
 </svg>

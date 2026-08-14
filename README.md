@@ -45,7 +45,7 @@ NeoBox is one half of a scanning rig. It replaces the light table; it does not r
 | Drawings, in English, 简体中文 and 日本語 | A [copy stand](docs/glossary.md#copy-stand), or a tripod with a horizontal or reversible column, that holds the camera squarely above the box |
 | Ten documents covering shopping, printing, building and scanning | The flash itself, plus a trigger set — the transmitter goes on the camera's hot shoe, and the receiver stays outside the box |
 | The committed STL exporter and the geometry verification script | A remote release, and software that does [flat-field correction](docs/glossary.md#flat-field-correction) and negative [inversion](docs/glossary.md#inversion) |
-| A ready-to-send print-shop bundle (still the previous revision; being rebuilt for v5) | The consumables in [Tools and consumables](docs/bom.md#tools-and-consumables) — assembly itself needs no screwdriver, wrench or soldering iron |
+| A ready-to-send print-shop bundle | The consumables in [Tools and consumables](docs/bom.md#tools-and-consumables) — assembly itself needs no screwdriver, wrench or soldering iron |
 
 > [!IMPORTANT]
 > The build cost covers the printed and bought parts only. It excludes the flash, the trigger, the camera, the lens, the stand, the release and the software. If you own none of those, budget for them first — [Getting started](docs/getting-started.md#what-you-must-already-own) itemises the whole list.
@@ -63,8 +63,6 @@ NeoBox is one half of a scanning rig. It replaces the light table; it does not r
 ## How the light works
 
 ![Optical path through NeoBox: the flash fires horizontally into the white cavity, which mixes the light over several diffuse bounces; an opal acrylic diffuser under the film smooths it, the black parts above the diffuser absorb stray light, and the camera photographs the film against the even glow](drawings/optics.svg)
-
-*(The drawing above still shows the previous revision; the drawings are being regenerated for v5.)*
 
 1. **The flash fires sideways into the cavity, never at the film.** It lies flat on the desk with its light face at the fully open front, aimed into the box. The trigger receiver stays outside with it.
 2. **The white cavity does the mixing.** Bare white filament walls and ceiling randomise direction over several diffuse bounces, the way an [integrating cavity](docs/glossary.md#integrating-cavity) does. There is no reflector plate and no internal adjustment hardware.
@@ -127,10 +125,11 @@ flowchart LR
 | [`cad/legacy-plywood/`](cad/legacy-plywood/) | Two DXFs left from the abandoned plywood route. Not a complete build; kept for the record | Historical |
 | [`stl/white-pla/`](stl/white-pla/) | `main-body.stl`, `cover-stage.stl` | Generated |
 | [`stl/black-pla/`](stl/black-pla/) | Four film-holder parts, two pressure-window inserts, and `mask-6x6.stl` | Generated |
-| [`drawings/`](drawings/) | Optical path, cross-section, print orientation, exploded view, capture setup and manufacturing overview, in three languages — still showing the previous revision; regeneration pending | Generated |
+| [`drawings/`](drawings/) | Optical path, cross-section, print orientation, exploded view, capture setup and manufacturing overview, in three languages — regenerated from the generators in `tools/drawings/` | Generated |
 | [`docs/`](docs/) | The documentation set, each file in English, 简体中文 and 日本語 | Source |
-| [`taobao-order/`](taobao-order/) | A bundle for a Chinese print service — still the previous revision; being rebuilt for v5 | Generated |
+| [`taobao-order/`](taobao-order/) | A bundle for a Chinese print service | Generated |
 | [`tools/export_stl.py`](tools/export_stl.py) | The committed exporter — regenerates the nine STL files from `cad/neobox.blend` | Source |
+| [`tools/drawings/`](tools/drawings/) | The drawing generators — regenerate the 18 SVG files under `drawings/` | Source |
 | [`tools/verify_stl.py`](tools/verify_stl.py) | The geometry gate — checks watertightness, the 0.2 mm z-grid and every bounding box | Source |
 
 ## Adapting to a different flash

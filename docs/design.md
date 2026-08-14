@@ -26,8 +26,6 @@ Reference flash: a **NEEWER TT560** speedlight with a **ZENIKO T1** 2.4 GHz trig
 
 ![Cross-section drawing of the NeoBox](../drawings/cross-section.svg)
 
-*The drawing set has not yet been regenerated for v5 — it still shows the previous, closed-box revision. The text below is the authority.*
-
 The stack, desk upward:
 
 **flash lying flat on the desk → the fully open front → white cavity 120 × 150 × 70 → light window 62 × 95 in the cover-stage → opal acrylic 68 × 118 × 2, top face at 78.6 → 4.6 mm of air → film plane at z = 83.2.**
@@ -280,7 +278,7 @@ If you want to build one:
 
 ## 11. Working with the source
 
-`cad/neobox.blend` is the only source of geometry in this repository. The nine STL files are generated from it (the drawing set is pending regeneration for v5), and a change that reaches the STLs without going through the blend file is lost the next time anyone re-exports.
+`cad/neobox.blend` is the only source of geometry in this repository. The nine STL files are generated from it, and a change that reaches the STLs without going through the blend file is lost the next time anyone re-exports.
 
 ### Opening the file
 

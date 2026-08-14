@@ -66,8 +66,6 @@ Thirty-two small, strong magnets still want reading about before you start: [Too
 
 ![One-page manufacturing overview: a section through the box, every printed part with its size and print orientation, and the bought parts](../drawings/manufacturing-overview.svg)
 
-*The drawings are still being regenerated for v5 — for every dimension, the text on this page is authoritative.*
-
 The build is **9 printed parts** — 2 white, 7 black, all of them support-free.
 
 | File | Colour | Footprint (mm) | What it is |

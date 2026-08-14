@@ -45,7 +45,7 @@ NeoBox 只是翻拍装置的一半。它替代的是观片灯板，不是架在�
 | 英文、简体中文、日文三语图纸 | 一台[翻拍台](docs/glossary.zh-CN.md#翻拍台)（copy stand），或者带横臂／可倒装中轴的三脚架，能把相机端端正正架在箱子正上方 |
 | 覆盖采购、打印、装配和翻拍的十份文档 | 闪光灯本身，外加一套引闪器——发射端装在相机热靴上，接收端留在箱外 |
 | 随仓库提交的 STL 导出脚本和几何验证脚本 | 一根快门线，以及能做[平场校正](docs/glossary.zh-CN.md#平场校正)（flat-field correction）和负片[反相](docs/glossary.zh-CN.md#反相)（inversion）的软件 |
-| 一份可发给打印店的打包件（仍是上一版内容，正在按 v5 重建） | [物料清单](docs/bom.zh-CN.md#工具与耗材)里"工具与耗材"一节列的东西——装配本身不需要螺丝刀、扳手或电烙铁 |
+| 一份可发给打印店的打包件 | [物料清单](docs/bom.zh-CN.md#工具与耗材)里"工具与耗材"一节列的东西——装配本身不需要螺丝刀、扳手或电烙铁 |
 
 > [!IMPORTANT]
 > 构建成本只包含打印件和采购件，不含闪光灯、引闪器、相机、镜头、支架、快门线和软件。如果这些你一样都没有，请先给它们留预算——[从这里开始](docs/getting-started.zh-CN.md#你需要自备的器材)把整份清单逐项列了出来。
@@ -63,8 +63,6 @@ NeoBox 只是翻拍装置的一半。它替代的是观片灯板，不是架在�
 ## 光是怎么走的
 
 ![NeoBox 的光路：闪光灯水平射入白色混光腔，混光腔靠数次漫反射把光打匀，胶片下方的乳白亚克力扩散板做最后一道平滑，扩散板以上的黑色零件吸收杂光，相机隔着胶片拍摄这个均匀的发光面](drawings/optics.zh-CN.svg)
-
-*（上图仍是上一版内容；全部图纸正在按 v5 重新生成。）*
 
 1. **闪光灯朝腔内打，绝不对着胶片。** 它平躺在桌面上，发光面贴着完全敞开的前口，向箱内发光。引闪接收端跟它一起留在箱外。
 2. **混光交给白色混光腔。** 裸露的白色耗材壁面和顶面经数次漫反射把光的方向彻底打乱，这正是[混光腔](docs/glossary.zh-CN.md#混光腔)（integrating cavity）的工作方式。箱内没有反射板，也没有任何可调硬件。
@@ -127,10 +125,11 @@ flowchart LR
 | [`cad/legacy-plywood/`](cad/legacy-plywood/) | 已放弃的胶合板路线留下的两个 DXF。不构成完整方案，仅作存档 | 历史存档 |
 | [`stl/white-pla/`](stl/white-pla/) | `main-body.stl`、`cover-stage.stl` | 生成物 |
 | [`stl/black-pla/`](stl/black-pla/) | 四个胶片夹零件、两个压片窗插片，以及 `mask-6x6.stl` | 生成物 |
-| [`drawings/`](drawings/) | 光路、剖面、打印方向、爆炸图、拍摄布置和制造总图，三种语言——仍是上一版内容，等待重新生成 | 生成物 |
+| [`drawings/`](drawings/) | 光路、剖面、打印方向、爆炸图、拍摄布置和制造总图，三种语言——由 `tools/drawings/` 里的生成器生成 | 生成物 |
 | [`docs/`](docs/) | 文档集，每份都有英文、简体中文和日文三个版本 | 源文件 |
-| [`taobao-order/`](taobao-order/) | 面向中国打印服务商的打包件——仍是上一版内容，正在按 v5 重建 | 生成物 |
+| [`taobao-order/`](taobao-order/) | 面向中国打印服务商的打包件 | 生成物 |
 | [`tools/export_stl.py`](tools/export_stl.py) | 随仓库提交的导出脚本——从 `cad/neobox.blend` 重新生成九个 STL 文件 | 源文件 |
+| [`tools/drawings/`](tools/drawings/) | 图纸生成器——重新生成 `drawings/` 下的 18 张 SVG | 源文件 |
 | [`tools/verify_stl.py`](tools/verify_stl.py) | 几何关卡——检查水密性、0.2 mm 的 z 向栅格，以及每一个包围盒 | 源文件 |
 
 ## 换用其他闪光灯

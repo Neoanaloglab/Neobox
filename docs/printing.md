@@ -14,7 +14,7 @@ Nine STL files: **eight for the default build plus one optional 6×6 mask**. Two
 > Never let a slicer scale these files. "Scale to fit the build plate" is the single most common way a print order goes wrong. The files are already 1:1, and every acceptance check below assumes they stayed that way.
 
 > [!NOTE]
-> This design has not been printed — nothing on this page comes from a machine. The geometry is verified in CAD (`cad/neobox.blend` is the authority). The SVG drawings in this repository still show the previous v4 design and are being regenerated: take every number and every orientation from the text on this page, not from the figures.
+> This design has not been printed — nothing on this page comes from a machine. The geometry is verified in CAD (`cad/neobox.blend` is the authority).
 
 ---
 
