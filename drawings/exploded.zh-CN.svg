@@ -24,7 +24,7 @@
 <line x1="324.0" y1="653.0" x2="337.0" y2="648.0" stroke="#e8a33d" stroke-width="1.6"/>
 <line x1="324.0" y1="670.0" x2="337.0" y2="678.0" stroke="#e8a33d" stroke-width="1.6"/>
 <text x="35.0" y="714.0" font-size="13" fill="#111">闪光灯平躺桌面，灯头怼住箱口。</text>
-<text x="35.0" y="733.0" font-size="13" fill="#111">接收器随灯留在箱外——不装进任何东西。</text>
+<text x="35.0" y="733.0" font-size="13" fill="#111">接收器随灯留在箱外，不装进任何东西。</text>
 <polygon points="340.0,540.8 340.0,528.2 262.0,484.6 262.0,497.1" fill="#e3e3e3" stroke="#444" stroke-width="1.2"/><polygon points="340.0,528.2 533.5,528.2 455.5,484.6 262.0,484.6" fill="#fafafa" stroke="#444" stroke-width="1.2"/><polygon points="340.0,540.8 533.5,540.8 533.5,528.2 340.0,528.2" fill="#f2f2f2" stroke="#444" stroke-width="2"/>
 <rect x="342.0" y="537.2" width="15.0" height="3.5" fill="none" stroke="#777" stroke-width="1" stroke-dasharray="3,3"/>
 <rect x="516.5" y="537.2" width="15.0" height="3.5" fill="none" stroke="#777" stroke-width="1" stroke-dasharray="3,3"/>
@@ -159,9 +159,9 @@
 <circle cx="652.0" cy="290.0" r="9" fill="#fff" stroke="#444" stroke-width="1.5"/><text x="652.0" y="294.3" font-size="12" text-anchor="middle" font-weight="bold" fill="#111">6</text>
 <text x="668.0" y="294.0" font-size="13" fill="#111">胶片条放入通道，两端伸出夹外。</text>
 <circle cx="652.0" cy="320.0" r="9" fill="#fff" stroke="#444" stroke-width="1.5"/><text x="652.0" y="324.3" font-size="12" text-anchor="middle" font-weight="bold" fill="#111">7</text>
-<text x="668.0" y="324.0" font-size="13" fill="#111">压片元件 64×95 搁上 4.6mm 元件台阶——</text>
+<text x="668.0" y="324.0" font-size="13" fill="#111">压片元件 64×95 搁上 4.6mm 元件台阶：</text>
 <text x="668.0" y="342.0" font-size="13" fill="#111">压片窗插片或防牛顿环玻璃二选一。</text>
 <circle cx="652.0" cy="368.0" r="9" fill="#fff" stroke="#444" stroke-width="1.5"/><text x="652.0" y="372.3" font-size="12" text-anchor="middle" font-weight="bold" fill="#111">8</text>
-<text x="668.0" y="372.0" font-size="13" fill="#111">磁吸上盖合上即完成——无螺丝、无工具。</text>
+<text x="668.0" y="372.0" font-size="13" fill="#111">磁吸上盖合上即完成：无螺丝、无工具。</text>
 <text x="640.0" y="408.0" font-size="12" fill="#777">图示为 135 幅面夹；120 幅面装配方式相同。</text>
 </g></svg>

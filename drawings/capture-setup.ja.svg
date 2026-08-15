@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="980" height="720" viewBox="0 0 980 720" font-family="Helvetica, Arial, sans-serif">
 <rect x="0" y="0" width="980" height="720" fill="#ffffff"/>
-<text x="40" y="42" font-size="20" fill="#111" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-weight="bold">撮影セットアップ —— 全体配置（側面図）</text>
+<text x="40" y="42" font-size="20" fill="#111" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-weight="bold">撮影セットアップ：全体配置（側面図）</text>
 <text x="40" y="66" font-size="12.5" fill="#777" text-anchor="start" font-family="Helvetica, Arial, sans-serif">ストロボは横置きで発光部をオープンフロント（前面開口）に密着、2.4Gレシーバーは箱外のまま。カメラはコピースタンドで真下向き。単位：mm。</text>
 <line x1="60" y1="640" x2="950" y2="640" stroke="#444" stroke-width="2"/>
 <line x1="74" y1="642" x2="65" y2="652" stroke="#aaa" stroke-width="1"/>
@@ -99,13 +99,13 @@
 <text x="54" y="114" font-size="11.5" fill="#777" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-weight="bold">カメラ設定</text>
 <text x="54" y="136" font-size="14" fill="#111" text-anchor="start" font-family="Menlo, Consolas, 'Courier New', monospace">ISO 100 · f/8 · 1/125 s</text>
 <text x="54" y="156" font-size="14" fill="#111" text-anchor="start" font-family="Menlo, Consolas, 'Courier New', monospace">ストロボ：マニュアル発光</text>
-<text x="40" y="184" font-size="11" fill="#777" text-anchor="start" font-family="Helvetica, Arial, sans-serif">安価な2.4Gトリガーは同調を約1段食う——1/125 s のままでよい</text>
+<text x="40" y="184" font-size="11" fill="#777" text-anchor="start" font-family="Helvetica, Arial, sans-serif">安価な2.4Gトリガーは同調を約1段食うので 1/125 s のままでよい</text>
 <text x="40" y="262" font-size="13" fill="#111" text-anchor="start" font-family="Helvetica, Arial, sans-serif">ミラー調整法：小さな鏡をホルダーの上に置き、</text>
 <text x="40" y="280" font-size="13" fill="#111" text-anchor="start" font-family="Helvetica, Arial, sans-serif">ファインダーでレンズの映り込みを中央に（一度だけ）</text>
 <polyline points="372,257.5 610,257.5 610,456" fill="none" stroke="#444" stroke-width="1"/><circle cx="610" cy="456" r="2.2" fill="#444"/>
-<text x="40" y="322" font-size="13" fill="#111" text-anchor="start" font-family="Helvetica, Arial, sans-serif">コマ送り：フィルムをそのまま引き抜く——</text>
+<text x="40" y="322" font-size="13" fill="#111" text-anchor="start" font-family="Helvetica, Arial, sans-serif">コマ送り：フィルムをそのまま引き抜く。</text>
 <text x="40" y="340" font-size="13" fill="#111" text-anchor="start" font-family="Helvetica, Arial, sans-serif">フタも押さえ部品も動かさない</text>
-<polyline points="307,317.5 526,317.5 526,468" fill="none" stroke="#444" stroke-width="1"/><circle cx="526" cy="468" r="2.2" fill="#444"/>
+<polyline points="294,317.5 526,317.5 526,468" fill="none" stroke="#444" stroke-width="1"/><circle cx="526" cy="468" r="2.2" fill="#444"/>
 <text x="40" y="382" font-size="13" fill="#111" text-anchor="start" font-family="Helvetica, Arial, sans-serif">薄暗い部屋で撮影する。</text>
 <text x="40" y="400" font-size="13" fill="#111" text-anchor="start" font-family="Helvetica, Arial, sans-serif">天井照明を前面開口に直射させない</text>
 <polyline points="255,377.5 512,377.5 512,501" fill="none" stroke="#444" stroke-width="1"/><circle cx="512" cy="501" r="2.2" fill="#444"/>

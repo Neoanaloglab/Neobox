@@ -24,7 +24,7 @@
 <line x1="324.0" y1="653.0" x2="337.0" y2="648.0" stroke="#e8a33d" stroke-width="1.6"/>
 <line x1="324.0" y1="670.0" x2="337.0" y2="678.0" stroke="#e8a33d" stroke-width="1.6"/>
 <text x="35.0" y="714.0" font-size="13" fill="#111">ストロボは机に平置きし、発光部を箱口に当てる。</text>
-<text x="35.0" y="733.0" font-size="13" fill="#111">レシーバーも箱の外に置く——中には何も入れない。</text>
+<text x="35.0" y="733.0" font-size="13" fill="#111">レシーバーも箱の外に置く。中には何も入れない。</text>
 <polygon points="340.0,540.8 340.0,528.2 262.0,484.6 262.0,497.1" fill="#e3e3e3" stroke="#444" stroke-width="1.2"/><polygon points="340.0,528.2 533.5,528.2 455.5,484.6 262.0,484.6" fill="#fafafa" stroke="#444" stroke-width="1.2"/><polygon points="340.0,540.8 533.5,540.8 533.5,528.2 340.0,528.2" fill="#f2f2f2" stroke="#444" stroke-width="2"/>
 <rect x="342.0" y="537.2" width="15.0" height="3.5" fill="none" stroke="#777" stroke-width="1" stroke-dasharray="3,3"/>
 <rect x="516.5" y="537.2" width="15.0" height="3.5" fill="none" stroke="#777" stroke-width="1" stroke-dasharray="3,3"/>
@@ -163,10 +163,10 @@
 <text x="668.0" y="348.0" font-size="13" fill="#111">フィルムを通路に載せ、両端を外に出す。</text>
 <circle cx="652.0" cy="374.0" r="9" fill="#fff" stroke="#444" stroke-width="1.5"/><text x="652.0" y="378.3" font-size="12" text-anchor="middle" font-weight="bold" fill="#111">7</text>
 <text x="668.0" y="378.0" font-size="13" fill="#111">押さえエレメント 64×95 をエレメント段</text>
-<text x="668.0" y="396.0" font-size="13" fill="#111">（4.6mm）に載せる——押さえ窓インサートか</text>
+<text x="668.0" y="396.0" font-size="13" fill="#111">（4.6mm）に載せる。押さえ窓インサートか</text>
 <text x="668.0" y="414.0" font-size="13" fill="#111">アンチニュートンガラスの二択。</text>
 <circle cx="652.0" cy="440.0" r="9" fill="#fff" stroke="#444" stroke-width="1.5"/><text x="652.0" y="444.3" font-size="12" text-anchor="middle" font-weight="bold" fill="#111">8</text>
-<text x="668.0" y="444.0" font-size="13" fill="#111">マグネットの上蓋を閉じて完成——</text>
+<text x="668.0" y="444.0" font-size="13" fill="#111">マグネットの上蓋を閉じて完成：</text>
 <text x="668.0" y="462.0" font-size="13" fill="#111">ネジなし・工具なし。</text>
 <text x="640.0" y="498.0" font-size="12" fill="#777">図は 135 用ホルダー。120 用も同じ手順。</text>
 </g></svg>

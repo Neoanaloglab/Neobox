@@ -2,7 +2,7 @@
 
 **English** · [简体中文](README.zh-CN.md) · [日本語](README.ja.md)
 
-> An open-hardware, 3D-printable desktop flash light box for camera scanning 135 and 120 film — about 125 × 155 × 83 mm, nine printed parts at roughly 300–350 g, assembled with magnets alone: no screws, no threads, no tools. Any hot-shoe flash lies at the fully open front and fires in; an insert platform keeps the film flat, with a single universal anti-Newton glass as the optional upgrade.
+> An open-hardware, 3D-printable desktop flash light box for camera scanning 135 and 120 film: about 125 × 155 × 83 mm, nine printed parts at roughly 300–350 g, assembled with magnets alone: no screws, no threads, no tools. Any hot-shoe flash lies at the fully open front and fires in; an insert platform keeps the film flat, with a single universal anti-Newton glass as the optional upgrade.
 
 **Contents:** [What NeoBox is](#what-neobox-is) · [What you get, and what you must already own](#what-you-get-and-what-you-must-already-own) · [Why a flash](#why-a-flash) · [How the light works](#how-the-light-works) · [Documentation](#documentation) · [Quick start](#quick-start) · [Repository layout](#repository-layout) · [Adapting to a different flash](#adapting-to-a-different-flash) · [Status](#status) · [Licence and credits](#licence-and-credits)
 
@@ -13,25 +13,25 @@
 
 ## What NeoBox is
 
-NeoBox is a white box, fully open at the front, that turns one bare speedlight into an evenly glowing surface, so you can photograph film with a digital camera instead of a scanner — a technique called [camera scanning](docs/glossary.md#camera-scanning) (also DSLR scanning).
+NeoBox is a white box, fully open at the front, that turns one bare speedlight into an evenly glowing surface, so you can photograph film with a digital camera instead of a scanner, a technique called [camera scanning](docs/glossary.md#camera-scanning) (also DSLR scanning).
 
 The flash lies flat on the desk with its head at the open front and fires **horizontally** into the white cavity; light reaches the film only after several diffuse bounces and one opal acrylic diffuser.
 
-Because the flash stays outside the enclosure, the box only has to contain the mixing cavity and the film platform — which is why nine printed parts, roughly 300–350 g of PLA and a 160 × 160 mm build plate are enough.
+Because the flash stays outside the enclosure, the box only has to contain the mixing cavity and the film platform, which is why nine printed parts, roughly 300–350 g of PLA and a 160 × 160 mm build plate are enough.
 
 | Item | Specification |
 |---|---|
 | Outer size | ≈ 125 × 155 × 83 mm (footprint 124.8 × 154.8 mm; 87 mm to the top of a seated film holder) |
 | Formats | 135 and 120 up to 6×9; 6×6 via a mask insert; 6×4.5 by cropping in post |
-| Printed parts | 9 STL files — 2 white, 7 black, including the 6×6 mask insert; ≈ 300–350 g; all support-free |
+| Printed parts | 9 STL files (2 white, 7 black, including the 6×6 mask insert); ≈ 300–350 g; all support-free |
 | Bought parts | 1 opal acrylic diffuser, 32 Ø8 × 2 mm magnets, 4 steel washers; optional: 1 anti-Newton glass, 1 USB LED strip, 1 flocking sheet |
 | Enclosure | A one-piece main body with a fully open front, and a cover-stage that drops on over four locating tenons |
 | Diffusion | Single opal acrylic diffuser, 68 × 118 × 2 mm, under a 62 × 95 mm light window, 4.6 mm below the film |
 | Film flatness | Insert platform: a 4.6 mm element ledge in the holder base carries a printed pressure-window insert, upgradable to one universal 64 × 95 × 2 mm anti-Newton glass |
 | Film holders | Sliding-channel holders for 135 and 120, closed by Ø8 × 2 magnets, swapped by lifting one off and setting the other down |
-| Film plane | 83.2 mm above the desk — identical for both formats |
+| Film plane | 83.2 mm above the desk, identical for both formats |
 | Light source | Any hot-shoe flash with manual power, lying flat at the open front; reference build is a NEEWER TT560 with a ZENIKO T1 trigger set |
-| Assembly | No screws, no threads, no tools — magnets and gravity only; levelling is done on the camera side with a small mirror |
+| Assembly | No screws, no threads, no tools; magnets and gravity only; levelling is done on the camera side with a small mirror |
 | Licence | MIT |
 
 ## What you get, and what you must already own
@@ -40,15 +40,15 @@ NeoBox is one half of a scanning rig. It replaces the light table; it does not r
 
 | This repository gives you | You must already own or buy |
 |---|---|
-| 9 STL files — 2 white, 7 black, every one printing support-free on a flat face | A camera body with manual exposure and raw capture (mirrorless or DSLR) |
-| The Blender source `cad/neobox.blend`, the authoritative geometry | A macro-capable lens — one 1:1 macro lens covers every format in this project |
+| 9 STL files (2 white, 7 black), every one printing support-free on a flat face | A camera body with manual exposure and raw capture (mirrorless or DSLR) |
+| The Blender source `cad/neobox.blend`, the authoritative geometry | A macro-capable lens; one 1:1 macro lens covers every format in this project |
 | Drawings, in English, 简体中文 and 日本語 | A [copy stand](docs/glossary.md#copy-stand), or a tripod with a horizontal or reversible column, that holds the camera squarely above the box |
-| Ten documents covering shopping, printing, building and scanning | The flash itself, plus a trigger set — the transmitter goes on the camera's hot shoe, and the receiver stays outside the box |
+| Ten documents covering shopping, printing, building and scanning | The flash itself, plus a trigger set: the transmitter goes on the camera's hot shoe, and the receiver stays outside the box |
 | The committed STL exporter and the geometry verification script | A remote release, and software that does [flat-field correction](docs/glossary.md#flat-field-correction) and negative [inversion](docs/glossary.md#inversion) |
-| A ready-to-send print-shop bundle | The consumables in [Tools and consumables](docs/bom.md#tools-and-consumables) — assembly itself needs no screwdriver, wrench or soldering iron |
+| A ready-to-send print-shop bundle | The consumables in [Tools and consumables](docs/bom.md#tools-and-consumables); assembly itself needs no screwdriver, wrench or soldering iron |
 
 > [!IMPORTANT]
-> The build cost covers the printed and bought parts only. It excludes the flash, the trigger, the camera, the lens, the stand, the release and the software. If you own none of those, budget for them first — [Getting started](docs/getting-started.md#what-you-must-already-own) itemises the whole list.
+> The build cost covers the printed and bought parts only. It excludes the flash, the trigger, the camera, the lens, the stand, the release and the software. If you own none of those, budget for them first; [Getting started](docs/getting-started.md#what-you-must-already-own) itemises the whole list.
 
 ## Why a flash
 
@@ -78,9 +78,9 @@ The precedent is commercial. Ricoh's [PENTAX FILM DUPLICATOR](https://ricohimagi
 
 1. **The flash fires sideways into the cavity, never at the film.** It lies flat on the desk with its light face at the fully open front, aimed into the box. The trigger receiver stays outside with it.
 2. **The white cavity does the mixing.** Bare white filament walls and ceiling randomise direction over several diffuse bounces, the way an [integrating cavity](docs/glossary.md#integrating-cavity) does. There is no reflector plate and no internal adjustment hardware.
-3. **One opal acrylic diffuser does the smoothing.** A 68 × 118 × 2 mm diffuser sits in a shallow recess in the cover-stage under the 62 × 95 mm light window, 4.6 mm below the film. Dust on it never images, because the diffuser itself is the glowing surface — wipe it occasionally and move on.
+3. **One opal acrylic diffuser does the smoothing.** A 68 × 118 × 2 mm diffuser sits in a shallow recess in the cover-stage under the 62 × 95 mm light window, 4.6 mm below the film. Dust on it never images, because the diffuser itself is the glowing surface; wipe it occasionally and move on.
 4. **Everything above the diffuser is black.** The holders, inserts and mask print in black filament, and an optional flocking sheet on the stage face kills the last of the glare, so stray light is absorbed instead of veiling the image.
-5. **Nothing touches the image area.** The film rides on narrow lands along its non-image edges, under a pressure element seated on the 4.6 mm element ledge, leaving a 0.4 mm channel across the full frame. With the printed pressure-window insert any bow stays within 0.28 mm — inside the depth of field at 1:1 and f/8 — and the optional [anti-Newton](docs/glossary.md#newton-rings) glass caps the whole frame continuously without ringing. Frames advance by pulling the strip through, so the holder is never opened mid-roll.
+5. **Nothing touches the image area.** The film rides on narrow lands along its non-image edges, under a pressure element seated on the 4.6 mm element ledge, leaving a 0.4 mm channel across the full frame. With the printed pressure-window insert any bow stays within 0.28 mm (inside the depth of field at 1:1 and f/8), and the optional [anti-Newton](docs/glossary.md#newton-rings) glass caps the whole frame continuously without ringing. Frames advance by pulling the strip through, so the holder is never opened mid-roll.
 
 <details>
 <summary>Why the flash stays outside the box</summary>
@@ -119,39 +119,39 @@ flowchart LR
 
 ## Quick start
 
-- [ ] **1. Check that it suits you** — what you must already own, and the honest timeline. → [Getting started](docs/getting-started.md#getting-started)
-- [ ] **2. Buy** — one opal acrylic diffuser cut to 68 × 118 × 2 mm, 32 Ø8 × 2 mm N35 magnets, 4 steel washers, and optionally one 64 × 95 × 2 mm anti-Newton glass, a USB LED strip and a flocking sheet. → [Bill of materials](docs/bom.md#tools-and-consumables)
-- [ ] **3. Print** — 9 STL files in two colours (2 white, 7 black), plain PLA, no supports; every part prints on a flat face. The white filament must be **matte**: silk or glossy white keeps specular reflections alive in the cavity. → [3D printing](docs/printing.md#printing)
-- [ ] **4. Assemble and calibrate** — press in the magnets, stack the parts; no screws, no tools. Then set a small mirror on the stage and centre the lens's own reflection in the viewfinder: the sensor is now parallel to the film plane. → [Assembly](docs/assembly.md#assembly)
-- [ ] **5. Scan** — focus on the grain, meter, and shoot a roll. → [Scanning](docs/scanning.md#scanning)
+- [ ] **1. Check that it suits you**: what you must already own, and the honest timeline. → [Getting started](docs/getting-started.md#getting-started)
+- [ ] **2. Buy**: one opal acrylic diffuser cut to 68 × 118 × 2 mm, 32 Ø8 × 2 mm N35 magnets, 4 steel washers, and optionally one 64 × 95 × 2 mm anti-Newton glass, a USB LED strip and a flocking sheet. → [Bill of materials](docs/bom.md#tools-and-consumables)
+- [ ] **3. Print**: 9 STL files in two colours (2 white, 7 black), plain PLA, no supports; every part prints on a flat face. The white filament must be **matte**: silk or glossy white keeps specular reflections alive in the cavity. → [3D printing](docs/printing.md#printing)
+- [ ] **4. Assemble and calibrate**: press in the magnets, stack the parts; no screws, no tools. Then set a small mirror on the stage and centre the lens's own reflection in the viewfinder: the sensor is now parallel to the film plane. → [Assembly](docs/assembly.md#assembly)
+- [ ] **5. Scan**: focus on the grain, meter, and shoot a roll. → [Scanning](docs/scanning.md#scanning)
 
 > [!TIP]
-> **[Bed size](docs/glossary.md#bed-size) is no longer a constraint.** The largest part is 154.8 mm long, so a 160 × 160 mm build plate is enough — every mainstream printer qualifies, and the large-bed warnings from earlier revisions no longer apply.
+> **[Bed size](docs/glossary.md#bed-size) is no longer a constraint.** The largest part is 154.8 mm long, so a 160 × 160 mm build plate is enough; every mainstream printer qualifies, and the large-bed warnings from earlier revisions no longer apply.
 
 ## Repository layout
 
 | Path | Contents | Kind |
 |---|---|---|
-| [`cad/neobox.blend`](cad/neobox.blend) | Blender source — the authoritative geometry for every part | Source |
-| [`cad/film-stage-aluminium-3mm.dxf`](cad/film-stage-aluminium-3mm.dxf) | The v4 aluminium film stage — superseded; in v5 the stage is merged into the cover-stage | Historical |
+| [`cad/neobox.blend`](cad/neobox.blend) | Blender source: the authoritative geometry for every part | Source |
+| [`cad/film-stage-aluminium-3mm.dxf`](cad/film-stage-aluminium-3mm.dxf) | The v4 aluminium film stage, superseded; in v5 the stage is merged into the cover-stage | Historical |
 | [`cad/legacy-plywood/`](cad/legacy-plywood/) | Two DXFs left from the abandoned plywood route. Not a complete build; kept for the record | Historical |
 | [`stl/white-pla/`](stl/white-pla/) | `main-body.stl`, `cover-stage.stl` | Generated |
 | [`stl/black-pla/`](stl/black-pla/) | Four film-holder parts, two pressure-window inserts, and `mask-6x6.stl` | Generated |
-| [`drawings/`](drawings/) | Optical path, cross-section, print orientation, exploded view, capture setup and manufacturing overview, in three languages — regenerated from the generators in `tools/drawings/` | Generated |
+| [`drawings/`](drawings/) | Optical path, cross-section, print orientation, exploded view, capture setup and manufacturing overview, in three languages, regenerated from the generators in `tools/drawings/` | Generated |
 | [`docs/`](docs/) | The documentation set, each file in English, 简体中文 and 日本語 | Source |
 | [`taobao-order/`](taobao-order/) | A bundle for a Chinese print service | Generated |
-| [`tools/export_stl.py`](tools/export_stl.py) | The committed exporter — regenerates the nine STL files from `cad/neobox.blend` | Source |
-| [`tools/drawings/`](tools/drawings/) | The drawing generators — regenerate the 18 SVG files under `drawings/` | Source |
-| [`tools/verify_stl.py`](tools/verify_stl.py) | The geometry gate — checks watertightness, the 0.2 mm z-grid and every bounding box | Source |
+| [`tools/export_stl.py`](tools/export_stl.py) | The committed exporter; regenerates the nine STL files from `cad/neobox.blend` | Source |
+| [`tools/drawings/`](tools/drawings/) | The drawing generators; regenerate the 18 SVG files under `drawings/` | Source |
+| [`tools/verify_stl.py`](tools/verify_stl.py) | The geometry gate; checks watertightness, the 0.2 mm z-grid and every bounding box | Source |
 
 ## Adapting to a different flash
 
 There is nothing to adapt. The reference build is a NEEWER TT560 with a ZENIKO T1 trigger set, but no dimension in the geometry depends on either: the flash lies flat on the desk with its head at the fully open front, and the receiver stays outside the box, where its radio signal is unobstructed and its batteries can be changed without touching anything.
 
-Choosing a substitute takes one criterion: **manual power control**. TTL and HSS are useless here — do not pay for them. There is no re-derivation and no CAD edit: set the flash down, aim its head into the opening, re-meter, shoot. The dimension chain that actually sets the enclosure — window, cavity, film plane — is in [Design § 2](docs/design.md#2-dimension-chain).
+Choosing a substitute takes one criterion: **manual power control**. TTL and HSS are useless here; do not pay for them. There is no re-derivation and no CAD edit: set the flash down, aim its head into the opening, re-meter, shoot. The dimension chain that actually sets the enclosure (window, cavity, film plane) is in [Design § 2](docs/design.md#2-dimension-chain).
 
 > [!TIP]
-> Never fix the outer height first and back-calculate the layers. Sum the layers, then read off the height. Doing it the other way round made the first draft physically unbuildable — it is entry 1 of the [design log](docs/design-log.md#design-log).
+> Never fix the outer height first and back-calculate the layers. Sum the layers, then read off the height. Doing it the other way round made the first draft physically unbuildable; it is entry 1 of the [design log](docs/design-log.md#design-log).
 
 ## Status
 
@@ -161,13 +161,13 @@ Prototype release, v5 geometry.
 - **Not verified:** the design has **never been printed, photographed, measured or evenness-tested.** No physical box exists.
 - Every evenness figure quoted in the documents is a **design target**, not a measurement.
 - The single-diffuser decision is informed by the author's existing light-pad workflow, not by testing this box.
-- The film-flatness figures — the 0.4 mm channel and the ≤ 0.28 mm bow under the printed insert — come from the CAD stack and tolerance analysis, not from measuring real film in a real holder.
+- The film-flatness figures (the 0.4 mm channel, the ≤ 0.28 mm bow under the printed insert) come from the CAD stack and tolerance analysis, not from measuring real film in a real holder.
 
 If you build one, the project would like to hear what came out tight, loose or uneven.
 
 ## Licence and credits
 
-Designed by [Neo Analog Lab Inc. (ネオアナログラボ株式会社)](https://github.com/Neoanaloglab). Released under the [MIT License](LICENSE) — build it, sell it, modify it, no permission needed.
+Designed by [Neo Analog Lab Inc. (ネオアナログラボ株式会社)](https://github.com/Neoanaloglab). Released under the [MIT License](LICENSE): build it, sell it, modify it, no permission needed.
 
 ---
 
