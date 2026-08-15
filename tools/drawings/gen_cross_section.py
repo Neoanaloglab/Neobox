@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""NeoBox v5 — cross-section drawing generator.
+"""NeoBox v1 — cross-section drawing generator.
 
 Generates drawings/cross-section.svg (en), .zh-CN.svg, .ja.svg.
 Main view: full x-z section through the centre, to scale (S px/mm),
@@ -299,7 +299,7 @@ def callout():
 LANG = {
     "en": {
         "file": "cross-section.svg",
-        "title": "NeoBox v5 — Cross-Section (x–z)",
+        "title": "NeoBox v1 — Cross-Section (x–z)",
         "sub": "Units: mm · main view to scale (bar below) · section through "
                "the centre · heights = world z, table top = 0",
         "lid": "holder lid 84–87",
@@ -329,7 +329,7 @@ LANG = {
     },
     "zh": {
         "file": "cross-section.zh-CN.svg",
-        "title": "NeoBox v5 — 整机剖面（x–z）",
+        "title": "NeoBox v1 — 整机剖面（x–z）",
         "sub": "单位 mm · 主图按比例（见左下比例尺）· 过中心剖切 · "
                "标高为世界 z，桌面 = 0",
         "lid": "夹上盖 84–87",
@@ -358,7 +358,7 @@ LANG = {
     },
     "ja": {
         "file": "cross-section.ja.svg",
-        "title": "NeoBox v5 — 全体断面図（x–z）",
+        "title": "NeoBox v1 — 全体断面図（x–z）",
         "sub": "単位 mm · 主図は縮尺どおり（左下スケールバー）· 中心断面 · "
                "高さは世界 z、机上面 = 0",
         "lid": "上蓋 84–87",
@@ -409,7 +409,7 @@ def build(L):
     parts += inset(L)
     parts.append(text(24, 40, L["title"], 21, weight="bold"))
     parts.append(text(24, 60, L["sub"], 12, fill="#555"))
-    parts.append(text(W - 24, H - 14, "NeoBox v5 — 2026-08", 12,
+    parts.append(text(W - 24, H - 14, "NeoBox v1 — 2026-08", 12,
                       anchor="end", fill="#888"))
     parts.append('</svg>')
     return "\n".join(parts) + "\n"

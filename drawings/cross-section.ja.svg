@@ -145,7 +145,7 @@
 <circle cx="816.0" cy="386.0" r="2.2" fill="#444" stroke="#ffffff" stroke-width="0.8"/>
 <polyline points="832,442 826,442 817.0,386.0" fill="none" stroke="#444" stroke-width="1"/>
 <text x="836" y="446" font-size="12.5" fill="#111">基部上面 3.8</text>
-<text x="24" y="40" font-size="21" fill="#111" font-weight="bold">NeoBox v5 — 全体断面図（x–z）</text>
+<text x="24" y="40" font-size="21" fill="#111" font-weight="bold">NeoBox v1 — 全体断面図（x–z）</text>
 <text x="24" y="60" font-size="12" fill="#555">単位 mm · 主図は縮尺どおり（左下スケールバー）· 中心断面 · 高さは世界 z、机上面 = 0</text>
-<text x="966" y="516" font-size="12" fill="#888" text-anchor="end">NeoBox v5 — 2026-08</text>
+<text x="966" y="516" font-size="12" fill="#888" text-anchor="end">NeoBox v1 — 2026-08</text>
 </svg>

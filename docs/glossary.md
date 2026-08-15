@@ -11,7 +11,7 @@
 Two vocabularies meet in this project: film photography and 3D printing. A reader is rarely fluent in both, so every entry below is written for someone fluent in neither.
 
 > [!TIP]
-> Part names are a separate matter. Every part is named once and never renamed. Printed: **main body**, **cover-stage**, **film holder** (**holder base** / **holder lid**, one pair per format), **pressure window inserts**, **6×6 mask**. Bought: **diffuser**, **magnets**, **steel shims**, and optionally **anti-Newton glass**. The v4 **top cover** and **film stage** are merged into the cover-stage since v5, and the **access panel**, **studs** and **nuts** are gone: v5 has no fasteners at all. If you cannot match a name to a shape in front of you, see [Part vocabulary](printing.md#part-vocabulary), which ties each one to a feature you can see.
+> Part names are a separate matter. Every part is named once and never renamed. Printed: **main body**, **cover-stage**, **film holder** (**holder base** / **holder lid**, one pair per format), **pressure window inserts**, **6×6 mask**. Bought: **diffuser**, **magnets**, **steel shims**, and optionally **anti-Newton glass**. The printed prototype's **top cover** and **film stage** are merged into the cover-stage since v1, and the **access panel**, **studs** and **nuts** are gone: v1 has no fasteners at all. If you cannot match a name to a shape in front of you, see [Part vocabulary](printing.md#part-vocabulary), which ties each one to a feature you can see.
 
 ### Anti-Newton glass
 
@@ -29,13 +29,13 @@ The lowest true sensitivity of a camera's sensor, usually ISO 100, where it has 
 
 The printable area of an FDM printer's build plate, quoted as X × Y.
 
-**Why it matters:** it is a go/no-go, not a preference, though in v5 an easy one. The largest parts, the main body and the cover-stage, are 124.8 × 154.8 mm, so a 160 × 160 mm bed prints everything; the old v4 warnings about 280 mm beds are obsolete. See [Will it fit your printer?](printing.md#will-it-fit-your-printer).
+**Why it matters:** it is a go/no-go, not a preference, though in v1 an easy one. The largest parts, the main body and the cover-stage, are 124.8 × 154.8 mm, so a 160 × 160 mm bed prints everything; the old prototype-era warnings about 280 mm beds are obsolete. See [Will it fit your printer?](printing.md#will-it-fit-your-printer).
 
 ### Bridging
 
 Extruding filament straight across an unsupported gap between two anchored points, so it spans in air and cools before it can droop.
 
-**Why it matters:** v5 has nothing to bridge. The front of the main body is not a spanned opening but a missing wall, the [open front](#open-front), and every one of the nine parts prints flat face down without [supports](#supports).
+**Why it matters:** v1 has nothing to bridge. The front of the main body is not a spanned opening but a missing wall, the [open front](#open-front), and every one of the nine parts prints flat face down without [supports](#supports).
 
 ### Camera scanning
 
@@ -57,7 +57,7 @@ A vertical column on a baseboard that holds a camera pointing straight down at a
 
 ### Cover-stage
 
-The single white part that closes the top of the box, the v4 top cover and film stage merged into one 124.8 × 154.8 × 10 mm piece. Its 6 mm plate rests on the box walls, located by four notches over the body's [tenons](#locating-tenon-and-notch); a raised flange rings the 94.6 × 120.6 mm holder seat, and the plate carries the 62 × 95 mm light window, a hidden slot for the [diffuser](#diffuser) and four flush steel shims for the holder's magnets to grab.
+The single white part that closes the top of the box, the prototype's top cover and film stage merged into one 124.8 × 154.8 × 10 mm piece. Its 6 mm plate rests on the box walls, located by four notches over the body's [tenons](#locating-tenon-and-notch); a raised flange rings the 94.6 × 120.6 mm holder seat, and the plate carries the 62 × 95 mm light window, a hidden slot for the [diffuser](#diffuser) and four flush steel shims for the holder's magnets to grab.
 
 **Why it matters:** merging cover and stage removed a whole stack of parts and the tolerances between them: nothing to level, nothing to bolt. The whole piece lifts off by its flange, holders snap on and off it magnetically in seconds, and the flange top runs 0.2 mm below the film plane, so film running out of the holder rides over it instead of jamming against it.
 
@@ -119,7 +119,7 @@ High-speed sync: the flash fires a rapid train of small pulses so it can be used
 
 The internal lattice that fills the space between a part's [perimeters](#perimeters), given as a percentage of solid.
 
-**Why it matters:** 15 % is the spec for all nine parts. Nothing in v5 hangs a load on infill any more. What keeps the walls opaque is perimeters, not infill. See [Print settings](printing.md#print-settings).
+**Why it matters:** 15 % is the spec for all nine parts. Nothing in v1 hangs a load on infill any more. What keeps the walls opaque is perimeters, not infill. See [Print settings](printing.md#print-settings).
 
 ### Integrating cavity
 
@@ -149,7 +149,7 @@ The thickness of one printed layer. It quantises every horizontal feature in the
 
 A tenon is a small raised block, a notch its matching recess. Four tenons, 2.4 × 12 × 2.6 mm, stand on the top edges of the main body's side walls and engage four notches in the underside of the [cover-stage](#cover-stage).
 
-**Why it matters:** they are the only alignment feature in the box: v5 has no fasteners of any kind, so gravity holds the stack and the tenons stop it shifting, registering the light window over the cavity every time. It is also why the assembled box is lifted straight up and never carried tilted, and why [elephant foot](#elephant-foot) compensation matters at the notch mouths.
+**Why it matters:** they are the only alignment feature in the box: v1 has no fasteners of any kind, so gravity holds the stack and the tenons stop it shifting, registering the light window over the cavity every time. It is also why the assembled box is lifted straight up and never carried tilted, and why [elephant foot](#elephant-foot) compensation matters at the notch mouths.
 
 ### Magnification ratio
 
@@ -167,7 +167,7 @@ The flash's output set by hand as a fraction of full power: 1/1, 1/2, 1/4 and so
 
 Squaring the camera to the film by eye: lay a small mirror flat at the film position, look through the viewfinder, and move the camera until the reflection of its own lens sits centred. A centred reflection means the sensor is parallel to the film plane.
 
-**Why it matters:** it replaced every piece of levelling hardware in v4: rods, nuts, all of it. Aligning at the camera also absorbs the printed box's tolerances, because you square up to the film plane that actually exists, not to the box that ought to be under it. See [Camera height and the stand](scanning.md#camera-height-and-the-stand).
+**Why it matters:** it replaced every piece of levelling hardware in the prototype: rods, nuts, all of it. Aligning at the camera also absorbs the printed box's tolerances, because you square up to the film plane that actually exists, not to the box that ought to be under it. See [Camera height and the stand](scanning.md#camera-height-and-the-stand).
 
 ### Newton rings
 
@@ -179,7 +179,7 @@ Irregular coloured interference fringes that appear where film is pressed agains
 
 Milky-white translucent acrylic that scatters light through its whole thickness, rather than at a textured surface.
 
-**Why it matters:** opal is not the same product as frosted, which is clear sheet with a matte face, and ordering the wrong one is an easy mistake. NeoBox needs one 2 mm opal sheet cut to 68 × 118 mm; a v4 110 × 130 sheet can be cut down to it. See [Getting the right part](bom.md#getting-the-right-part).
+**Why it matters:** opal is not the same product as frosted, which is clear sheet with a matte face, and ordering the wrong one is an easy mistake. NeoBox needs one 2 mm opal sheet cut to 68 × 118 mm; a prototype-era 110 × 130 sheet can be cut down to it. See [Getting the right part](bom.md#getting-the-right-part).
 
 ### Open front
 

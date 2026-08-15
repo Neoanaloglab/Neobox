@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""Generate drawings/capture-setup{,.zh-CN,.ja}.svg — NeoBox v5 capture scene.
+"""Generate drawings/capture-setup{,.zh-CN,.ja}.svg — NeoBox v1 capture scene.
 
 Whole-bench side view: NeoBox on the table with the film holder on top, the
 flash lying flat with its head against the fully open front, the 2.4G receiver
@@ -96,7 +96,7 @@ LANG = {
         "R3": "copy stand",
         "wd": ["working distance:", "set by your", "magnification"],
         "dim_cap": ["table →", "film plane"],
-        "caption": "NeoBox v5 — overall 124.8 × 154.8 × 87 mm (holder on top)",
+        "caption": "NeoBox v1 — overall 124.8 × 154.8 × 87 mm (holder on top)",
     },
     "zh": {
         "suffix": ".zh-CN",
@@ -121,7 +121,7 @@ LANG = {
         "R3": "翻拍架 / 复制台",
         "wd": ["工作距离：", "按放大倍率调"],
         "dim_cap": ["桌面 →", "胶片平面"],
-        "caption": "NeoBox v5：外形 124.8 × 154.8 × 87 mm（顶上为胶片夹）",
+        "caption": "NeoBox v1：外形 124.8 × 154.8 × 87 mm（顶上为胶片夹）",
     },
     "ja": {
         "suffix": ".ja",
@@ -146,7 +146,7 @@ LANG = {
         "R3": "コピースタンド（複写台）",
         "wd": ["撮影距離：", "倍率に合わせて", "調整"],
         "dim_cap": ["机上面 →", "フィルム面"],
-        "caption": "NeoBox v5 — 全体 124.8 × 154.8 × 87 mm（上はフィルムホルダー）",
+        "caption": "NeoBox v1 — 全体 124.8 × 154.8 × 87 mm（上はフィルムホルダー）",
     },
 }
 CHIP1 = "ISO 100 · f/8 · 1/125 s"   # sync-speed fact, FACTS §5 — keep 1/125
@@ -445,7 +445,7 @@ def draw(L):
 
     # ---- captions
     o.append(text(CX, 666, L["caption"], 11.5, anchor="middle", fill=MUTED))
-    o.append(text(940, 706, "NeoBox v5 — 2026-08", 11, anchor="end",
+    o.append(text(940, 706, "NeoBox v1 — 2026-08", 11, anchor="end",
                   fill="#999"))
     o.append("</svg>")
     return "\n".join(o) + "\n"

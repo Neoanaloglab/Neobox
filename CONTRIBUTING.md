@@ -14,7 +14,7 @@ NeoBox is a hardware repository: the files under `stl/` are build output, not ha
 | Source (prose) | `README.md` and `docs/*.md`, in all three languages | Yes. |
 | Source (drawings) | `drawings/*.svg` (+ `.zh-CN.svg`, `.ja.svg`) | Yes: hand-authored, not exported from the `.blend`. |
 | Generated | the nine `.stl` files under `stl/white-pla/` and `stl/black-pla/` | No. Re-export them from `cad/neobox.blend`. |
-| Historical | `cad/legacy-plywood/`, `cad/film-stage-aluminium-3mm.dxf` | No. Kept for the record only; the plywood route and the v4 aluminium film stage are superseded. |
+| Historical | `cad/legacy-plywood/`, `cad/film-stage-aluminium-3mm.dxf` | No. Kept for the record only; the plywood route and the printed prototype's aluminium film stage are superseded. |
 
 There are **9 STL files (2 white, 7 black)**, never eight, never ten:
 
@@ -58,7 +58,7 @@ Numbers come from the project fact sheet or from `cad/neobox.blend`. Do not inve
 
 One name per thing. Use these and nothing else: main body, cover-stage (never "top cover" or "lid"), open front, the cavity, light window, diffuser, film holder → holder base / holder lid, pressure window (insert), anti-Newton (AN) glass, element ledge, locating tenon / notch, land, rail, channel, window, magnet, steel washer, film strip, build plate. Definitions live in the [glossary](docs/glossary.md#glossary); a synonym introduced by a pull request will be sent back.
 
-Japanese: 本体 must never mean the flash; write ストロボ本体. The combined top part is 天板ステージ, never plain 天板. Chinese: 打印台 means the printer's build plate and nothing else; the v4 胶片台 no longer exists (its function lives in the 顶盖台), so write 顶盖台.
+Japanese: 本体 must never mean the flash; write ストロボ本体. The combined top part is 天板ステージ, never plain 天板. Chinese: 打印台 means the printer's build plate and nothing else; the prototype-era 胶片台 no longer exists (its function lives in the 顶盖台), so write 顶盖台.
 
 ## Rejecting an alternative
 

@@ -22,7 +22,7 @@ The whole build is smaller than it sounds:
 - **No screws, no threads, no glue, no tools.** The box assembles by gravity and magnets, and levelling happens at the camera, not inside the box.
 
 > [!IMPORTANT]
-> This is a prototype release. The geometry is dimensionally verified in the Blender source, and all nine STL files are watertight single solids with every horizontal face on the 0.2 mm grid. But the box has **never been printed, photographed, measured or evenness-tested.** If you build one, you are the first.
+> This is the first release. The geometry is dimensionally verified in the Blender source, and all nine STL files are watertight single solids with every horizontal face on the 0.2 mm grid. But no box of this geometry has **ever been printed, photographed, measured or evenness-tested.** If you build one, you are the first.
 
 **Build it if you** already shoot film and already own a camera you can put on a stand; want [base-ISO](glossary.md#base-iso), f/8 captures where vibration is irrelevant; and are happy to print nine parts and press in some magnets. There is nothing to screw, solder or glue.
 
@@ -78,7 +78,7 @@ Prices live in one place, the [bill of materials](bom.md#tools-and-consumables);
 | Everything structural: nine PLA parts, the opal acrylic sheet, 32 magnets, 4 steel washers | priced in the bill of materials |
 | A speedlight (any hot-shoe model with manual power control) | reference pick priced in the bill of materials |
 | A radio trigger set | reference pick priced in the bill of materials |
-| Optional upgrades: anti-Newton glass, LED positioning strip, flocking sheet | priced in the bill of materials |
+| Optional upgrades: anti-Newton glass and flocking sheet | priced in the bill of materials |
 | Camera, lens, stand, release, software | not costed here |
 
 Printing is a small job: nothing is longer than 154.8 mm, plain PLA is fine, and every part goes down support-free: 0.2 mm layers, 15 % infill.
@@ -86,7 +86,7 @@ Printing is a small job: nothing is longer than 154.8 mm, plain PLA is fine, and
 | Stage | Typical elapsed time | Notes |
 |---|---|---|
 | 3D printing, at home or from a service | days | usually the critical path; two colours, no supports to remove |
-| Opal acrylic cut to size | days | 68 × 118 × 2 mm custom cut; a v4-era 110 × 130 mm sheet can be cut down and reused |
+| Opal acrylic cut to size | days | 68 × 118 × 2 mm custom cut; a prototype-era 110 × 130 mm sheet can be cut down and reused |
 | Magnets and washers | usually the fastest order | stock sizes, nothing custom |
 | Assembly | minutes | no tools; pressing in the 32 magnets is most of the work |
 | First set-up | an evening | camera parallelism with the mirror, then an evenness check |
@@ -136,13 +136,11 @@ The flash pulse **is** the exposure. In a dim room, its output through the cavit
 
 Other things follow from the same choice. Every frame receives identical output, so one inversion profile fits the whole roll. Base-ISO, f/8 shooting is the design's working point, and a xenon tube gives a genuinely continuous, daylight-balanced spectrum.
 
-The optional LED strip in the bill of materials does not change this argument: stuck to a wall inside the cavity, it is a positioning light, a steady glow for framing and advancing film, and plays no part in the exposure.
-
 </details>
 
 ## FAQ
 
-**Has anyone built one?** No. The v5 geometry is dimensionally verified in CAD and the exported files are numerically checked, but no physical box has ever been printed, photographed, measured or evenness-tested. Treat every optical claim as reasoned, not measured.
+**Has anyone built one?** No. The v1 geometry is dimensionally verified in CAD and the exported files are numerically checked, but no box of this geometry has ever been printed, photographed, measured or evenness-tested; the only thing ever printed was the old prototype, which shares almost no parts with v1. Treat every optical claim as reasoned, not measured.
 
 **Can I use an LED panel instead of a flash?** Not with the released files: no LED variant is published, and the argument against one is in the collapsed block above. The optional LED strip in the bill of materials is a positioning light only, never the exposure.
 

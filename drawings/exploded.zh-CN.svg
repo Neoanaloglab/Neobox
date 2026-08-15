@@ -1,11 +1,11 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1000" height="775" viewBox="0 0 1000 775">
 <rect x="0" y="0" width="1000" height="775" fill="#ffffff"/>
 <g font-family="Helvetica, Arial, sans-serif" fill="#111">
-<text x="25.0" y="44.0" font-size="21" font-weight="bold" fill="#111">NeoBox v5 — 爆炸装配图</text>
+<text x="25.0" y="44.0" font-size="21" font-weight="bold" fill="#111">NeoBox v1 — 爆炸装配图</text>
 <text x="25.0" y="66.0" font-size="12" fill="#555">自下而上磁吸堆叠 · 整机 124.8×154.8×87 · 尺寸单位 mm（设计值）</text>
 <rect x="802.6" y="24" width="182.4" height="30" rx="15" fill="#fbf1dd" stroke="#e8a33d" stroke-width="1.6"/>
 <text x="893.8" y="43.5" font-size="13" text-anchor="middle" font-weight="bold" fill="#8a5c10">无螺丝 · 无工具 · 磁吸</text>
-<text x="985.0" y="758.0" font-size="12" text-anchor="end" fill="#888">NeoBox v5 — 2026-08</text>
+<text x="985.0" y="758.0" font-size="12" text-anchor="end" fill="#888">NeoBox v1 — 2026-08</text>
 <line x1="25.0" y1="690.0" x2="585.0" y2="690.0" stroke="#ccc" stroke-width="1.5"/>
 <polygon points="340.0,598.8 533.5,598.8 455.5,555.1 262.0,555.1" fill="#fafafa" stroke="#444" stroke-width="1.2"/>
 <polygon points="338.5,597.9 529.0,597.9 454.0,555.9 263.5,555.9" fill="#d6d6d6" stroke="#777" stroke-width="1"/>

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""NeoBox v5 — optics / light-path section drawing generator.
+"""NeoBox v1 — optics / light-path section drawing generator.
 
 Generates drawings/optics.svg (en), optics.zh-CN.svg, optics.ja.svg.
 Side cross-section in the y-z plane (y = depth, z = height above table),
@@ -208,7 +208,7 @@ def labels(L):
 LANG = {
     "en": {
         "file": "optics.svg",
-        "title": "NeoBox v5 — Light Path (Section)",
+        "title": "NeoBox v1 — Light Path (Section)",
         "sub": "Units: mm · box, flash and stack drawn to scale, camera pictorial · y–z section",
         "camera": "camera",
         "element": "pressure element",
@@ -223,7 +223,7 @@ LANG = {
     },
     "zh": {
         "file": "optics.zh-CN.svg",
-        "title": "NeoBox v5 — 光路示意（剖面）",
+        "title": "NeoBox v1 — 光路示意（剖面）",
         "sub": "单位 mm · 箱体、闪光灯与叠层按比例，相机仅为示意 · y–z 剖面",
         "camera": "相机",
         "element": "压片元件",
@@ -238,7 +238,7 @@ LANG = {
     },
     "ja": {
         "file": "optics.ja.svg",
-        "title": "NeoBox v5 — 光路図（断面）",
+        "title": "NeoBox v1 — 光路図（断面）",
         "sub": "単位 mm · 箱・ストロボ・積層は縮尺どおり、カメラは模式 · y–z 断面",
         "camera": "カメラ",
         "element": "押さえエレメント",
@@ -275,7 +275,7 @@ def build(L):
     parts += labels(L)
     parts.append(text(24, 40, L["title"], 21, weight="bold"))
     parts.append(text(24, 60, L["sub"], 12, fill="#555"))
-    parts.append(text(W - 24, H - 14, "NeoBox v5 — 2026-08", 12,
+    parts.append(text(W - 24, H - 14, "NeoBox v1 — 2026-08", 12,
                       anchor="end", fill="#888"))
     parts.append('</svg>')
     return "\n".join(parts) + "\n"

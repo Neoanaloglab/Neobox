@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""NeoBox v5 — print-orientation drawing generator.
+"""NeoBox v1 — print-orientation drawing generator.
 
 Generates drawings/print-orientation.svg (en), .zh-CN.svg, .ja.svg.
 Data source: scratchpad/FACTS-v5.md §2 (9 STLs, colors, sizes, orientations)
@@ -38,11 +38,11 @@ LANG = {
     "en": {
         "suffix": "",
         "title": "Print Orientation",
-        "subtitle": "NeoBox v5 — how each of the 9 printed parts sits on the build plate",
+        "subtitle": "NeoBox v1 — how each of the 9 printed parts sits on the build plate",
         "banner": "All 9 parts print without supports · Layer height 0.2 mm · Do not rescale (unit: mm)",
         "legend_white": "white PLA",
         "legend_black": "black PLA",
-        "footer": "NeoBox v5 — 2026-08",
+        "footer": "NeoBox v1 — 2026-08",
         "desc": {
             "main-body": ["Flat bottom down, opening up", "(the missing wall is by design)"],
             "cover-stage": ["Large flat face down,", "raised frame flange up"],
@@ -55,11 +55,11 @@ LANG = {
     "zh": {
         "suffix": ".zh-CN",
         "title": "打印朝向",
-        "subtitle": "NeoBox v5 — 9 个打印件在打印机床板上的摆放姿态",
+        "subtitle": "NeoBox v1 — 9 个打印件在打印机床板上的摆放姿态",
         "banner": "9 件全部免支撑打印 · 层高一律 0.2 mm · 切勿缩放（单位 mm）",
         "legend_white": "白 PLA",
         "legend_black": "黑 PLA",
-        "footer": "NeoBox v5 — 2026-08",
+        "footer": "NeoBox v1 — 2026-08",
         "desc": {
             "main-body": ["平底朝下，开口朝上", "（缺一面墙是设计特征）"],
             "cover-stage": ["平的大面朝下，方框凸缘朝上"],
@@ -72,11 +72,11 @@ LANG = {
     "ja": {
         "suffix": ".ja",
         "title": "プリント方向",
-        "subtitle": "NeoBox v5 — 9 点の印刷パーツをビルドプレートに置く向き",
+        "subtitle": "NeoBox v1 — 9 点の印刷パーツをビルドプレートに置く向き",
         "banner": "全 9 パーツともサポート不要 · 積層ピッチは必ず 0.2 mm · 拡大縮小禁止（単位 mm）",
         "legend_white": "白 PLA",
         "legend_black": "黒 PLA",
-        "footer": "NeoBox v5 — 2026-08",
+        "footer": "NeoBox v1 — 2026-08",
         "desc": {
             "main-body": ["平らな底を下、開口を上", "（壁が一面ないのは設計どおり）"],
             "cover-stage": ["大きな平面を下、枠フランジを上"],

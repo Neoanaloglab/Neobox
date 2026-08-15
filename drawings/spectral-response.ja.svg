@@ -3,7 +3,7 @@
 <defs>
 <marker id="mg" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5.5" markerHeight="5.5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#666"/></marker>
 </defs>
-<text x="24" y="40" font-size="21" fill="#111" font-weight="bold">NeoBox v5 — なぜストロボか：スペクトルと時間</text>
+<text x="24" y="40" font-size="21" fill="#111" font-weight="bold">NeoBox v1 — なぜストロボか：スペクトルと時間</text>
 <text x="24" y="60" font-size="12" fill="#555">模式図（実測ではなく典型スペクトル） · 横軸：波長 400–700nm · 縦軸：相対分光パワー（0–1・無単位）</text>
 <line x1="200" y1="96" x2="230" y2="96" stroke="#e8a33d" stroke-width="3"/>
 <text x="236" y="100" font-size="13" fill="#111">キセノン閃光（連続スペクトル）</text>
@@ -93,5 +93,5 @@
 <text x="725" y="592" font-size="13" fill="#111">すべて写り込む</text>
 <polyline points="721,570 708,570 508,576" fill="none" stroke="#444" stroke-width="1"/>
 <circle cx="508" cy="576" r="2.2" fill="#444" stroke="#ffffff" stroke-width="0.8"/>
-<text x="956" y="626" font-size="12" fill="#888" text-anchor="end">NeoBox v5 — 2026-08</text>
+<text x="956" y="626" font-size="12" fill="#888" text-anchor="end">NeoBox v1 — 2026-08</text>
 </svg>

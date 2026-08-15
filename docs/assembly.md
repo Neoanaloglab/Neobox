@@ -60,7 +60,7 @@ Every clamp part takes eight magnets: bases from **above**, into the counterbore
 **Failure mode:** one reversed magnet pushes its corner of the lid open, and a pressed-in magnet does not come out willingly. The touch-and-mark check in sub-step 3 costs seconds per magnet; skipping it can cost the part.
 
 > [!IMPORTANT]
-> The eight magnet pairs are all that holds the sandwich shut; there are no clips or screws behind them. Every base and every lid gets its full eight; no magnet in v5 is optional.
+> The eight magnet pairs are all that holds the sandwich shut; there are no clips or screws behind them. Every base and every lid gets its full eight; no magnet in v1 is optional.
 
 ### Step 2 — Drop the steel washers into the cover-stage
 
@@ -155,7 +155,7 @@ flowchart TD
 
 A spirit level measures against gravity, and gravity is not in the optical chain: a stage perfectly level to the floor can still be tilted relative to the sensor. The mirror measures the one relationship that matters, and doubles it: any angle between the sensor's axis and the mirror shows up twice over in where the reflection lands, which makes centring the lens's own reflection a sensitive null test.
 
-Adjusting at the camera rather than the box also absorbs everything below the mirror in the same move: wall-top flatness, tenon seating, the stack of printed tolerances. Shimming the box could only ever correct the box. That is why v5 deleted the box-side levelling hardware instead of refining it.
+Adjusting at the camera rather than the box also absorbs everything below the mirror in the same move: wall-top flatness, tenon seating, the stack of printed tolerances. Shimming the box could only ever correct the box. That is why v1 deleted the box-side levelling hardware instead of refining it.
 
 </details>
 

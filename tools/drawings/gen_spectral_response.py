@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""NeoBox v5 — spectral-response drawing generator (flash vs LED).
+"""NeoBox v1 — spectral-response drawing generator (flash vs LED).
 
 Generates drawings/spectral-response.svg (en), .zh-CN.svg, .ja.svg.
 Panel 1: schematic spectral power distribution 400-700 nm, xenon flash
@@ -130,7 +130,7 @@ DYE_BANDS = [  # (nm0, nm1, fill)  blue / green / red working bands
 LANG = {
     "en": {
         "file": "spectral-response.svg",
-        "title": "NeoBox v5 — Why a Flash: Spectrum &amp; Time",
+        "title": "NeoBox v1 — Why a Flash: Spectrum &amp; Time",
         "sub": "Schematic — typical spectra, not measurements · x: wavelength 400–700 nm · y: relative spectral power (0–1, unitless)",
         "legend_flash": "xenon flash (continuous spectrum)",
         "legend_led": "typical white LED (blue pump + phosphor)",
@@ -156,7 +156,7 @@ LANG = {
     },
     "zh": {
         "file": "spectral-response.zh-CN.svg",
-        "title": "NeoBox v5 — 为什么是闪光灯：光谱与时间域",
+        "title": "NeoBox v1 — 为什么是闪光灯：光谱与时间域",
         "sub": "示意图（典型光谱而非实测） · 横轴：波长 400–700nm · 纵轴：相对光谱功率（0–1，无单位）",
         "legend_flash": "氙气闪光（连续光谱）",
         "legend_led": "典型白光 LED（蓝泵浦＋荧光粉）",
@@ -182,7 +182,7 @@ LANG = {
     },
     "ja": {
         "file": "spectral-response.ja.svg",
-        "title": "NeoBox v5 — なぜストロボか：スペクトルと時間",
+        "title": "NeoBox v1 — なぜストロボか：スペクトルと時間",
         "sub": "模式図（実測ではなく典型スペクトル） · 横軸：波長 400–700nm · 縦軸：相対分光パワー（0–1・無単位）",
         "legend_flash": "キセノン閃光（連続スペクトル）",
         "legend_led": "典型的な白色 LED（青ポンプ＋蛍光体）",
@@ -289,7 +289,7 @@ def build(L):
     g += label(L["led"], 578, (298, 590), "L")
     g += label(L["shake"], 574, (508, 576), "R")
 
-    g.append(text(W - 24, H - 14, "NeoBox v5 — 2026-08", 12,
+    g.append(text(W - 24, H - 14, "NeoBox v1 — 2026-08", 12,
                   anchor="end", fill="#888"))
     g.append('</svg>')
     return "\n".join(g) + "\n"

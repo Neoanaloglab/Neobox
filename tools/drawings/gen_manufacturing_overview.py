@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""NeoBox v5 — manufacturing overview drawing generator.
+"""NeoBox v1 — manufacturing overview drawing generator.
 
 Generates drawings/manufacturing-overview.svg (+ .zh-CN.svg, .ja.svg):
 a "kit card" grid — 9 printed parts (top) + purchased hardware (bottom).
@@ -23,54 +23,54 @@ SB = 0.55         # px per mm for purchased flat goods
 LANG = {
     "en": {
         "suffix": "",
-        "title": "NeoBox v5 — Manufacturing Overview",
+        "title": "NeoBox v1 — Manufacturing Overview",
         "subtitle": "9 printed parts + purchased hardware · all dimensions in mm",
         "spec1": "standard PLA · layer height 0.2 mm · infill 15% · no supports on any part",
         "spec2": "largest part 154.8 mm → a 160×160 bed is enough",
         "sec_print": "3D-printed parts ×9",
         "chip_white": "white PLA ×2",
         "chip_black": "black PLA ×7",
-        "sec_buy": "Purchased parts — 3 required + 3 optional",
+        "sec_buy": "Purchased parts — 3 required + 2 optional",
         "white": "white",
         "black": "black",
         "optional": "optional",
         "buy_names": ["opal acrylic", "magnet N35", "steel shim",
-                      "anti-Newton glass", "LED strip 5V USB", "black flocking sheet"],
-        "credit": "NeoBox v5 — 2026-08",
+                      "anti-Newton glass", "black flocking sheet"],
+        "credit": "NeoBox v1 — 2026-08",
     },
     "zh": {
         "suffix": ".zh-CN",
-        "title": "NeoBox v5 — 制造总览",
+        "title": "NeoBox v1 — 制造总览",
         "subtitle": "打印件 9 件 + 外购件 · 尺寸单位 mm",
         "spec1": "普通 PLA · 层高 0.2 mm · 填充 15% · 全部免支撑",
         "spec2": "最大件 154.8 mm → 160×160 打印床即可",
         "sec_print": "打印件 ×9",
         "chip_white": "白色 PLA ×2",
         "chip_black": "黑色 PLA ×7",
-        "sec_buy": "外购件 — 必备 3 + 可选 3",
+        "sec_buy": "外购件 — 必备 3 + 可选 2",
         "white": "白色",
         "black": "黑色",
         "optional": "可选",
         "buy_names": ["乳白亚克力", "磁铁 N35", "钢垫片",
-                      "防牛顿环玻璃", "LED 灯带 5V USB", "黑色植绒贴"],
-        "credit": "NeoBox v5 — 2026-08",
+                      "防牛顿环玻璃", "黑色植绒贴"],
+        "credit": "NeoBox v1 — 2026-08",
     },
     "ja": {
         "suffix": ".ja",
-        "title": "NeoBox v5 — 製造オーバービュー",
+        "title": "NeoBox v1 — 製造オーバービュー",
         "subtitle": "プリントパーツ 9 点 + 購入部品 · 寸法単位 mm",
         "spec1": "標準 PLA · 積層ピッチ 0.2 mm · インフィル 15% · 全パーツサポート不要",
         "spec2": "最大パーツ 154.8 mm → 160×160 ビルドプレートで可",
         "sec_print": "プリントパーツ ×9",
         "chip_white": "白 PLA ×2",
         "chip_black": "黒 PLA ×7",
-        "sec_buy": "購入部品 — 必須 3 + オプション 3",
+        "sec_buy": "購入部品 — 必須 3 + オプション 2",
         "white": "白",
         "black": "黒",
         "optional": "オプション",
         "buy_names": ["乳白アクリル", "磁石 N35", "スチールシム",
-                      "アンチニュートンガラス", "LEDテープ 5V USB", "黒の植毛シート"],
-        "credit": "NeoBox v5 — 2026-08",
+                      "アンチニュートンガラス", "黒の植毛シート"],
+        "credit": "NeoBox v1 — 2026-08",
     },
 }
 
@@ -79,7 +79,6 @@ BUY_SPECS = [("68×118×2", "×1", False),
              ("Ø8×2", "×32", False),
              ("10×10×1", "×4", False),
              ("64×95×2", "×1", True),
-             ("120 mm", "×2", True),
              ("A5", "×1", True)]
 
 # ------------------------------------------------------------- svg helpers ---
@@ -303,7 +302,7 @@ def buy_flock(cx, cy):
     return el
 
 
-BUY_SKETCHES = [buy_acrylic, buy_magnet, buy_shim, buy_an_glass, buy_led, buy_flock]
+BUY_SKETCHES = [buy_acrylic, buy_magnet, buy_shim, buy_an_glass, buy_flock]
 
 # ------------------------------------------------------------------ layout ---
 
@@ -380,8 +379,9 @@ def build(L):
         el += part_card(row2_x + i * (CARD_W + GAP), 318, L, part)
     # purchased parts
     el.append(T(30, 546, L["sec_buy"], size=15, weight="bold"))
-    buy_x0 = (W - (6 * BUY_W + 5 * BUY_GAP)) / 2
-    for i in range(6):
+    n_buy = len(BUY_SPECS)
+    buy_x0 = (W - (n_buy * BUY_W + (n_buy - 1) * BUY_GAP)) / 2
+    for i in range(n_buy):
         el += buy_card(buy_x0 + i * (BUY_W + BUY_GAP), 558, L, i)
     # credit
     el.append(T(W - 30, 736, L["credit"], size=12, anchor="end", fill="#666"))

@@ -6,7 +6,7 @@
 
 **Contents:** [Will it fit your printer?](#will-it-fit-your-printer) · [Print settings](#print-settings) · [Filament](#filament) · [The nine parts](#the-nine-parts) · [Print one 135 holder first](#print-one-135-holder-first) · [Check each part before you assemble](#check-each-part-before-you-assemble) · [If it came out tight or loose](#if-it-came-out-tight-or-loose) · [Ordering from a print service](#ordering-from-a-print-service)
 
-Nine STL files: **eight for the default build plus one optional 6×6 mask**. Two are white, seven are black. All are 1:1 in millimetres, all print without supports, and the whole set weighs about **300–350 g of filament, roughly a third of what v4 needed**.
+Nine STL files: **eight for the default build plus one optional 6×6 mask**. Two are white, seven are black. All are 1:1 in millimetres, all print without supports, and the whole set weighs about **300–350 g of filament, roughly a third of what the printed prototype needed**.
 
 ![One-page manufacturing overview: the printed parts, the bought parts, and the print notes for each](../drawings/manufacturing-overview.svg)
 
@@ -20,7 +20,7 @@ Nine STL files: **eight for the default build plus one optional 6×6 mask**. Two
 
 ## Will it fit your printer?
 
-Yes, almost certainly. The largest parts in the build, the main body and the cover-stage, are 124.8 × 154.8 mm on the plate, and the tallest is the main body at 75.6 mm. **A 160 × 160 mm bed prints everything**, which today means practically every desktop machine, including the smallest current ones. The v4 warnings about oversized parts and outsourcing the enclosure went away with v4.
+Yes, almost certainly. The largest parts in the build, the main body and the cover-stage, are 124.8 × 154.8 mm on the plate, and the tallest is the main body at 75.6 mm. **A 160 × 160 mm bed prints everything**, which today means practically every desktop machine, including the smallest current ones. The old warnings about oversized parts and outsourcing the enclosure went away with the prototype.
 
 | Part | Footprint on the plate | Height |
 |---|---|---|
@@ -81,7 +81,7 @@ The spec is ordinary PLA throughout: no engineering filaments, no specialty fini
 
 **Black for the seven parts near the film.** Everything the film sees at close range is black to absorb stray light: holder bases and lids, pressure windows, the mask.
 
-**Quantity.** About **300–350 g for the whole set**, roughly a third of the v4 build. One spool of each colour covers it many times over.
+**Quantity.** About **300–350 g for the whole set**, roughly a third of the prototype build. One spool of each colour covers it many times over.
 
 ---
 
@@ -117,7 +117,7 @@ Print instructions here always name a feature you can see on the part, never a h
 
 ### [cover-stage.stl](../stl/white-pla/cover-stage.stl)
 
-- **White.** 124.8 × 154.8 × 10.0. This single part replaces the v4 top cover and film stage.
+- **White.** 124.8 × 154.8 × 10.0. This single part replaces the prototype's top cover and film stage.
 - **On the plate:** the flat face with the four corner notches goes down; the raised tray flange faces up.
 - **Supports: none.** The notch roofs bridge 3.3 mm, the longest bridges in the build and still trivial.
 - **On this part:** the 62 × 95 light window, the recessed seat for the opal acrylic just below the deck surface, four small square counterbores for the steel shims, and the tray flange that locates the film holder.

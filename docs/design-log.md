@@ -8,6 +8,8 @@
 
 ## How to read this log
 
+A note on numbering first: v1 to v5 in this log are internal draft numbers. The fifth draft is what shipped as the public release, version 1; the printed prototype discussed below is internal draft 4.
+
 The design moved through three phases: repairing a first draft whose arithmetic did not close, collapsing a tall upright box into a flat horizontal one, and then deleting everything that turned out to be unnecessary.
 
 ```mermaid

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""NeoBox v5 — exploded assembly drawing generator.
+"""NeoBox v1 — exploded assembly drawing generator.
 
 Regenerates (overwrites) three files in drawings/:
     exploded.svg          (English)
@@ -49,7 +49,7 @@ FONT = "Helvetica, Arial, sans-serif"
 LANG = {
     "en": {
         "file": "exploded.svg",
-        "title": "NeoBox v5 — Exploded Assembly",
+        "title": "NeoBox v1 — Exploded Assembly",
         "subtitle": "Bottom-up magnetic stack · overall 124.8×154.8×87 · dimensions in mm (design values)",
         "badge": "NO SCREWS · NO TOOLS · MAGNETIC",
         "steps_header": "Assembly steps",
@@ -81,7 +81,7 @@ LANG = {
     },
     "zh": {
         "file": "exploded.zh-CN.svg",
-        "title": "NeoBox v5 — 爆炸装配图",
+        "title": "NeoBox v1 — 爆炸装配图",
         "subtitle": "自下而上磁吸堆叠 · 整机 124.8×154.8×87 · 尺寸单位 mm（设计值）",
         "badge": "无螺丝 · 无工具 · 磁吸",
         "steps_header": "装配步骤",
@@ -113,7 +113,7 @@ LANG = {
     },
     "ja": {
         "file": "exploded.ja.svg",
-        "title": "NeoBox v5 — 分解組立図",
+        "title": "NeoBox v1 — 分解組立図",
         "subtitle": "下から積むマグネット構成 · 全体 124.8×154.8×87 · 寸法 mm（設計値）",
         "badge": "ネジなし · 工具なし · マグネット",
         "steps_header": "組立手順",
@@ -145,7 +145,7 @@ LANG = {
     },
 }
 
-FOOTER = "NeoBox v5 — 2026-08"
+FOOTER = "NeoBox v1 — 2026-08"
 
 
 # ---------------------------------------------------------------- helpers

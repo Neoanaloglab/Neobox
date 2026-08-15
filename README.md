@@ -6,10 +6,10 @@
 
 **Contents:** [What NeoBox is](#what-neobox-is) · [What you get, and what you must already own](#what-you-get-and-what-you-must-already-own) · [Why a flash](#why-a-flash) · [How the light works](#how-the-light-works) · [Documentation](#documentation) · [Quick start](#quick-start) · [Repository layout](#repository-layout) · [Adapting to a different flash](#adapting-to-a-different-flash) · [Status](#status) · [Licence and credits](#licence-and-credits)
 
-![Licence: MIT](https://img.shields.io/badge/licence-MIT-blue) ![Status: prototype, never printed](https://img.shields.io/badge/status-prototype-orange) ![Formats: 35 mm and 120](https://img.shields.io/badge/formats-35%20mm%20%C2%B7%20120-lightgrey) ![Outer size about 125 by 155 by 83 mm](https://img.shields.io/badge/size-~125%20%C3%97%20155%20%C3%97%2083%20mm-lightgrey)
+![Licence: MIT](https://img.shields.io/badge/licence-MIT-blue) ![Status: v1, not yet built](https://img.shields.io/badge/status-v1%20unbuilt-orange) ![Formats: 35 mm and 120](https://img.shields.io/badge/formats-35%20mm%20%C2%B7%20120-lightgrey) ![Outer size about 125 by 155 by 83 mm](https://img.shields.io/badge/size-~125%20%C3%97%20155%20%C3%97%2083%20mm-lightgrey)
 
 > [!IMPORTANT]
-> This is a prototype release. The geometry is dimensionally verified in the Blender source and the exported STL files are numerically verified, but **the box has never been printed, photographed, measured or evenness-tested.** Read [Status](#status) before you spend money.
+> This is the first release. The geometry is dimensionally verified in the Blender source and the exported STL files are numerically verified, but **no box of this geometry has ever been printed, photographed, measured or evenness-tested.** Read [Status](#status) before you spend money.
 
 ## What NeoBox is
 
@@ -24,7 +24,7 @@ Because the flash stays outside the enclosure, the box only has to contain the m
 | Outer size | ≈ 125 × 155 × 83 mm (footprint 124.8 × 154.8 mm; 87 mm to the top of a seated film holder) |
 | Formats | 135 and 120 up to 6×9; 6×6 via a mask insert; 6×4.5 by cropping in post |
 | Printed parts | 9 STL files (2 white, 7 black, including the 6×6 mask insert); ≈ 300–350 g; all support-free |
-| Bought parts | 1 opal acrylic diffuser, 32 Ø8 × 2 mm magnets, 4 steel washers; optional: 1 anti-Newton glass, 1 USB LED strip, 1 flocking sheet |
+| Bought parts | 1 opal acrylic diffuser, 32 Ø8 × 2 mm magnets, 4 steel washers; optional: 1 anti-Newton glass, 1 flocking sheet |
 | Enclosure | A one-piece main body with a fully open front, and a cover-stage that drops on over four locating tenons |
 | Diffusion | Single opal acrylic diffuser, 68 × 118 × 2 mm, under a 62 × 95 mm light window, 4.6 mm below the film |
 | Film flatness | Insert platform: a 4.6 mm element ledge in the holder base carries a printed pressure-window insert, upgradable to one universal 64 × 95 × 2 mm anti-Newton glass |
@@ -85,7 +85,7 @@ The precedent is commercial. Ricoh's [PENTAX FILM DUPLICATOR](https://ricohimagi
 <details>
 <summary>Why the flash stays outside the box</summary>
 
-Earlier NeoBox revisions sealed the speedlight inside the enclosure, so the box had to be sized around the largest supported flash, and changing its batteries meant opening the box. v5 leaves the front wall entirely open: the flash lies on the desk and fires in, so the enclosure no longer depends on any flash dimension, any brand works, and the radio receiver sits outside where its signal is unobstructed.
+Earlier NeoBox revisions sealed the speedlight inside the enclosure, so the box had to be sized around the largest supported flash, and changing its batteries meant opening the box. v1 leaves the front wall entirely open: the flash lies on the desk and fires in, so the enclosure no longer depends on any flash dimension, any brand works, and the radio receiver sits outside where its signal is unobstructed.
 
 Fully diffuse illumination keeps a side benefit known from darkroom enlargers, too: fine scratches and grain render softer than under directional light.
 
@@ -120,7 +120,7 @@ flowchart LR
 ## Quick start
 
 - [ ] **1. Check that it suits you**: what you must already own, and the honest timeline. → [Getting started](docs/getting-started.md#getting-started)
-- [ ] **2. Buy**: one opal acrylic diffuser cut to 68 × 118 × 2 mm, 32 Ø8 × 2 mm N35 magnets, 4 steel washers, and optionally one 64 × 95 × 2 mm anti-Newton glass, a USB LED strip and a flocking sheet. → [Bill of materials](docs/bom.md#tools-and-consumables)
+- [ ] **2. Buy**: one opal acrylic diffuser cut to 68 × 118 × 2 mm, 32 Ø8 × 2 mm N35 magnets, 4 steel washers, and optionally one 64 × 95 × 2 mm anti-Newton glass and a flocking sheet. → [Bill of materials](docs/bom.md#tools-and-consumables)
 - [ ] **3. Print**: 9 STL files in two colours (2 white, 7 black), plain PLA, no supports; every part prints on a flat face. The white filament must be **matte**: silk or glossy white keeps specular reflections alive in the cavity. → [3D printing](docs/printing.md#printing)
 - [ ] **4. Assemble and calibrate**: press in the magnets, stack the parts; no screws, no tools. Then set a small mirror on the stage and centre the lens's own reflection in the viewfinder: the sensor is now parallel to the film plane. → [Assembly](docs/assembly.md#assembly)
 - [ ] **5. Scan**: focus on the grain, meter, and shoot a roll. → [Scanning](docs/scanning.md#scanning)
@@ -133,7 +133,7 @@ flowchart LR
 | Path | Contents | Kind |
 |---|---|---|
 | [`cad/neobox.blend`](cad/neobox.blend) | Blender source: the authoritative geometry for every part | Source |
-| [`cad/film-stage-aluminium-3mm.dxf`](cad/film-stage-aluminium-3mm.dxf) | The v4 aluminium film stage, superseded; in v5 the stage is merged into the cover-stage | Historical |
+| [`cad/film-stage-aluminium-3mm.dxf`](cad/film-stage-aluminium-3mm.dxf) | The printed prototype's aluminium film stage, superseded; in v1 the stage is merged into the cover-stage | Historical |
 | [`cad/legacy-plywood/`](cad/legacy-plywood/) | Two DXFs left from the abandoned plywood route. Not a complete build; kept for the record | Historical |
 | [`stl/white-pla/`](stl/white-pla/) | `main-body.stl`, `cover-stage.stl` | Generated |
 | [`stl/black-pla/`](stl/black-pla/) | Four film-holder parts, two pressure-window inserts, and `mask-6x6.stl` | Generated |
@@ -154,10 +154,10 @@ Choosing a substitute takes one criterion: **manual power control**. TTL and HSS
 
 ## Status
 
-Prototype release, v5 geometry.
+First release, v1 geometry.
 
 - **Verified:** all nine STL files are watertight single solids with zero non-manifold edges, every horizontal face sits on the 0.2 mm layer grid in its print orientation, and every bounding box matches the published dimensions. Run `tools/verify_stl.py` to reproduce this.
-- **Not verified:** the design has **never been printed, photographed, measured or evenness-tested.** No physical box exists.
+- **Not verified:** this geometry has **never been printed, photographed, measured or evenness-tested.** The only box ever printed was the old prototype, which shares almost no parts with v1.
 - Every evenness figure quoted in the documents is a **design target**, not a measurement.
 - The single-diffuser decision is informed by the author's existing light-pad workflow, not by testing this box.
 - The film-flatness figures (the 0.4 mm channel, the ≤ 0.28 mm bow under the printed insert) come from the CAD stack and tolerance analysis, not from measuring real film in a real holder.

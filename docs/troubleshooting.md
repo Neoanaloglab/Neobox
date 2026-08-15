@@ -58,7 +58,7 @@ flowchart TD
 | The holder will not snap down onto the stage, or slides around on it | The four steel washers are stainless (not magnetic), or missing from their counterbores | Fit carbon-steel or zinc-plated washers, one in each counterbore, flush with the deck. Test any new batch with a magnet the day it arrives. |
 | A magnet drops into its pocket loose instead of press-fitting | The pocket printed oversize | A drop of cyanoacrylate, and seat it to the pocket's full depth; a proud magnet changes the closing gap. |
 | The whole holder sits about 1 mm high with the 6 × 6 mask fitted | The mask goes underneath the 120 base | Not a fault; the design does exactly this. |
-| The diffuser has gone cloudy or is covered in fine cracks | Alcohol, or an ammonia-based glass cleaner | Fit a new sheet: 68 × 118 × 2 mm is a cheap custom cut, and a v4-size 110 × 130 sheet can be cut down to it. |
+| The diffuser has gone cloudy or is covered in fine cracks | Alcohol, or an ammonia-based glass cleaner | Fit a new sheet: 68 × 118 × 2 mm is a cheap custom cut, and a prototype-era 110 × 130 sheet can be cut down to it. |
 | The diffuser looks dull and milky all over, straight out of the packet | Protective film still on one face | Peel both faces. It is easy to remove one and miss the other. |
 
 > [!CAUTION]

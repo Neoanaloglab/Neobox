@@ -34,7 +34,7 @@ The flash is not inside the box. It lies flat on the same desk the box stands on
 
 **Nothing is aimed at the film.** The light window is in the ceiling of the cavity, at right angles to the beam, so light reaches it only after several diffuse bounces off the bare white PLA. That is what makes the interior an [integrating cavity](glossary.md#integrating-cavity) rather than a lamp with a shade. It leaves through the 62 × 95 window and gets its final smoothing from one [opal](glossary.md#opal) acrylic sheet recessed into the cover-stage directly above.
 
-The open front is the whole v5 architecture in one move. The v4 box sealed the flash inside, and everything difficult about v4 followed from that: the box height was derived from the flash's thickness, an access panel was needed to reach the power dial, a cable gland to pass wires, and the published STLs fitted one flash model and no other. With the flash outside, all of it disappears: any brand of flash works, the receiver stays on the desk where its radio signal is clean and its batteries are reachable, and there is no panel, gland or ventilation question left to answer ([§6](#6-enclosure)). The price is that ambient light can enter the cavity. That trade is accepted, not ignored: the flash pulse is far brighter than room ambient at sync speed ([§8](#8-flash-operation)).
+The open front is the whole v1 architecture in one move. The printed prototype (internal revision 4) sealed the flash inside the box, and everything difficult about the prototype followed from that: the box height was derived from the flash's thickness, an access panel was needed to reach the power dial, a cable gland to pass wires, and the published STLs fitted one flash model and no other. With the flash outside, all of it disappears: any brand of flash works, the receiver stays on the desk where its radio signal is clean and its batteries are reachable, and there is no panel, gland or ventilation question left to answer ([§6](#6-enclosure)). The price is that ambient light can enter the cavity. That trade is accepted, not ignored: the flash pulse is far brighter than room ambient at sync speed ([§8](#8-flash-operation)).
 
 > [!NOTE]
 > **Work in a dim room, and keep ceiling lamps from shining straight into the opening.** The pulse overwhelms ambient light by design, but a bright lamp aimed into the open front is the one geometry that erodes that margin for free.
@@ -43,7 +43,7 @@ The open front is the whole v5 architecture in one move. The v4 box sealed the f
 
 ## 2. Dimension chain
 
-In v4 the box was derived from the flash, and its numbers died with it. v5 severs the link: the flash never enters the box, so the chain no longer starts at a product's datasheet. It starts at the desk and runs upward, part stacked on part, by gravity.
+In the prototype the box was derived from the flash, and its numbers died with it. v1 severs the link: the flash never enters the box, so the chain no longer starts at a product's datasheet. It starts at the desk and runs upward, part stacked on part, by gravity.
 
 ### The printed parts
 
@@ -87,7 +87,7 @@ The main body is 124.8 × 154.8 outside; the walls are 2.4, the front is open, s
 
 ### Generalising to another flash
 
-There is nothing to re-derive. The v4 formulas that turned a flash datasheet into a box height are gone because the input is gone: **no dimension of the v5 box encodes any dimension of any flash.** A substitute flash needs manual power control and a head that can lie flat and fire level into the open front. The TT560's emitting face, 60 × 45 with its centre 31 above the desk, is the reference, not a limit. The receiver stays outside too, so the trigger model is equally free. Swapping flashes touches neither `cad/neobox.blend` nor the STLs ([§11](#11-working-with-the-source)).
+There is nothing to re-derive. The prototype-era formulas that turned a flash datasheet into a box height are gone because the input is gone: **no dimension of the v1 box encodes any dimension of any flash.** A substitute flash needs manual power control and a head that can lie flat and fire level into the open front. The TT560's emitting face, 60 × 45 with its centre 31 above the desk, is the reference, not a limit. The receiver stays outside too, so the trigger model is equally free. Swapping flashes touches neither `cad/neobox.blend` nor the STLs ([§11](#11-working-with-the-source)).
 
 ### Layer quantisation
 
@@ -101,7 +101,7 @@ There is nothing to re-derive. The v4 formulas that turned a flash datasheet int
 | Holder lids (printed top face down) | 0 · 1.0 element-cavity ceiling · 3.0 lid underside (assembly-local 8.0 / 7.0 / 5.0) |
 | Inserts / mask | flat plates, 2.0 / 1.0 |
 
-The point of the grid: at a 0.2 mm [layer height](glossary.md#layer-height) every one of those stations lands exactly on a layer boundary, so a printed 0.4 step is a true 0.4 step, not a slicer rounding. 0.1 mm also divides the grid; 0.12 and 0.16 do not. The reasoning dates from the v4 holders and carries over unchanged ([design log entry 18](design-log.md#18-layer-quantised-holders)); what is new in v5 is that the whole design obeys it, not just the holders. The print order spec pins every file at 0.2 ([printing.md](printing.md)). The verifier enforces the grid and the minimum step on every export ([§11](#11-working-with-the-source)).
+The point of the grid: at a 0.2 mm [layer height](glossary.md#layer-height) every one of those stations lands exactly on a layer boundary, so a printed 0.4 step is a true 0.4 step, not a slicer rounding. 0.1 mm also divides the grid; 0.12 and 0.16 do not. The reasoning dates from the prototype's holders and carries over unchanged ([design log entry 18](design-log.md#18-layer-quantised-holders)); what is new in v1 is that the whole design obeys it, not just the holders. The print order spec pins every file at 0.2 ([printing.md](printing.md)). The verifier enforces the grid and the minimum step on every export ([§11](#11-working-with-the-source)).
 
 ---
 
@@ -125,7 +125,7 @@ The point of the grid: at a 0.2 mm [layer height](glossary.md#layer-height) ever
 
 ## 4. Cover-stage
 
-The cover-stage is v4's top cover and film stage merged into a single white plate: one printed part where there used to be a cover, a stage, three studs, six nuts and three heat-set inserts. It seats directly on the wall tops and carries everything optical above the cavity.
+The cover-stage is the prototype's top cover and film stage merged into a single white plate: one printed part where there used to be a cover, a stage, three studs, six nuts and three heat-set inserts. It seats directly on the wall tops and carries everything optical above the cavity.
 
 What the one part carries:
 
@@ -133,18 +133,18 @@ What the one part carries:
 - **The light window**: 62 × 95, centred, straight through the plate.
 - **The acrylic recess**: 69 × 119, 2.4 deep, floor at 76.6, open to the deck. The opal sheet drops in from above and sits 0.4 below the deck ([§3](#3-optical-decisions)).
 - **The tray**: a flange rim around a 94.6 × 120.6 seat, 4 high, top at 83.0. It locates the holder with 0.3 mm per side and its top face catches the film tail 0.2 below the film plane ([§5](#5-film-holders)).
-- **The washer pockets**: four, 10.6 square and 1.0 deep, at (±41, ±12). A 10 × 10 × 1 steel washer (or a Ø10 × 1 disc) drops into each, flush with the deck: ferrous seats for the holder-base magnets, so the holder snaps down onto the tray and stays put. It is the same job v4's glued washers did, now without glue.
+- **The washer pockets**: four, 10.6 square and 1.0 deep, at (±41, ±12). A 10 × 10 × 1 steel washer (or a Ø10 × 1 disc) drops into each, flush with the deck: ferrous seats for the holder-base magnets, so the holder snaps down onto the tray and stays put. It is the same job the prototype's glued washers did, now without glue.
 
 To move it, pinch the flange and lift; the whole cover-stage comes off the box in one piece.
 
-**There is no levelling hardware, and that is the design, not an omission.** v4 levelled its film stage against the box on three M6 studs; v5 deletes the studs, the nuts, the inserts and the procedure.
+**There is no levelling hardware, and that is the design, not an omission.** The prototype levelled its film stage against the box on three M6 studs; v1 deletes the studs, the nuts, the inserts and the procedure.
 
 <details>
 <summary>Why levelling moved to the camera end</summary>
 
-Plastic never carries a thread in this design. FDM-printed threads are weak and creep under load; v4 already avoided them with brass inserts and steel studs, and v5 removes the need for even those.
+Plastic never carries a thread in this design. FDM-printed threads are weak and creep under load; the prototype already avoided them with brass inserts and steel studs, and v1 removes the need for even those.
 
-The deeper reason: the only parallelism that matters is **film plane to sensor**, and levelling the stage against the box never delivered that directly; after v4's three-nut ritual you still had to square the camera to the stage. v5 keeps only the step that matters. Lay a small mirror on the film stage, look through the viewfinder, and move the camera until the reflection of its own lens is centred: when it is, the sensor is parallel to the mirror, and therefore to the film plane the mirror is lying on ([assembly.md](assembly.md#step-7--level-at-the-camera-the-mirror-method)).
+The deeper reason: the only parallelism that matters is **film plane to sensor**, and levelling the stage against the box never delivered that directly; after the prototype's three-nut ritual you still had to square the camera to the stage. v1 keeps only the step that matters. Lay a small mirror on the film stage, look through the viewfinder, and move the camera until the reflection of its own lens is centred: when it is, the sensor is parallel to the mirror, and therefore to the film plane the mirror is lying on ([assembly.md](assembly.md#step-7--level-at-the-camera-the-mirror-method)).
 
 Because the mirror lies on the *result* of the whole printed stack (floor, walls, plate, holder), every print tolerance underneath it is absorbed in that single alignment. The box does not need to be flat to a target; the camera meets the film plane wherever it actually is.
 
@@ -200,12 +200,12 @@ The element is seated once and then never handled. Advancing film means gripping
 
 **Main body** is one printed piece: a 3.0 floor, three 2.4 walls (left, right, rear), and no front wall at all. Four locating tenons, 2.4 × 12 × 2.6, stand on the side-wall tops and engage the cover-stage's corner notches.
 
-**What the open front deleted.** v4 needed an access panel because the flash's power dial lived inside a sealed box, a cable gland because wires had to cross a light-tight wall, and a ventilation answer because heat had nowhere to go. In v5 there is nothing inside to reach: flash, receiver and their batteries all sit on the desk, a power change is a fingertip away, the focus light's cable simply walks out through the opening, and the cavity is open air. All three problems left with the front wall.
+**What the open front deleted.** The prototype needed an access panel because the flash's power dial lived inside a sealed box, a cable gland because wires had to cross a light-tight wall, and a ventilation answer because heat had nowhere to go. In v1 there is nothing inside to reach: flash, receiver and their batteries all sit on the desk, a power change is a fingertip away, the focus light's cable simply walks out through the opening, and the cavity is open air. All three problems left with the front wall.
 
 **No screws, no glue, no tools.** No thread engages plastic anywhere in the design. Every joint is a tenon in a notch, gravity, or a magnet: the cover-stage locates on tenons and holds by weight, the holder holds by magnets on washers, the lid by magnets on the base, the element by gravity in its ledge. The magnets press-fit; the washers drop in loose. Assembly is stacking, in order, and is over in minutes ([assembly.md](assembly.md)).
 
 > [!NOTE]
-> **The fastener inventory of the entire build is: zero screws, zero adhesive.** Even v4's two glue points (holder magnets and steel washers) are gone: v5's magnets are interference-fitted and its washers sit in pockets.
+> **The fastener inventory of the entire build is: zero screws, zero adhesive.** Even the prototype's two glue points (holder magnets and steel washers) are gone: v1's magnets are interference-fitted and its washers sit in pockets.
 
 > [!WARNING]
 > **A gravity stack must not be carried tilted.** Assembled, the box is aligned, not attached: move it flat across the desk, or move the pieces separately; the cover-stage lifts off by its flange in one motion.
@@ -231,9 +231,7 @@ XY from the centre of the box; z from the desk. Read from `cad/neobox.blend`.
 
 ## 7. Focus light
 
-Optional: two 120 mm segments of dimmable 5 V USB LED strip, stuck to the inside of the side walls, a dim, always-on positioning light so you can see the frame between pops. The flash overwhelms it completely, so it never needs switching off between frames; switch it off at the end of a roll.
-
-The cable leaves through the open front, and the inline dimmer stays outside with it. **Nothing mains-powered goes inside the enclosure**: power the strip from a USB power bank or charger.
+There is no built-in focus light, and nothing electrical lives inside the enclosure. Frame and focus with ordinary room light: a dim room shows plenty of film detail, any lamp works as long as it does not shine straight into the open front, and at capture the flash overwhelms whatever the room contributes.
 
 ---
 
@@ -270,7 +268,7 @@ Once the camera is set, the box is what moves: slide it on the desk to centre th
 
 If you want to build one:
 
-1. Size the light window from the sheet plus clearance, then the cavity from the window plus a mixing margin on every side. v5's margins of 29 and 27.5 are this build's values, not established minima; at 4×5 scale expect to iterate, and expect a bigger flash to be needed to fill the larger cavity. Nothing about evenness at that size has been tested.
+1. Size the light window from the sheet plus clearance, then the cavity from the window plus a mixing margin on every side. v1's margins of 29 and 27.5 are this build's values, not established minima; at 4×5 scale expect to iterate, and expect a bigger flash to be needed to fill the larger cavity. Nothing about evenness at that size has been tested.
 2. Keep the flattening sandwich: a four-sided land at 0.4 above the plate face, an element ledge exactly 0.4 above the land, every z-feature on the 0.2 grid, no exposed step under 0.4 ([§5](#5-film-holders)). Sheets load one at a time, so the strip-feed details (pull-through advance, guide stubs) do not carry over; the land-plus-element principle does.
 3. The open-front architecture and the screwless gravity stack carry over unchanged: derive a bigger box, not a different kind of box.
 
@@ -316,10 +314,10 @@ Scene Collection
 
 ### What is a mock-up and must never be exported
 
-Everything else in the scene is a mock-up, there to show fit and light path, and none of it is printed or exported: the flash body and its emitting face, the T1 receiver, the two LED-strip candidates, the four light-path arrows, the 135 and 120 film-strip mock-ups, the opal acrylic, the AN glass, the four steel washers, a text label, and the camera/light/view-target scaffolding.
+Everything else in the scene is a mock-up, there to show fit and light path, and none of it is printed or exported: the flash body and its emitting face, the T1 receiver, the four light-path arrows, the 135 and 120 film-strip mock-ups, the opal acrylic, the AN glass, the four steel washers, a text label, and the camera/light/view-target scaffolding.
 
 > [!CAUTION]
-> **Material names do not tell you the filament colour.** The material slots exist for the renders: `NB_alu`, for one, survives from the deleted v4 aluminium stage. Take colours from [printing.md](printing.md#the-nine-parts), never from the material slot.
+> **Material names do not tell you the filament colour.** The material slots exist for the renders: `NB_alu`, for one, survives from the prototype's deleted aluminium stage. Take colours from [printing.md](printing.md#the-nine-parts), never from the material slot.
 
 ### The export convention
 
@@ -400,11 +398,11 @@ The published bounding boxes live in the `EXPECTED` table at the top of the scri
 
 ### Changing the flash
 
-In v4 this heading introduced a re-derivation checklist. In v5 there is nothing to change: **no dimension of the box encodes the flash**, so a different flash (or a different trigger) touches neither `cad/neobox.blend` nor the STLs. The new flash needs manual power control and a head that can lie flat and fire level into the open front; after swapping, redo the metering test frame and carry on ([§8](#8-flash-operation)).
+In the prototype era this heading introduced a re-derivation checklist. In v1 there is nothing to change: **no dimension of the box encodes the flash**, so a different flash (or a different trigger) touches neither `cad/neobox.blend` nor the STLs. The new flash needs manual power control and a head that can lie flat and fire level into the open front; after swapping, redo the metering test frame and carry on ([§8](#8-flash-operation)).
 
 ### Other files in `cad/`
 
-- `film-stage-aluminium-3mm.dxf`: the v4 aluminium film stage, kept for history only. v5 has no film stage: the part was merged into the cover-stage, and nothing in the current design is cut from this file.
+- `film-stage-aluminium-3mm.dxf`: the prototype's aluminium film stage, kept for history only. v1 has no film stage: the part was merged into the cover-stage, and nothing in the current design is cut from this file.
 - `legacy-plywood/`: DXFs from the plywood revision, kept for history only. Between them the two files do not describe a complete shell, and nothing in the current design is cut from them.
 
 Contribution rules (what is source, what is generated, and the three-language requirement) are in [CONTRIBUTING.md](../CONTRIBUTING.md#source-of-truth-vs-generated-files).

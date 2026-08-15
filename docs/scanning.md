@@ -108,7 +108,7 @@ Re-check parallelism whenever the box or the camera has been moved. The rest of 
 
 ## Focus
 
-1. Switch on the optional LED strip (the 5 V USB positioning light on the inside wall) if you fitted one. Without it, give the room just enough light to see film detail, keeping every lamp out of the open front's line of sight.
+1. Give the room just enough light to see film detail, keeping every lamp out of the open front's line of sight.
    *Checkpoint:* you can see film detail in the window.
 2. Load a strip and pull the first frame into the window.
    *Checkpoint:* the frame sits centred in the window, with no rebate line intruding.
@@ -120,8 +120,6 @@ Re-check parallelism whenever the box or the camera has been moved. The rest of 
    *Checkpoint:* grain is crisp in the centre and in both corners. If one corner never comes good, go back to [Parallelism](#parallelism).
 6. Switch the lens to manual focus, or tape the focus ring, and do not touch it again for the rest of the session.
    *Checkpoint:* nudging the focus ring does nothing, or the tape holds it fast.
-
-The LED strip can stay on while you shoot; the flash overwhelms it completely. It is there so you can see, not to expose anything.
 
 ## Exposure
 
