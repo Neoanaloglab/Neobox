@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="640" viewBox="0 0 980 640" font-family="Helvetica, Arial, sans-serif">
+<rect width="980" height="640" fill="#ffffff"/>
+<defs>
+<marker id="mg" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5.5" markerHeight="5.5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#666"/></marker>
+</defs>
+<text x="24" y="40" font-size="21" fill="#111" font-weight="bold">NeoBox v5 — なぜストロボか：スペクトルと時間</text>
+<text x="24" y="60" font-size="12" fill="#555">模式図——実測ではなく典型スペクトル · 横軸：波長 400–700nm · 縦軸：相対分光パワー（0–1・無単位）</text>
+<line x1="200" y1="96" x2="230" y2="96" stroke="#e8a33d" stroke-width="3"/>
+<text x="236" y="100" font-size="13" fill="#111">キセノン閃光（連続スペクトル）</text>
+<line x1="470" y1="96" x2="500" y2="96" stroke="#555" stroke-width="3"/>
+<text x="506" y="100" font-size="13" fill="#111">典型的な白色 LED（青ポンプ＋蛍光体）</text>
+<line x1="790" y1="96" x2="820" y2="96" stroke="#999" stroke-width="3" stroke-dasharray="7,5"/>
+<text x="826" y="100" font-size="13" fill="#111">RGB 合成白</text>
+<text x="24" y="128" font-size="14" fill="#111" font-weight="bold">① スペクトル領域</text>
+<text x="280" y="128" font-size="11.5" fill="#666">相対分光パワー（0–1）</text>
+<line x1="270.0" y1="384.0" x2="702" y2="384.0" stroke="#666" stroke-width="1.4" marker-end="url(#mg)"/>
+<line x1="270.0" y1="384.0" x2="270.0" y2="130" stroke="#666" stroke-width="1.4" marker-end="url(#mg)"/>
+<text x="708" y="388" font-size="11.5" fill="#666">λ (nm)</text>
+<line x1="270.0" y1="384.0" x2="270.0" y2="390.0" stroke="#666" stroke-width="1"/>
+<text x="270.0" y="404" font-size="11.5" fill="#666" text-anchor="middle">400</text>
+<line x1="340.0" y1="384.0" x2="340.0" y2="390.0" stroke="#666" stroke-width="1"/>
+<text x="340.0" y="404" font-size="11.5" fill="#666" text-anchor="middle">450</text>
+<line x1="410.0" y1="384.0" x2="410.0" y2="390.0" stroke="#666" stroke-width="1"/>
+<text x="410.0" y="404" font-size="11.5" fill="#666" text-anchor="middle">500</text>
+<line x1="480.0" y1="384.0" x2="480.0" y2="390.0" stroke="#666" stroke-width="1"/>
+<text x="480.0" y="404" font-size="11.5" fill="#666" text-anchor="middle">550</text>
+<line x1="550.0" y1="384.0" x2="550.0" y2="390.0" stroke="#666" stroke-width="1"/>
+<text x="550.0" y="404" font-size="11.5" fill="#666" text-anchor="middle">600</text>
+<line x1="620.0" y1="384.0" x2="620.0" y2="390.0" stroke="#666" stroke-width="1"/>
+<text x="620.0" y="404" font-size="11.5" fill="#666" text-anchor="middle">650</text>
+<line x1="690.0" y1="384.0" x2="690.0" y2="390.0" stroke="#666" stroke-width="1"/>
+<text x="690.0" y="404" font-size="11.5" fill="#666" text-anchor="middle">700</text>
+<line x1="264.0" y1="384.0" x2="270.0" y2="384.0" stroke="#666" stroke-width="1"/>
+<text x="260.0" y="388.0" font-size="11.5" fill="#666" text-anchor="end">0</text>
+<line x1="264.0" y1="262.0" x2="270.0" y2="262.0" stroke="#666" stroke-width="1"/>
+<text x="260.0" y="266.0" font-size="11.5" fill="#666" text-anchor="end">0.5</text>
+<line x1="264.0" y1="140.0" x2="270.0" y2="140.0" stroke="#666" stroke-width="1"/>
+<text x="260.0" y="144.0" font-size="11.5" fill="#666" text-anchor="end">1.0</text>
+<rect x="270.0" y="414" width="140.0" height="26" fill="#dce8f7" stroke="#bbbbbb" stroke-width="0.8"/>
+<text x="340.0" y="431" font-size="12" fill="#333" text-anchor="middle">イエロー色素層</text>
+<text x="340.0" y="458" font-size="12" fill="#333" text-anchor="middle">（青を吸収）</text>
+<rect x="410.0" y="414" width="140.0" height="26" fill="#dcefdc" stroke="#bbbbbb" stroke-width="0.8"/>
+<text x="480.0" y="431" font-size="12" fill="#333" text-anchor="middle">マゼンタ色素層</text>
+<text x="480.0" y="458" font-size="12" fill="#333" text-anchor="middle">（緑を吸収）</text>
+<rect x="550.0" y="414" width="140.0" height="26" fill="#f7dcdc" stroke="#bbbbbb" stroke-width="0.8"/>
+<text x="620.0" y="431" font-size="12" fill="#333" text-anchor="middle">シアン色素層</text>
+<text x="620.0" y="458" font-size="12" fill="#333" text-anchor="middle">（赤を吸収）</text>
+<text x="258" y="431" font-size="12" fill="#333" text-anchor="end">カラーネガ３層の色素帯域</text>
+<path d="M270.0,381.6 C274.2,381.6 288.7,382.0 295.2,381.6 C301.7,381.2 305.2,382.0 309.2,379.1 C313.2,376.2 315.3,377.5 319.0,364.5 C322.7,351.5 326.9,325.4 331.6,301.0 C336.3,276.6 341.9,218.1 347.0,218.1 C352.1,218.1 357.7,276.6 362.4,301.0 C367.1,325.4 370.8,351.5 375.0,364.5 C379.2,377.5 383.6,376.2 387.6,379.1 C391.6,382.0 395.1,381.2 398.8,381.6 C402.5,382.0 406.3,382.8 410.0,381.6 C413.7,380.4 417.9,386.4 421.2,374.2 C424.5,362.0 425.6,332.0 429.6,308.4 C433.6,284.8 439.9,232.7 445.0,232.7 C450.1,232.7 456.4,284.8 460.4,308.4 C464.4,332.0 465.5,362.0 468.8,374.2 C472.1,386.4 474.6,380.4 480.0,381.6 C485.4,382.8 494.0,381.6 501.0,381.6 C508.0,381.6 516.2,381.6 522.0,381.6 C527.8,381.6 531.8,381.6 536.0,381.6 C540.2,381.6 543.5,382.8 547.2,381.6 C550.9,380.4 553.7,387.2 558.4,374.2 C563.1,361.2 569.6,328.7 575.2,303.5 C580.8,278.3 586.4,223.0 592.0,223.0 C597.6,223.0 603.2,278.3 608.8,303.5 C614.4,328.7 620.9,361.2 625.6,374.2 C630.3,387.2 630.7,380.4 636.8,381.6 C642.9,382.8 653.1,381.6 662.0,381.6 C670.9,381.6 685.3,381.6 690.0,381.6" fill="none" stroke="#999" stroke-width="2.6" stroke-linecap="round" stroke-dasharray="7,5"/>
+<path d="M270.0,232.7 C277.0,228.6 298.0,215.6 312.0,208.3 C326.0,201.0 340.0,193.9 354.0,188.8 C368.0,183.7 382.0,178.6 396.0,177.8 C410.0,177.0 424.0,184.5 438.0,183.9 C452.0,183.3 466.0,174.8 480.0,174.2 C494.0,173.6 508.0,177.9 522.0,180.3 C536.0,182.7 550.0,186.6 564.0,188.8 C578.0,191.0 592.0,191.0 606.0,193.7 C620.0,196.3 634.0,199.8 648.0,204.7 C662.0,209.6 683.0,219.9 690.0,223.0" fill="none" stroke="#e8a33d" stroke-width="2.6" stroke-linecap="round"/>
+<path d="M270.0,379.1 C272.8,379.1 281.2,380.3 286.8,379.1 C292.4,377.9 298.5,376.7 303.6,371.8 C308.7,366.9 313.4,368.1 317.6,349.8 C321.8,331.5 325.8,292.1 328.8,262.0 C331.8,231.9 333.9,188.4 335.8,169.3 C337.7,150.2 338.6,147.3 340.0,147.3 C341.4,147.3 342.3,152.2 344.2,169.3 C346.1,186.4 348.2,227.4 351.2,249.8 C354.2,272.2 358.7,291.3 362.4,303.5 C366.1,315.7 369.9,318.5 373.6,323.0 C377.3,327.5 380.6,330.3 384.8,330.3 C389.0,330.3 393.4,327.9 398.8,323.0 C404.2,318.1 409.3,312.0 417.0,301.0 C424.7,290.0 435.7,270.9 445.0,257.1 C454.3,243.3 463.7,227.8 473.0,218.1 C482.3,208.3 491.7,202.3 501.0,198.6 C510.3,194.9 519.7,194.5 529.0,196.1 C538.3,197.7 547.7,201.4 557.0,208.3 C566.3,215.2 576.8,226.6 585.0,237.6 C593.2,248.6 599.0,261.2 606.0,274.2 C613.0,287.2 620.0,303.5 627.0,315.7 C634.0,327.9 641.0,338.9 648.0,347.4 C655.0,355.9 662.0,362.4 669.0,366.9 C676.0,371.4 686.5,373.0 690.0,374.2" fill="none" stroke="#555" stroke-width="2.6" stroke-linecap="round"/>
+<text x="688" y="150" font-size="11.5" fill="#777" text-anchor="end">模式図——典型スペクトル（実測ではない）</text>
+<text x="245" y="170" font-size="13" fill="#111" text-anchor="end">LED：450nm の青色ピーク</text>
+<polyline points="249,166 262,166 340,144" fill="none" stroke="#444" stroke-width="1"/>
+<circle cx="340" cy="144" r="2.2" fill="#444" stroke="#ffffff" stroke-width="0.8"/>
+<text x="245" y="206" font-size="13" fill="#111" text-anchor="end">キセノン閃光：CRI ≥95・R9 が強い</text>
+<text x="245" y="224" font-size="13" fill="#111" text-anchor="end">（色温度 5500–6000K・昼光に近い）</text>
+<polyline points="249,202 262,202 312,208" fill="none" stroke="#444" stroke-width="1"/>
+<circle cx="312" cy="208" r="2.2" fill="#444" stroke="#ffffff" stroke-width="0.8"/>
+<text x="245" y="330" font-size="13" fill="#111" text-anchor="end">シアンの谷（cyan gap, ~480nm）</text>
+<polyline points="249,326 262,326 378,331" fill="none" stroke="#444" stroke-width="1"/>
+<circle cx="378" cy="331" r="2.2" fill="#444" stroke="#ffffff" stroke-width="0.8"/>
+<text x="245" y="372" font-size="13" fill="#111" text-anchor="end">RGB 合成白：ピークの間は</text>
+<text x="245" y="390" font-size="13" fill="#111" text-anchor="end">全くサンプリングされない</text>
+<polyline points="249,368 262,368 404,380" fill="none" stroke="#444" stroke-width="1"/>
+<circle cx="404" cy="380" r="2.2" fill="#444" stroke="#ffffff" stroke-width="0.8"/>
+<text x="725" y="196" font-size="13" fill="#111">3 つの色素層の帯域を</text>
+<text x="725" y="214" font-size="13" fill="#111">連続スペクトルで完全カバー</text>
+<polyline points="721,192 708,192 606,194" fill="none" stroke="#444" stroke-width="1"/>
+<circle cx="606" cy="194" r="2.2" fill="#444" stroke="#ffffff" stroke-width="0.8"/>
+<text x="725" y="330" font-size="13" fill="#111">630nm 以降の深赤ロールオフ</text>
+<text x="725" y="348" font-size="13" fill="#111">（R9 が弱い個体が多い）</text>
+<polyline points="721,326 708,326 641,335" fill="none" stroke="#444" stroke-width="1"/>
+<circle cx="641" cy="335" r="2.2" fill="#444" stroke="#ffffff" stroke-width="0.8"/>
+<text x="24" y="500" font-size="14" fill="#111" font-weight="bold">② 時間領域——パルス vs 実シャッター</text>
+<line x1="270" y1="545" x2="696" y2="545" stroke="#888" stroke-width="1.2" marker-end="url(#mg)"/>
+<text x="704" y="549" font-size="11" fill="#666">t</text>
+<rect x="300" y="511" width="5" height="34" fill="#e8a33d"/>
+<text x="322" y="524" font-size="12.5" fill="#333">＝パルスがシャッター（振動に強い）</text>
+<text x="245" y="522" font-size="13" fill="#111" text-anchor="end">閃光パルス</text>
+<text x="245" y="540" font-size="13" fill="#111" text-anchor="end">1/1,000–1/20,000 s</text>
+<polyline points="249,518 262,518 298,515" fill="none" stroke="#444" stroke-width="1"/>
+<circle cx="298" cy="515" r="2.2" fill="#444" stroke="#ffffff" stroke-width="0.8"/>
+<line x1="270" y1="600" x2="696" y2="600" stroke="#888" stroke-width="1.2" marker-end="url(#mg)"/>
+<text x="704" y="604" font-size="11" fill="#666">t</text>
+<rect x="300" y="584" width="260" height="16" fill="#d9d9d9" stroke="#555" stroke-width="1.2"/>
+<polyline points="302,577 310,581 318,577 326,581 334,577 342,581 350,577 358,581 366,577 374,581 382,577 390,581 398,577 406,581 414,577 422,581 430,577 438,581 446,577 454,581 462,577 470,581 478,577 486,581 494,577 502,581 510,577 518,581 526,577 534,581 542,577 550,581 558,577" fill="none" stroke="#777" stroke-width="1"/>
+<text x="245" y="578" font-size="13" fill="#111" text-anchor="end">連続 LED の長時間露光</text>
+<text x="245" y="596" font-size="13" fill="#111" text-anchor="end">1/15–1/60 s @ ISO 100 f/8</text>
+<polyline points="249,574 262,574 298,590" fill="none" stroke="#444" stroke-width="1"/>
+<circle cx="298" cy="590" r="2.2" fill="#444" stroke="#ffffff" stroke-width="0.8"/>
+<text x="725" y="574" font-size="13" fill="#111">架台の振動・シャッターショックが</text>
+<text x="725" y="592" font-size="13" fill="#111">すべて写り込む</text>
+<polyline points="721,570 708,570 508,576" fill="none" stroke="#444" stroke-width="1"/>
+<circle cx="508" cy="576" r="2.2" fill="#444" stroke="#ffffff" stroke-width="0.8"/>
+<text x="956" y="626" font-size="12" fill="#888" text-anchor="end">NeoBox v5 — 2026-08</text>
+</svg>

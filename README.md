@@ -56,9 +56,21 @@ NeoBox is one half of a scanning rig. It replaces the light table; it does not r
 
 **That makes vibration irrelevant.** The pulse behaves as an *effective shutter* one to three orders of magnitude shorter than the 1/15–1/60 s of real shutter time a continuous LED panel needs at ISO 100 and f/8. Copy-stand flex, shutter shock and footsteps on a wooden floor stop mattering, because nothing moves measurably within the pulse. This is the project's central claim.
 
-**Three smaller reasons follow.** You get f/8 at [base ISO](docs/glossary.md#base-iso) with power in reserve; every frame of a roll receives identical light, so one inversion profile fits the whole roll; and a xenon tube emits a genuinely continuous daylight spectrum at about 5600 K.
+**The second argument is spectral — film is pickier here than it looks.** A colour negative is three stacked dye layers — yellow, magenta, cyan — recording blue, green and red respectively, and the cyan record and the orange mask both do their work at the red end of the spectrum. A scanning light has to deliver honest energy across all three bands at once: wherever the source is weak or gapped, that dye layer is under-sampled, the three channels stop separating cleanly, and the bill arrives after inversion as crossed colour curves and stubborn casts that no single white-balance click can fix.
 
-**An LED panel was considered and declined.** A panel is already a surface emitter, but it loses the effective-shutter argument above. The reasoning is in [Design](docs/design.md#8-flash-operation) and the [FAQ](docs/getting-started.md#faq).
+**A xenon tube is the native light source for silver-halide materials.** Its emission is a genuinely continuous spectrum at roughly 5600 K — daylight-class colour rendering (CRI typically ≥ 95) with strong deep red, the R9 patch LEDs struggle with. A typical white LED is a blue pump plus phosphor: a spike near 450 nm, a dip around 480 nm (the "cyan gap"), a broad phosphor hump, then a roll-off past about 630 nm — landing exactly where the cyan layer and the orange mask need light most. The figure below shows the shape of the problem; the curves are schematic, typical of the two source classes, not measurements.
+
+![Spectral and time-domain comparison of flash and LED](drawings/spectral-response.svg)
+
+**"White" mixed from three LEDs fares no better — for the opposite reason.** An RGB-mixed source is three narrow spikes with near-nothing between them: whole bands of the dye spectra are simply never sampled. A one-shot colour camera makes it worse — its colour matrix is calibrated for continuous illuminants, so three spikes read through the Bayer filters produce channel cross-talk the calibration never anticipated, and the white point baked into the mixing ratios fights the orange mask. The result is casts that shift from film stock to film stock and refuse to grade out.
+
+**The honest optimum is acknowledged: a monochrome camera with sequential RGB.** Three exposures under narrow red, green and blue on a sensor with no Bayer mosaic make a densitometer-grade trichromatic scan — full resolution in every channel, separation defined by the source instead of by filter dyes. It is the drum-scanner lineage, and it costs a niche camera, three shots per frame and a registration workflow. NeoBox deliberately sits at the pragmatic point of that curve: one flash, one shot, any camera — with a continuous spectrum keeping the single-shot path honest.
+
+**Consistency is the third, quieter argument.** A manual flash at a fixed power fraction repeats shot after shot: every frame of a roll receives the same light, so one inversion profile fits the whole roll. There is no warm-up drift, no thermal colour shift over a session, and no PWM dimming — so nothing to band against an electronic shutter. And all of it arrives at f/8 and [base ISO](docs/glossary.md#base-iso), with power in reserve.
+
+**The precedent is commercial.** Ricoh's [PENTAX FILM DUPLICATOR](https://ricohimagingstore.com/pentax-film-duplicator.html) — the benchmark camera-scanning rig, from a camera maker with film heritage — is specified around exactly this recipe: a digital camera with a macro lens, and an external strobe fired through a diffusion screen. NeoBox is the same optical recipe, with the light box printed at home and a film path of its own.
+
+**An LED panel was considered and declined.** A panel is already a surface emitter, but it loses both the effective-shutter argument and the spectral argument above. The reasoning is in [Design](docs/design.md#8-flash-operation) and the [FAQ](docs/getting-started.md#faq).
 
 ## How the light works
 
