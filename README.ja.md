@@ -45,7 +45,7 @@ NeoBox はスキャン装置の半分です。ライトテーブルを置き換�
 | 図面（English・简体中文・日本語） | 箱の真上にカメラをまっすぐ保持できる[複写スタンド（copy stand）](docs/glossary.ja.md#複写スタンド-copy-stand)、または水平・反転可能なセンターポールを備えた三脚 |
 | 買い物・出力・組立・スキャンまでを扱うドキュメント 10 種 | ストロボ本体とトリガーセット。送信機はカメラのホットシューに載せ、受信機は箱の外に置きます |
 | リポジトリにコミット済みの STL 書き出しスクリプトとジオメトリ検証スクリプト | レリーズ、および[フラットフィールド補正（flat-field correction）](docs/glossary.ja.md#フラットフィールド補正-flat-field-correction)とネガの[反転（inversion）](docs/glossary.ja.md#反転-inversion)ができるソフトウェア |
-| プリント代行へ送れるバンドル | [工具と消耗品](docs/bom.ja.md#工具と消耗品)に挙げたもの。組立自体にはドライバーもレンチもはんだごても不要です |
+| そのまま貼り付けられる[発注文面](docs/bom.ja.md#発注文面)（各部品の注文用） | [工具と消耗品](docs/bom.ja.md#工具と消耗品)に挙げたもの。組立自体にはドライバーもレンチもはんだごても不要です |
 
 > [!IMPORTANT]
 > 製作費はプリント部品と購入部品だけの金額です。ストロボ、トリガー、カメラ、レンズ、スタンド、レリーズ、ソフトウェアは含みません。これらをひとつも持っていない場合は、まずそちらの予算を立ててください。全リストは [はじめに](docs/getting-started.ja.md#すでに持っている必要があるもの) に挙げてあります。
@@ -139,7 +139,6 @@ flowchart LR
 | [`stl/black-pla/`](stl/black-pla/) | フィルムホルダー 4 点、押さえ窓インサート 2 点、`mask-6x6.stl` | 生成物 |
 | [`drawings/`](drawings/) | 光路図、断面図、印刷姿勢、分解図、撮影セットアップ、製造総図を 3 言語分。`tools/drawings/` のジェネレーターから生成 | 生成物 |
 | [`docs/`](docs/) | ドキュメント一式。各ファイルに English・简体中文・日本語 | ソース |
-| [`taobao-order/`](taobao-order/) | 中国のプリント代行向けバンドル | 生成物 |
 | [`tools/export_stl.py`](tools/export_stl.py) | コミット済みの書き出しスクリプト。`cad/neobox.blend` から STL 9 点を再生成する | ソース |
 | [`tools/drawings/`](tools/drawings/) | 図面ジェネレーター。`drawings/` 配下の SVG 18 点を再生成する | ソース |
 | [`tools/verify_stl.py`](tools/verify_stl.py) | ジオメトリのゲート。水密性、0.2 mm の z グリッド、全バウンディングボックスを検査 | ソース |
