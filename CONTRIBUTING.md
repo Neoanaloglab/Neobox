@@ -23,6 +23,8 @@ There are **9 STL files (2 white, 7 black)**, never eight, never ten:
 
 They are binary artefacts committed to the repository, so a diff never shows what changed. A pull request that edits an STL by hand will be closed: change the Blender scene and re-export. [Design § 11](docs/design.md#11-working-with-the-source) documents the collection tree, which objects make up each file, and the export procedure.
 
+Names inside the `.blend` follow one rule, and the exporter enforces it: a printed part is named after the STL file it becomes, and everything that is not printed carries a `mock_` prefix. Add a mesh object that is neither listed in the exporter's `MAPPING` nor prefixed `mock_`, and the export fails rather than quietly leaving your part out of the release.
+
 ## The export and verify gate
 
 Any pull request that touches geometry regenerates the STLs with the committed exporter and then shows a clean run of the verifier, both from the repository root:

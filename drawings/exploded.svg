@@ -24,7 +24,7 @@
 <line x1="324.0" y1="653.0" x2="337.0" y2="648.0" stroke="#e8a33d" stroke-width="1.6"/>
 <line x1="324.0" y1="670.0" x2="337.0" y2="678.0" stroke="#e8a33d" stroke-width="1.6"/>
 <text x="35.0" y="714.0" font-size="13" fill="#111">Flash lies flat on the desk, head against the open front.</text>
-<text x="35.0" y="733.0" font-size="13" fill="#111">Receiver stays with it outside — nothing goes inside the box.</text>
+<text x="35.0" y="733.0" font-size="13" fill="#111">Receiver stays with it outside; nothing goes inside the box.</text>
 <polygon points="340.0,540.8 340.0,528.2 262.0,484.6 262.0,497.1" fill="#e3e3e3" stroke="#444" stroke-width="1.2"/><polygon points="340.0,528.2 533.5,528.2 455.5,484.6 262.0,484.6" fill="#fafafa" stroke="#444" stroke-width="1.2"/><polygon points="340.0,540.8 533.5,540.8 533.5,528.2 340.0,528.2" fill="#f2f2f2" stroke="#444" stroke-width="2"/>
 <rect x="342.0" y="537.2" width="15.0" height="3.5" fill="none" stroke="#777" stroke-width="1" stroke-dasharray="3,3"/>
 <rect x="516.5" y="537.2" width="15.0" height="3.5" fill="none" stroke="#777" stroke-width="1" stroke-dasharray="3,3"/>
@@ -127,7 +127,7 @@
 <circle cx="560.0" cy="255.1" r="11" fill="#fff" stroke="#444" stroke-width="1.5"/><text x="560.0" y="259.8" font-size="13" text-anchor="middle" font-weight="bold" fill="#111">8</text>
 <text x="213.0" y="297.0" font-size="13" text-anchor="end" fill="#111">insert or AN glass (either)</text>
 <polyline points="219.0,293.0 233.0,293.0 378.4,299.0" fill="none" stroke="#666" stroke-width="1"/><circle cx="378.4" cy="299.0" r="2.2" fill="#666"/>
-<text x="213.0" y="322.7" font-size="13" text-anchor="end" fill="#111">35 mm film — ends stick out</text>
+<text x="213.0" y="322.7" font-size="13" text-anchor="end" fill="#111">35 mm film, ends stick out</text>
 <polyline points="219.0,318.7 233.0,318.7 323.8,324.7" fill="none" stroke="#666" stroke-width="1"/><circle cx="323.8" cy="324.7" r="2.2" fill="#666"/>
 <text x="213.0" y="378.1" font-size="13" text-anchor="end" fill="#111">film-holder base 94×120</text>
 <polyline points="219.0,374.1 233.0,374.1 362.8,380.1" fill="none" stroke="#666" stroke-width="1"/><circle cx="362.8" cy="380.1" r="2.2" fill="#666"/>
@@ -150,7 +150,7 @@
 <text x="668.0" y="144.0" font-size="13" fill="#111">Set the main body on the desk, open front</text>
 <text x="668.0" y="162.0" font-size="13" fill="#111">toward you.</text>
 <circle cx="652.0" cy="188.0" r="9" fill="#fff" stroke="#444" stroke-width="1.5"/><text x="652.0" y="192.3" font-size="12" text-anchor="middle" font-weight="bold" fill="#111">2</text>
-<text x="668.0" y="192.0" font-size="13" fill="#111">Rest the cover-stage on the walls — tenons</text>
+<text x="668.0" y="192.0" font-size="13" fill="#111">Rest the cover-stage on the walls; tenons</text>
 <text x="668.0" y="210.0" font-size="13" fill="#111">drop into the corner notches.</text>
 <circle cx="652.0" cy="236.0" r="9" fill="#fff" stroke="#444" stroke-width="1.5"/><text x="652.0" y="240.3" font-size="12" text-anchor="middle" font-weight="bold" fill="#111">3</text>
 <text x="668.0" y="240.0" font-size="13" fill="#111">Fit the opal acrylic 68×118 into the hidden</text>
@@ -162,14 +162,14 @@
 <text x="668.0" y="336.0" font-size="13" fill="#111">Set the film-holder base 94×120 into the</text>
 <text x="668.0" y="354.0" font-size="13" fill="#111">flange tray.</text>
 <circle cx="652.0" cy="380.0" r="9" fill="#fff" stroke="#444" stroke-width="1.5"/><text x="652.0" y="384.3" font-size="12" text-anchor="middle" font-weight="bold" fill="#111">6</text>
-<text x="668.0" y="384.0" font-size="13" fill="#111">Lay the film in the channel — both ends</text>
+<text x="668.0" y="384.0" font-size="13" fill="#111">Lay the film in the channel; both ends</text>
 <text x="668.0" y="402.0" font-size="13" fill="#111">stick out of the holder.</text>
 <circle cx="652.0" cy="428.0" r="9" fill="#fff" stroke="#444" stroke-width="1.5"/><text x="652.0" y="432.3" font-size="12" text-anchor="middle" font-weight="bold" fill="#111">7</text>
 <text x="668.0" y="432.0" font-size="13" fill="#111">Rest the pressure element 64×95 on the</text>
-<text x="668.0" y="450.0" font-size="13" fill="#111">4.6 mm element ledge — pressure window</text>
+<text x="668.0" y="450.0" font-size="13" fill="#111">4.6 mm element ledge: pressure window</text>
 <text x="668.0" y="468.0" font-size="13" fill="#111">insert or anti-Newton glass, either one.</text>
 <circle cx="652.0" cy="494.0" r="9" fill="#fff" stroke="#444" stroke-width="1.5"/><text x="652.0" y="498.3" font-size="12" text-anchor="middle" font-weight="bold" fill="#111">8</text>
-<text x="668.0" y="498.0" font-size="13" fill="#111">Snap the magnetic lid shut — done,</text>
+<text x="668.0" y="498.0" font-size="13" fill="#111">Snap the magnetic lid shut. Done:</text>
 <text x="668.0" y="516.0" font-size="13" fill="#111">no screws, no tools.</text>
 <text x="640.0" y="552.0" font-size="12" fill="#777">135-format holder shown; the 120 holder</text>
 <text x="640.0" y="568.0" font-size="12" fill="#777">assembles the same way.</text>

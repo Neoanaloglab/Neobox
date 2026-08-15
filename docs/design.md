@@ -290,34 +290,36 @@ If you want to build one:
 
 ```
 Scene Collection
-├── 焦点                       an empty, used as a view target
-├── Collection                 Camera, Light: render scaffolding
-├── NeoBox_混光箱_TT560定稿     the enclosure, the cover-stage and the mock-ups
-├── 胶片夹_135                  the 135 holder set, assembled in place
-├── 胶片夹_120                  the 120 holder set, parked at x = 200
-└── 打印小件                    the 6×6 mask, parked at x = 350
+├── mock_view-target        an empty, used as a view target
+├── Scaffolding             Camera, Light: render scaffolding
+├── NeoBox_v1               the enclosure, the cover-stage and the mock-ups
+├── Holder_135              the 135 holder set, assembled in place
+├── Holder_120              the 120 holder set, parked at x = 200
+└── Masks                   the 6×6 mask, parked at x = 350
 ```
 
 ### Which objects make each STL
 
 | STL file | Blender object(s) | Gloss |
 |---|---|---|
-| `main-body.stl` | `主箱_底3mm`, `主箱_左壁`, `主箱_右壁`, `主箱_后壁` | **four objects**: floor, left wall, right wall, rear wall; the open front needs no lintel or posts |
-| `cover-stage.stl` | `顶盖台一体_窗62x95` | cover-stage, one piece, window 62 × 95 |
-| `film-holder-135-base.stl` | `135夹_底座_94x120_平底` | 135 holder base, flat-bottomed |
-| `film-holder-135-lid.stl` | `135夹_上盖_94x120` | 135 holder lid |
-| `film-holder-120-base.stl` | `120夹_底座_94x120_平底` | 120 holder base, flat-bottomed |
-| `film-holder-120-lid.stl` | `120夹_上盖_94x120` | 120 holder lid |
-| `pressure-window-135.stl` | `压片窗插片_135_64x95x2` | pressure-window insert, 135 |
-| `pressure-window-120.stl` | `压片窗插片_120_64x95x2` | pressure-window insert, 120 |
-| `mask-6x6.stl` | `6x6插片_94x80x1` | 6×6 mask |
+| `main-body.stl` | `main-body_floor`, `main-body_wall-left`, `main-body_wall-right`, `main-body_wall-rear` | **four objects**: floor, left wall, right wall, rear wall; the open front needs no lintel or posts |
+| `cover-stage.stl` | `cover-stage` | cover-stage, one piece, window 62 × 95 |
+| `film-holder-135-base.stl` | `film-holder-135-base` | 135 holder base, flat-bottomed |
+| `film-holder-135-lid.stl` | `film-holder-135-lid` | 135 holder lid |
+| `film-holder-120-base.stl` | `film-holder-120-base` | 120 holder base, flat-bottomed |
+| `film-holder-120-lid.stl` | `film-holder-120-lid` | 120 holder lid |
+| `pressure-window-135.stl` | `pressure-window-135` | pressure-window insert, 135 |
+| `pressure-window-120.stl` | `pressure-window-120` | pressure-window insert, 120 |
+| `mask-6x6.stl` | `mask-6x6` | 6×6 mask |
 
 ### What is a mock-up and must never be exported
 
-Everything else in the scene is a mock-up, there to show fit and light path, and none of it is printed or exported: the flash body and its emitting face, the T1 receiver, the four light-path arrows, the 135 and 120 film-strip mock-ups, the opal acrylic, the AN glass, the four steel washers, a text label, and the camera/light/view-target scaffolding.
+**The name says whether an object is printed.** A printed part carries the name of the STL file it becomes: `cover-stage` is the object that becomes `cover-stage.stl`, and the main body is the four shells sharing the `main-body_` prefix. Everything else in the scene is a mock-up, there to show fit and light path, and takes the `mock_` prefix instead; none of it is printed or exported: the flash body and its emitting face (`mock_flash-body`, `mock_flash-face`), the T1 receiver (`mock_trigger-receiver`), the four light-path arrows (`mock_ray-1-into-cavity` to `mock_ray-4-through-window`), the 135 and 120 film-strip mock-ups (`mock_film-135`, `mock_film-120`), the opal acrylic (`mock_diffuser-68x118x2`), the AN glass (`mock_an-glass-64x95x2`), the four steel washers (`mock_steel-shim-1` to `mock_steel-shim-4`), a text label (`mock_label`), and the view target (`mock_view-target`). `Camera` and `Light` carry no prefix and need none: neither is a mesh, so neither can reach an STL.
+
+The convention is a gate, not a habit. `tools/export_stl.py` fails the whole export when it finds a mesh object that is neither listed in its `MAPPING` table, reproduced above, nor prefixed `mock_`. A printed part added to the scene and forgotten in that table therefore stops the export instead of quietly dropping out of the release.
 
 > [!CAUTION]
-> **Material names do not tell you the filament colour.** The material slots exist for the renders: `NB_alu`, for one, survives from the prototype's deleted aluminium stage. Take colours from [printing.md](printing.md#the-nine-parts), never from the material slot.
+> **Material names do not tell you the filament colour.** The eight materials (`NB_white`, `NB_black`, `NB_steel`, `NB_opal`, `NB_film`, `NB_glow`, `NB_ray`, `NB_receiver`) exist for the renders, and each is named for what it is applied to rather than for anything you load into the printer: `NB_black`, for one, covers every black printed part and two mock-ups, the flash body and the label. The prototype-era materials have been deleted, so nothing misleading survives in the list, but colours still come from [printing.md](printing.md#the-nine-parts), never from the material slot.
 
 ### The export convention
 

@@ -290,34 +290,36 @@ XY 从箱体中心起算，z 从桌面起算。数据读自 `cad/neobox.blend`�
 
 ```
 Scene Collection
-├── 焦点                       一个 empty，用作视图目标
-├── Collection                 Camera、Light：渲染用的脚手架
-├── NeoBox_混光箱_TT560定稿     壳体、顶盖台和示意件
-├── 胶片夹_135                  135 那副夹子，就位装配
-├── 胶片夹_120                  120 那副夹子，停放在 x = 200
-└── 打印小件                    6×6 遮幅片，停放在 x = 350
+├── mock_view-target    一个 empty，用作视图目标
+├── Scaffolding         Camera、Light：渲染用的脚手架
+├── NeoBox_v1           壳体、顶盖台和示意件
+├── Holder_135          135 那副夹子，就位装配
+├── Holder_120          120 那副夹子，停放在 x = 200
+└── Masks               6×6 遮幅片，停放在 x = 350
 ```
 
 ### 每个 STL 由哪些对象组成
 
 | STL 文件 | Blender 对象 | 说明 |
 |---|---|---|
-| `main-body.stl` | `主箱_底3mm`、`主箱_左壁`、`主箱_右壁`、`主箱_后壁` | **四个对象**：底板、左壁、右壁、后壁；前面敞开，不再需要门楣和前柱 |
-| `cover-stage.stl` | `顶盖台一体_窗62x95` | 顶盖台，一体件，窗 62 × 95 |
-| `film-holder-135-base.stl` | `135夹_底座_94x120_平底` | 135 夹底座，平底 |
-| `film-holder-135-lid.stl` | `135夹_上盖_94x120` | 135 夹上盖 |
-| `film-holder-120-base.stl` | `120夹_底座_94x120_平底` | 120 夹底座，平底 |
-| `film-holder-120-lid.stl` | `120夹_上盖_94x120` | 120 夹上盖 |
-| `pressure-window-135.stl` | `压片窗插片_135_64x95x2` | 135 压片窗插片 |
-| `pressure-window-120.stl` | `压片窗插片_120_64x95x2` | 120 压片窗插片 |
-| `mask-6x6.stl` | `6x6插片_94x80x1` | 6×6 遮幅插片 |
+| `main-body.stl` | `main-body_floor`、`main-body_wall-left`、`main-body_wall-right`、`main-body_wall-rear` | **四个对象**：底板、左壁、右壁、后壁；前面敞开，不再需要门楣和前柱 |
+| `cover-stage.stl` | `cover-stage` | 顶盖台，一体件，窗 62 × 95 |
+| `film-holder-135-base.stl` | `film-holder-135-base` | 135 夹底座，平底 |
+| `film-holder-135-lid.stl` | `film-holder-135-lid` | 135 夹上盖 |
+| `film-holder-120-base.stl` | `film-holder-120-base` | 120 夹底座，平底 |
+| `film-holder-120-lid.stl` | `film-holder-120-lid` | 120 夹上盖 |
+| `pressure-window-135.stl` | `pressure-window-135` | 135 压片窗插片 |
+| `pressure-window-120.stl` | `pressure-window-120` | 120 压片窗插片 |
+| `mask-6x6.stl` | `mask-6x6` | 6×6 遮幅插片 |
 
 ### 哪些是示意件，绝不能导出
 
-场景里其余的一切都是看装配关系和光路用的示意件，一件也不打印、不导出：闪光灯灯体和它的发光面、T1 接收器、四支光路箭头、135 和 120 的胶片示意条、乳白亚克力、防牛顿环玻璃、四片钢垫片、一个文字标签，以及相机／灯光／视图目标这些脚手架。
+场景里其余的一切都是看装配关系和光路用的示意件，一件也不打印、不导出：闪光灯灯体和它的发光面（`mock_flash-body`、`mock_flash-face`）、T1 接收器（`mock_trigger-receiver`）、四支光路箭头（`mock_ray-1-into-cavity` 到 `mock_ray-4-through-window`）、135 和 120 的胶片示意条（`mock_film-135`、`mock_film-120`）、乳白亚克力（`mock_diffuser-68x118x2`）、防牛顿环玻璃（`mock_an-glass-64x95x2`）、四片钢垫片（`mock_steel-shim-1` 到 `mock_steel-shim-4`）、一个文字标签（`mock_label`），以及相机／灯光／视图目标这些脚手架（`Camera`、`Light`、`mock_view-target`）。
+
+这条界线现在写在名字里，也由脚本兜底。命名约定有两条：**要打印的对象，名字就是它生成的那个 STL 文件名**（主箱是四片壳体，共用 `main-body_` 前缀）；**不打印的对象，一律带 `mock_` 前缀**。`Camera` 和 `Light` 不在这条规则之内：它们不是 MESH 对象，本来就到不了 STL。`tools/export_stl.py` 会强制执行：任何一个 MESH 对象，只要既不在它的 `MAPPING` 表里、又没有 `mock_` 前缀，导出就整体失败。这样一来，往场景里加了新的可打印零件却忘了写进 `MAPPING`，不会悄无声息地少导出一个零件，而是当场让导出失败。
 
 > [!CAUTION]
-> **材质名不代表耗材颜色。** 材质槽是为渲染服务的：比如 `NB_alu` 就是已删除的原型机铝制胶片台留下的残余。颜色一律以[打印文档的九个零件](printing.zh-CN.md#九个零件)为准，绝不要看材质槽。
+> **材质名不代表耗材颜色。** 场景里现在只有八个材质，全部只为渲染服务，名字说的是它贴在什么东西上：`NB_white` 贴主箱四片壳体和顶盖台，`NB_black` 贴全部黑色打印件外加闪光灯灯体和文字标签这两个示意件，其余六个（`NB_steel`、`NB_opal`、`NB_film`、`NB_glow`、`NB_ray`、`NB_receiver`）只贴在示意件上。原型机时代那批材质已经全部删除，槽里不再有会误导人的残余。即便如此，耗材颜色仍然一律以[打印文档的九个零件](printing.zh-CN.md#九个零件)为准，绝不要看材质槽。
 
 ### 导出约定
 

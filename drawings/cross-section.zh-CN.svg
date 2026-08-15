@@ -100,7 +100,7 @@
 <circle cx="377" cy="266" r="7" fill="none" stroke="#444" stroke-width="1.4"/>
 <circle cx="377" cy="266" r="1.8" fill="#444"/>
 <text x="377" y="292" font-size="13" fill="#111" text-anchor="middle">敞开前口（前面全开）</text>
-<text x="377" y="310" font-size="11.5" fill="#555" text-anchor="middle">朝向读者 — 闪光灯由此打光</text>
+<text x="377" y="310" font-size="11.5" fill="#555" text-anchor="middle">朝向读者，闪光灯由此打光</text>
 <rect x="630.0" y="112.0" width="348.0" height="372.0" rx="10" fill="#ffffff" stroke="#444" stroke-width="1.4"/>
 <text x="646.0" y="138.0" font-size="14" fill="#111" font-weight="bold">放大：压平系统（135 夹）</text>
 <text x="646.0" y="156.0" font-size="11" fill="#555">z 为夹局部坐标（世界 z = 局部 + 79）· 纵向放大示意</text>

@@ -99,13 +99,13 @@
 <text x="54" y="114" font-size="11.5" fill="#777" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-weight="bold">CAMERA SETTINGS</text>
 <text x="54" y="136" font-size="14" fill="#111" text-anchor="start" font-family="Menlo, Consolas, 'Courier New', monospace">ISO 100 · f/8 · 1/125 s</text>
 <text x="54" y="156" font-size="14" fill="#111" text-anchor="start" font-family="Menlo, Consolas, 'Courier New', monospace">flash: MANUAL power</text>
-<text x="40" y="184" font-size="11" fill="#777" text-anchor="start" font-family="Helvetica, Arial, sans-serif">cheap 2.4G triggers eat ≈1 stop of sync — stay at 1/125 s</text>
+<text x="40" y="184" font-size="11" fill="#777" text-anchor="start" font-family="Helvetica, Arial, sans-serif">cheap 2.4G triggers eat ≈1 stop of sync; stay at 1/125 s</text>
 <text x="40" y="262" font-size="13" fill="#111" text-anchor="start" font-family="Helvetica, Arial, sans-serif">mirror alignment: lay a small mirror on the holder,</text>
 <text x="40" y="280" font-size="13" fill="#111" text-anchor="start" font-family="Helvetica, Arial, sans-serif">center the lens reflection in the viewfinder (once)</text>
 <polyline points="383.96,257.5 610,257.5 610,456" fill="none" stroke="#444" stroke-width="1"/><circle cx="610" cy="456" r="2.2" fill="#444"/>
-<text x="40" y="322" font-size="13" fill="#111" text-anchor="start" font-family="Helvetica, Arial, sans-serif">film advance: just pull the strip out —</text>
+<text x="40" y="322" font-size="13" fill="#111" text-anchor="start" font-family="Helvetica, Arial, sans-serif">film advance: just pull the strip out,</text>
 <text x="40" y="340" font-size="13" fill="#111" text-anchor="start" font-family="Helvetica, Arial, sans-serif">no lid off, pressure element stays put</text>
-<polyline points="299.46,317.5 526,317.5 526,468" fill="none" stroke="#444" stroke-width="1"/><circle cx="526" cy="468" r="2.2" fill="#444"/>
+<polyline points="297.64,317.5 526,317.5 526,468" fill="none" stroke="#444" stroke-width="1"/><circle cx="526" cy="468" r="2.2" fill="#444"/>
 <text x="40" y="382" font-size="13" fill="#111" text-anchor="start" font-family="Helvetica, Arial, sans-serif">shoot in a dim room; keep ceiling lights</text>
 <text x="40" y="400" font-size="13" fill="#111" text-anchor="start" font-family="Helvetica, Arial, sans-serif">from shining into the open front</text>
 <polyline points="303.1,377.5 512,377.5 512,501" fill="none" stroke="#444" stroke-width="1"/><circle cx="512" cy="501" r="2.2" fill="#444"/>
@@ -113,7 +113,7 @@
 <text x="40" y="458" font-size="13" fill="#111" text-anchor="start" font-family="Helvetica, Arial, sans-serif">head against the open front, manual power</text>
 <polyline points="333.78,435.5 466,435.5 466,525" fill="none" stroke="#444" stroke-width="1"/><circle cx="466" cy="525" r="2.2" fill="#444"/>
 <text x="40" y="494" font-size="13" fill="#111" text-anchor="start" font-family="Helvetica, Arial, sans-serif">2.4G receiver (ZENIKO T1 or similar) on the</text>
-<text x="40" y="512" font-size="13" fill="#111" text-anchor="start" font-family="Helvetica, Arial, sans-serif">flash foot — it stays outside the box</text>
+<text x="40" y="512" font-size="13" fill="#111" text-anchor="start" font-family="Helvetica, Arial, sans-serif">flash foot; it stays outside the box</text>
 <polyline points="58,520 58,566 79,586" fill="none" stroke="#444" stroke-width="1"/>
 <circle cx="79" cy="586" r="2.2" fill="#444"/>
 <text x="940" y="100" font-size="13" fill="#111" text-anchor="end" font-family="Helvetica, Arial, sans-serif">hot-shoe trigger (2.4G transmitter)</text>
@@ -125,6 +125,6 @@
 <text x="940" y="162" font-size="13" fill="#111" text-anchor="end" font-family="Helvetica, Arial, sans-serif">copy stand</text>
 <polyline points="870.58,168 900,168 891,171" fill="none" stroke="#444" stroke-width="1"/>
 <circle cx="891" cy="171" r="2.2" fill="#444"/>
-<text x="655" y="666" font-size="11.5" fill="#777" text-anchor="middle" font-family="Helvetica, Arial, sans-serif">NeoBox v1 — overall 124.8 × 154.8 × 87 mm (holder on top)</text>
+<text x="655" y="666" font-size="11.5" fill="#777" text-anchor="middle" font-family="Helvetica, Arial, sans-serif">NeoBox v1: overall 124.8 × 154.8 × 87 mm (holder on top)</text>
 <text x="940" y="706" font-size="11" fill="#999" text-anchor="end" font-family="Helvetica, Arial, sans-serif">NeoBox v1 — 2026-08</text>
 </svg>

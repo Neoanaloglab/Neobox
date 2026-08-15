@@ -30,16 +30,17 @@ import bpy
 # is a mock-up and must never be exported — see docs/design.md section 11.
 MAPPING = {
     "main-body.stl": ("white-pla", [
-        "主箱_底3mm", "主箱_左壁", "主箱_右壁", "主箱_后壁",
+        "main-body_floor", "main-body_wall-left",
+        "main-body_wall-right", "main-body_wall-rear",
     ]),
-    "cover-stage.stl": ("white-pla", ["顶盖台一体_窗62x95"]),
-    "film-holder-135-base.stl": ("black-pla", ["135夹_底座_94x120_平底"]),
-    "film-holder-135-lid.stl": ("black-pla", ["135夹_上盖_94x120"]),
-    "film-holder-120-base.stl": ("black-pla", ["120夹_底座_94x120_平底"]),
-    "film-holder-120-lid.stl": ("black-pla", ["120夹_上盖_94x120"]),
-    "pressure-window-135.stl": ("black-pla", ["压片窗插片_135_64x95x2"]),
-    "pressure-window-120.stl": ("black-pla", ["压片窗插片_120_64x95x2"]),
-    "mask-6x6.stl": ("black-pla", ["6x6插片_94x80x1"]),
+    "cover-stage.stl": ("white-pla", ["cover-stage"]),
+    "film-holder-135-base.stl": ("black-pla", ["film-holder-135-base"]),
+    "film-holder-135-lid.stl": ("black-pla", ["film-holder-135-lid"]),
+    "film-holder-120-base.stl": ("black-pla", ["film-holder-120-base"]),
+    "film-holder-120-lid.stl": ("black-pla", ["film-holder-120-lid"]),
+    "pressure-window-135.stl": ("black-pla", ["pressure-window-135"]),
+    "pressure-window-120.stl": ("black-pla", ["pressure-window-120"]),
+    "mask-6x6.stl": ("black-pla", ["mask-6x6"]),
 }
 
 WELD = 0.02          # weld distance for boolean slivers, mm
@@ -141,11 +142,25 @@ def main():
         except RuntimeError as err:
             print(f"FAIL  {err}")
             failures += 1
+
+    # Naming convention as a gate: every mesh object is either a mock-up
+    # (mock_ prefix, never exported) or a source listed above.  A printed part
+    # added to the scene and forgotten here would otherwise ship as nothing.
+    listed = {name for _, sources in MAPPING.values() for name in sources}
+    stray = sorted(o.name for o in bpy.data.objects
+                   if o.type == "MESH"
+                   and not o.name.startswith("mock_")
+                   and o.name not in listed)
+    if stray:
+        print(f"FAIL  mesh object(s) neither exported nor named mock_*: {stray}")
+        failures += 1
+
     print()
     if failures:
-        print(f"{failures} file(s) failed — nothing under {args.out} should be trusted")
+        print(f"{failures} failure(s): nothing under {args.out} should be trusted")
         sys.exit(1)
-    print(f"nine files written under {args.out} — now run: python3 tools/verify_stl.py")
+    print(f"{len(MAPPING)} files written under {args.out}. "
+          f"Now run: python3 tools/verify_stl.py")
 
 
 if __name__ == "__main__":

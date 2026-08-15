@@ -99,7 +99,7 @@
 <text x="766.0" y="491.0" font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#333" text-anchor="middle">94×80×1</text>
 <circle cx="747.0" cy="503.0" r="5" fill="#3a3a3a" stroke="#111" stroke-width="1.2"/>
 <text x="758.0" y="507.0" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#333" text-anchor="start">black</text>
-<text x="30.0" y="546.0" font-family="Helvetica, Arial, sans-serif" font-size="15" fill="#111" text-anchor="start" font-weight="bold">Purchased parts — 3 required + 2 optional</text>
+<text x="30.0" y="546.0" font-family="Helvetica, Arial, sans-serif" font-size="15" fill="#111" text-anchor="start" font-weight="bold">Purchased parts: 3 required + 2 optional</text>
 <rect x="108.0" y="558.0" width="148.0" height="150.0" fill="#fff" stroke="#ccc" stroke-width="1" rx="6"/>
 <rect x="163.3" y="579.5" width="37.4" height="64.9" fill="#fbfbfb" stroke="#999" stroke-width="1.5" rx="2"/>
 <line x1="169.3" y1="636.5" x2="179.3" y2="587.5" stroke="#e0e0e0" stroke-width="2"/>
