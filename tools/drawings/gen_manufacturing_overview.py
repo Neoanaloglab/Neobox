@@ -2,7 +2,7 @@
 """NeoBox v1 — manufacturing overview drawing generator.
 
 Generates drawings/manufacturing-overview.svg (+ .zh-CN.svg, .ja.svg):
-a "kit card" grid — 10 printed parts (top) + purchased hardware (bottom).
+a "kit card" grid — 12 printed parts (top) + purchased hardware (bottom).
 All numbers come from scratchpad/FACTS-v5.md (§2 print table, §8 BOM).
 """
 
@@ -10,7 +10,7 @@ import os
 
 OUT_DIR = os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..", "drawings"))
 
-W, H = 980, 752
+W, H = 980, 960
 FONT = "Helvetica, Arial, sans-serif"
 MONO = "Menlo, Consolas, monospace"
 AMBER = "#e8a33d"
@@ -24,52 +24,52 @@ LANG = {
     "en": {
         "suffix": "",
         "title": "NeoBox v1 — Manufacturing Overview",
-        "subtitle": "10 printed parts + purchased hardware · all dimensions in mm",
+        "subtitle": "12 printed parts + purchased hardware · all dimensions in mm",
         "spec1": "standard PLA · layer height 0.2 mm · infill 15% · no supports on any part",
         "spec2": "largest part 154.8 mm → a 160×160 bed is enough",
-        "sec_print": "3D-printed parts ×10",
-        "chip_white": "white PLA ×2",
-        "chip_black": "black PLA ×8",
-        "sec_buy": "Purchased parts: 3 required + 2 optional",
+        "sec_print": "3D-printed parts ×12",
+        "chip_white": "white PLA ×3",
+        "chip_black": "black PLA ×9",
+        "sec_buy": "Purchased parts: 3 required + 3 optional",
         "white": "white",
         "black": "black",
         "optional": "optional",
         "buy_names": ["opal acrylic", "magnet N35", "steel shim",
-                      "anti-Newton glass", "black flocking sheet"],
+                      "anti-Newton glass", "black flocking sheet", "opal acrylic, 4×5"],
         "credit": "NeoBox v1 — 2026-08",
     },
     "zh": {
         "suffix": ".zh-CN",
         "title": "NeoBox v1 — 制造总览",
-        "subtitle": "打印件 10 件 + 外购件 · 尺寸单位 mm",
+        "subtitle": "打印件 12 件 + 外购件 · 尺寸单位 mm",
         "spec1": "普通 PLA · 层高 0.2 mm · 填充 15% · 全部免支撑",
         "spec2": "最大件 154.8 mm → 160×160 打印床即可",
-        "sec_print": "打印件 ×10",
-        "chip_white": "白色 PLA ×2",
-        "chip_black": "黑色 PLA ×8",
-        "sec_buy": "外购件：必备 3 + 可选 2",
+        "sec_print": "打印件 ×12",
+        "chip_white": "白色 PLA ×3",
+        "chip_black": "黑色 PLA ×9",
+        "sec_buy": "外购件：必备 3 + 可选 3",
         "white": "白色",
         "black": "黑色",
         "optional": "可选",
         "buy_names": ["乳白亚克力", "磁铁 N35", "钢垫片",
-                      "防牛顿环玻璃", "黑色植绒贴"],
+                      "防牛顿环玻璃", "黑色植绒贴", "乳白亚克力（4×5）"],
         "credit": "NeoBox v1 — 2026-08",
     },
     "ja": {
         "suffix": ".ja",
         "title": "NeoBox v1 — 製造オーバービュー",
-        "subtitle": "プリントパーツ 10 点 + 購入部品 · 寸法単位 mm",
+        "subtitle": "プリントパーツ 12 点 + 購入部品 · 寸法単位 mm",
         "spec1": "標準 PLA · 積層ピッチ 0.2 mm · インフィル 15% · 全パーツサポート不要",
         "spec2": "最大パーツ 154.8 mm → 160×160 ビルドプレートで可",
-        "sec_print": "プリントパーツ ×10",
-        "chip_white": "白 PLA ×2",
-        "chip_black": "黒 PLA ×8",
-        "sec_buy": "購入部品：必須 3 + オプション 2",
+        "sec_print": "プリントパーツ ×12",
+        "chip_white": "白 PLA ×3",
+        "chip_black": "黒 PLA ×9",
+        "sec_buy": "購入部品：必須 3 + オプション 3",
         "white": "白",
         "black": "黒",
         "optional": "オプション",
         "buy_names": ["乳白アクリル", "磁石 N35", "スチールシム",
-                      "アンチニュートンガラス", "黒の植毛シート"],
+                      "アンチニュートンガラス", "黒の植毛シート", "乳白アクリル（4×5）"],
         "credit": "NeoBox v1 — 2026-08",
     },
 }
@@ -79,7 +79,8 @@ BUY_SPECS = [("68×118×2", "×1", False),
              ("Ø8×2", "×32", False),
              ("10×10×1", "×4", False),
              ("64×95×2", "×1", True),
-             ("A5", "×1", True)]
+             ("A5", "×1", True),
+             ("106×130×2", "×1", True)]
 
 # ------------------------------------------------------------- svg helpers ---
 
@@ -164,17 +165,17 @@ def draw_main_body(cx, cy):
     return el
 
 
-def draw_cover_stage(cx, cy):
-    """Cover-stage, top view: plate, flange frame 94.6×120.6, window 62×95, 4 shim pockets."""
+def draw_cover_stage(cx, cy, tray=(94.6, 120.6), window=(62, 95), shims=True):
+    """Cover-stage, top view: plate, flange frame around the tray, light window, shim pockets."""
     w, h = 124.8 * S, 154.8 * S
     el = [crect(cx, cy, w, h, fill="#f2f2f2", stroke="#444", sw=2)]
-    fw, fh = 94.6 * S, 120.6 * S      # flange surrounds this tray area
+    fw, fh = tray[0] * S, tray[1] * S  # flange surrounds this tray area
     band = 3.5                        # illustrative flange band, not dimensioned
     el.append(crect(cx, cy, fw + 2 * band, fh + 2 * band, fill="#d9d9d9", stroke="#444", sw=1.4))
     el.append(crect(cx, cy, fw, fh, fill="#f2f2f2", stroke="#444", sw=1))
-    el.append(crect(cx, cy, 62 * S, 95 * S, fill="#fff", stroke="#444", sw=1.4))  # light window
+    el.append(crect(cx, cy, window[0] * S, window[1] * S, fill="#fff", stroke="#444", sw=1.4))  # light window
     sq = 10.6 * S
-    for sx in (-41, 41):
+    for sx in ((-41, 41) if shims else ()):
         for sy in (-12, 12):
             el.append(crect(cx + sx * S, cy + sy * S, sq, sq,
                             fill="#e6e6e6", stroke="#666", sw=0.8))
@@ -241,21 +242,37 @@ def draw_slide_plate(cx, cy):
     return el
 
 
-# 10 printed parts — FACTS §2 (file, colour, envelope, sketch)
-PARTS_ROW1 = [
+def draw_cover_stage_4x5(cx, cy):
+    return draw_cover_stage(cx, cy, tray=(112.6, 138.6), window=(102, 126), shims=False)
+
+
+def draw_sheet_plate(cx, cy):
+    """Sheet plate, top view: 112×138 plate, 102.2×127.6 pocket, 97×121 window, two edge notches."""
+    el = [_plate(cx, cy, 112, 138)]
+    el.append(crect(cx, cy, 102.2 * S, 127.6 * S, fill="#4a4a4a", stroke="#111", sw=1.2))
+    for fy in (-1, 1):
+        el.append(crect(cx, cy + fy * 64.5 * S, 18 * S, 9 * S, fill="#5a5a5a", stroke="#111", sw=0.9))
+    el.append(_window(cx, cy, 97, 121))
+    return el
+
+
+# 12 printed parts — FACTS §2 (file, colour, envelope, sketch)
+PARTS_ROWS = [[
     ("main-body.stl", "white", "124.8×154.8×75.6", draw_main_body),
     ("cover-stage.stl", "white", "124.8×154.8×10.0", draw_cover_stage),
     ("film-holder-135-base.stl", "black", "94×120×5", draw_holder_base(25, 37)),
     ("film-holder-135-lid.stl", "black", "94×120×3", draw_holder_lid(25, 37)),
+], [
     ("pressure-window-135.stl", "black", "64×95×2", draw_pressure_window(25, 37)),
-]
-PARTS_ROW2 = [
     ("film-holder-120-base.stl", "black", "94×120×5", draw_holder_base(57, 85)),
     ("film-holder-120-lid.stl", "black", "94×120×3", draw_holder_lid(57, 85)),
     ("pressure-window-120.stl", "black", "64×95×2", draw_pressure_window(57, 85)),
+], [
     ("mask-6x6.stl", "black", "94×80×1", draw_mask),
     ("slide-plate-135.stl", "black", "94×120×5", draw_slide_plate),
-]
+    ("cover-stage-4x5.stl", "white", "124.8×154.8×10.0", draw_cover_stage_4x5),
+    ("sheet-plate-4x5.stl", "black", "112×138×5", draw_sheet_plate),
+]]
 
 # ------------------------------------------------------- purchased sketches ---
 
@@ -313,7 +330,15 @@ def buy_flock(cx, cy):
     return el
 
 
-BUY_SKETCHES = [buy_acrylic, buy_magnet, buy_shim, buy_an_glass, buy_flock]
+def buy_acrylic_4x5(cx, cy):
+    w, h = 106 * SB, 130 * SB
+    el = [crect(cx, cy, w, h, fill="#fbfbfb", stroke="#999", sw=1.5, rx=2)]
+    el.append(LN(cx - w / 2 + 8, cy + h / 2 - 8, cx - w / 2 + 20, cy - h / 2 + 8, stroke="#e0e0e0", sw=2))
+    el.append(LN(cx - w / 2 + 16, cy + h / 2 - 8, cx - w / 2 + 28, cy - h / 2 + 8, stroke="#e8e8e8", sw=2))
+    return el
+
+
+BUY_SKETCHES = [buy_acrylic, buy_magnet, buy_shim, buy_an_glass, buy_flock, buy_acrylic_4x5]
 
 # ------------------------------------------------------------------ layout ---
 
@@ -383,19 +408,19 @@ def build(L):
     el.append(T(W - 30, 56, L["spec2"], size=12, anchor="end", fill="#444"))
     # printed parts
     el += section_header(30, 98, L)
-    for i, part in enumerate(PARTS_ROW1):
-        el += part_card(30 + i * (CARD_W + GAP), 110, L, part)
-    row2_x = 30
-    for i, part in enumerate(PARTS_ROW2):
-        el += part_card(row2_x + i * (CARD_W + GAP), 318, L, part)
+    for r, row in enumerate(PARTS_ROWS):
+        row_x = (W - (len(row) * CARD_W + (len(row) - 1) * GAP)) / 2
+        for i, part in enumerate(row):
+            el += part_card(row_x + i * (CARD_W + GAP), 110 + r * (CARD_H + 12), L, part)
     # purchased parts
-    el.append(T(30, 546, L["sec_buy"], size=15, weight="bold"))
+    buy_y = 110 + len(PARTS_ROWS) * (CARD_H + 12) + 20
+    el.append(T(30, buy_y, L["sec_buy"], size=15, weight="bold"))
     n_buy = len(BUY_SPECS)
     buy_x0 = (W - (n_buy * BUY_W + (n_buy - 1) * BUY_GAP)) / 2
     for i in range(n_buy):
-        el += buy_card(buy_x0 + i * (BUY_W + BUY_GAP), 558, L, i)
+        el += buy_card(buy_x0 + i * (BUY_W + BUY_GAP), buy_y + 12, L, i)
     # credit
-    el.append(T(W - 30, 736, L["credit"], size=12, anchor="end", fill="#666"))
+    el.append(T(W - 30, H - 16, L["credit"], size=12, anchor="end", fill="#666"))
     el.append("</svg>")
     return "\n".join(el) + "\n"
 

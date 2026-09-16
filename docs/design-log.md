@@ -2,7 +2,7 @@
 
 **English** · [简体中文](design-log.zh-CN.md) · [日本語](design-log.ja.md)
 
-> Why NeoBox ended up this shape: twenty-five decisions in the order they were taken, and the four ideas that were considered and turned down. Read it before you modify anything.
+> Why NeoBox ended up this shape: twenty-six decisions in the order they were taken, and the four ideas that were considered and turned down. Read it before you modify anything.
 
 **Contents:** [How to read this log](#how-to-read-this-log) · [Phase 1: the first draft did not close](#phase-1-the-first-draft-did-not-close) · [Phase 2: from 32 litres to about 5](#phase-2-from-32-litres-to-about-5) · [Phase 3: removing everything unnecessary](#phase-3-removing-everything-unnecessary) · [Phase 4: the flash leaves the box](#phase-4-the-flash-leaves-the-box) · [Things deliberately not done](#things-deliberately-not-done)
 
@@ -195,7 +195,7 @@ All of them now measure 0.4 mm, two layers, without disturbing anything that mat
 
 The vendor asked which face the drawings' orientation note (a first-revision phrase naming the channel side, since deleted from every document) actually referred to. Re-deriving the answer from print physics exposed the note itself as wrong: it would have stood the holder base on its two rail crests and left the film-bearing lands hanging over air, so the one surface that has to be flat would have been built on [supports](glossary.md#supports).
 
-The correct orientation for every holder part is flat face down with the features growing upward and no supports at all. But a slicer will not get there by itself: `film-holder-*-lid.stl` loads with the pressure strips down and must be rotated 180° about X after import. Every vendor script now places parts by a feature the operator can see ("the face with the two long ridges goes up") and states support locations explicitly. The per-part cards in [printing.md](printing.md#the-ten-parts) follow the same rule.
+The correct orientation for every holder part is flat face down with the features growing upward and no supports at all. But a slicer will not get there by itself: `film-holder-*-lid.stl` loads with the pressure strips down and must be rotated 180° about X after import. Every vendor script now places parts by a feature the operator can see ("the face with the two long ridges goes up") and states support locations explicitly. The per-part cards in [printing.md](printing.md#the-twelve-parts) follow the same rule.
 
 **Lesson: write orientation instructions around a feature the operator can see and point at.**
 
@@ -267,6 +267,14 @@ Mounted 135 slides were out of scope through v5: a card or plastic mount is abou
 What shipped instead is a fourth holder set that is one part: `slide-plate-135.stl`, a 94 × 120 × 5 plate with a 51.4 mm square pocket 2.0 deep, a 26 × 38 window through its floor and two blind finger wells. It stands in the tray where a holder base stands, so the 135 set is not touched at all. It has no lid, no magnets and no glass, because a mount is rigid and the box is horizontal: the pocket locates and gravity holds. The film plane lands at about 82.6 – 83.6 depending on the mount, within refocusing distance of the strip plane at 83.2, the same accommodation the 6×6 mask already asks for.
 
 **Lesson: when a new format cannot share the flattening geometry, give it its own part rather than a compromise in the shared one.**
+
+### 26. 4×5 on the same body, as an experiment
+
+Design § 10 had reserved 4×5 for a bigger box: a window with v1's mixing margins, which means a body about 165 × 186 mm and a 220-class bed. Before deriving that, the cheaper question was asked: what does 4×5 cost on the body that exists? Two parts. A second cover-stage with the same outline and four notches carries a 102 × 126 window, a recess for a 106 × 130 × 2 opal sheet and a 112.6 × 138.6 tray; a sheet plate in that tray takes the 101.6 × 127 sheet in a 102.2 × 127.6 pocket over a 97 × 121 window. No pressure element: at 0.25× the depth of field at f/8 is roughly 8 – 10 mm, ten times the 135 case, so a sheet's curl is invisible. Nothing else in the box changes, and everything still prints on a 160 × 160 bed.
+
+What it gives up is the mixing margin: 9 and 12 mm to the walls instead of 29 and 27.5. Whether that shows as a gradient is unknown, exactly as v1's own evenness is unknown; the acrylic still diffuses, flat-field correction still exists, and the bigger box stays on the table as the second step. The stage ships as an experiment on the same body because it costs two files and one acrylic cut to find out, and a whole new body to guess.
+
+**Lesson: before scaling the box, find out what the existing box can do; a two-part experiment is cheaper than a derived enclosure.**
 
 ## Things deliberately not done
 

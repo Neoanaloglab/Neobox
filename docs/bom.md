@@ -14,7 +14,7 @@ Prices are indicative, in CNY, from Chinese marketplaces (Taobao / 1688) as of A
 
 | Group | What it covers | Price (CNY) |
 |---|---|---|
-| 3D printing | the 10 printed parts (2 optional), white and black PLA | 50–110 |
+| 3D printing | the 12 printed parts (4 optional), white and black PLA | 50–110 |
 | Diffuser | opal acrylic, 2 mm, cut 68 × 118 mm | 5–10 |
 | Magnets and shims | 32 neodymium magnets, 4 steel shims | 10–20 |
 | **Whole build, excluding the flash** | everything above, once | **CNY 65–140 · JPY 1,500–3,000** |
@@ -66,7 +66,7 @@ Thirty-two small, strong magnets still want reading about before you start: [Too
 
 ![One-page manufacturing overview: a section through the box, every printed part with its size and print orientation, and the bought parts](../drawings/manufacturing-overview.svg)
 
-The build is **10 printed parts**: 2 white, 8 black, the 6×6 mask and the slide plate optional, all of them support-free.
+The build is **12 printed parts**: 3 white, 9 black; the 6×6 mask, the slide plate and the two 4×5 parts are optional, and all of them are support-free.
 
 | File | Colour | Footprint (mm) | What it is |
 |---|---|---|---|
@@ -80,6 +80,8 @@ The build is **10 printed parts**: 2 white, 8 black, the 6×6 mask and the slide
 | pressure-window-120.stl | black | 64 × 95 × 2 | 120 pressure-window insert |
 | mask-6x6.stl | black | 94 × 80 × 1 | 6×6 mask, sits under the 120 base |
 | slide-plate-135.stl | black | 94 × 120 × 5 | slide plate for mounted 135 slides, stands in the tray in place of the 135 holder |
+| cover-stage-4x5.stl | white | 124.8 × 154.8 × 10.0 | 4×5 cover-stage, replaces cover-stage.stl on the same main body; takes the larger acrylic |
+| sheet-plate-4x5.stl | black | 112 × 138 × 5 | 4×5 sheet plate, stands in the 4×5 cover-stage's tray |
 
 The print spec, written straight into the order: ordinary PLA, 0.2 mm layers on every file, 15 % infill, no [supports](glossary.md#supports) on any file. Every part prints flat face down except the two holder lids, which print top face down. Layer height, [infill](glossary.md#infill) and the per-part cards are in [printing.md](printing.md#print-settings); this page only tells you what to order.
 
@@ -89,7 +91,7 @@ The print spec, written straight into the order: ordinary PLA, 0.2 mm layers on 
 > [!WARNING]
 > White filament must be **matte**. The two white parts are the diffusion cavity: the flash bounces off those walls several times before it reaches the diffuser, and silk or glossy white reproduces the flash head as a hot spot. The inside is never painted or coated, so a glossy part cannot be fixed after it is printed, only reprinted in matte. Tell the shop this is a requirement, not a preference: "matte preferred" gets you whatever is already loaded on the machine.
 
-White and black in one order is normal: one shop, one order, two colours. Ask before you pay whether the filament change is charged separately. mask-6x6.stl is only used when shooting 6×6, but at a gram of filament there is no reason to leave it out of the order. slide-plate-135.stl is the other optional file: order it if you have mounted slides.
+White and black in one order is normal: one shop, one order, two colours. Ask before you pay whether the filament change is charged separately. mask-6x6.stl is only used when shooting 6×6, but at a gram of filament there is no reason to leave it out of the order. slide-plate-135.stl is optional too: order it if you have mounted slides. cover-stage-4x5.stl and sheet-plate-4x5.stl are the 4×5 pair: order them, with the larger acrylic below, only if you shoot sheet film.
 
 ---
 
@@ -104,8 +106,9 @@ White and black in one order is normal: one shop, one order, two colours. Ask be
 | Steel shim | 10 × 10 × 1 mm square, or Ø10 × 1 mm round | 4 | 2–5 |
 | Anti-Newton glass (optional) | 64 × 95 × 2 mm, one face AN; one sheet serves both formats | 1 | 15–30 |
 | Black flocking sheet (optional) | self-adhesive, A5 | 1 | 5–10 |
+| Opal acrylic diffuser, 4×5 (optional) | 2 mm, cut 106 × 130 mm; only the 4×5 cover-stage uses it | 1 | 8–15 |
 
-The first three lines are the entire bought-parts list of the default build, with nothing threaded anywhere. The last two are upgrades the box works without: the AN glass replaces the two printed pressure-window inserts with one sheet that serves both formats, and the flocking sheet kills glare on the stage surface around the window.
+The first three lines are the entire bought-parts list of the default build, with nothing threaded anywhere. The last three are optional: the AN glass replaces the two printed pressure-window inserts with one sheet that serves both formats, the flocking sheet kills glare on the stage surface around the window, and the larger opal sheet is the diffuser of the 4×5 cover-stage.
 
 Two ordering notes. **Order 2 diffusers**: opal acrylic chips at the cut edges in transit, it sits directly in the optical path, and a second cut costs almost nothing while a second shipping cycle costs a week. And if you are upgrading from a prototype, its 110 × 130 mm diffuser is the same 2 mm opal; any acrylic shop will trim it to 68 × 118 mm, and the line drops out of the order. **Order a few spare magnets**: press-fitting is unforgiving of a chipped edge, and N35 discs cost pennies each.
 
@@ -176,7 +179,7 @@ Three orders, and all of them can go out on the same day. Nothing waits on anyth
 
 ```mermaid
 flowchart TD
-  A[Order 1: the ten STLs<br/>one shop, white + black] --> D[Arrival checks]
+  A[Order 1: the twelve STLs<br/>one shop, white + black] --> D[Arrival checks]
   B[Order 2: opal acrylic 68 × 118<br/>plus the AN glass, if wanted] --> D
   C[Order 3: magnets and shims<br/>plus the flocking sheet] --> D
   D --> E[Assembly]
@@ -184,7 +187,7 @@ flowchart TD
 
 | Order | Typical lead time | When to place it |
 |---|---|---|
-| 1: the ten STLs | 2–5 days plus shipping | first; it is the long pole |
+| 1: the twelve STLs | 2–5 days plus shipping | first; it is the long pole |
 | 2: opal acrylic, cut to size | 3–7 days | the same day, in parallel |
 | 3: magnets and shims | next day to a few days | any time |
 | AN glass and flocking (optional) | 3–7 days | with orders 2 and 3, or after the box works; the printed inserts are the default |
@@ -206,23 +209,24 @@ Three questions to ask a print shop before you pay:
 
 Copy-paste briefs, each written in the language the shop reads. They agree with [Ordering from a print service](printing.md#ordering-from-a-print-service), which carries the same instructions as a per-part reference; change a setting in one place and change it in the other.
 
-All ten files print support-free, and the only non-obvious placement is the two holder lids: finished top face down on the plate. Every brief below says so; slicers will not place parts for you.
+All twelve files print support-free, and the only non-obvious placement is the two holder lids: finished top face down on the plate. Every brief below says so; slicers will not place parts for you.
 
 <details>
 <summary>3D printing brief: China (Taobao / 1688), in Chinese</summary>
 
 ```
-共 10 个 STL 文件，单位毫米，请勿缩放。
-普通 PLA：白色 2 件、黑色 8 件。白色必须是哑光料
+共 12 个 STL 文件，单位毫米，请勿缩放。
+普通 PLA：白色 3 件、黑色 9 件。白色必须是哑光料
 （丝面／亮面会把灯头映成亮斑）。
 层高一律 0.2，填充 15%，全部免支撑。
 摆放：全部平面朝下；只有两个夹上盖
 （film-holder-135-lid / film-holder-120-lid）成品顶面朝下贴床。
 
-白色 PLA 2 件：
+白色 PLA 3 件：
   main-body.stl        124.8×154.8×75.6
   cover-stage.stl      124.8×154.8×10
-黑色 PLA 8 件：
+  cover-stage-4x5.stl  124.8×154.8×10（可选，4×5 用）
+黑色 PLA 9 件：
   film-holder-135-base.stl   94×120×5
   film-holder-135-lid.stl    94×120×3
   film-holder-120-base.stl   94×120×5
@@ -231,6 +235,7 @@ All ten files print support-free, and the only non-obvious placement is the two 
   pressure-window-120.stl    64×95×2
   mask-6x6.stl               94×80×1
   slide-plate-135.stl        94×120×5（可选，装框幻灯片用）
+  sheet-plate-4x5.stl        112×138×5（可选，4×5 用）
 
 最大件 154.8mm，160×160 打印床即可，不需要大尺寸机器。
 ```
@@ -250,8 +255,8 @@ All ten files print support-free, and the only non-obvious placement is the two 
 <summary>3D printing brief: Japan, in Japanese</summary>
 
 ```
-合計 10 ファイルです。単位はミリ、スケール変更は不可。
-普通の PLA：白 2 点、黒 8 点。白はマット必須です
+合計 12 ファイルです。単位はミリ、スケール変更は不可。
+普通の PLA：白 3 点、黒 9 点。白はマット必須です
 （シルク／光沢はストロボの発光部が明るい斑点として写り込みます）。
 積層ピッチは全ファイル 0.2 mm、
 インフィル 15 %、全ファイル サポート不要。
@@ -259,10 +264,11 @@ All ten files print support-free, and the only non-obvious placement is the two 
 （film-holder-135-lid / film-holder-120-lid）のみ、
 仕上がりの上面をプレートに向けてください。
 
-白 PLA 2 点：
+白 PLA 3 点：
   main-body.stl        124.8×154.8×75.6
   cover-stage.stl      124.8×154.8×10
-黒 PLA 8 点：
+  cover-stage-4x5.stl  124.8×154.8×10（オプション、4×5 用）
+黒 PLA 9 点：
   film-holder-135-base.stl   94×120×5
   film-holder-135-lid.stl    94×120×3
   film-holder-120-base.stl   94×120×5
@@ -271,6 +277,7 @@ All ten files print support-free, and the only non-obvious placement is the two 
   pressure-window-120.stl    64×95×2
   mask-6x6.stl               94×80×1
   slide-plate-135.stl        94×120×5（オプション、マウント済みスライド用）
+  sheet-plate-4x5.stl        112×138×5（オプション、4×5 用）
 
 最大のパーツは 154.8 mm。ビルドプレートは 160×160 mm で足ります。
 ```
@@ -290,8 +297,8 @@ All ten files print support-free, and the only non-obvious placement is the two 
 <summary>3D printing brief: everywhere else, in English</summary>
 
 ```
-10 STL files. Millimetres. Do not scale.
-Plain PLA: 2 white parts, 8 black parts. White must be MATTE -
+12 STL files. Millimetres. Do not scale.
+Plain PLA: 3 white parts, 9 black parts. White must be MATTE -
 silk or gloss reproduces the flash head as a bright spot on the film.
 0.2 mm layers on every file, 15% infill,
 no supports on any file.
@@ -299,10 +306,11 @@ Placement: every part flat face down, except the two lids
 (film-holder-135-lid, film-holder-120-lid): their finished TOP face
 goes on the plate.
 
-White PLA, 2 parts:
+White PLA, 3 parts:
   main-body.stl        124.8 x 154.8 x 75.6
   cover-stage.stl      124.8 x 154.8 x 10
-Black PLA, 8 parts:
+  cover-stage-4x5.stl  124.8 x 154.8 x 10   (optional, for 4x5)
+Black PLA, 9 parts:
   film-holder-135-base.stl   94 x 120 x 5
   film-holder-135-lid.stl    94 x 120 x 3
   film-holder-120-base.stl   94 x 120 x 5
@@ -311,11 +319,12 @@ Black PLA, 8 parts:
   pressure-window-120.stl    64 x 95 x 2
   mask-6x6.stl               94 x 80 x 1
   slide-plate-135.stl        94 x 120 x 5   (optional, for mounted slides)
+  sheet-plate-4x5.stl        112 x 138 x 5  (optional, for 4x5)
 
 Largest part 154.8 mm: a 160 x 160 mm bed is enough.
 ```
 
-If you want the insurance step: print one 135 holder base and lid first, check that a film strip slides, then order the remaining eight files.
+If you want the insurance step: print one 135 holder base and lid first, check that a film strip slides, then order the remaining ten files.
 
 </details>
 
@@ -326,6 +335,7 @@ China (Taobao / 1688), acrylic:
 
 ```
 乳白半透明亚克力 2mm 厚，68×118mm，切 2 块。
+（如做 4×5：另切 106×130mm 一块。）
 要乳白（板体本身扩散），不要磨砂透明板。
 ```
 
@@ -340,6 +350,7 @@ Japan, acrylic:
 
 ```
 乳半（乳白半透明）アクリル 厚 2 mm、68×118 mm に 2 枚切断してください。
+（4×5 を使う場合は 106×130 mm も 1 枚。）
 表面をつや消しにした透明板ではなく、板そのものが光を拡散する
 乳半材でお願いします。
 ```
@@ -357,6 +368,7 @@ Everywhere else, acrylic:
 ```
 Opal (white translucent, light-diffusing) acrylic, 2 mm thick,
 cut 2 pieces at 68 x 118 mm.
+(For 4x5: one more piece at 106 x 130 mm.)
 Opal, not frosted clear - the sheet itself must diffuse, not just its surface.
 ```
 

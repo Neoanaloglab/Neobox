@@ -2,7 +2,7 @@
 
 **English** · [简体中文](README.zh-CN.md) · [日本語](README.ja.md)
 
-> An open-hardware, 3D-printable desktop flash light box for camera scanning 135 and 120 film: about 125 × 155 × 83 mm, ten printed parts (two of them optional) at roughly 300–350 g, assembled with magnets alone: no screws, no threads, no tools. Any hot-shoe flash lies at the fully open front and fires in; an insert platform keeps the film flat, with a single universal anti-Newton glass as the optional upgrade.
+> An open-hardware, 3D-printable desktop flash light box for camera scanning 135 and 120 film: about 125 × 155 × 83 mm, twelve printed parts (four of them optional) at roughly 300–350 g, assembled with magnets alone: no screws, no threads, no tools. Any hot-shoe flash lies at the fully open front and fires in; an insert platform keeps the film flat, with a single universal anti-Newton glass as the optional upgrade.
 
 **Contents:** [What NeoBox is](#what-neobox-is) · [What you get, and what you must already own](#what-you-get-and-what-you-must-already-own) · [Why a flash](#why-a-flash) · [How the light works](#how-the-light-works) · [Documentation](#documentation) · [Quick start](#quick-start) · [Repository layout](#repository-layout) · [Adapting to a different flash](#adapting-to-a-different-flash) · [Status](#status) · [Licence and credits](#licence-and-credits)
 
@@ -17,13 +17,13 @@ NeoBox is a white box, fully open at the front, that turns one bare speedlight i
 
 The flash lies flat on the desk with its head at the open front and fires **horizontally** into the white cavity; light reaches the film only after several diffuse bounces and one opal acrylic diffuser.
 
-Because the flash stays outside the enclosure, the box only has to contain the mixing cavity and the film platform, which is why ten printed parts, roughly 300–350 g of PLA and a 160 × 160 mm build plate are enough.
+Because the flash stays outside the enclosure, the box only has to contain the mixing cavity and the film platform, which is why twelve printed parts, roughly 300–350 g of PLA and a 160 × 160 mm build plate are enough.
 
 | Item | Specification |
 |---|---|
 | Outer size | ≈ 125 × 155 × 83 mm (footprint 124.8 × 154.8 mm; 87 mm to the top of a seated film holder) |
-| Formats | 135 and 120 up to 6×9; 6×6 via a mask insert; 6×4.5 by cropping in post; mounted 135 slides via the optional slide plate |
-| Printed parts | 10 STL files (2 white, 8 black, including the optional 6×6 mask and slide plate); ≈ 300–350 g; all support-free |
+| Formats | 135 and 120 up to 6×9; 6×6 via a mask insert; 6×4.5 by cropping in post; mounted 135 slides via the optional slide plate; 4×5 sheets via the optional 4×5 stage, with an evenness caveat |
+| Printed parts | 12 STL files (3 white, 9 black, including the optional 6×6 mask, slide plate and 4×5 stage); ≈ 300–350 g; all support-free |
 | Bought parts | 1 opal acrylic diffuser, 32 Ø8 × 2 mm magnets, 4 steel washers; optional: 1 anti-Newton glass, 1 flocking sheet |
 | Enclosure | A one-piece main body with a fully open front, and a cover-stage that drops on over four locating tenons |
 | Diffusion | Single opal acrylic diffuser, 68 × 118 × 2 mm, under a 62 × 95 mm light window, 4.6 mm below the film |
@@ -40,7 +40,7 @@ NeoBox is one half of a scanning rig. It replaces the light table; it does not r
 
 | This repository gives you | You must already own or buy |
 |---|---|
-| 10 STL files (2 white, 8 black), every one printing support-free on a flat face | A camera body with manual exposure and raw capture (mirrorless or DSLR) |
+| 12 STL files (3 white, 9 black), every one printing support-free on a flat face | A camera body with manual exposure and raw capture (mirrorless or DSLR) |
 | The Blender source `cad/neobox.blend`, the authoritative geometry | A macro-capable lens; one 1:1 macro lens covers every format in this project |
 | Drawings, in English, 简体中文 and 日本語 | A [copy stand](docs/glossary.md#copy-stand), or a tripod with a horizontal or reversible column, that holds the camera squarely above the box |
 | Ten documents covering shopping, printing, building and scanning | The flash itself, plus a trigger set: the transmitter goes on the camera's hot shoe, and the receiver stays outside the box |
@@ -121,7 +121,7 @@ flowchart LR
 
 - [ ] **1. Check that it suits you**: what you must already own, and the honest timeline. → [Getting started](docs/getting-started.md#getting-started)
 - [ ] **2. Buy**: one opal acrylic diffuser cut to 68 × 118 × 2 mm, 32 Ø8 × 2 mm N35 magnets, 4 steel washers, and optionally one 64 × 95 × 2 mm anti-Newton glass and a flocking sheet. → [Bill of materials](docs/bom.md#tools-and-consumables)
-- [ ] **3. Print**: 10 STL files in two colours (2 white, 8 black), plain PLA, no supports; every part prints on a flat face. The white filament must be **matte**: silk or glossy white keeps specular reflections alive in the cavity. → [3D printing](docs/printing.md#printing)
+- [ ] **3. Print**: 12 STL files in two colours (3 white, 9 black), plain PLA, no supports; every part prints on a flat face. The white filament must be **matte**: silk or glossy white keeps specular reflections alive in the cavity. → [3D printing](docs/printing.md#printing)
 - [ ] **4. Assemble and calibrate**: press in the magnets, stack the parts; no screws, no tools. Then set a small mirror on the stage and centre the lens's own reflection in the viewfinder: the sensor is now parallel to the film plane. → [Assembly](docs/assembly.md#assembly)
 - [ ] **5. Scan**: focus on the grain, meter, and shoot a roll. → [Scanning](docs/scanning.md#scanning)
 
@@ -135,11 +135,11 @@ flowchart LR
 | [`cad/neobox.blend`](cad/neobox.blend) | Blender source: the authoritative geometry for every part | Source |
 | [`cad/film-stage-aluminium-3mm.dxf`](cad/film-stage-aluminium-3mm.dxf) | The printed prototype's aluminium film stage, superseded; in v1 the stage is merged into the cover-stage | Historical |
 | [`cad/legacy-plywood/`](cad/legacy-plywood/) | Two DXFs left from the abandoned plywood route. Not a complete build; kept for the record | Historical |
-| [`stl/white-pla/`](stl/white-pla/) | `main-body.stl`, `cover-stage.stl` | Generated |
-| [`stl/black-pla/`](stl/black-pla/) | Four film-holder parts, two pressure-window inserts, `mask-6x6.stl` and `slide-plate-135.stl` | Generated |
+| [`stl/white-pla/`](stl/white-pla/) | `main-body.stl`, `cover-stage.stl`, `cover-stage-4x5.stl` | Generated |
+| [`stl/black-pla/`](stl/black-pla/) | Four film-holder parts, two pressure-window inserts, `mask-6x6.stl`, `slide-plate-135.stl` and `sheet-plate-4x5.stl` | Generated |
 | [`drawings/`](drawings/) | Optical path, cross-section, print orientation, exploded view, capture setup and manufacturing overview, in three languages, regenerated from the generators in `tools/drawings/` | Generated |
 | [`docs/`](docs/) | The documentation set, each file in English, 简体中文 and 日本語 | Source |
-| [`tools/export_stl.py`](tools/export_stl.py) | The committed exporter; regenerates the ten STL files from `cad/neobox.blend` | Source |
+| [`tools/export_stl.py`](tools/export_stl.py) | The committed exporter; regenerates the twelve STL files from `cad/neobox.blend` | Source |
 | [`tools/drawings/`](tools/drawings/) | The drawing generators; regenerate the 18 SVG files under `drawings/` | Source |
 | [`tools/verify_stl.py`](tools/verify_stl.py) | The geometry gate; checks watertightness, the 0.2 mm z-grid and every bounding box | Source |
 
@@ -156,7 +156,7 @@ Choosing a substitute takes one criterion: **manual power control**. TTL and HSS
 
 First release, v1 geometry.
 
-- **Verified:** all ten STL files are watertight single solids with zero non-manifold edges, every horizontal face sits on the 0.2 mm layer grid in its print orientation, and every bounding box matches the published dimensions. Run `tools/verify_stl.py` to reproduce this.
+- **Verified:** all twelve STL files are watertight single solids with zero non-manifold edges, every horizontal face sits on the 0.2 mm layer grid in its print orientation, and every bounding box matches the published dimensions. Run `tools/verify_stl.py` to reproduce this.
 - **Not verified:** this geometry has **never been printed, photographed, measured or evenness-tested.** The only box ever printed was the old prototype, which shares almost no parts with v1.
 - Every evenness figure quoted in the documents is a **design target**, not a measurement.
 - The single-diffuser decision is informed by the author's existing light-pad workflow, not by testing this box.
