@@ -1,9 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="960" height="920" viewBox="0 0 960 920">
 <rect x="0.0" y="0.0" width="960.0" height="920.0" fill="#ffffff"/>
 <text x="24.0" y="40.0" font-family="Helvetica, Arial, sans-serif" font-size="21" fill="#111" text-anchor="start" font-weight="bold">プリント方向</text>
-<text x="24.0" y="60.0" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#444" text-anchor="start">NeoBox v1 — 10 点の印刷パーツをビルドプレートに置く向き</text>
+<text x="24.0" y="60.0" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#444" text-anchor="start">NeoBox v1 — 12 点の印刷パーツをビルドプレートに置く向き</text>
 <rect x="24.0" y="72.0" width="912.0" height="30.0" fill="#fbf0dd" stroke="#e8a33d" stroke-width="1.2" rx="5"/>
-<text x="38.0" y="91.0" font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#111" text-anchor="start" font-weight="bold">全 10 パーツともサポート不要 · 積層ピッチは必ず 0.2 mm · 拡大縮小禁止（単位 mm）</text>
+<text x="38.0" y="91.0" font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#111" text-anchor="start" font-weight="bold">全 12 パーツともサポート不要 · 積層ピッチは必ず 0.2 mm · 拡大縮小禁止（単位 mm）</text>
 <text x="922.0" y="91.0" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#444" text-anchor="end">黒 PLA</text>
 <circle cx="871.7" cy="87.0" r="5" fill="#3a3a3a" stroke="#444" stroke-width="1"/>
 <text x="851.7" y="91.0" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#444" text-anchor="end">白 PLA</text>
@@ -23,7 +23,7 @@
 <rect x="351.0" y="244.0" width="257.0" height="6.0" fill="#d9d9d9" stroke="#444" stroke-width="1"/>
 <line x1="398.5" y1="184.0" x2="398.5" y2="233.0" stroke="#e8a33d" stroke-width="2.5"/>
 <polygon points="393.5,232.0 403.5,232.0 398.5,242.0" fill="#e8a33d" stroke="none" stroke-width="0" stroke-linejoin="round"/>
-<polygon points="416.5,244.0 416.5,230.0 430.7,230.0 430.7,221.0 438.7,221.0 438.7,230.0 544.3,230.0 544.3,221.0 552.3,221.0 552.3,230.0 566.5,230.0 566.5,244.0" fill="#f2f2f2" stroke="#444" stroke-width="2" stroke-linejoin="round"/>
+<polygon points="416.5,244.0 416.5,230.0 428.7,230.0 428.7,221.0 434.7,221.0 434.7,230.0 548.3,230.0 548.3,221.0 554.3,221.0 554.3,230.0 566.5,230.0 566.5,244.0" fill="#f2f2f2" stroke="#444" stroke-width="2" stroke-linejoin="round"/>
 <text x="479.5" y="276.0" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#111" text-anchor="middle">大きな平面を下、枠フランジを上</text>
 <rect x="642.0" y="116.0" width="293.0" height="182.0" fill="#ffffff" stroke="#cccccc" stroke-width="1" rx="6"/>
 <circle cx="660.0" cy="132.0" r="5" fill="#3a3a3a" stroke="#444" stroke-width="1"/>
@@ -95,5 +95,21 @@
 <polygon points="103.1,820.0 113.1,820.0 108.1,830.0" fill="#e8a33d" stroke="none" stroke-width="0" stroke-linejoin="round"/>
 <polygon points="126.1,832.0 126.1,821.0 151.7,821.0 151.7,826.0 213.3,826.0 213.3,821.0 238.9,821.0 238.9,832.0" fill="#3a3a3a" stroke="#444" stroke-width="2" stroke-linejoin="round"/>
 <text x="170.5" y="864.0" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#111" text-anchor="middle">平面を下、四角いポケットを上</text>
+<rect x="333.0" y="704.0" width="293.0" height="182.0" fill="#ffffff" stroke="#cccccc" stroke-width="1" rx="6"/>
+<circle cx="351.0" cy="720.0" r="5" fill="#ffffff" stroke="#444" stroke-width="1"/>
+<text x="361.0" y="724.0" font-family="SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#111" text-anchor="start">cover-stage-4x5.stl</text>
+<rect x="351.0" y="832.0" width="257.0" height="6.0" fill="#d9d9d9" stroke="#444" stroke-width="1"/>
+<line x1="398.5" y1="772.0" x2="398.5" y2="821.0" stroke="#e8a33d" stroke-width="2.5"/>
+<polygon points="393.5,820.0 403.5,820.0 398.5,830.0" fill="#e8a33d" stroke="none" stroke-width="0" stroke-linejoin="round"/>
+<polygon points="416.5,832.0 416.5,818.0 417.9,818.0 417.9,809.0 423.9,809.0 423.9,818.0 559.1,818.0 559.1,809.0 565.1,809.0 565.1,818.0 566.5,818.0 566.5,832.0" fill="#f2f2f2" stroke="#444" stroke-width="2" stroke-linejoin="round"/>
+<text x="479.5" y="864.0" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#111" text-anchor="middle">大きな平面を下、枠フランジを上</text>
+<rect x="642.0" y="704.0" width="293.0" height="182.0" fill="#ffffff" stroke="#cccccc" stroke-width="1" rx="6"/>
+<circle cx="660.0" cy="720.0" r="5" fill="#3a3a3a" stroke="#444" stroke-width="1"/>
+<text x="670.0" y="724.0" font-family="SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#111" text-anchor="start">sheet-plate-4x5.stl</text>
+<rect x="660.0" y="832.0" width="257.0" height="6.0" fill="#d9d9d9" stroke="#444" stroke-width="1"/>
+<line x1="715.3" y1="772.0" x2="715.3" y2="821.0" stroke="#e8a33d" stroke-width="2.5"/>
+<polygon points="710.3,820.0 720.3,820.0 715.3,830.0" fill="#e8a33d" stroke="none" stroke-width="0" stroke-linejoin="round"/>
+<polygon points="733.3,832.0 733.3,821.0 739.2,821.0 739.2,826.0 861.8,826.0 861.8,821.0 867.7,821.0 867.7,832.0" fill="#3a3a3a" stroke="#444" stroke-width="2" stroke-linejoin="round"/>
+<text x="788.5" y="864.0" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#111" text-anchor="middle">平面を下、ポケットと縁の切欠きを上</text>
 <text x="936.0" y="910.0" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#444" text-anchor="end">NeoBox v1 — 2026-08</text>
 </svg>

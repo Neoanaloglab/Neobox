@@ -4,7 +4,7 @@
 
 > The camera half of the project: what to put above the box, how to square the camera to the film, how to focus and expose, how to load and advance film, and what to do with the raw files afterwards.
 
-**Contents:** [Before you start](#before-you-start) · [Camera-side equipment](#camera-side-equipment) · [Magnification and lens choice](#magnification-and-lens-choice) · [Camera height and the stand](#camera-height-and-the-stand) · [Parallelism](#parallelism) · [Focus](#focus) · [Exposure](#exposure) · [Loading film](#loading-film) · [Mounted slides](#mounted-slides) · [Shooting a roll](#shooting-a-roll) · [Flat-field and inversion](#flat-field-and-inversion) · [When something looks wrong](#when-something-looks-wrong)
+**Contents:** [Before you start](#before-you-start) · [Camera-side equipment](#camera-side-equipment) · [Magnification and lens choice](#magnification-and-lens-choice) · [Camera height and the stand](#camera-height-and-the-stand) · [Parallelism](#parallelism) · [Focus](#focus) · [Exposure](#exposure) · [Loading film](#loading-film) · [Mounted slides](#mounted-slides) · [4×5 sheets](#45-sheets) · [Shooting a roll](#shooting-a-roll) · [Flat-field and inversion](#flat-field-and-inversion) · [When something looks wrong](#when-something-looks-wrong)
 
 ## Before you start
 
@@ -54,6 +54,7 @@ Magnification needed to fill the sensor with the frame (approximate, for choosin
 | 6×6 | 56 × 56 | 0.43× | 0.28× |
 | 6×7 | 56 × 70 | 0.34× | 0.22× |
 | 6×9 | 56 × 84 | 0.29× | 0.19× |
+| 4×5 | 96 × 120 | 0.25× | 0.16× |
 
 Any 1:1 macro lens covers every row in this table; for the larger formats you simply use less than full magnification. The demanding case is 135 on full frame, which needs the full 1.0×.
 
@@ -61,7 +62,7 @@ Dust sorts by surface, not by magnification. A particle on the acrylic diffuser 
 
 ## Camera height and the stand
 
-The film plane sits at **83.2 mm above whatever surface the box stands on**. That height is fixed by the design and is the same for 135 and 120: both holders present the film at the same level, so you do not re-level anything when you change format. The one exception is the 6×6 mask, which lifts the 120 holder by 1 mm. That is normal; refocus and carry on.
+The film plane sits at **83.2 mm above whatever surface the box stands on**. That height is fixed by the design and is the same for 135 and 120: both holders present the film at the same level, so you do not re-level anything when you change format. The exceptions are small: the 6×6 mask lifts the 120 holder by 1 mm, a mounted slide sits at about 82.6 – 83.6 and a 4×5 sheet at about 82.2. That is normal; refocus and carry on. What does change a lot at 4×5 is the working distance: a 100 mm macro at 0.25× wants its front element roughly half a metre above the film, so check the column reaches, or use a 50 – 60 mm macro, which halves that.
 
 Camera height follows from two numbers:
 
@@ -236,6 +237,21 @@ A mount is about 1.2 – 3.2 mm thick and the channel is 0.4, so a mounted slide
 5. Lift the mount out by the two finger wells at the sides of the pocket, and drop in the next.
 
 A card mount that has warped, or a frame that popped in a projector, is not flattened by anything here, exactly as in a dedicated slide scanner; at 1:1 and f/8 the roughly ±0.4 mm depth of field absorbs most of it. Glass mounts go in as they are. The window is larger than any mount's aperture, so it is the mount that frames the image: crop to it in post.
+
+## 4×5 sheets
+
+4×5 needs the optional 4×5 stage: `cover-stage-4x5.stl` in place of the cover-stage, its own 106 × 130 × 2 opal sheet in the recess, and `sheet-plate-4x5.stl` in its tray, which takes the 101.6 × 127 sheet in a 102.2 × 127.6 pocket over a 97 × 121 window. The main body, the flash and the stand do not change.
+
+1. Lift the cover-stage off by its flange and set the 4×5 cover-stage down on the same four tenons, its acrylic already in its recess.
+   *Checkpoint:* it settles onto the tenons under its own weight, exactly like the cover-stage.
+2. Set the sheet plate into the tray.
+   *Checkpoint:* it lies flat inside the flange and does not rock.
+3. Blow the pocket and both faces of the sheet, and drop the sheet in the way you would hold it up to a window: image reading correctly from above, emulsion down.
+   *Checkpoint:* the sheet lies on the pocket floor with the window fully covered.
+4. Refocus and re-set the column: 4×5 on full frame is about 0.25×, and the sheet lies at about 82.2 mm. At 0.25× and f/8 the depth of field is roughly 8 – 10 mm, so a curled sheet is not a focus problem.
+5. Lift the sheet out by the two edge notches.
+
+**Evenness is the one unknown.** The 4×5 window sits 9 and 12 mm from the cavity walls instead of v1's 29 and 27.5. Shoot a blank frame first and look at it: if it shows a gradient you will not accept, [flat-field correction](#flat-field-and-inversion) removes it in post, and [Design § 10](design.md#10-45-on-the-v1-body) describes the bigger box that restores the margins.
 
 ## Shooting a roll
 

@@ -37,7 +37,7 @@ flowchart TD
 
 | Symptom | Likely cause | Fix |
 |---|---|---|
-| A part measures smaller than its card in [The ten parts](printing.md#the-ten-parts) | The slicer scaled it to fit the build plate | Reslice at 100 %, millimetres, and reprint. The largest part is 154.8 mm across and fits a 160 × 160 plate without scaling, so any scaling was an accident. Re-run the acceptance checks. |
+| A part measures smaller than its card in [The twelve parts](printing.md#the-twelve-parts) | The slicer scaled it to fit the build plate | Reslice at 100 %, millimetres, and reprint. The largest part is 154.8 mm across and fits a 160 × 160 plate without scaling, so any scaling was an accident. Re-run the acceptance checks. |
 | A corner of the main body or the cover-stage has lifted off the build plate | A cold or draughty machine, or a dirty plate | Reprint on a clean plate, out of the draught, with whatever adhesion aid your machine likes. A lifted corner is not cosmetic: the cover-stage rests on the wall tops and the film plane stands on the cover-stage, so warp at either face rocks everything above it. |
 | A part has drooped, ragged overhangs | It was sliced in the wrong orientation | Every part prints support-free, but only one way up: flat base down for the holder bases, the inserts, the main body and the cover-stage, and **top face down** for the two holder lids. Reorient and reprint; nothing recovers the part as printed. |
 | The white parts came back shiny or silky | Silk or glossy filament | They have to be reprinted in matte. The bare white interior *is* the reflector; a glossy one reproduces the flash head as a hot spot, and painting the inside is not the fix. |
@@ -87,6 +87,7 @@ Judge all of this on a flat frame (the bare lit surface, no film, shot raw at th
 | Everything is darker than the meter suggested | The bounce cavity costs light; that is the price of evenness | Add flash power before you add ISO. |
 | The image is grey and veiled, low in contrast | The white deck reflecting stray light up around the holder, or a ceiling light shining into the open front | Stick the optional black flocking sheet onto the deck, and keep overhead light off the mouth of the box. The flash overwhelms ambient light, but only in a dim room. |
 | Evenness has changed since last session | The flash has moved on the desk | Tape or trace its footprint so the head always returns to the same spot against the front opening. |
+| A 4×5 frame is brighter toward the back of the box than the front | The 4×5 window sits 9 and 12 mm from the cavity walls, a third of the v1 mixing margin, and nothing has been measured | Flat-field correction removes a smooth gradient. If it is more than you will accept, the bigger box in [Design § 10](design.md#10-45-on-the-v1-body) restores the margins. |
 
 > [!IMPORTANT]
 > Fix parallelism before you chase evenness. A flash freezes vibration, but nothing in the box can rescue a film plane that is not parallel to the sensor; the whole adjustment lives at the camera end, in the mirror method. A tilted plane can also read as a brightness gradient once you start pixel-peeping corners.

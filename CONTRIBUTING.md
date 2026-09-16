@@ -13,13 +13,13 @@ NeoBox is a hardware repository: the files under `stl/` are build output, not ha
 | Source (geometry) | `cad/neobox.blend` | Yes. Every printed part is modelled here. |
 | Source (prose) | `README.md` and `docs/*.md`, in all three languages | Yes. |
 | Source (drawings) | `drawings/*.svg` (+ `.zh-CN.svg`, `.ja.svg`) | Yes: hand-authored, not exported from the `.blend`. |
-| Generated | the ten `.stl` files under `stl/white-pla/` and `stl/black-pla/` | No. Re-export them from `cad/neobox.blend`. |
+| Generated | the twelve `.stl` files under `stl/white-pla/` and `stl/black-pla/` | No. Re-export them from `cad/neobox.blend`. |
 | Historical | `cad/legacy-plywood/`, `cad/film-stage-aluminium-3mm.dxf` | No. Kept for the record only; the plywood route and the printed prototype's aluminium film stage are superseded. |
 
-There are **10 STL files (2 white, 8 black)**, never nine, never eleven:
+There are **12 STL files (3 white, 9 black)**, never eleven, never thirteen:
 
-- `stl/white-pla/`: `main-body.stl`, `cover-stage.stl`
-- `stl/black-pla/`: `film-holder-135-base.stl`, `film-holder-135-lid.stl`, `film-holder-120-base.stl`, `film-holder-120-lid.stl`, `pressure-window-135.stl`, `pressure-window-120.stl`, `mask-6x6.stl`, `slide-plate-135.stl`
+- `stl/white-pla/`: `main-body.stl`, `cover-stage.stl`, `cover-stage-4x5.stl`
+- `stl/black-pla/`: `film-holder-135-base.stl`, `film-holder-135-lid.stl`, `film-holder-120-base.stl`, `film-holder-120-lid.stl`, `pressure-window-135.stl`, `pressure-window-120.stl`, `mask-6x6.stl`, `slide-plate-135.stl`, `sheet-plate-4x5.stl`
 
 They are binary artefacts committed to the repository, so a diff never shows what changed. A pull request that edits an STL by hand will be closed: change the Blender scene and re-export. [Design § 11](docs/design.md#11-working-with-the-source) documents the collection tree, which objects make up each file, and the export procedure.
 
@@ -45,7 +45,7 @@ It walks every file under `stl/` and exits non-zero if any check fails, so it ca
 | 3 | No exposed step below 0.4 mm (two layers at 0.2) | design-log entry 19 |
 | 4 | Bounding box matches the published dimensions | the documents quote them and the fits depend on them |
 
-As of 2026-09-16 all ten files pass: watertight single solids, 0 non-manifold edges. Keep it that way.
+As of 2026-09-16 all twelve files pass: watertight single solids, 0 non-manifold edges. Keep it that way.
 
 > [!IMPORTANT]
 > The geometry is dimensionally verified in Blender and numerically verified from the exported STLs by `tools/verify_stl.py`. The design has never been physically printed, built, photographed or tested. Do not write "measured", "tested" or "empirically" about any enclosure or optical figure, in any language.
@@ -58,7 +58,7 @@ Numbers come from the project fact sheet or from `cad/neobox.blend`. Do not inve
 
 ## Terminology
 
-One name per thing. Use these and nothing else: main body, cover-stage (never "top cover" or "lid"), open front, the cavity, light window, diffuser, film holder → holder base / holder lid, pressure window (insert), anti-Newton (AN) glass, element ledge, locating tenon / notch, land, rail, channel, window, magnet, steel washer, film strip, slide plate, slide mount, build plate. Definitions live in the [glossary](docs/glossary.md#glossary); a synonym introduced by a pull request will be sent back.
+One name per thing. Use these and nothing else: main body, cover-stage (never "top cover" or "lid"), open front, the cavity, light window, diffuser, film holder → holder base / holder lid, pressure window (insert), anti-Newton (AN) glass, element ledge, locating tenon / notch, land, rail, channel, window, magnet, steel washer, film strip, slide plate, slide mount, 4×5 cover-stage, sheet plate, build plate. Definitions live in the [glossary](docs/glossary.md#glossary); a synonym introduced by a pull request will be sent back.
 
 Japanese: 本体 must never mean the flash; write ストロボ本体. The combined top part is 天板ステージ, never plain 天板. Chinese: 打印台 means the printer's build plate and nothing else; the prototype-era 胶片台 no longer exists (its function lives in the 顶盖台), so write 顶盖台.
 
@@ -70,7 +70,7 @@ If your change rejects an approach (another diffuser stack, another fastening sc
 
 A **fix** corrects the published design: a wrong dimension, a broken link, a failing check, an unclear step. Open it against `main`.
 
-A **variant** changes what the box is for: 4×5, an LED panel instead of a speedlight, a different flattening scheme. A different flash is **not** a variant any more: the enclosure depends on no flash dimension, because the flash lies outside the fully open front; any hot-shoe flash with manual power control works with the published STLs as they are. For a true variant, start from the dimension chain in [Design § 2](docs/design.md#2-dimension-chain), keep it on its own branch, and state in the pull request which parts changed and what you re-verified.
+A **variant** changes what the box is for: a bigger box that gives 4×5 the full mixing margin, an LED panel instead of a speedlight, a different flattening scheme. A different flash is **not** a variant any more: the enclosure depends on no flash dimension, because the flash lies outside the fully open front; any hot-shoe flash with manual power control works with the published STLs as they are. For a true variant, start from the dimension chain in [Design § 2](docs/design.md#2-dimension-chain), keep it on its own branch, and state in the pull request which parts changed and what you re-verified.
 
 ## Pull requests
 

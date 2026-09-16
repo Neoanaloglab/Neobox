@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Regenerate the ten published STL files from cad/neobox.blend.
+"""Regenerate the twelve published STL files from cad/neobox.blend.
 
 This is the committed form of the pipeline that produced the files under stl/.
 The printable parts are modelled as overlapping shells (interpenetrating by
@@ -42,6 +42,8 @@ MAPPING = {
     "pressure-window-120.stl": ("black-pla", ["pressure-window-120"]),
     "mask-6x6.stl": ("black-pla", ["mask-6x6"]),
     "slide-plate-135.stl": ("black-pla", ["slide-plate-135"]),
+    "cover-stage-4x5.stl": ("white-pla", ["cover-stage-4x5"]),
+    "sheet-plate-4x5.stl": ("black-pla", ["sheet-plate-4x5"]),
 }
 
 WELD = 0.02          # weld distance for boolean slivers, mm

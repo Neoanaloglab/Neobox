@@ -27,6 +27,8 @@ EXPECTED = {
     "pressure-window-120.stl": (95.0, 64.0, 2.0),
     "mask-6x6.stl": (94.0, 80.0, 1.0),
     "slide-plate-135.stl": (120.0, 94.0, 5.0),
+    "cover-stage-4x5.stl": (154.8, 124.8, 10.0),
+    "sheet-plate-4x5.stl": (138.0, 112.0, 5.0),
 }
 LAYER = 0.2
 MIN_STEP = 0.4
