@@ -47,7 +47,7 @@ In the prototype the box was derived from the flash, and its numbers died with i
 
 ### The printed parts
 
-Nine STL files, two white and seven black, all printed without supports:
+Ten STL files, two white and eight black, all printed without supports:
 
 | STL | Colour | Overall (mm) | What it is |
 |---|---|---|---|
@@ -60,6 +60,7 @@ Nine STL files, two white and seven black, all printed without supports:
 | `pressure-window-135.stl` | black | 64 × 95 × 2 | Pressure-window insert, 135 (window 25 × 37) |
 | `pressure-window-120.stl` | black | 64 × 95 × 2 | Pressure-window insert, 120 (window 57 × 85) |
 | `mask-6x6.stl` | black | 94 × 80 × 1 | 6×6 mask (window 56.5 × 56.5), laid in the tray under the 120 base |
+| `slide-plate-135.stl` | black | 94 × 120 × 5 | Slide plate for mounted 135 slides: 51.4 × 51.4 pocket, 26 × 38 window, two finger wells; a fourth holder set in one piece ([§5](#5-film-holders)) |
 
 Every part prints flat face down; the two lids print top face down. The largest part is 154.8 mm long, so a 160 × 160 print bed is enough. Layer heights, orientation cards and slicer settings are in [printing.md](printing.md).
 
@@ -76,8 +77,9 @@ The whole assembly is one gravity stack. World z, desk = 0:
 | Opal acrylic | 76.6 – 78.6 | in its recess, top face 0.4 below the deck |
 | Steel washers | 78.0 – 79.0 | in their pockets, flush with the deck |
 | Tray flange | 79.0 – 83.0 | rim around the holder seat, 4 high |
-| Holder base | 79.0 – 84.0 | stands on the deck inside the flange |
+| Holder base | 79.0 – 84.0 | stands on the deck inside the flange; the slide plate occupies the same 5 mm |
 | **Film plane** | **83.2** | land top; the same height for both formats |
+| Slide film plane | ≈ 82.6 – 83.6 | in the slide plate: pocket floor at 82.0 plus about half the mount's thickness; refocus |
 | Pressure element | 83.6 – 85.6 | insert or AN glass on the 4.6 ledge |
 | Holder lid | 84.0 – 87.0 | total assembled height 87 |
 
@@ -100,6 +102,7 @@ There is nothing to re-derive. The prototype-era formulas that turned a flash da
 | Holder bases (both formats) | 0 · 2.2 magnet-pocket floor · 3.8 plate face · **4.2 land** · **4.6 element ledge** · 5.0 rail top |
 | Holder lids (printed top face down) | 0 · 1.0 element-cavity ceiling · 3.0 lid underside (assembly-local 8.0 / 7.0 / 5.0) |
 | Inserts / mask | flat plates, 2.0 / 1.0 |
+| Slide plate | 0 · 1.0 finger-well floor · 3.0 pocket floor · 5.0 top |
 
 The point of the grid: at a 0.2 mm [layer height](glossary.md#layer-height) every one of those stations lands exactly on a layer boundary, so a printed 0.4 step is a true 0.4 step, not a slicer rounding. 0.1 mm also divides the grid; 0.12 and 0.16 do not. The reasoning dates from the prototype's holders and carries over unchanged ([design log entry 18](design-log.md#18-layer-quantised-holders)); what is new in v1 is that the whole design obeys it, not just the holders. The print order spec pins every file at 0.2 ([printing.md](printing.md)). The verifier enforces the grid and the minimum step on every export ([§11](#11-working-with-the-source)).
 
@@ -154,7 +157,7 @@ Because the mirror lies on the *result* of the whole printed stack (floor, walls
 
 ## 5. Film holders
 
-One holder set per format: a base and a lid, both 94 × 120, standing in the cover-stage tray. Changing format means lifting one set off and dropping the other in: the magnets release and re-seat in about five seconds, and nothing else moves. The film is advanced by pulling the strip through the closed holder; it is never opened mid-roll.
+One holder set per format: a base and a lid, both 94 × 120, standing in the cover-stage tray. Changing format means lifting one set off and dropping the other in: the magnets release and re-seat in about five seconds, and nothing else moves. The film is advanced by pulling the strip through the closed holder; it is never opened mid-roll. A fourth set, for mounted 135 slides, is a single plate with no lid ([below](#mounted-slides-the-slide-plate)).
 
 | Feature | 135 holder | 120 holder |
 |---|---|---|
@@ -191,8 +194,21 @@ The element is seated once and then never handled. Advancing film means gripping
 
 **6×6 and 6×4.5.** For 6×6, lay `mask-6x6.stl` (94 × 80 × 1, window 56.5 × 56.5) in the tray *under* the 120 base: the whole set rides 1 mm higher, which is normal; refocus and carry on. 6×4.5 has no dedicated mask; crop in post.
 
-> [!NOTE]
-> **Mounted slides are out of scope.** A cardboard or plastic slide mount is many times thicker than the 0.4 mm channel and cannot enter the holder. NeoBox takes bare film strips only, up to 6×9.
+### Mounted slides: the slide plate
+
+A slide in its mount is about 1.2 – 3.2 mm thick, many times the 0.4 mm channel, so it can never enter the 135 holder; and cutting a pocket for it into the 135 base would remove the land that supports the strip ([design log entry 25](design-log.md#25-mounted-slides-a-plate-of-their-own)). Instead `slide-plate-135.stl` is a fourth holder set in one piece: a 94 × 120 × 5 black plate that stands in the tray in place of the 135 set. It has no lid, no magnets and no pressure element: a mount is rigid and the box is horizontal, so the pocket locates the mount and gravity holds it.
+
+| Feature | Slide plate |
+|---|---|
+| Outline and thickness | 94 × 120 × 5, the same seat in the tray as a holder base |
+| Pocket | 51.4 × 51.4, 2.0 deep; floor at 3.0 above the plate bottom (z = 82.0) |
+| Window | 26 × 38, through the pocket floor |
+| Finger wells | two, 18 × 12, centred on the pocket's short sides; floor at 1.0, blind |
+| Film plane | pocket floor plus about half the mount's thickness: roughly 82.6 (card mounts) to 83.6 (glass mounts); refocus |
+
+**Why 51.4:** mounts are nominally 50 × 50, but card mounts run up to 50.8 (2 inch), so 51.4 leaves 0.3 mm per side on the largest mount and 0.7 on a plastic one: the same clearance the holder bases have in the tray. **Why 2.0 deep:** the thinnest card mount, about 1.2, is still captured by the pocket walls, and the thickest glass mount, about 3.2, stands 1.2 proud, where nothing sits above it to object. **Why 26 × 38, not 25 × 37:** the mount can float up to 0.7 mm in the pocket, and with 1 mm of margin per side against the nominal 24 × 36 frame it is always the mount's own aperture, never the printed edge, that frames the image; every mount still overlaps the window by more than 5 mm on every side, so nothing leaks. **The finger wells** let a fingernail under the edge of a card mount that sits 0.8 below the pocket rim; they are blind, 2.0 below the pocket floor, so they pass no light.
+
+A mount is loaded the way you would hold it up to a window: image reading correctly from above, which puts the emulsion down, the same rule as for strips. A warped card mount or a popped frame is not flattened by anything here, exactly as in a dedicated slide scanner; at 1:1 and f/8 the roughly ±0.4 mm depth of field absorbs most of it.
 
 ---
 
@@ -276,7 +292,7 @@ If you want to build one:
 
 ## 11. Working with the source
 
-`cad/neobox.blend` is the only source of geometry in this repository. The nine STL files are generated from it, and a change that reaches the STLs without going through the blend file is lost the next time anyone re-exports.
+`cad/neobox.blend` is the only source of geometry in this repository. The ten STL files are generated from it, and a change that reaches the STLs without going through the blend file is lost the next time anyone re-exports.
 
 ### Opening the file
 
@@ -284,7 +300,7 @@ If you want to build one:
 |---|---|
 | Blender version | **3.0 or newer.** The file is Zstandard-compressed, which pre-3.0 Blender cannot read at all. The file header records **Blender 5.2** as the version it was last saved with |
 | Unit system | Metric, unit scale 0.001, length unit millimetres: **one Blender unit is one millimetre** |
-| Scene layout | The assembly is modelled in place, on the same z datum this document uses: the desk (the outer bottom of the box) is z = 0. The 120 holder set is parked beside the assembly at x = 200 and the 6×6 mask at x = 350 |
+| Scene layout | The assembly is modelled in place, on the same z datum this document uses: the desk (the outer bottom of the box) is z = 0. The 120 holder set is parked beside the assembly at x = 200, the 6×6 mask at x = 350 and the slide plate at x = 500 |
 
 ### The collection tree
 
@@ -295,7 +311,8 @@ Scene Collection
 ├── NeoBox_v1               the enclosure, the cover-stage and the mock-ups
 ├── Holder_135              the 135 holder set, assembled in place
 ├── Holder_120              the 120 holder set, parked at x = 200
-└── Masks                   the 6×6 mask, parked at x = 350
+├── Masks                   the 6×6 mask, parked at x = 350
+└── Holder_slide            the slide plate and its mount mock-up, parked at x = 500
 ```
 
 ### Which objects make each STL
@@ -311,15 +328,16 @@ Scene Collection
 | `pressure-window-135.stl` | `pressure-window-135` | pressure-window insert, 135 |
 | `pressure-window-120.stl` | `pressure-window-120` | pressure-window insert, 120 |
 | `mask-6x6.stl` | `mask-6x6` | 6×6 mask |
+| `slide-plate-135.stl` | `slide-plate-135` | slide plate, one piece |
 
 ### What is a mock-up and must never be exported
 
-**The name says whether an object is printed.** A printed part carries the name of the STL file it becomes: `cover-stage` is the object that becomes `cover-stage.stl`, and the main body is the four shells sharing the `main-body_` prefix. Everything else in the scene is a mock-up, there to show fit and light path, and takes the `mock_` prefix instead; none of it is printed or exported: the flash body and its emitting face (`mock_flash-body`, `mock_flash-face`), the T1 receiver (`mock_trigger-receiver`), the four light-path arrows (`mock_ray-1-into-cavity` to `mock_ray-4-through-window`), the 135 and 120 film-strip mock-ups (`mock_film-135`, `mock_film-120`), the opal acrylic (`mock_diffuser-68x118x2`), the AN glass (`mock_an-glass-64x95x2`), the four steel washers (`mock_steel-shim-1` to `mock_steel-shim-4`), a text label (`mock_label`), and the view target (`mock_view-target`). `Camera` and `Light` carry no prefix and need none: neither is a mesh, so neither can reach an STL.
+**The name says whether an object is printed.** A printed part carries the name of the STL file it becomes: `cover-stage` is the object that becomes `cover-stage.stl`, and the main body is the four shells sharing the `main-body_` prefix. Everything else in the scene is a mock-up, there to show fit and light path, and takes the `mock_` prefix instead; none of it is printed or exported: the flash body and its emitting face (`mock_flash-body`, `mock_flash-face`), the T1 receiver (`mock_trigger-receiver`), the four light-path arrows (`mock_ray-1-into-cavity` to `mock_ray-4-through-window`), the 135 and 120 film-strip mock-ups (`mock_film-135`, `mock_film-120`), a 50 × 50 × 2 slide mount (`mock_slide-mount-50x50x2`), the opal acrylic (`mock_diffuser-68x118x2`), the AN glass (`mock_an-glass-64x95x2`), the four steel washers (`mock_steel-shim-1` to `mock_steel-shim-4`), a text label (`mock_label`), and the view target (`mock_view-target`). `Camera` and `Light` carry no prefix and need none: neither is a mesh, so neither can reach an STL.
 
 The convention is a gate, not a habit. `tools/export_stl.py` fails the whole export when it finds a mesh object that is neither listed in its `MAPPING` table, reproduced above, nor prefixed `mock_`. A printed part added to the scene and forgotten in that table therefore stops the export instead of quietly dropping out of the release.
 
 > [!CAUTION]
-> **Material names do not tell you the filament colour.** The eight materials (`NB_white`, `NB_black`, `NB_steel`, `NB_opal`, `NB_film`, `NB_glow`, `NB_ray`, `NB_receiver`) exist for the renders, and each is named for what it is applied to rather than for anything you load into the printer: `NB_black`, for one, covers every black printed part and two mock-ups, the flash body and the label. The prototype-era materials have been deleted, so nothing misleading survives in the list, but colours still come from [printing.md](printing.md#the-nine-parts), never from the material slot.
+> **Material names do not tell you the filament colour.** The eight materials (`NB_white`, `NB_black`, `NB_steel`, `NB_opal`, `NB_film`, `NB_glow`, `NB_ray`, `NB_receiver`) exist for the renders, and each is named for what it is applied to rather than for anything you load into the printer: `NB_black`, for one, covers every black printed part and three mock-ups, the flash body, the label and the slide mount. The prototype-era materials have been deleted, so nothing misleading survives in the list, but colours still come from [printing.md](printing.md#the-ten-parts), never from the material slot.
 
 ### The export convention
 
@@ -334,12 +352,13 @@ Every STL is exported **in assembly world space**: nothing is re-zeroed or re-or
 | `film-holder-120-base.stl` / `-lid.stl` | parked at x 153 – 247, z 0 – 5 / 5 – 8 |
 | `pressure-window-120.stl` | parked at x 168 – 232, z 4.6 – 6.6 |
 | `mask-6x6.stl` | parked at x 303 – 397, z 0 – 1 |
+| `slide-plate-135.stl` | parked at x 453 – 547, z 0 – 5 |
 
-A slicer drops each file onto the build plate by its bounding box. Seven of the nine files arrive lying on their print face already; the two holder lids do not: they print **top face down** and have to be flipped after import. The required rotation is on each part card in [printing.md](printing.md#the-nine-parts).
+A slicer drops each file onto the build plate by its bounding box. Eight of the ten files arrive lying on their print face already; the two holder lids do not: they print **top face down** and have to be flipped after import. The required rotation is on each part card in [printing.md](printing.md#the-ten-parts).
 
 ### Re-exporting
 
-One command regenerates all nine files. It is the committed form of the pipeline that produced the published STLs, and it is the only supported way to export:
+One command regenerates all ten files. It is the committed form of the pipeline that produced the published STLs, and it is the only supported way to export:
 
 ```
 blender --background cad/neobox.blend --python tools/export_stl.py
@@ -358,7 +377,7 @@ Regenerated files may differ from the published ones **byte for byte** (triangul
 2. **Make it one solid: every part, not just the main body.** Single-object parts can still be multi-shell inside. Join what needs joining, separate by loose parts, boolean-union the shells, then merge vertices by distance (0.02 mm) and run a limited dissolve (1°) to remove the boolean slivers. *Checkpoint:* the part is one connected shell and the verify script reports no non-manifold edges.
 3. **Export.** File → Export → STL, with *Selection Only*, scale 1.00, forward Y, up Z. No axis conversion: the numbers in the file must be the numbers in Blender. *Checkpoint:* re-importing the file puts the part back exactly where it was.
 4. **Write it to the same path** under `stl/white-pla/` or `stl/black-pla/`, keeping the filename. *Checkpoint:* `git status` shows a modified file, not a new one.
-5. **Verify** before you commit anything. *Checkpoint:* `python3 tools/verify_stl.py` prints `all 9 files pass` and exits 0.
+5. **Verify** before you commit anything. *Checkpoint:* `python3 tools/verify_stl.py` prints `all 10 files pass` and exits 0.
 
 </details>
 
@@ -366,7 +385,7 @@ Regenerated files may differ from the published ones **byte for byte** (triangul
 flowchart LR
   A[Edit cad/neobox.blend] --> B[Export the affected STLs]
   B --> C[python3 tools/verify_stl.py]
-  C -->|all 9 files pass| D[Update the docs in all three languages]
+  C -->|all 10 files pass| D[Update the docs in all three languages]
   C -->|any FAIL| A
   D --> E[Commit blend, STLs and docs together]
 ```
@@ -393,7 +412,7 @@ Horizontal faces smaller than 1 mm² are ignored when hunting for steps, so mode
 ```
 ok    film-holder-120-base.stl  [94.0, 120.0, 5.0]  256 triangles
 ...
-all 9 files pass
+all 10 files pass
 ```
 
 The published bounding boxes live in the `EXPECTED` table at the top of the script, sorted largest first. **If you change a published dimension on purpose, edit `EXPECTED` in the same commit**; otherwise the check fails on the part you meant to change and quietly passes on the part you did not.

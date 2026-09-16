@@ -14,7 +14,7 @@ Prices are indicative, in CNY, from Chinese marketplaces (Taobao / 1688) as of A
 
 | Group | What it covers | Price (CNY) |
 |---|---|---|
-| 3D printing | the 9 printed parts, white and black PLA | 50–110 |
+| 3D printing | the 10 printed parts (2 optional), white and black PLA | 50–110 |
 | Diffuser | opal acrylic, 2 mm, cut 68 × 118 mm | 5–10 |
 | Magnets and shims | 32 neodymium magnets, 4 steel shims | 10–20 |
 | **Whole build, excluding the flash** | everything above, once | **CNY 65–140 · JPY 1,500–3,000** |
@@ -66,7 +66,7 @@ Thirty-two small, strong magnets still want reading about before you start: [Too
 
 ![One-page manufacturing overview: a section through the box, every printed part with its size and print orientation, and the bought parts](../drawings/manufacturing-overview.svg)
 
-The build is **9 printed parts**: 2 white, 7 black, all of them support-free.
+The build is **10 printed parts**: 2 white, 8 black, the 6×6 mask and the slide plate optional, all of them support-free.
 
 | File | Colour | Footprint (mm) | What it is |
 |---|---|---|---|
@@ -79,6 +79,7 @@ The build is **9 printed parts**: 2 white, 7 black, all of them support-free.
 | pressure-window-135.stl | black | 64 × 95 × 2 | 135 pressure-window insert |
 | pressure-window-120.stl | black | 64 × 95 × 2 | 120 pressure-window insert |
 | mask-6x6.stl | black | 94 × 80 × 1 | 6×6 mask, sits under the 120 base |
+| slide-plate-135.stl | black | 94 × 120 × 5 | slide plate for mounted 135 slides, stands in the tray in place of the 135 holder |
 
 The print spec, written straight into the order: ordinary PLA, 0.2 mm layers on every file, 15 % infill, no [supports](glossary.md#supports) on any file. Every part prints flat face down except the two holder lids, which print top face down. Layer height, [infill](glossary.md#infill) and the per-part cards are in [printing.md](printing.md#print-settings); this page only tells you what to order.
 
@@ -88,7 +89,7 @@ The print spec, written straight into the order: ordinary PLA, 0.2 mm layers on 
 > [!WARNING]
 > White filament must be **matte**. The two white parts are the diffusion cavity: the flash bounces off those walls several times before it reaches the diffuser, and silk or glossy white reproduces the flash head as a hot spot. The inside is never painted or coated, so a glossy part cannot be fixed after it is printed, only reprinted in matte. Tell the shop this is a requirement, not a preference: "matte preferred" gets you whatever is already loaded on the machine.
 
-White and black in one order is normal: one shop, one order, two colours. Ask before you pay whether the filament change is charged separately. mask-6x6.stl is only used when shooting 6×6, but at a gram of filament there is no reason to leave it out of the order.
+White and black in one order is normal: one shop, one order, two colours. Ask before you pay whether the filament change is charged separately. mask-6x6.stl is only used when shooting 6×6, but at a gram of filament there is no reason to leave it out of the order. slide-plate-135.stl is the other optional file: order it if you have mounted slides.
 
 ---
 
@@ -175,7 +176,7 @@ Three orders, and all of them can go out on the same day. Nothing waits on anyth
 
 ```mermaid
 flowchart TD
-  A[Order 1: the nine STLs<br/>one shop, white + black] --> D[Arrival checks]
+  A[Order 1: the ten STLs<br/>one shop, white + black] --> D[Arrival checks]
   B[Order 2: opal acrylic 68 × 118<br/>plus the AN glass, if wanted] --> D
   C[Order 3: magnets and shims<br/>plus the flocking sheet] --> D
   D --> E[Assembly]
@@ -183,7 +184,7 @@ flowchart TD
 
 | Order | Typical lead time | When to place it |
 |---|---|---|
-| 1: the nine STLs | 2–5 days plus shipping | first; it is the long pole |
+| 1: the ten STLs | 2–5 days plus shipping | first; it is the long pole |
 | 2: opal acrylic, cut to size | 3–7 days | the same day, in parallel |
 | 3: magnets and shims | next day to a few days | any time |
 | AN glass and flocking (optional) | 3–7 days | with orders 2 and 3, or after the box works; the printed inserts are the default |
@@ -205,14 +206,14 @@ Three questions to ask a print shop before you pay:
 
 Copy-paste briefs, each written in the language the shop reads. They agree with [Ordering from a print service](printing.md#ordering-from-a-print-service), which carries the same instructions as a per-part reference; change a setting in one place and change it in the other.
 
-All nine files print support-free, and the only non-obvious placement is the two holder lids: finished top face down on the plate. Every brief below says so; slicers will not place parts for you.
+All ten files print support-free, and the only non-obvious placement is the two holder lids: finished top face down on the plate. Every brief below says so; slicers will not place parts for you.
 
 <details>
 <summary>3D printing brief: China (Taobao / 1688), in Chinese</summary>
 
 ```
-共 9 个 STL 文件，单位毫米，请勿缩放。
-普通 PLA：白色 2 件、黑色 7 件。白色必须是哑光料
+共 10 个 STL 文件，单位毫米，请勿缩放。
+普通 PLA：白色 2 件、黑色 8 件。白色必须是哑光料
 （丝面／亮面会把灯头映成亮斑）。
 层高一律 0.2，填充 15%，全部免支撑。
 摆放：全部平面朝下；只有两个夹上盖
@@ -221,7 +222,7 @@ All nine files print support-free, and the only non-obvious placement is the two
 白色 PLA 2 件：
   main-body.stl        124.8×154.8×75.6
   cover-stage.stl      124.8×154.8×10
-黑色 PLA 7 件：
+黑色 PLA 8 件：
   film-holder-135-base.stl   94×120×5
   film-holder-135-lid.stl    94×120×3
   film-holder-120-base.stl   94×120×5
@@ -229,6 +230,7 @@ All nine files print support-free, and the only non-obvious placement is the two
   pressure-window-135.stl    64×95×2
   pressure-window-120.stl    64×95×2
   mask-6x6.stl               94×80×1
+  slide-plate-135.stl        94×120×5（可选，装框幻灯片用）
 
 最大件 154.8mm，160×160 打印床即可，不需要大尺寸机器。
 ```
@@ -248,8 +250,8 @@ All nine files print support-free, and the only non-obvious placement is the two
 <summary>3D printing brief: Japan, in Japanese</summary>
 
 ```
-合計 9 ファイルです。単位はミリ、スケール変更は不可。
-普通の PLA：白 2 点、黒 7 点。白はマット必須です
+合計 10 ファイルです。単位はミリ、スケール変更は不可。
+普通の PLA：白 2 点、黒 8 点。白はマット必須です
 （シルク／光沢はストロボの発光部が明るい斑点として写り込みます）。
 積層ピッチは全ファイル 0.2 mm、
 インフィル 15 %、全ファイル サポート不要。
@@ -260,7 +262,7 @@ All nine files print support-free, and the only non-obvious placement is the two
 白 PLA 2 点：
   main-body.stl        124.8×154.8×75.6
   cover-stage.stl      124.8×154.8×10
-黒 PLA 7 点：
+黒 PLA 8 点：
   film-holder-135-base.stl   94×120×5
   film-holder-135-lid.stl    94×120×3
   film-holder-120-base.stl   94×120×5
@@ -268,6 +270,7 @@ All nine files print support-free, and the only non-obvious placement is the two
   pressure-window-135.stl    64×95×2
   pressure-window-120.stl    64×95×2
   mask-6x6.stl               94×80×1
+  slide-plate-135.stl        94×120×5（オプション、マウント済みスライド用）
 
 最大のパーツは 154.8 mm。ビルドプレートは 160×160 mm で足ります。
 ```
@@ -287,8 +290,8 @@ All nine files print support-free, and the only non-obvious placement is the two
 <summary>3D printing brief: everywhere else, in English</summary>
 
 ```
-9 STL files. Millimetres. Do not scale.
-Plain PLA: 2 white parts, 7 black parts. White must be MATTE -
+10 STL files. Millimetres. Do not scale.
+Plain PLA: 2 white parts, 8 black parts. White must be MATTE -
 silk or gloss reproduces the flash head as a bright spot on the film.
 0.2 mm layers on every file, 15% infill,
 no supports on any file.
@@ -299,7 +302,7 @@ goes on the plate.
 White PLA, 2 parts:
   main-body.stl        124.8 x 154.8 x 75.6
   cover-stage.stl      124.8 x 154.8 x 10
-Black PLA, 7 parts:
+Black PLA, 8 parts:
   film-holder-135-base.stl   94 x 120 x 5
   film-holder-135-lid.stl    94 x 120 x 3
   film-holder-120-base.stl   94 x 120 x 5
@@ -307,11 +310,12 @@ Black PLA, 7 parts:
   pressure-window-135.stl    64 x 95 x 2
   pressure-window-120.stl    64 x 95 x 2
   mask-6x6.stl               94 x 80 x 1
+  slide-plate-135.stl        94 x 120 x 5   (optional, for mounted slides)
 
 Largest part 154.8 mm: a 160 x 160 mm bed is enough.
 ```
 
-If you want the insurance step: print one 135 holder base and lid first, check that a film strip slides, then order the remaining seven files.
+If you want the insurance step: print one 135 holder base and lid first, check that a film strip slides, then order the remaining eight files.
 
 </details>
 

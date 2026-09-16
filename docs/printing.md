@@ -2,11 +2,11 @@
 
 **English** · [简体中文](printing.zh-CN.md) · [日本語](printing.ja.md)
 
-> How to print the nine NeoBox parts: why almost any printer can, one set of settings for the whole build, a card per file, and the checks to run before you assemble anything.
+> How to print the ten NeoBox parts: why almost any printer can, one set of settings for the whole build, a card per file, and the checks to run before you assemble anything.
 
-**Contents:** [Will it fit your printer?](#will-it-fit-your-printer) · [Print settings](#print-settings) · [Filament](#filament) · [The nine parts](#the-nine-parts) · [Print one 135 holder first](#print-one-135-holder-first) · [Check each part before you assemble](#check-each-part-before-you-assemble) · [If it came out tight or loose](#if-it-came-out-tight-or-loose) · [Ordering from a print service](#ordering-from-a-print-service)
+**Contents:** [Will it fit your printer?](#will-it-fit-your-printer) · [Print settings](#print-settings) · [Filament](#filament) · [The ten parts](#the-ten-parts) · [Print one 135 holder first](#print-one-135-holder-first) · [Check each part before you assemble](#check-each-part-before-you-assemble) · [If it came out tight or loose](#if-it-came-out-tight-or-loose) · [Ordering from a print service](#ordering-from-a-print-service)
 
-Nine STL files: **eight for the default build plus one optional 6×6 mask**. Two are white, seven are black. All are 1:1 in millimetres, all print without supports, and the whole set weighs about **300–350 g of filament, roughly a third of what the printed prototype needed**.
+Ten STL files: **eight for the default build plus two optional, the 6×6 mask and the slide plate for mounted slides**. Two are white, eight are black. All are 1:1 in millimetres, all print without supports, and the default build weighs about **300–350 g of filament, roughly a third of what the printed prototype needed**.
 
 ![One-page manufacturing overview: the printed parts, the bought parts, and the print notes for each](../drawings/manufacturing-overview.svg)
 
@@ -30,6 +30,7 @@ Yes, almost certainly. The largest parts in the build, the main body and the cov
 | `film-holder-*-lid.stl` (both) | 94 × 120 | 3.0 |
 | `pressure-window-*.stl` (both) | 64 × 95 | 2.0 |
 | `mask-6x6.stl` | 94 × 80 | 1.0 |
+| `slide-plate-135.stl` | 94 × 120 | 5.0 |
 
 ---
 
@@ -79,13 +80,13 @@ The spec is ordinary PLA throughout: no engineering filaments, no specialty fini
 > [!IMPORTANT]
 > Use plain white PLA (not silk, satin or another specialty finish) and leave the interior faces untouched: no paint, no sanding, no coating. The reflectance of the bare white walls is part of the optical design.
 
-**Black for the seven parts near the film.** Everything the film sees at close range is black to absorb stray light: holder bases and lids, pressure windows, the mask.
+**Black for the eight parts near the film.** Everything the film sees at close range is black to absorb stray light: holder bases and lids, pressure windows, the mask, the slide plate.
 
-**Quantity.** About **300–350 g for the whole set**, roughly a third of the prototype build. One spool of each colour covers it many times over.
+**Quantity.** About **300–350 g for the default build**, roughly a third of the prototype build; the optional slide plate adds about 25 g. One spool of each colour covers it many times over.
 
 ---
 
-## The nine parts
+## The ten parts
 
 ![Side views of the printed parts on the build plate](../drawings/print-orientation.svg)
 
@@ -104,6 +105,8 @@ Print instructions here always name a feature you can see on the part, never a h
 | Tenon | One of the four small locating tabs on top of the main-body side walls |
 | Notch | One of the four corner sockets in the underside of the cover-stage that the tenons locate into |
 | Tray flange | The raised rim on top of the cover-stage that the film holder sits inside |
+| Pocket | The 51.4 mm square recess in the top of the slide plate that a mounted slide drops into |
+| Finger well | One of the two small blind recesses at the sides of the pocket that let you lift the mount out |
 
 > [!CAUTION]
 > Two orientation traps, one per part family. The holder **bases** print flat face down: never with the railed side toward the plate, or the lands and ledges hang over air and the channel will not come out. The holder **lids** are the opposite case: their flat **top** face goes down, so that the shallow recess and the magnet pockets face up. A misoriented holder reached a vendor once already ([design log entry 20](design-log.md)); that is why every card below places its part by a feature you can see.
@@ -168,6 +171,13 @@ Print instructions here always name a feature you can see on the part, never a h
 - **Supports: none.**
 - **Print it only if** you shoot 6×6: it goes into the tray under the 120 base and masks the window down to a square. There is no 6×4.5 mask; crop 6×4.5 in post.
 
+### [slide-plate-135.stl](../stl/black-pla/slide-plate-135.stl) — optional
+
+- **Black.** 94 × 120 × 5.0. Square pocket 51.4 × 51.4, 2.0 deep; window 26 × 38 through the pocket floor; two finger wells.
+- **On the plate:** flat face down; the pocket and the finger wells open upward.
+- **Supports: none.** Every recess opens upward and the window is a through hole.
+- **Print it only if** you have mounted 135 slides: it stands in the tray in place of the 135 holder set and the mount drops into the pocket. No lid, no magnets, no pressure element.
+
 ---
 
 ## Print one 135 holder first
@@ -196,6 +206,7 @@ Run these as parts come off the machine or out of the box from a print service. 
 - [ ] Ø8 × 2 magnets press into every pocket in every base and lid.
 - [ ] With the insert in and the lid closed, a film strip pulls through each holder you printed.
 - [ ] If you printed it: `mask-6x6.stl` measures 94 × 80 and sits in the tray under the 120 base.
+- [ ] If you printed it: `slide-plate-135.stl` measures 94 × 120, sits in the tray, and a mounted slide drops into its pocket and lifts out by the finger wells.
 - [ ] Nothing inside the main body has been sanded, polished or painted. The bare white surface is the reflector.
 
 Anything that fails has a remedy below, or in [troubleshooting](troubleshooting.md#printing).
@@ -220,10 +231,10 @@ Fits, in order of how tight they are. XY compensation is called *XY size compens
 
 ## Ordering from a print service
 
-Even with no printer at all this is now a small order: nine files, about 300–350 g of plain PLA, no supports, and every part fits a 160 × 160 mm bed. Send this text as-is; it names every file and places each one by a feature the operator can see.
+Even with no printer at all this is now a small order: ten files (two optional), about 300–350 g of plain PLA, no supports, and every part fits a 160 × 160 mm bed. Send this text as-is; it names every file and places each one by a feature the operator can see.
 
 ```text
-9 STL files: 8 required + 1 optional (mask-6x6). Millimetres, 1:1. DO NOT SCALE.
+10 STL files: 8 required + 2 optional (mask-6x6, slide-plate-135). Millimetres, 1:1. DO NOT SCALE.
 
 Plain PLA. Layer height 0.2 mm on every part. Infill 15%. NO SUPPORTS on any part.
 Everything fits a 160 x 160 mm bed.
@@ -236,7 +247,7 @@ WHITE PLA - 2 parts:
                        sockets goes on the plate; the raised rectangular frame
                        faces up.
 
-BLACK PLA - 6 parts + 1 optional:
+BLACK PLA - 6 parts + 2 optional:
   film-holder-135-base.stl  Flat face on the plate, the two long ridges up.
   film-holder-120-base.stl  Same placement.
   film-holder-135-lid.stl   FLAT TOP FACE on the plate. The face with the
@@ -244,6 +255,7 @@ BLACK PLA - 6 parts + 1 optional:
   pressure-window-135.stl   Thin flat plate, lies flat.
   pressure-window-120.stl   Thin flat plate, lies flat.
   mask-6x6.stl (OPTIONAL)   Thin flat plate, lies flat.
+  slide-plate-135.stl (OPTIONAL)  Flat face on the plate, square pocket up.
 ```
 
 **Ask three questions before you pay.** Print services take the order first and discover the problem afterwards.

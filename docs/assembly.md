@@ -2,7 +2,7 @@
 
 **English** · [简体中文](assembly.zh-CN.md) · [日本語](assembly.ja.md)
 
-> How to turn nine printed parts, thirty-two magnets, four steel washers and a sheet of opal acrylic into a working light source, with no tools at all: magnets pressed in with paired polarity, a gravity stack from main body to cover-stage to film holder, and the mirror method that makes the film plane parallel to your sensor.
+> How to turn ten printed parts, thirty-two magnets, four steel washers and a sheet of opal acrylic into a working light source, with no tools at all: magnets pressed in with paired polarity, a gravity stack from main body to cover-stage to film holder, and the mirror method that makes the film plane parallel to your sensor.
 
 **Contents:** [Before you start](#before-you-start) · [Tools and safety](#tools-and-safety) · [What connects to what](#what-connects-to-what) · [Assembly steps](#assembly-steps) · [Formats and everyday handling](#formats-and-everyday-handling) · [If something is wrong](#if-something-is-wrong)
 
@@ -102,7 +102,7 @@ That is the whole step. No glue: each counterbore locates its washer flush with 
 
 ### Step 5 — Holder base into the tray
 
-**You need:** the cover-stage in place, the holder base for your format, and the 6×6 mask if that is your frame.
+**You need:** the cover-stage in place, the holder base for your format (or the slide plate, for mounted slides), and the 6×6 mask if that is your frame.
 
 1. Lower the base inside the tray flange. At 0.3 mm of clearance per side it goes in without play worth noticing.
 2. Let it settle: the base magnets find the steel washers in the deck and pull the base flat into register.
@@ -112,7 +112,7 @@ That is the whole step. No glue: each counterbore locates its washer flush with 
 **Failure mode:** a base that stays indifferent, with no settle and no grip, means Step 2's washers are stainless or missing. A base that will not enter the flange without force is elephant foot again, not a reason to push.
 
 > [!NOTE]
-> For 6×6 frames, lay the **6×6 mask** in the tray first and the 120 base on top of it. The whole clamp then rides 1 mm higher; that is normal. There is no 6×4.5 mask: shoot through the 120 window and crop afterwards.
+> For 6×6 frames, lay the **6×6 mask** in the tray first and the 120 base on top of it. The whole clamp then rides 1 mm higher; that is normal. There is no 6×4.5 mask: shoot through the 120 window and crop afterwards. For mounted slides the **slide plate** stands in the tray in place of the 135 base, on its own: no magnets, no element, no lid, so Step 6 does not apply to it.
 
 ### Step 6 — Pressure element in, lid on
 
@@ -166,6 +166,7 @@ For the camera side of the setup, the stand is in [parallelism](scanning.md#para
 - **Changing format is changing the clamp.** Lift the whole clamp off (it is held by magnets alone) and drop the other format's clamp in. Each clamp keeps its own insert fitted; if you use the AN glass, that one sheet serves both formats, so only the glass moves across to the other clamp's ledge.
 - **Advancing film:** pinch the leader where it sticks out of the clamp and pull. The tail rides on the top of the tray flange, 0.2 mm below the film plane, which supports it on the way; with a long strip, steady the far end with your free hand.
 - **Loading direction:** with the glass, load the strip curl-up; with the insert, curl-down.
+- **Mounted slides:** lift the 135 clamp out, set the slide plate in, and drop the mount into its pocket the way you would hold it up to a window, image reading correctly from above (emulsion down). Lift it out by the two finger wells. Nothing else changes; refocus.
 - **Getting the acrylic out:** lift the clamp off, reach in through the open front, and push the sheet up through the light window.
 - **The cover-stage comes off as one piece:** grip it by the tray flange and lift straight up.
 - **The flash never moves in:** it lies at the open front with its head firing into the cavity, and the receiver stays outside where its signal is clean and its batteries are reachable. Work in a dim room and keep ceiling light out of the box mouth.

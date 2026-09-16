@@ -37,7 +37,7 @@ flowchart TD
 
 | Symptom | Likely cause | Fix |
 |---|---|---|
-| A part measures smaller than its card in [The nine parts](printing.md#the-nine-parts) | The slicer scaled it to fit the build plate | Reslice at 100 %, millimetres, and reprint. The largest part is 154.8 mm across and fits a 160 × 160 plate without scaling, so any scaling was an accident. Re-run the acceptance checks. |
+| A part measures smaller than its card in [The ten parts](printing.md#the-ten-parts) | The slicer scaled it to fit the build plate | Reslice at 100 %, millimetres, and reprint. The largest part is 154.8 mm across and fits a 160 × 160 plate without scaling, so any scaling was an accident. Re-run the acceptance checks. |
 | A corner of the main body or the cover-stage has lifted off the build plate | A cold or draughty machine, or a dirty plate | Reprint on a clean plate, out of the draught, with whatever adhesion aid your machine likes. A lifted corner is not cosmetic: the cover-stage rests on the wall tops and the film plane stands on the cover-stage, so warp at either face rocks everything above it. |
 | A part has drooped, ragged overhangs | It was sliced in the wrong orientation | Every part prints support-free, but only one way up: flat base down for the holder bases, the inserts, the main body and the cover-stage, and **top face down** for the two holder lids. Reorient and reprint; nothing recovers the part as printed. |
 | The white parts came back shiny or silky | Silk or glossy filament | They have to be reprinted in matte. The bare white interior *is* the reflector; a glossy one reproduces the flash head as a hot spot, and painting the inside is not the fix. |
@@ -108,7 +108,7 @@ Judge all of this on a flat frame (the bare lit surface, no film, shot raw at th
 | The strip drags or jams while being pulled through | A curled edge catching at the break in the inner rails, or the tail of a long strip hanging off and dragging | Back the strip out and re-feed it straight; the rail ends carry 12 mm guides for exactly this. Support the tail of a long strip with your free hand; the flange top helps, 0.2 mm below the film plane, but a long overhang still wants a hand under it. |
 | Edge markings read mirrored in live view | The strip is in upside down | Dull emulsion side down toward the light, shiny base up toward the camera. Full sequence in [Loading film](scanning.md#loading-film). |
 | A sliver of rebate shows around the frame | The windows are deliberately oversize (25 × 37 for a 24 × 36 frame, about 0.5 mm per side) to absorb camera-gate variance and printer tolerance | Not a fault. Crop it off in post. |
-| A mounted slide will not go in | The holders take film strips only | Mounted slides are outside the scope of this design. |
+| A mounted slide will not go in | The holders take film strips only | Use the slide plate: lift the 135 holder out, set `slide-plate-135.stl` in the tray and drop the mount into its pocket. See [Mounted slides](scanning.md#mounted-slides). |
 | The frame does not fill the sensor | Not enough [magnification](glossary.md#magnification-ratio) for your format and sensor | The table in [Magnification and lens choice](scanning.md#magnification-and-lens-choice). Any 1:1 macro lens covers every format the box handles. |
 
 > [!CAUTION]

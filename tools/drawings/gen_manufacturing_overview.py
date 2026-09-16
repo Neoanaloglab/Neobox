@@ -2,7 +2,7 @@
 """NeoBox v1 — manufacturing overview drawing generator.
 
 Generates drawings/manufacturing-overview.svg (+ .zh-CN.svg, .ja.svg):
-a "kit card" grid — 9 printed parts (top) + purchased hardware (bottom).
+a "kit card" grid — 10 printed parts (top) + purchased hardware (bottom).
 All numbers come from scratchpad/FACTS-v5.md (§2 print table, §8 BOM).
 """
 
@@ -24,12 +24,12 @@ LANG = {
     "en": {
         "suffix": "",
         "title": "NeoBox v1 — Manufacturing Overview",
-        "subtitle": "9 printed parts + purchased hardware · all dimensions in mm",
+        "subtitle": "10 printed parts + purchased hardware · all dimensions in mm",
         "spec1": "standard PLA · layer height 0.2 mm · infill 15% · no supports on any part",
         "spec2": "largest part 154.8 mm → a 160×160 bed is enough",
-        "sec_print": "3D-printed parts ×9",
+        "sec_print": "3D-printed parts ×10",
         "chip_white": "white PLA ×2",
-        "chip_black": "black PLA ×7",
+        "chip_black": "black PLA ×8",
         "sec_buy": "Purchased parts: 3 required + 2 optional",
         "white": "white",
         "black": "black",
@@ -41,12 +41,12 @@ LANG = {
     "zh": {
         "suffix": ".zh-CN",
         "title": "NeoBox v1 — 制造总览",
-        "subtitle": "打印件 9 件 + 外购件 · 尺寸单位 mm",
+        "subtitle": "打印件 10 件 + 外购件 · 尺寸单位 mm",
         "spec1": "普通 PLA · 层高 0.2 mm · 填充 15% · 全部免支撑",
         "spec2": "最大件 154.8 mm → 160×160 打印床即可",
-        "sec_print": "打印件 ×9",
+        "sec_print": "打印件 ×10",
         "chip_white": "白色 PLA ×2",
-        "chip_black": "黑色 PLA ×7",
+        "chip_black": "黑色 PLA ×8",
         "sec_buy": "外购件：必备 3 + 可选 2",
         "white": "白色",
         "black": "黑色",
@@ -58,12 +58,12 @@ LANG = {
     "ja": {
         "suffix": ".ja",
         "title": "NeoBox v1 — 製造オーバービュー",
-        "subtitle": "プリントパーツ 9 点 + 購入部品 · 寸法単位 mm",
+        "subtitle": "プリントパーツ 10 点 + 購入部品 · 寸法単位 mm",
         "spec1": "標準 PLA · 積層ピッチ 0.2 mm · インフィル 15% · 全パーツサポート不要",
         "spec2": "最大パーツ 154.8 mm → 160×160 ビルドプレートで可",
-        "sec_print": "プリントパーツ ×9",
+        "sec_print": "プリントパーツ ×10",
         "chip_white": "白 PLA ×2",
-        "chip_black": "黒 PLA ×7",
+        "chip_black": "黒 PLA ×8",
         "sec_buy": "購入部品：必須 3 + オプション 2",
         "white": "白",
         "black": "黒",
@@ -231,7 +231,17 @@ def draw_mask(cx, cy):
     return [_plate(cx, cy, 94, 80), _window(cx, cy, 56.5, 56.5)]
 
 
-# 9 printed parts — FACTS §2 (file, colour, envelope, sketch)
+def draw_slide_plate(cx, cy):
+    """Slide plate, top view: 94×120 plate, 51.4 square pocket, 26×38 window, two finger wells."""
+    el = [_plate(cx, cy, 94, 120)]
+    el.append(crect(cx, cy, 51.4 * S, 51.4 * S, fill="#4a4a4a", stroke="#111", sw=1.2))
+    for fy in (-1, 1):
+        el.append(crect(cx, cy + fy * 28 * S, 18 * S, 12 * S, fill="#5a5a5a", stroke="#111", sw=0.9))
+    el.append(_window(cx, cy, 26, 38))
+    return el
+
+
+# 10 printed parts — FACTS §2 (file, colour, envelope, sketch)
 PARTS_ROW1 = [
     ("main-body.stl", "white", "124.8×154.8×75.6", draw_main_body),
     ("cover-stage.stl", "white", "124.8×154.8×10.0", draw_cover_stage),
@@ -244,6 +254,7 @@ PARTS_ROW2 = [
     ("film-holder-120-lid.stl", "black", "94×120×3", draw_holder_lid(57, 85)),
     ("pressure-window-120.stl", "black", "64×95×2", draw_pressure_window(57, 85)),
     ("mask-6x6.stl", "black", "94×80×1", draw_mask),
+    ("slide-plate-135.stl", "black", "94×120×5", draw_slide_plate),
 ]
 
 # ------------------------------------------------------- purchased sketches ---
@@ -374,7 +385,7 @@ def build(L):
     el += section_header(30, 98, L)
     for i, part in enumerate(PARTS_ROW1):
         el += part_card(30 + i * (CARD_W + GAP), 110, L, part)
-    row2_x = (W - (4 * CARD_W + 3 * GAP)) / 2
+    row2_x = 30
     for i, part in enumerate(PARTS_ROW2):
         el += part_card(row2_x + i * (CARD_W + GAP), 318, L, part)
     # purchased parts

@@ -14,7 +14,7 @@
 
 | 分组 | 包含内容 | 价格（CNY） |
 |---|---|---|
-| 3D 打印 | 9 个打印件，白色与黑色 PLA | 50–110 |
+| 3D 打印 | 10 个打印件（2 个可选），白色与黑色 PLA | 50–110 |
 | 扩散板 | 乳白亚克力，2 mm，切 68 × 118 mm | 5–10 |
 | 磁铁与垫片 | 32 颗钕磁铁、4 片钢垫片 | 10–20 |
 | **整台箱子，不含闪光灯** | 以上全部，各一份 | **CNY 65–140 · JPY 1,500–3,000** |
@@ -66,7 +66,7 @@ NeoBox 只是一个光源。它是[相机翻拍](glossary.zh-CN.md#相机翻拍)
 
 ![一页式制造总览：箱体剖面、每个打印件的尺寸与打印朝向，以及需要采购的零件](../drawings/manufacturing-overview.zh-CN.svg)
 
-整机共 **9 个打印件**：白 2 件、黑 7 件，全部免支撑。
+整机共 **10 个打印件**：白 2 件、黑 8 件，其中 6×6 遮幅插片和幻灯片板可选，全部免支撑。
 
 | 文件 | 颜色 | 外形（mm） | 是什么 |
 |---|---|---|---|
@@ -79,6 +79,7 @@ NeoBox 只是一个光源。它是[相机翻拍](glossary.zh-CN.md#相机翻拍)
 | pressure-window-135.stl | 黑 | 64 × 95 × 2 | 135 压片窗插片 |
 | pressure-window-120.stl | 黑 | 64 × 95 × 2 | 120 压片窗插片 |
 | mask-6x6.stl | 黑 | 94 × 80 × 1 | 6×6 遮幅插片，垫在 120 底座下方 |
+| slide-plate-135.stl | 黑 | 94 × 120 × 5 | 装框 135 幻灯片用的幻灯片板，代替 135 胶片夹立在托盘里 |
 
 打印规格直接写进订单：普通 PLA，层高一律 0.2 mm，填充 15%，任何文件都不加[支撑](glossary.zh-CN.md#支撑)。所有零件平面朝下打印，只有两个夹上盖顶面朝下。层高、[填充](glossary.zh-CN.md#填充)和每个零件的参数卡，都在[打印文档](printing.zh-CN.md#打印参数)里。本页只告诉你要下什么单。
 
@@ -88,7 +89,7 @@ NeoBox 只是一个光源。它是[相机翻拍](glossary.zh-CN.md#相机翻拍)
 > [!WARNING]
 > 白色耗材必须是**哑光**的。两个白色件就是混光腔本身：闪光在这些墙面上反弹好几次才到扩散板，丝面和亮面白料会把灯头映成一块亮斑。内壁永远不喷漆、不做涂层，所以亮面的件打出来没法补救，只能换哑光料重打。要明确告诉店家这是硬性要求，不是偏好：说"最好用哑光"，机器上装着什么料就给你打什么料。
 
-白色和黑色放在同一单里打是常规做法：一家店、一个订单、两种颜色。付款前先问清楚换料要不要另外收费。mask-6x6.stl 只在拍 6×6 时用，但它只费一克料，没有理由不放进同一单。
+白色和黑色放在同一单里打是常规做法：一家店、一个订单、两种颜色。付款前先问清楚换料要不要另外收费。mask-6x6.stl 只在拍 6×6 时用，但它只费一克料，没有理由不放进同一单。slide-plate-135.stl 是另一个可选文件：有装框幻灯片就把它加进去。
 
 ---
 
@@ -175,7 +176,7 @@ CNY 8–15 就能连备用一起买齐 32 颗。底座磁铁吸的对象就是�
 
 ```mermaid
 flowchart TD
-  A[订单 1：9 个 STL<br/>一家店，白＋黑] --> D[到货检查]
+  A[订单 1：10 个 STL<br/>一家店，白＋黑] --> D[到货检查]
   B[订单 2：乳白亚克力 68 × 118<br/>想要就加上防牛顿环玻璃] --> D
   C[订单 3：磁铁和钢垫片<br/>可加植绒贴] --> D
   D --> E[装配]
@@ -183,7 +184,7 @@ flowchart TD
 
 | 订单 | 常见货期 | 什么时候下 |
 |---|---|---|
-| 1：9 个 STL | 2–5 天，加物流 | 最先下，它是最长的一环 |
+| 1：10 个 STL | 2–5 天，加物流 | 最先下，它是最长的一环 |
 | 2：乳白亚克力，按尺寸切 | 3–7 天 | 同一天，与 1 并行 |
 | 3：磁铁和钢垫片 | 次日到几天 | 随时 |
 | 防牛顿环玻璃、植绒贴（可选） | 3–7 天 | 跟订单 2、3 一起，或者等箱子跑通再说，打印插片本来就是默认方案 |
@@ -205,14 +206,14 @@ flowchart TD
 
 可以直接复制粘贴的下单说明，每一份都用店家读得懂的语言写成。它们与[打印文档](printing.zh-CN.md#找代打服务下单)里"找代打服务下单"一节是一致的，那边把同一套要求按零件逐个列了一遍；改了一处，另一处也要跟着改。
 
-九个文件全部免支撑，唯一不直观的摆放是两个夹上盖：成品的顶面朝下贴床。下面每份话术都写明了这一点；切片软件不会替你摆。
+十个文件全部免支撑，唯一不直观的摆放是两个夹上盖：成品的顶面朝下贴床。下面每份话术都写明了这一点；切片软件不会替你摆。
 
 <details>
 <summary>3D 打印下单说明：中国（淘宝／1688），中文</summary>
 
 ```
-共 9 个 STL 文件，单位毫米，请勿缩放。
-普通 PLA：白色 2 件、黑色 7 件。白色必须是哑光料
+共 10 个 STL 文件，单位毫米，请勿缩放。
+普通 PLA：白色 2 件、黑色 8 件。白色必须是哑光料
 （丝面／亮面会把灯头映成亮斑）。
 层高一律 0.2，填充 15%，全部免支撑。
 摆放：全部平面朝下；只有两个夹上盖
@@ -221,7 +222,7 @@ flowchart TD
 白色 PLA 2 件：
   main-body.stl        124.8×154.8×75.6
   cover-stage.stl      124.8×154.8×10
-黑色 PLA 7 件：
+黑色 PLA 8 件：
   film-holder-135-base.stl   94×120×5
   film-holder-135-lid.stl    94×120×3
   film-holder-120-base.stl   94×120×5
@@ -229,6 +230,7 @@ flowchart TD
   pressure-window-135.stl    64×95×2
   pressure-window-120.stl    64×95×2
   mask-6x6.stl               94×80×1
+  slide-plate-135.stl        94×120×5（可选，装框幻灯片用）
 
 最大件 154.8mm，160×160 打印床即可，不需要大尺寸机器。
 ```
@@ -248,8 +250,8 @@ flowchart TD
 <summary>3D 打印下单说明：日本，日文</summary>
 
 ```
-合計 9 ファイルです。単位はミリ、スケール変更は不可。
-普通の PLA：白 2 点、黒 7 点。白はマット必須です
+合計 10 ファイルです。単位はミリ、スケール変更は不可。
+普通の PLA：白 2 点、黒 8 点。白はマット必須です
 （シルク／光沢はストロボの発光部が明るい斑点として写り込みます）。
 積層ピッチは全ファイル 0.2 mm、
 インフィル 15 %、全ファイル サポート不要。
@@ -260,7 +262,7 @@ flowchart TD
 白 PLA 2 点：
   main-body.stl        124.8×154.8×75.6
   cover-stage.stl      124.8×154.8×10
-黒 PLA 7 点：
+黒 PLA 8 点：
   film-holder-135-base.stl   94×120×5
   film-holder-135-lid.stl    94×120×3
   film-holder-120-base.stl   94×120×5
@@ -268,6 +270,7 @@ flowchart TD
   pressure-window-135.stl    64×95×2
   pressure-window-120.stl    64×95×2
   mask-6x6.stl               94×80×1
+  slide-plate-135.stl        94×120×5（オプション、マウント済みスライド用）
 
 最大のパーツは 154.8 mm。ビルドプレートは 160×160 mm で足ります。
 ```
@@ -287,8 +290,8 @@ flowchart TD
 <summary>3D 打印下单说明：其他地区，英文</summary>
 
 ```
-9 STL files. Millimetres. Do not scale.
-Plain PLA: 2 white parts, 7 black parts. White must be MATTE -
+10 STL files. Millimetres. Do not scale.
+Plain PLA: 2 white parts, 8 black parts. White must be MATTE -
 silk or gloss reproduces the flash head as a bright spot on the film.
 0.2 mm layers on every file, 15% infill,
 no supports on any file.
@@ -299,7 +302,7 @@ goes on the plate.
 White PLA, 2 parts:
   main-body.stl        124.8 x 154.8 x 75.6
   cover-stage.stl      124.8 x 154.8 x 10
-Black PLA, 7 parts:
+Black PLA, 8 parts:
   film-holder-135-base.stl   94 x 120 x 5
   film-holder-135-lid.stl    94 x 120 x 3
   film-holder-120-base.stl   94 x 120 x 5
@@ -307,11 +310,12 @@ Black PLA, 7 parts:
   pressure-window-135.stl    64 x 95 x 2
   pressure-window-120.stl    64 x 95 x 2
   mask-6x6.stl               94 x 80 x 1
+  slide-plate-135.stl        94 x 120 x 5   (optional, for mounted slides)
 
 Largest part 154.8 mm: a 160 x 160 mm bed is enough.
 ```
 
-想上保险的话：先打一个 135 夹底座和夹上盖，确认片条能滑动，再下其余七个文件的单。
+想上保险的话：先打一个 135 夹底座和夹上盖，确认片条能滑动，再下其余八个文件的单。
 
 </details>
 

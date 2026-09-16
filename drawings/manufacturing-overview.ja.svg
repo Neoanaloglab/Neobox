@@ -1,14 +1,14 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="980" height="752" viewBox="0 0 980 752">
 <rect x="0.0" y="0.0" width="980.0" height="752.0" fill="#fff"/>
 <text x="30.0" y="44.0" font-family="Helvetica, Arial, sans-serif" font-size="21" fill="#111" text-anchor="start" font-weight="bold">NeoBox v1 — 製造オーバービュー</text>
-<text x="30.0" y="66.0" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#555" text-anchor="start">プリントパーツ 9 点 + 購入部品 · 寸法単位 mm</text>
+<text x="30.0" y="66.0" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#555" text-anchor="start">プリントパーツ 10 点 + 購入部品 · 寸法単位 mm</text>
 <text x="950.0" y="38.0" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#444" text-anchor="end">標準 PLA · 積層ピッチ 0.2 mm · インフィル 15% · 全パーツサポート不要</text>
 <text x="950.0" y="56.0" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#444" text-anchor="end">最大パーツ 154.8 mm → 160×160 ビルドプレートで可</text>
-<text x="30.0" y="98.0" font-family="Helvetica, Arial, sans-serif" font-size="15" fill="#111" text-anchor="start" font-weight="bold">プリントパーツ ×9</text>
-<circle cx="198.4" cy="93.5" r="5.5" fill="#fff" stroke="#444" stroke-width="1.4"/>
-<text x="209.4" y="98.0" font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#333" text-anchor="start">白 PLA ×2</text>
-<circle cx="298.2" cy="93.5" r="5.5" fill="#3a3a3a" stroke="#111" stroke-width="1.2"/>
-<text x="309.2" y="98.0" font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#333" text-anchor="start">黒 PLA ×7</text>
+<text x="30.0" y="98.0" font-family="Helvetica, Arial, sans-serif" font-size="15" fill="#111" text-anchor="start" font-weight="bold">プリントパーツ ×10</text>
+<circle cx="203.8" cy="93.5" r="5.5" fill="#fff" stroke="#444" stroke-width="1.4"/>
+<text x="214.8" y="98.0" font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#333" text-anchor="start">白 PLA ×2</text>
+<circle cx="303.6" cy="93.5" r="5.5" fill="#3a3a3a" stroke="#111" stroke-width="1.2"/>
+<text x="314.6" y="98.0" font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#333" text-anchor="start">黒 PLA ×8</text>
 <rect x="30.0" y="110.0" width="176.0" height="196.0" fill="#fff" stroke="#ccc" stroke-width="1" rx="6"/>
 <rect x="73.1" y="134.3" width="89.9" height="111.5" fill="#f2f2f2" stroke="#444" stroke-width="1"/>
 <path d="M 73.1 245.7 L 73.1 134.3 L 162.9 134.3 L 162.9 245.7 L 158.4 245.7 L 158.4 138.8 L 77.6 138.8 L 77.6 245.7 Z" fill="#d9d9d9" stroke="#444" stroke-width="2"/>
@@ -65,40 +65,50 @@
 <text x="854.0" y="283.0" font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#333" text-anchor="middle">64×95×2</text>
 <circle cx="844.9" cy="295.0" r="5" fill="#3a3a3a" stroke="#111" stroke-width="1.2"/>
 <text x="855.9" y="299.0" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#333" text-anchor="start">黒</text>
-<rect x="126.0" y="318.0" width="176.0" height="196.0" fill="#fff" stroke="#ccc" stroke-width="1" rx="6"/>
-<rect x="180.2" y="354.8" width="67.7" height="86.4" fill="#3a3a3a" stroke="#111" stroke-width="2"/>
-<line x1="191.7" y1="357.7" x2="191.7" y2="438.3" stroke="#6f6f6f" stroke-width="1"/>
-<line x1="189.9" y1="357.7" x2="189.9" y2="438.3" stroke="#6f6f6f" stroke-width="1"/>
-<line x1="236.3" y1="357.7" x2="236.3" y2="438.3" stroke="#6f6f6f" stroke-width="1"/>
-<line x1="238.1" y1="357.7" x2="238.1" y2="438.3" stroke="#6f6f6f" stroke-width="1"/>
-<rect x="191.0" y="363.8" width="46.1" height="68.4" fill="none" stroke="#9a9a9a" stroke-width="1" stroke-dasharray="3,2.5"/>
-<rect x="193.5" y="367.4" width="41.0" height="61.2" fill="#fff" stroke="#111" stroke-width="1.2"/>
-<text x="214.0" y="474.0" font-family="Menlo, Consolas, monospace" font-size="11" fill="#111" text-anchor="middle">film-holder-120-base.stl</text>
-<text x="214.0" y="491.0" font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#333" text-anchor="middle">94×120×5</text>
-<circle cx="204.9" cy="503.0" r="5" fill="#3a3a3a" stroke="#111" stroke-width="1.2"/>
-<text x="215.9" y="507.0" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#333" text-anchor="start">黒</text>
-<rect x="310.0" y="318.0" width="176.0" height="196.0" fill="#fff" stroke="#ccc" stroke-width="1" rx="6"/>
-<rect x="364.2" y="354.8" width="67.7" height="86.4" fill="#3a3a3a" stroke="#111" stroke-width="2"/>
-<rect x="374.7" y="363.4" width="46.7" height="69.1" fill="none" stroke="#9a9a9a" stroke-width="1" stroke-dasharray="3,2.5"/>
-<rect x="377.5" y="367.4" width="41.0" height="61.2" fill="#fff" stroke="#111" stroke-width="1.2"/>
-<text x="398.0" y="474.0" font-family="Menlo, Consolas, monospace" font-size="11" fill="#111" text-anchor="middle">film-holder-120-lid.stl</text>
-<text x="398.0" y="491.0" font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#333" text-anchor="middle">94×120×3</text>
-<circle cx="388.9" cy="503.0" r="5" fill="#3a3a3a" stroke="#111" stroke-width="1.2"/>
-<text x="399.9" y="507.0" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#333" text-anchor="start">黒</text>
-<rect x="494.0" y="318.0" width="176.0" height="196.0" fill="#fff" stroke="#ccc" stroke-width="1" rx="6"/>
-<rect x="559.0" y="363.8" width="46.1" height="68.4" fill="#3a3a3a" stroke="#111" stroke-width="2"/>
-<rect x="561.5" y="367.4" width="41.0" height="61.2" fill="#fff" stroke="#111" stroke-width="1.2"/>
-<text x="582.0" y="474.0" font-family="Menlo, Consolas, monospace" font-size="11" fill="#111" text-anchor="middle">pressure-window-120.stl</text>
-<text x="582.0" y="491.0" font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#333" text-anchor="middle">64×95×2</text>
-<circle cx="572.9" cy="503.0" r="5" fill="#3a3a3a" stroke="#111" stroke-width="1.2"/>
-<text x="583.9" y="507.0" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#333" text-anchor="start">黒</text>
-<rect x="678.0" y="318.0" width="176.0" height="196.0" fill="#fff" stroke="#ccc" stroke-width="1" rx="6"/>
-<rect x="732.2" y="369.2" width="67.7" height="57.6" fill="#3a3a3a" stroke="#111" stroke-width="2"/>
-<rect x="745.7" y="377.7" width="40.7" height="40.7" fill="#fff" stroke="#111" stroke-width="1.2"/>
-<text x="766.0" y="474.0" font-family="Menlo, Consolas, monospace" font-size="11" fill="#111" text-anchor="middle">mask-6x6.stl</text>
-<text x="766.0" y="491.0" font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#333" text-anchor="middle">94×80×1</text>
-<circle cx="756.9" cy="503.0" r="5" fill="#3a3a3a" stroke="#111" stroke-width="1.2"/>
-<text x="767.9" y="507.0" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#333" text-anchor="start">黒</text>
+<rect x="30.0" y="318.0" width="176.0" height="196.0" fill="#fff" stroke="#ccc" stroke-width="1" rx="6"/>
+<rect x="84.2" y="354.8" width="67.7" height="86.4" fill="#3a3a3a" stroke="#111" stroke-width="2"/>
+<line x1="95.7" y1="357.7" x2="95.7" y2="438.3" stroke="#6f6f6f" stroke-width="1"/>
+<line x1="93.9" y1="357.7" x2="93.9" y2="438.3" stroke="#6f6f6f" stroke-width="1"/>
+<line x1="140.3" y1="357.7" x2="140.3" y2="438.3" stroke="#6f6f6f" stroke-width="1"/>
+<line x1="142.1" y1="357.7" x2="142.1" y2="438.3" stroke="#6f6f6f" stroke-width="1"/>
+<rect x="95.0" y="363.8" width="46.1" height="68.4" fill="none" stroke="#9a9a9a" stroke-width="1" stroke-dasharray="3,2.5"/>
+<rect x="97.5" y="367.4" width="41.0" height="61.2" fill="#fff" stroke="#111" stroke-width="1.2"/>
+<text x="118.0" y="474.0" font-family="Menlo, Consolas, monospace" font-size="11" fill="#111" text-anchor="middle">film-holder-120-base.stl</text>
+<text x="118.0" y="491.0" font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#333" text-anchor="middle">94×120×5</text>
+<circle cx="108.9" cy="503.0" r="5" fill="#3a3a3a" stroke="#111" stroke-width="1.2"/>
+<text x="119.9" y="507.0" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#333" text-anchor="start">黒</text>
+<rect x="214.0" y="318.0" width="176.0" height="196.0" fill="#fff" stroke="#ccc" stroke-width="1" rx="6"/>
+<rect x="268.2" y="354.8" width="67.7" height="86.4" fill="#3a3a3a" stroke="#111" stroke-width="2"/>
+<rect x="278.7" y="363.4" width="46.7" height="69.1" fill="none" stroke="#9a9a9a" stroke-width="1" stroke-dasharray="3,2.5"/>
+<rect x="281.5" y="367.4" width="41.0" height="61.2" fill="#fff" stroke="#111" stroke-width="1.2"/>
+<text x="302.0" y="474.0" font-family="Menlo, Consolas, monospace" font-size="11" fill="#111" text-anchor="middle">film-holder-120-lid.stl</text>
+<text x="302.0" y="491.0" font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#333" text-anchor="middle">94×120×3</text>
+<circle cx="292.9" cy="503.0" r="5" fill="#3a3a3a" stroke="#111" stroke-width="1.2"/>
+<text x="303.9" y="507.0" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#333" text-anchor="start">黒</text>
+<rect x="398.0" y="318.0" width="176.0" height="196.0" fill="#fff" stroke="#ccc" stroke-width="1" rx="6"/>
+<rect x="463.0" y="363.8" width="46.1" height="68.4" fill="#3a3a3a" stroke="#111" stroke-width="2"/>
+<rect x="465.5" y="367.4" width="41.0" height="61.2" fill="#fff" stroke="#111" stroke-width="1.2"/>
+<text x="486.0" y="474.0" font-family="Menlo, Consolas, monospace" font-size="11" fill="#111" text-anchor="middle">pressure-window-120.stl</text>
+<text x="486.0" y="491.0" font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#333" text-anchor="middle">64×95×2</text>
+<circle cx="476.9" cy="503.0" r="5" fill="#3a3a3a" stroke="#111" stroke-width="1.2"/>
+<text x="487.9" y="507.0" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#333" text-anchor="start">黒</text>
+<rect x="582.0" y="318.0" width="176.0" height="196.0" fill="#fff" stroke="#ccc" stroke-width="1" rx="6"/>
+<rect x="636.2" y="369.2" width="67.7" height="57.6" fill="#3a3a3a" stroke="#111" stroke-width="2"/>
+<rect x="649.7" y="377.7" width="40.7" height="40.7" fill="#fff" stroke="#111" stroke-width="1.2"/>
+<text x="670.0" y="474.0" font-family="Menlo, Consolas, monospace" font-size="11" fill="#111" text-anchor="middle">mask-6x6.stl</text>
+<text x="670.0" y="491.0" font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#333" text-anchor="middle">94×80×1</text>
+<circle cx="660.9" cy="503.0" r="5" fill="#3a3a3a" stroke="#111" stroke-width="1.2"/>
+<text x="671.9" y="507.0" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#333" text-anchor="start">黒</text>
+<rect x="766.0" y="318.0" width="176.0" height="196.0" fill="#fff" stroke="#ccc" stroke-width="1" rx="6"/>
+<rect x="820.2" y="354.8" width="67.7" height="86.4" fill="#3a3a3a" stroke="#111" stroke-width="2"/>
+<rect x="835.5" y="379.5" width="37.0" height="37.0" fill="#4a4a4a" stroke="#111" stroke-width="1.2"/>
+<rect x="847.5" y="373.5" width="13.0" height="8.6" fill="#5a5a5a" stroke="#111" stroke-width="0.9"/>
+<rect x="847.5" y="413.8" width="13.0" height="8.6" fill="#5a5a5a" stroke="#111" stroke-width="0.9"/>
+<rect x="844.6" y="384.3" width="18.7" height="27.4" fill="#fff" stroke="#111" stroke-width="1.2"/>
+<text x="854.0" y="474.0" font-family="Menlo, Consolas, monospace" font-size="11" fill="#111" text-anchor="middle">slide-plate-135.stl</text>
+<text x="854.0" y="491.0" font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#333" text-anchor="middle">94×120×5</text>
+<circle cx="844.9" cy="503.0" r="5" fill="#3a3a3a" stroke="#111" stroke-width="1.2"/>
+<text x="855.9" y="507.0" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#333" text-anchor="start">黒</text>
 <text x="30.0" y="546.0" font-family="Helvetica, Arial, sans-serif" font-size="15" fill="#111" text-anchor="start" font-weight="bold">購入部品：必須 3 + オプション 2</text>
 <rect x="108.0" y="558.0" width="148.0" height="150.0" fill="#fff" stroke="#ccc" stroke-width="1" rx="6"/>
 <rect x="163.3" y="579.5" width="37.4" height="64.9" fill="#fbfbfb" stroke="#999" stroke-width="1.5" rx="2"/>

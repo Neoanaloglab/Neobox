@@ -4,14 +4,14 @@
 
 > One line for every term the NeoBox documents use as if you already knew it, and one line on why it matters in this project. Other pages link straight to the entry they need.
 
-**Contents:** [Anti-Newton glass](#anti-newton-glass) · [Base ISO](#base-iso) · [Bed size](#bed-size) · [Bridging](#bridging) · [Camera scanning](#camera-scanning) · [Channel](#channel) · [Copy stand](#copy-stand) · [Cover-stage](#cover-stage) · [Diffuser](#diffuser) · [EFCS](#efcs) · [Element ledge](#element-ledge) · [Elephant foot](#elephant-foot) · [EV](#ev) · [Film gate](#film-gate) · [Flat-field correction](#flat-field-correction) · [Guide number](#guide-number) · [HSS](#hss) · [Infill](#infill) · [Integrating cavity](#integrating-cavity) · [Inversion](#inversion) · [Land](#land) · [Layer height](#layer-height) · [Locating tenon and notch](#locating-tenon-and-notch) · [Magnification ratio](#magnification-ratio) · [Manual power fraction](#manual-power-fraction) · [Mirror alignment](#mirror-alignment) · [Newton rings](#newton-rings) · [Opal](#opal) · [Open front](#open-front) · [Perimeters](#perimeters) · [Pressure window insert](#pressure-window-insert) · [Rail](#rail) · [Raw](#raw) · [Run-out corridor](#run-out-corridor) · [Supports](#supports) · [Sync speed](#sync-speed) · [TTL](#ttl) · [Window](#window) · [Working distance](#working-distance)
+**Contents:** [Anti-Newton glass](#anti-newton-glass) · [Base ISO](#base-iso) · [Bed size](#bed-size) · [Bridging](#bridging) · [Camera scanning](#camera-scanning) · [Channel](#channel) · [Copy stand](#copy-stand) · [Cover-stage](#cover-stage) · [Diffuser](#diffuser) · [EFCS](#efcs) · [Element ledge](#element-ledge) · [Elephant foot](#elephant-foot) · [EV](#ev) · [Film gate](#film-gate) · [Flat-field correction](#flat-field-correction) · [Guide number](#guide-number) · [HSS](#hss) · [Infill](#infill) · [Integrating cavity](#integrating-cavity) · [Inversion](#inversion) · [Land](#land) · [Layer height](#layer-height) · [Locating tenon and notch](#locating-tenon-and-notch) · [Magnification ratio](#magnification-ratio) · [Manual power fraction](#manual-power-fraction) · [Mirror alignment](#mirror-alignment) · [Newton rings](#newton-rings) · [Opal](#opal) · [Open front](#open-front) · [Perimeters](#perimeters) · [Pressure window insert](#pressure-window-insert) · [Rail](#rail) · [Raw](#raw) · [Run-out corridor](#run-out-corridor) · [Slide plate](#slide-plate) · [Supports](#supports) · [Sync speed](#sync-speed) · [TTL](#ttl) · [Window](#window) · [Working distance](#working-distance)
 
 ## A–Z
 
 Two vocabularies meet in this project: film photography and 3D printing. A reader is rarely fluent in both, so every entry below is written for someone fluent in neither.
 
 > [!TIP]
-> Part names are a separate matter. Every part is named once and never renamed. Printed: **main body**, **cover-stage**, **film holder** (**holder base** / **holder lid**, one pair per format), **pressure window inserts**, **6×6 mask**. Bought: **diffuser**, **magnets**, **steel shims**, and optionally **anti-Newton glass**. The printed prototype's **top cover** and **film stage** are merged into the cover-stage since v1, and the **access panel**, **studs** and **nuts** are gone: v1 has no fasteners at all. If you cannot match a name to a shape in front of you, see [Part vocabulary](printing.md#part-vocabulary), which ties each one to a feature you can see.
+> Part names are a separate matter. Every part is named once and never renamed. Printed: **main body**, **cover-stage**, **film holder** (**holder base** / **holder lid**, one pair per format), **pressure window inserts**, **6×6 mask**, **slide plate**. Bought: **diffuser**, **magnets**, **steel shims**, and optionally **anti-Newton glass**. The printed prototype's **top cover** and **film stage** are merged into the cover-stage since v1, and the **access panel**, **studs** and **nuts** are gone: v1 has no fasteners at all. If you cannot match a name to a shape in front of you, see [Part vocabulary](printing.md#part-vocabulary), which ties each one to a feature you can see.
 
 ### Anti-Newton glass
 
@@ -35,7 +35,7 @@ The printable area of an FDM printer's build plate, quoted as X × Y.
 
 Extruding filament straight across an unsupported gap between two anchored points, so it spans in air and cools before it can droop.
 
-**Why it matters:** v1 has nothing to bridge. The front of the main body is not a spanned opening but a missing wall, the [open front](#open-front), and every one of the nine parts prints flat face down without [supports](#supports).
+**Why it matters:** v1 has nothing to bridge. The front of the main body is not a spanned opening but a missing wall, the [open front](#open-front), and every one of the ten parts prints flat face down without [supports](#supports).
 
 ### Camera scanning
 
@@ -119,7 +119,7 @@ High-speed sync: the flash fires a rapid train of small pulses so it can be used
 
 The internal lattice that fills the space between a part's [perimeters](#perimeters), given as a percentage of solid.
 
-**Why it matters:** 15 % is the spec for all nine parts. Nothing in v1 hangs a load on infill any more. What keeps the walls opaque is perimeters, not infill. See [Print settings](printing.md#print-settings).
+**Why it matters:** 15 % is the spec for all ten parts. Nothing in v1 hangs a load on infill any more. What keeps the walls opaque is perimeters, not infill. See [Print settings](printing.md#print-settings).
 
 ### Integrating cavity
 
@@ -217,11 +217,17 @@ The clear strip along the film's path: everything within 31 mm either side of th
 
 **Why it matters:** film longer than the 120 mm holder leaves it at both ends. Inside the holder the corridor is guaranteed by the [rails](#rail); outside it, the [cover-stage](#cover-stage)'s flange top runs 0.2 mm below the film plane, so the tail rides over it: supported, not blocked. Steady the far end of a long strip by hand. The 31 mm is a half-width; 120 film is about 62 mm wide.
 
+### Slide plate
+
+The one-piece holder for mounted 135 slides, `slide-plate-135.stl`: a 94 × 120 × 5 mm plate with a 51.4 mm square pocket 2.0 mm deep, a 26 × 38 mm window through the pocket floor and two finger wells. It stands in the [cover-stage](#cover-stage) tray in place of the 135 holder set.
+
+**Why it matters:** a mount is many times thicker than the 0.4 mm [channel](#channel), so it can never enter a holder. The plate has no lid, no magnets and no pressure element: the mount is rigid and the box is horizontal, so the pocket locates it and gravity holds it. Refocus when you switch to it; the film in a mount sits within about half a millimetre of the strip film plane.
+
 ### Supports
 
 Sacrificial printed scaffolding under an overhang, snapped off after the print.
 
-**Why it matters:** none of the nine parts needs them: every one prints support-free, flat face down, with the two holder lids printed top face down. Enabling supports anyway will scar the surfaces the film slides against. See [The nine parts](printing.md#the-nine-parts).
+**Why it matters:** none of the ten parts needs them: every one prints support-free, flat face down, with the two holder lids printed top face down. Enabling supports anyway will scar the surfaces the film slides against. See [The ten parts](printing.md#the-ten-parts).
 
 ### Sync speed
 
@@ -241,7 +247,7 @@ Through-the-lens flash metering: the camera fires a pre-flash, measures it and s
 
 ### Window
 
-The hole in the holder base and lid that you photograph through: 25 × 37 mm in the 135 holder, 57 × 85 mm in the 120 holder. The slide-in 6×6 mask narrows the 120 view to 56.5 × 56.5 mm.
+The hole in the holder base and lid that you photograph through: 25 × 37 mm in the 135 holder, 57 × 85 mm in the 120 holder. The slide-in 6×6 mask narrows the 120 view to 56.5 × 56.5 mm, and the slide plate's window is 26 × 38 mm.
 
 **Why it matters:** each window is deliberately about 0.5 mm oversize per side against the nominal frame, to absorb [film gate](#film-gate) variation between cameras and printer tolerance. You will see a sliver of film edge around the image; crop it in post.
 
