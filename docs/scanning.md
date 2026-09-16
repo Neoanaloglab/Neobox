@@ -4,7 +4,7 @@
 
 > The camera half of the project: what to put above the box, how to square the camera to the film, how to focus and expose, how to load and advance film, and what to do with the raw files afterwards.
 
-**Contents:** [Before you start](#before-you-start) · [Camera-side equipment](#camera-side-equipment) · [Magnification and lens choice](#magnification-and-lens-choice) · [Camera height and the stand](#camera-height-and-the-stand) · [Parallelism](#parallelism) · [Focus](#focus) · [Exposure](#exposure) · [Loading film](#loading-film) · [Shooting a roll](#shooting-a-roll) · [Flat-field and inversion](#flat-field-and-inversion) · [When something looks wrong](#when-something-looks-wrong)
+**Contents:** [Before you start](#before-you-start) · [Camera-side equipment](#camera-side-equipment) · [Magnification and lens choice](#magnification-and-lens-choice) · [Camera height and the stand](#camera-height-and-the-stand) · [Parallelism](#parallelism) · [Focus](#focus) · [Exposure](#exposure) · [Loading film](#loading-film) · [Mounted slides](#mounted-slides) · [Shooting a roll](#shooting-a-roll) · [Flat-field and inversion](#flat-field-and-inversion) · [When something looks wrong](#when-something-looks-wrong)
 
 ## Before you start
 
@@ -213,7 +213,7 @@ Handling notes:
 - **Changing format = changing the holder.** Lift the whole holder off the stage against its magnets and set the other one in. It takes a few seconds, and nothing needs re-levelling.
 - **Handle by the edges**, with clean hands or cotton gloves.
 - **6×6** uses the 120 holder with `mask-6x6.stl` laid **under** the base, in the tray; the holder rides 1 mm higher; normal, just refocus. **6×4.5** has no dedicated mask: frame it in the 120 window and crop in post.
-- **Mounted slides do not fit.** The channel is 0.4 mm; a slide mount is not.
+- **Mounted slides** go in the slide plate, never in a holder: see [Mounted slides](#mounted-slides).
 
 <details>
 <summary>Why the film comes out flat, and why you always crop in post</summary>
@@ -222,6 +222,20 @@ The film's edges ride on the perch of the holder base, 0.4 mm below the undersid
 
 The windows are deliberately about 0.5 mm oversize per side against the nominal frame (135 nominal 24 × 36, 120 nominal 56 × 84). That absorbs camera-gate variance between film bodies and printer XY tolerance between holders. The cost is that you see a sliver of rebate around the frame and crop it off in post. Full geometry is in [Design](design.md#5-film-holders).
 </details>
+
+## Mounted slides
+
+A mount is about 1.2 – 3.2 mm thick and the channel is 0.4, so a mounted slide never enters a holder. It has its own part, `slide-plate-135.stl`: a plate that stands in the tray in place of the 135 holder set, with a 51.4 mm square pocket and a 26 × 38 mm window under it. There is no lid, no magnets and no pressure element: the mount is rigid and the box is horizontal, so the pocket locates and gravity holds.
+
+1. Lift the 135 holder out of the tray and set the slide plate in.
+   *Checkpoint:* the plate lies flat inside the flange and does not rock.
+2. Blow the pocket and both faces of the slide.
+3. Drop the mount into the pocket the way you would hold it up to a window: image reading correctly from above, which puts the emulsion down.
+   *Checkpoint:* the mount sits on the pocket floor with the window fully covered.
+4. Refocus. The film in a mount sits at about 82.6 – 83.6 mm, not the strip plane's 83.2, and card and plastic mounts differ; focus on the grain once per mount type.
+5. Lift the mount out by the two finger wells at the sides of the pocket, and drop in the next.
+
+A card mount that has warped, or a frame that popped in a projector, is not flattened by anything here, exactly as in a dedicated slide scanner; at 1:1 and f/8 the roughly ±0.4 mm depth of field absorbs most of it. Glass mounts go in as they are. The window is larger than any mount's aperture, so it is the mount that frames the image: crop to it in post.
 
 ## Shooting a roll
 

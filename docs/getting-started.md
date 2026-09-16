@@ -16,17 +16,17 @@ A bare speedlight lies flat on the desk with its head against the box's fully op
 
 The whole build is smaller than it sounds:
 
-- **9 printed parts** (two white, seven black), all nine STL files support-free, each printed with its flat face down.
+- **10 printed parts** (two white, eight black; the 6×6 mask and the slide plate are optional), all ten STL files support-free, each printed with its flat face down.
 - **1 opal acrylic diffuser**, 68 × 118 × 2 mm, dropped into a pocket in the cover-stage.
 - **32 magnets and 4 steel washers**: Ø8 × 2 mm N35 discs press-fitted into the film holder parts, and 10 × 10 × 1 mm washers that sit flush in the cover-stage.
 - **No screws, no threads, no glue, no tools.** The box assembles by gravity and magnets, and levelling happens at the camera, not inside the box.
 
 > [!IMPORTANT]
-> This is the first release. The geometry is dimensionally verified in the Blender source, and all nine STL files are watertight single solids with every horizontal face on the 0.2 mm grid. But no box of this geometry has **ever been printed, photographed, measured or evenness-tested.** If you build one, you are the first.
+> This is the first release. The geometry is dimensionally verified in the Blender source, and all ten STL files are watertight single solids with every horizontal face on the 0.2 mm grid. But no box of this geometry has **ever been printed, photographed, measured or evenness-tested.** If you build one, you are the first.
 
-**Build it if you** already shoot film and already own a camera you can put on a stand; want [base-ISO](glossary.md#base-iso), f/8 captures where vibration is irrelevant; and are happy to print nine parts and press in some magnets. There is nothing to screw, solder or glue.
+**Build it if you** already shoot film and already own a camera you can put on a stand; want [base-ISO](glossary.md#base-iso), f/8 captures where vibration is irrelevant; and are happy to print the parts and press in some magnets. There is nothing to screw, solder or glue.
 
-**Do not start if you** have neither a 3D printer nor access to a print service: every structural part is printed and there is no alternative route in the released files. Also skip it if you need 4×5, or if your film is in slide mounts; neither is supported, see the [FAQ](#faq).
+**Do not start if you** have neither a 3D printer nor access to a print service: every structural part is printed and there is no alternative route in the released files. Also skip it if you need 4×5: sheet film is not supported, see the [FAQ](#faq).
 
 > [!WARNING]
 > **Build-plate go/no-go.** The two largest parts, `main-body.stl` and `cover-stage.stl`, share a 124.8 × 154.8 mm footprint, so a 160 × 160 mm [bed](glossary.md#bed-size) prints the entire set, and any current desktop machine qualifies. Nothing needs supports; the one orientation rule is that the two holder lids print top face down while every other part prints flat bottom down. If you cannot reach a 160 × 160 mm bed, settle the outsourcing route before you spend anything else.
@@ -39,7 +39,7 @@ Three things to settle before any money moves:
 
 If all three are yes, continue to the [bill of materials](bom.md#tools-and-consumables). If the first is no, stop here.
 
-![One-page manufacturing overview: the nine printed files with their sizes and print notes, the bought parts, and a section through the assembled box](../drawings/manufacturing-overview.svg)
+![One-page manufacturing overview: the ten printed files with their sizes and print notes, the bought parts, and a section through the assembled box](../drawings/manufacturing-overview.svg)
 
 ## What camera scanning is
 
@@ -75,7 +75,7 @@ Prices live in one place, the [bill of materials](bom.md#tools-and-consumables);
 
 | What you are buying | Cost |
 |---|---|
-| Everything structural: nine PLA parts, the opal acrylic sheet, 32 magnets, 4 steel washers | priced in the bill of materials |
+| Everything structural: ten PLA parts, the opal acrylic sheet, 32 magnets, 4 steel washers | priced in the bill of materials |
 | A speedlight (any hot-shoe model with manual power control) | reference pick priced in the bill of materials |
 | A radio trigger set | reference pick priced in the bill of materials |
 | Optional upgrades: anti-Newton glass and flocking sheet | priced in the bill of materials |
@@ -99,7 +99,7 @@ Printing is a small job: nothing is longer than 154.8 mm, plain PLA is fine, and
 ```mermaid
 flowchart TD
     A[Decide: can you print it] --> B[Buy parts, acrylic, magnets]
-    B --> C[Print or order the 9 files]
+    B --> C[Print or order the 10 files]
     C --> D[Check every part before you build]
     D --> E[Assemble: magnets, acrylic, stack]
     E --> F[Align the camera with the mirror method]
@@ -111,7 +111,7 @@ flowchart TD
 |---|---|---|
 | Decide | Bed size (160 × 160 mm is enough), flash on hand, what you already own | this page |
 | Buy | Parts and consumables; vendor scripts; acceptance checks on arrival | [bom](bom.md#tools-and-consumables) |
-| Print | Nine STL files in plain PLA: 0.2 mm [layers](glossary.md#layer-height), 15 % infill, no supports | [printing](printing.md#ordering-from-a-print-service) |
+| Print | Ten STL files in plain PLA: 0.2 mm [layers](glossary.md#layer-height), 15 % infill, no supports | [printing](printing.md#ordering-from-a-print-service) |
 | Check parts | Measure before you build; a wrong part found now costs a reprint, found later costs the build | [printing](printing.md#check-each-part-before-you-assemble) |
 | Assemble | Press 32 magnets into the holder parts, drop the acrylic and washers into the cover-stage, stack everything, no tools | [assembly](assembly.md#assembly-steps) |
 | Align | A small mirror on the film plane; move the camera until its own lens reflection is centred; the camera levels, the box does not | [assembly](assembly.md#step-7--level-at-the-camera-the-mirror-method) |
@@ -157,7 +157,7 @@ Other things follow from the same choice. Every frame receives identical output,
 
 **Does it do 4×5?** No. The film windows are 25 × 37 mm for 135 and 57 × 85 mm for 120 (a full 6×9), and the holders are 94 × 120 mm overall. Nothing in the released files handles sheet film.
 
-**Does it do mounted slides?** No. The 135 channel is 0.4 mm high, sized for bare film strips; a slide in its mount will not enter it. Unmounted transparencies are fine.
+**Does it do mounted slides?** Yes, with the optional slide plate. The 135 channel is 0.4 mm high, sized for bare strips, so a mount never enters the holder; instead `slide-plate-135.stl` stands in the tray in the holder's place, with a 51.4 mm square pocket that takes card, plastic and glass mounts over a 26 × 38 mm window. No lid, no magnets: the pocket locates the mount and gravity holds it. See [Mounted slides](scanning.md#mounted-slides). Unmounted transparencies go through the 135 holder like any strip.
 
 **How do I advance film, and switch formats?** Advance by pulling: grip the strip where it leaves the holder and draw it through. The pressure element flattens any arch as the film slides under it, and the holder is never opened mid-roll. To switch formats, lift one holder off and set the other down; the magnets locate it, about five seconds. For 6×6, lay the mask under the 120 base; the holder rides 1 mm higher, which is normal. 6×4.5 has no dedicated mask, so crop in post. A long strip's tail rests on the tray flange just below the film plane, so give its far end a hand. Loading and handling are covered in [scanning](scanning.md#loading-film).
 

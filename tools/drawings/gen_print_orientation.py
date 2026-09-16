@@ -2,7 +2,7 @@
 """NeoBox v1 — print-orientation drawing generator.
 
 Generates drawings/print-orientation.svg (en), .zh-CN.svg, .ja.svg.
-Data source: scratchpad/FACTS-v5.md §2 (9 STLs, colors, sizes, orientations)
+Data source: scratchpad/FACTS-v5.md §2 (10 STLs, colors, sizes, orientations)
 and §3 (per-part local layer stacks). All geometry is schematic side-view
 sketches (thin parts vertically exaggerated); no dimension figures shown.
 """
@@ -19,7 +19,8 @@ CARD_H = 182
 GAP_X = 16
 GAP_Y = 14
 GRID_TOP = 116
-H = GRID_TOP + 3 * CARD_H + 2 * GAP_Y + 34  # grid + footer strip
+ROWS = 4
+H = GRID_TOP + ROWS * CARD_H + (ROWS - 1) * GAP_Y + 34  # grid + footer strip
 
 AMBER = "#e8a33d"
 INK = "#111"
@@ -38,8 +39,8 @@ LANG = {
     "en": {
         "suffix": "",
         "title": "Print Orientation",
-        "subtitle": "NeoBox v1 — how each of the 9 printed parts sits on the build plate",
-        "banner": "All 9 parts print without supports · Layer height 0.2 mm · Do not rescale (unit: mm)",
+        "subtitle": "NeoBox v1 — how each of the 10 printed parts sits on the build plate",
+        "banner": "All 10 parts print without supports · Layer height 0.2 mm · Do not rescale (unit: mm)",
         "legend_white": "white PLA",
         "legend_black": "black PLA",
         "footer": "NeoBox v1 — 2026-08",
@@ -50,13 +51,14 @@ LANG = {
             "lid": ["Smooth large flat face DOWN,", "shallow square recess UP"],
             "insert": ["Lay flat (thin plate)"],
             "mask": ["Lay flat (thin plate)"],
+            "plate": ["Flat face down, square pocket up"],
         },
     },
     "zh": {
         "suffix": ".zh-CN",
         "title": "打印朝向",
-        "subtitle": "NeoBox v1 — 9 个打印件在打印机床板上的摆放姿态",
-        "banner": "9 件全部免支撑打印 · 层高一律 0.2 mm · 切勿缩放（单位 mm）",
+        "subtitle": "NeoBox v1 — 10 个打印件在打印机床板上的摆放姿态",
+        "banner": "10 件全部免支撑打印 · 层高一律 0.2 mm · 切勿缩放（单位 mm）",
         "legend_white": "白 PLA",
         "legend_black": "黑 PLA",
         "footer": "NeoBox v1 — 2026-08",
@@ -67,13 +69,14 @@ LANG = {
             "lid": ["光滑大平面朝下，", "浅方坑的面朝上"],
             "insert": ["平放（薄片）"],
             "mask": ["平放（薄片）"],
+            "plate": ["平面朝下，方槽朝上"],
         },
     },
     "ja": {
         "suffix": ".ja",
         "title": "プリント方向",
-        "subtitle": "NeoBox v1 — 9 点の印刷パーツをビルドプレートに置く向き",
-        "banner": "全 9 パーツともサポート不要 · 積層ピッチは必ず 0.2 mm · 拡大縮小禁止（単位 mm）",
+        "subtitle": "NeoBox v1 — 10 点の印刷パーツをビルドプレートに置く向き",
+        "banner": "全 10 パーツともサポート不要 · 積層ピッチは必ず 0.2 mm · 拡大縮小禁止（単位 mm）",
         "legend_white": "白 PLA",
         "legend_black": "黒 PLA",
         "footer": "NeoBox v1 — 2026-08",
@@ -84,6 +87,7 @@ LANG = {
             "lid": ["つるつるの大平面を下、", "浅い四角のくぼみを上"],
             "insert": ["平置き（薄板）"],
             "mask": ["平置き（薄板）"],
+            "plate": ["平面を下、四角いポケットを上"],
         },
     },
 }
@@ -184,6 +188,15 @@ def sk_mask(cx, ybed):
     return [rect(cx - hw, ybed - th, 2 * hw, th, FILL_BLACK_PART, GREY, 2)], hw
 
 
+def sk_plate(cx, ybed):
+    # 94 wide, 5 thick; square slide pocket (51.4 span) opening upward.
+    hw, th, phw, pd = 94 / 2 * S, 11, 51.4 / 2 * S, 5
+    x0, x1, yp = cx - hw, cx + hw, ybed - th
+    pts = [(x0, ybed), (x0, yp), (cx - phw, yp), (cx - phw, yp + pd),
+           (cx + phw, yp + pd), (cx + phw, yp), (x1, yp), (x1, ybed)]
+    return [poly(pts, FILL_BLACK_PART)], hw
+
+
 # ---------------------------------------------------------------- card roster
 # (file, sketch, desc key, is white part, amber warning)
 CARDS = [
@@ -196,6 +209,7 @@ CARDS = [
     ("pressure-window-135.stl",  sk_insert,      "insert", False, False),
     ("pressure-window-120.stl",  sk_insert,      "insert", False, False),
     ("mask-6x6.stl",             sk_mask,        "mask", False, False),
+    ("slide-plate-135.stl",      sk_plate,       "plate", False, False),
 ]
 
 

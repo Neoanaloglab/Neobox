@@ -2,7 +2,7 @@
 
 **English** · [简体中文](design-log.zh-CN.md) · [日本語](design-log.ja.md)
 
-> Why NeoBox ended up this shape: twenty-four decisions in the order they were taken, and the four ideas that were considered and turned down. Read it before you modify anything.
+> Why NeoBox ended up this shape: twenty-five decisions in the order they were taken, and the four ideas that were considered and turned down. Read it before you modify anything.
 
 **Contents:** [How to read this log](#how-to-read-this-log) · [Phase 1: the first draft did not close](#phase-1-the-first-draft-did-not-close) · [Phase 2: from 32 litres to about 5](#phase-2-from-32-litres-to-about-5) · [Phase 3: removing everything unnecessary](#phase-3-removing-everything-unnecessary) · [Phase 4: the flash leaves the box](#phase-4-the-flash-leaves-the-box) · [Things deliberately not done](#things-deliberately-not-done)
 
@@ -195,7 +195,7 @@ All of them now measure 0.4 mm, two layers, without disturbing anything that mat
 
 The vendor asked which face the drawings' orientation note (a first-revision phrase naming the channel side, since deleted from every document) actually referred to. Re-deriving the answer from print physics exposed the note itself as wrong: it would have stood the holder base on its two rail crests and left the film-bearing lands hanging over air, so the one surface that has to be flat would have been built on [supports](glossary.md#supports).
 
-The correct orientation for every holder part is flat face down with the features growing upward and no supports at all. But a slicer will not get there by itself: `film-holder-*-lid.stl` loads with the pressure strips down and must be rotated 180° about X after import. Every vendor script now places parts by a feature the operator can see ("the face with the two long ridges goes up") and states support locations explicitly. The per-part cards in [printing.md](printing.md#the-nine-parts) follow the same rule.
+The correct orientation for every holder part is flat face down with the features growing upward and no supports at all. But a slicer will not get there by itself: `film-holder-*-lid.stl` loads with the pressure strips down and must be rotated 180° about X after import. Every vendor script now places parts by a feature the operator can see ("the face with the two long ridges goes up") and states support locations explicitly. The per-part cards in [printing.md](printing.md#the-ten-parts) follow the same rule.
 
 **Lesson: write orientation instructions around a feature the operator can see and point at.**
 
@@ -259,6 +259,14 @@ The invoice for the v4 prototype (about CN¥1,200) was the sharpest review the d
 Everything still prints support-free, flat face down. The whole nine-file set is estimated at **300–350 g** of filament: an estimate from CAD like every other v5 figure, but one the next invoice will check.
 
 **Lesson: printed volume needs a budget of its own, like any other dimension.**
+
+### 25. Mounted slides: a plate of their own
+
+Mounted 135 slides were out of scope through v5: a card or plastic mount is about 1.2 – 3.2 mm thick and the 135 channel is 0.4. The obvious fix, a 50 × 50 pocket cut into the 135 base, was rejected on sight: the pocket would take out the land on all four sides of the window, and the land is the whole flattening system ([entry 22](#22-flattening-converged-on-an-insert-platform)). A filler plug to restore the land for strips would add a part and hang the film plane on a plug's seating instead of a printed step.
+
+What shipped instead is a fourth holder set that is one part: `slide-plate-135.stl`, a 94 × 120 × 5 plate with a 51.4 mm square pocket 2.0 deep, a 26 × 38 window through its floor and two blind finger wells. It stands in the tray where a holder base stands, so the 135 set is not touched at all. It has no lid, no magnets and no glass, because a mount is rigid and the box is horizontal: the pocket locates and gravity holds. The film plane lands at about 82.6 – 83.6 depending on the mount, within refocusing distance of the strip plane at 83.2, the same accommodation the 6×6 mask already asks for.
+
+**Lesson: when a new format cannot share the flattening geometry, give it its own part rather than a compromise in the shared one.**
 
 ## Things deliberately not done
 
