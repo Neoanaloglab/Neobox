@@ -21,7 +21,7 @@ flowchart LR
 ```
 
 > [!NOTE]
-> Nothing here was settled by building anything. **The box has never been printed, photographed or evenness-tested.** Every decision below was reached in CAD and arithmetic, or in correspondence with a print vendor. Dimensions quoted are the released geometry; figures from superseded revisions are not repeated, because they were never re-verified.
+> Nothing here was settled by building anything. **The released box has since been printed and used, but every decision below was reached before that,** in CAD and arithmetic, or in correspondence with a print vendor. Dimensions quoted are the released geometry; figures from superseded revisions are not repeated, because they were never re-verified.
 
 Each entry is a heading, so any of them can be linked from elsewhere, for example `design-log.md#18-layer-quantised-holders`.
 
@@ -204,7 +204,7 @@ The correct orientation for every holder part is flat face down with the feature
 Phase 3 closed a three-phase history at the released 208 × 273 × 96 mm box. Then the box got built: a vendor printed v4 for about CN¥1,200, and hand-held experiments with that unit reopened the design. The four entries below, added 2026-08-14, take it to **v5**.
 
 > [!NOTE]
-> The note in [How to read this log](#how-to-read-this-log) predates these entries and now needs one amendment: **v4 has been printed and handled. v5 has not.** v5 has never been printed, photographed or evenness-tested; apart from the hand-held v4 observations reported below, every v5 figure is CAD and arithmetic (`cad/neobox.blend`).
+> The note in [How to read this log](#how-to-read-this-log) predates these entries and now needs one amendment: **v4 has been printed and handled, and v5 has since been printed and used as well.** These entries were written before v5 existed in plastic; apart from the hand-held v4 observations reported below, every v5 figure is CAD and arithmetic (`cad/neobox.blend`), and none has been re-derived from the printed box.
 
 *Entries: [21](#21-the-flash-moved-outside-and-the-front-opened-fully) · [22](#22-flattening-converged-on-an-insert-platform) · [23](#23-the-design-went-screwless) · [24](#24-the-cover-absorbed-the-film-stage-and-the-print-thinned)*
 

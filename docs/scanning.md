@@ -20,7 +20,7 @@ Work through this list before you set a camera up:
 - [ ] You have blown the channel and the flattening element with a rocket blower, and in glass mode both faces of the glass before it went in.
 
 > [!NOTE]
-> This design has not been printed or built, so nothing below is a measured result. Exposure figures are starting points to bracket from, not predictions.
+> The box has been printed and used, but this page was written from the design, and nothing below is a published measurement. Exposure figures are starting points to bracket from, not predictions.
 
 ## Camera-side equipment
 
@@ -152,7 +152,7 @@ Finding the working power:
 5. Lock it and leave it for the whole roll.
    *Checkpoint:* flash power and aperture are written down.
 
-Expect to pay several stops of flash power over a bare-source reading for the bounce path through the box. This design has not been built, so no loss figure exists; treat 1/8 as nothing more than a start, and bracket.
+Expect to pay several stops of flash power over a bare-source reading for the bounce path through the box. No loss figure has been published for this box yet; treat 1/8 as nothing more than a start, and bracket.
 
 > [!TIP]
 > The flash and its T1 receiver sit on the desk in front of the box, so changing flash power never touches the box, and changing the receiver's batteries never opens anything. Settle power once during calibration and then do the fine work with the aperture. Keep two sets of NiMH cells in rotation.
@@ -281,7 +281,7 @@ Habits worth forming on the first roll:
 - **Do not change flash power mid-roll.** The flash sits on the open desk where it is easy to nudge; resist, because one power change breaks the one-profile-per-roll advantage.
 - **Blow between strips**, every time.
 
-Throughput is set by the flash's recycle time at whatever power you settled on and by how carefully you check each frame. No frames-per-hour figure exists for this design, because it has not been built. Two sets of NiMH cells in rotation is the practical arrangement for a long session.
+Throughput is set by the flash's recycle time at whatever power you settled on and by how carefully you check each frame. No frames-per-hour figure has been published for this box, because it depends on those two things far more than on the box. Two sets of NiMH cells in rotation is the practical arrangement for a long session.
 
 ## Flat-field and inversion
 

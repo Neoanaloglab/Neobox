@@ -22,7 +22,7 @@ The whole build is smaller than it sounds:
 - **No screws, no threads, no glue, no tools.** The box assembles by gravity and magnets, and levelling happens at the camera, not inside the box.
 
 > [!IMPORTANT]
-> This is the first release. The geometry is dimensionally verified in the Blender source, and all twelve STL files are watertight single solids with every horizontal face on the 0.2 mm grid. But no box of this geometry has **ever been printed, photographed, measured or evenness-tested.** If you build one, you are the first.
+> This is the first release. The geometry is dimensionally verified in the Blender source, and all twelve STL files are watertight single solids with every horizontal face on the 0.2 mm grid. The box has been printed and used for scanning by the author, and by friends with their own flashes and film. **What has not been done yet is instrument measurement:** the evenness and flatness figures in these documents are design targets.
 
 **Build it if you** already shoot film and already own a camera you can put on a stand; want [base-ISO](glossary.md#base-iso), f/8 captures where vibration is irrelevant; and are happy to print the parts and press in some magnets. There is nothing to screw, solder or glue.
 
@@ -140,7 +140,7 @@ Other things follow from the same choice. Every frame receives identical output,
 
 ## FAQ
 
-**Has anyone built one?** No. The v1 geometry is dimensionally verified in CAD and the exported files are numerically checked, but no box of this geometry has ever been printed, photographed, measured or evenness-tested; the only thing ever printed was the old prototype, which shares almost no parts with v1. Treat every optical claim as reasoned, not measured.
+**Has anyone built one?** Yes. The author has printed this geometry and has been scanning 135 and 120 film with it, friends have run it with their own flashes and film, and the 6×6 mask, the slide plate and the 4×5 stage have been printed and used too. What nobody has done yet is put instruments on it: the evenness and flatness figures in these documents are design targets from the CAD, and the optical claims are reasoned, then confirmed by eye and in the inversions, not metered.
 
 **Can I use an LED panel instead of a flash?** Not with the released files: no LED variant is published, and the argument against one is in the collapsed block above. The optional LED strip in the bill of materials is a positioning light only, never the exposure.
 

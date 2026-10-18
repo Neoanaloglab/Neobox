@@ -18,7 +18,7 @@ Reference flash: a **NEEWER TT560** speedlight with a **ZENIKO T1** 2.4 GHz trig
 | Source | Every number below is read from `cad/neobox.blend` or from the exported STL files. [§11](#11-working-with-the-source) explains how to read them yourself |
 
 > [!IMPORTANT]
-> The geometry is verified dimensionally in Blender and numerically in the exported STL files. **The box has never been printed, built, photographed or measured.** Every performance figure in this document is a design target, not a result: the mixing margins, the ≤ 0.28 mm flatness bound, the depth-of-field coverage. No evenness has been measured, and nothing here claims otherwise.
+> The geometry is verified dimensionally in Blender and numerically in the exported STL files, and the box has been printed and used. **Every performance figure in this document is still a design target, not a measurement:** the mixing margins, the ≤ 0.28 mm flatness bound, the depth-of-field coverage. The printed box scans evenly by eye and in the inversions, but no evenness has been metered, and nothing here claims otherwise.
 
 ---
 
