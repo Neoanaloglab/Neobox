@@ -9,7 +9,7 @@
 ## How to use this page
 
 > [!NOTE]
-> This design has not been printed or built. Every row below is a fault the geometry, the materials or the procedure can produce, derived from the design and not from a repair log. Nothing here is a measured result.
+> Every row below is a fault the geometry, the materials or the procedure can produce, derived from the design rather than from a repair log. The box has been printed and used, but this page was written ahead of that, and nothing here is a measured result.
 
 Check these before you go looking for anything exotic. Most symptoms on this page trace back to one of them:
 
@@ -133,7 +133,7 @@ With the glass, contact is the point: the film's shiny base rests against the gl
 1. **Prove which half is at fault.** Shoot a flat frame: no film, everything else untouched. If the corrected flat frame is clean, the box is fine and the problem is on the camera side. If it is not, stay in [Light and evenness](#light-and-evenness).
 2. **Re-run the acceptance checks.** [Check each part before you assemble](printing.md#check-each-part-before-you-assemble) catches scaling, warp and tight fits: the faults that make everything downstream unbuildable.
 3. **Change one thing at a time**, and re-shoot the flat frame after each. The calibration remedies are deliberately ordered; applying the last one first hides what the first one would have told you.
-4. **Report it.** This design has never been built, so the failures of a real first build are new information for everyone. The repository is public: <https://github.com/Neoanaloglab/Neobox>.
+4. **Report it.** Few of these boxes exist yet, so what goes wrong on a different printer is new information for everyone. The repository is public: <https://github.com/Neoanaloglab/Neobox>.
 
 Reference material: [Design](design.md) for why a part is shaped the way it is, [Design log](design-log.md#things-deliberately-not-done) for what was tried and rejected, and the [Glossary](glossary.md) for any term on this page that is new to you.
 

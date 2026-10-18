@@ -14,7 +14,7 @@ Twelve STL files: **eight for the default build plus four optional: the 6×6 mas
 > Never let a slicer scale these files. "Scale to fit the build plate" is the single most common way a print order goes wrong. The files are already 1:1, and every acceptance check below assumes they stayed that way.
 
 > [!NOTE]
-> This design has not been printed: nothing on this page comes from a machine. The geometry is verified in CAD (`cad/neobox.blend` is the authority).
+> The settings on this page were written from the geometry, not read off a machine: the box has been printed and used, but the values below are the design's, verified in CAD (`cad/neobox.blend` is the authority), not the log of one particular printer.
 
 ---
 

@@ -6,10 +6,10 @@
 
 **Contents:** [What NeoBox is](#what-neobox-is) · [What you get, and what you must already own](#what-you-get-and-what-you-must-already-own) · [Why a flash](#why-a-flash) · [How the light works](#how-the-light-works) · [Documentation](#documentation) · [Quick start](#quick-start) · [Repository layout](#repository-layout) · [Adapting to a different flash](#adapting-to-a-different-flash) · [Status](#status) · [Licence and credits](#licence-and-credits)
 
-![Licence: MIT](https://img.shields.io/badge/licence-MIT-blue) ![Status: v1, not yet built](https://img.shields.io/badge/status-v1%20unbuilt-orange) ![Formats: 35 mm and 120](https://img.shields.io/badge/formats-35%20mm%20%C2%B7%20120-lightgrey) ![Outer size about 125 by 155 by 83 mm](https://img.shields.io/badge/size-~125%20%C3%97%20155%20%C3%97%2083%20mm-lightgrey)
+![Licence: MIT](https://img.shields.io/badge/licence-MIT-blue) ![Status: v1, built and in use](https://img.shields.io/badge/status-v1%20built-green) ![Formats: 35 mm and 120](https://img.shields.io/badge/formats-35%20mm%20%C2%B7%20120-lightgrey) ![Outer size about 125 by 155 by 83 mm](https://img.shields.io/badge/size-~125%20%C3%97%20155%20%C3%97%2083%20mm-lightgrey)
 
 > [!IMPORTANT]
-> This is the first release. The geometry is dimensionally verified in the Blender source and the exported STL files are numerically verified, but **no box of this geometry has ever been printed, photographed, measured or evenness-tested.** Read [Status](#status) before you spend money.
+> This is the first release. The geometry is dimensionally verified in the Blender source, the exported STL files are numerically verified, and the box has been printed and used for 135 and 120 scanning by the author and by friends. **The evenness and flatness figures in the documents are still design targets, not instrument measurements.** Read [Status](#status) before you spend money.
 
 ## What NeoBox is
 
@@ -154,15 +154,15 @@ Choosing a substitute takes one criterion: **manual power control**. TTL and HSS
 
 ## Status
 
-First release, v1 geometry.
+First release, v1 geometry, built and in use.
 
-- **Verified:** all twelve STL files are watertight single solids with zero non-manifold edges, every horizontal face sits on the 0.2 mm layer grid in its print orientation, and every bounding box matches the published dimensions. Run `tools/verify_stl.py` to reproduce this.
-- **Not verified:** this geometry has **never been printed, photographed, measured or evenness-tested.** The only box ever printed was the old prototype, which shares almost no parts with v1.
-- Every evenness figure quoted in the documents is a **design target**, not a measurement.
-- The single-diffuser decision is informed by the author's existing light-pad workflow, not by testing this box.
+- **Verified in software:** all twelve STL files are watertight single solids with zero non-manifold edges, every horizontal face sits on the 0.2 mm layer grid in its print orientation, and every bounding box matches the published dimensions. Run `tools/verify_stl.py` to reproduce this.
+- **Verified in plastic:** the author has printed this geometry and has been scanning 135 and 120 film with it since, and friends have run it with their own flashes and film. The 6×6 mask, the slide plate and the 4×5 stage have been printed and used as well.
+- Every evenness figure quoted in the documents is still a **design target** from the CAD, not an instrument measurement: the box scans evenly by eye and in the inversions, but no flat-field numbers have been written up yet.
+- The single-diffuser decision was made from the author's existing light-pad workflow, and the printed box has borne it out.
 - The film-flatness figures (the 0.4 mm channel, the ≤ 0.28 mm bow under the printed insert) come from the CAD stack and tolerance analysis, not from measuring real film in a real holder.
 
-If you build one, the project would like to hear what came out tight, loose or uneven.
+If you build one, the project would still like to hear what came out tight, loose or uneven on your printer.
 
 ## Licence and credits
 
