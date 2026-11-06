@@ -8,6 +8,8 @@
 
 ![Licence: MIT](https://img.shields.io/badge/licence-MIT-blue) ![Status: v1, built and in use](https://img.shields.io/badge/status-v1%20built-green) ![Formats: 35 mm and 120](https://img.shields.io/badge/formats-35%20mm%20%C2%B7%20120-lightgrey) ![Outer size about 125 by 155 by 83 mm](https://img.shields.io/badge/size-~125%20%C3%97%20155%20%C3%97%2083%20mm-lightgrey)
 
+![NeoBox v1 from an oblique angle: the white box with its open front and a flash lying at it, the black film holder on top, and the camera tube now in development standing on the holder, with the camera shown as a ghost](drawings/neobox-45.png)
+
 > [!IMPORTANT]
 > This is the first release. The geometry is dimensionally verified in the Blender source, the exported STL files are numerically verified, and the box has been printed and used for 135 and 120 scanning by the author and by friends. **The evenness and flatness figures in the documents are still design targets, not instrument measurements.** Read [Status](#status) before you spend money.
 

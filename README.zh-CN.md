@@ -8,6 +8,8 @@
 
 ![许可证：MIT](https://img.shields.io/badge/许可证-MIT-blue) ![状态：v1，已打印并在用](https://img.shields.io/badge/状态-v1%20已实机-green) ![支持画幅：135 与 120](https://img.shields.io/badge/画幅-135%20%C2%B7%20120-lightgrey) ![外形尺寸约 125 × 155 × 83 mm](https://img.shields.io/badge/尺寸-约%20125%20%C3%97%20155%20%C3%97%2083%20mm-lightgrey)
 
+![斜视角下的 NeoBox v1：前端敞开的白色盒体和平躺在前端的闪光灯，上方的黑色胶片夹，以及正在设计中的相机筒立在胶片夹上，相机以半透明示意](drawings/neobox-45.png)
+
 > [!IMPORTANT]
 > 这是第一个正式发布版。几何尺寸已在 Blender 源文件中逐项核对，导出的 STL 文件也通过了数值验证，箱子本身已经打印出来，作者和朋友一直用它扫 135 和 120 胶片。**文档里的均匀度和压平数字仍然是设计目标，不是仪器实测值。** 花钱之前请先读[当前状态](#当前状态)。
 

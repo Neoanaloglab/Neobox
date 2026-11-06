@@ -8,6 +8,8 @@
 
 ![ライセンス: MIT](https://img.shields.io/badge/licence-MIT-blue) ![ステータス: v1、出力済み・使用中](https://img.shields.io/badge/status-v1%20built-green) ![対応フォーマット: 135 判・120 判](https://img.shields.io/badge/formats-35%20mm%20%C2%B7%20120-lightgrey) ![外形寸法 約 125 × 155 × 83 mm](https://img.shields.io/badge/size-~125%20%C3%97%20155%20%C3%97%2083%20mm-lightgrey)
 
+![斜め上から見た NeoBox v1：前面が開いた白い本体とその前に横たわるストロボ、上の黒いフィルムホルダー、そしてフィルムホルダーの上に立つ開発中のカメラ筒、カメラは半透明で示してある](drawings/neobox-45.png)
+
 > [!IMPORTANT]
 > これは最初の公開リリースです。形状は Blender ソース上で寸法検証済み、書き出した STL も数値検証済みで、箱そのものも出力され、作者と友人が 135 と 120 のスキャンに使っています。**ドキュメント中の均一性と平面保持の数値は、いまも設計目標であって、計測器による実測値ではありません。** お金を使う前に [ステータス](#ステータス) を読んでください。
 
