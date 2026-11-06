@@ -52,8 +52,8 @@ Magnification needed to fill the sensor with the frame (approximate, for choosin
 | 135 | 36 × 24 | 1.0× (a 1:1 macro lens) | 0.65× |
 | 6×4.5 | 56 × 41.5 | 0.58× | 0.38× |
 | 6×6 | 56 × 56 | 0.43× | 0.28× |
-| 6×7 | 56 × 70 | 0.34× | 0.22× |
-| 6×9 | 56 × 84 | 0.29× | 0.19× |
+| 6×7 | 56 × 70 | 0.43× | 0.28× |
+| 6×9 | 56 × 84 | 0.43× | 0.28× |
 | 4×5 | 96 × 120 | 0.25× | 0.16× |
 
 Any 1:1 macro lens covers every row in this table; for the larger formats you simply use less than full magnification. The demanding case is 135 on full frame, which needs the full 1.0×.
