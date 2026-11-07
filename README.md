@@ -6,7 +6,7 @@
 
 > A 3D-printed light box that turns any hot-shoe flash into an even light source for photographing 135 and 120 film with a digital camera. 12 printed parts, 3 bought parts, no screws, no glue, no tools.
 
-![NeoBox v1: the white box with its open front and a flash lying at it, the black film holder on top, and the camera tube now in development standing on the holder](drawings/neobox-45.png)
+![NeoBox v1: the white box with its open front and a flash lying at it, and the camera tube now in development sitting on the box top as a hood, with the film strip coming out of its front slot](drawings/neobox-45.png)
 
 ## What it is
 
@@ -123,7 +123,7 @@ The stack is held by gravity and magnets only. Move the pieces separately, never
 
 **Afterwards.** Shoot one empty frame at the same settings and use it for flat-field correction. Then set the white balance on the clear film base, invert, and crop the rebate. One profile normally fits the whole roll. RawTherapee, darktable and Negative Lab Pro all do this.
 
-**Camera tube.** A printed stand that holds the lens by its filter thread on top of the holder is in development. `tools/camera_tube.py` builds it from four numbers you measure. See [Design](docs/design.md#7-camera-tube).
+**Camera tube.** A printed hood that sits on the box top and holds the lens by its filter thread is in development. It fixes the camera to the box itself, not to the film holder. `tools/camera_tube.py` builds it from four numbers you measure. See [Design](docs/design.md#7-camera-tube).
 
 ## When something is wrong
 
