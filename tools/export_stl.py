@@ -27,7 +27,7 @@ import sys
 import bpy
 
 # STL file -> (subdirectory, [source objects]).  Everything else in the .blend
-# is a mock-up and must never be exported — see docs/design.md section 11.
+# is a mock-up and must never be exported — see docs/design.md, "Working with the source".
 MAPPING = {
     "main-body.stl": ("white-pla", [
         "main-body_floor", "main-body_wall-left",

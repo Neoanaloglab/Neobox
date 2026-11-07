@@ -1,90 +1,21 @@
 # Contributing to NeoBox
 
-> How to change NeoBox without breaking the geometry, the published numbers or the three language editions. Read this before you open a pull request.
+A few rules keep the repository consistent.
 
-**Contents:** [Source vs generated](#source-of-truth-vs-generated-files) · [Verify gate](#the-export-and-verify-gate) · [Three languages](#the-three-language-rule) · [Terminology](#terminology) · [Design log](#rejecting-an-alternative) · [Variant or fix](#a-variant-or-a-fix) · [Pull requests](#pull-requests)
+**Source of truth.** `cad/neobox.blend` is the only geometry source. The STL files, the drawings and every number in the documents are generated or read from it. Never hand-edit an STL. Export with `tools/export_stl.py` and run `tools/verify_stl.py`, which must report all 12 files passing. If you change a published dimension on purpose, update the `EXPECTED` table in the verifier in the same commit.
 
-NeoBox is a hardware repository. The files under `stl/` are build output, not hand-editable artwork, and every document exists three times over. Most contributor mistakes come from missing one of those two facts.
+**Naming in the .blend.** A printed part is named after its STL file. Anything that is not printed carries the `mock_` prefix. The exporter fails on a mesh that is neither, by design.
 
-## Source of truth vs generated files
+**Three languages.** README and design exist in English, 简体中文 and 日本語. A change to one is a change to all three, in the same pull request, with the same headings, tables and numbers.
 
-| Kind | Files | Edit directly? |
-|---|---|---|
-| Source (geometry) | `cad/neobox.blend` | Yes. Every printed part is modelled here. |
-| Source (prose) | `README.md` and `docs/*.md`, in all three languages | Yes. |
-| Source (drawings) | `drawings/*.svg` (+ `.zh-CN.svg`, `.ja.svg`) | Yes: hand-authored, not exported from the `.blend`. |
-| Generated | the twelve `.stl` files under `stl/white-pla/` and `stl/black-pla/` | No. Re-export them from `cad/neobox.blend`. |
-| Historical | `cad/legacy-plywood/`, `cad/film-stage-aluminium-3mm.dxf` | No. Kept for the record only. The plywood route and the printed prototype's aluminium film stage are superseded. |
+**Claims.** The box has been printed and is in use, but no optical figure has been measured with instruments. Do not write "measured" or "tested" about evenness or flatness.
 
-There are **12 STL files (3 white, 9 black)**, never eleven, never thirteen:
+**Writing.** Say each fact once, in the document where it belongs. Short sentences, tables over prose, no decoration.
 
-- `stl/white-pla/`: `main-body.stl`, `cover-stage.stl`, `cover-stage-4x5.stl`
-- `stl/black-pla/`: `film-holder-135-base.stl`, `film-holder-135-lid.stl`, `film-holder-120-base.stl`, `film-holder-120-lid.stl`, `pressure-window-135.stl`, `pressure-window-120.stl`, `mask-6x6.stl`, `slide-plate-135.stl`, `sheet-plate-4x5.stl`
+Before you open a pull request:
 
-They are binary artefacts committed to the repository, so a diff never shows what changed. A pull request that edits an STL by hand will be closed. Change the Blender scene and re-export instead. [Design § 11](docs/design.md#11-working-with-the-source) documents the collection tree, which objects make up each file, and the export procedure.
+- [ ] `tools/verify_stl.py` passes
+- [ ] All three languages updated
+- [ ] No new claim of a measurement
 
-Names inside the `.blend` follow one rule, and the exporter enforces it: a printed part is named after the STL file it becomes, and everything that is not printed carries a `mock_` prefix. If you add a mesh object that is neither listed in the exporter's `MAPPING` nor prefixed `mock_`, the export fails rather than quietly leaving your part out of the release. The one tolerated exception is the camera-tube parts that `tools/camera_tube.py` generates, and they are not exported either.
-
-## The export and verify gate
-
-Any pull request that touches geometry regenerates the STLs with the committed exporter and then shows a clean run of the verifier, both from the repository root:
-
-```
-blender --background cad/neobox.blend --python tools/export_stl.py
-python3 tools/verify_stl.py
-```
-
-The exporter unions each part's deliberately overlapping shells into one watertight solid and writes it in assembly world space. A naive File → Export → STL produces multi-shell files that fail the verifier. Regenerated files may differ from the published ones byte for byte (triangulation is not stable across Blender versions) while being geometrically identical. The verifier is the referee.
-
-It walks every file under `stl/` and exits non-zero if any check fails, so it can gate a commit. Four invariants per file:
-
-| # | Invariant | Why it matters |
-|---|---|---|
-| 1 | Watertight: every edge shared by exactly two triangles | non-manifold geometry slices unpredictably |
-| 2 | Every horizontal face on the 0.2 mm grid above the part's own base | the layer height has to divide every feature |
-| 3 | No exposed step below 0.4 mm (two layers at 0.2) | design-log entry 19 |
-| 4 | Bounding box matches the published dimensions | the documents quote them and the fits depend on them |
-
-As of 2026-09-16 all twelve files pass: watertight single solids, 0 non-manifold edges. Keep it that way.
-
-> [!IMPORTANT]
-> The geometry is dimensionally verified in Blender and numerically verified from the exported STLs by `tools/verify_stl.py`. The box has been printed and is in use, but no enclosure or optical figure has been measured with instruments. Evenness and flatness numbers are design targets. Do not write "measured" or "empirically" about any enclosure or optical figure, in any language.
-
-## The three-language rule
-
-Every document family ships as `x.md` + `x.zh-CN.md` + `x.ja.md`, and the three move together in one pull request. 简体中文 and 日本語 must carry exactly the same facts as English. No number, claim or caveat may drift in translation. The one exception is this file. `CONTRIBUTING.md` is English-only, and there is no `CONTRIBUTING.zh-CN.md` or `CONTRIBUTING.ja.md`.
-
-Numbers come from the project fact sheet or from `cad/neobox.blend`. Do not invent one, do not round differently, do not quietly "improve" a dimension.
-
-## Terminology
-
-One name per thing. Use these and nothing else: main body, cover-stage (never "top cover" or "lid"), open front, the cavity, light window, diffuser, film holder → holder base / holder lid, pressure window (insert), anti-Newton (AN) glass, element ledge, locating tenon / notch, land, rail, channel, window, magnet, steel washer, film strip, slide plate, slide mount, 4×5 cover-stage, sheet plate, build plate. Definitions live in the [glossary](docs/glossary.md#glossary). A synonym introduced by a pull request will be sent back.
-
-Japanese: 本体 must never mean the flash. Write ストロボ本体. The combined top part is 天板ステージ, never plain 天板. Chinese: 打印台 means the printer's build plate and nothing else. The prototype-era 胶片台 no longer exists (its function lives in the 顶盖台), so write 顶盖台.
-
-## Rejecting an alternative
-
-If your change rejects an approach (another diffuser stack, another fastening scheme, another material), add a new numbered entry to `docs/design-log.md`, continuing the existing numbered sequence, as an H3 heading (`### 21. …`) so other documents can link to it. Say what was considered, why it lost, and end with the one-line lesson in bold. All three languages, same entry.
-
-## A variant, or a fix?
-
-A **fix** corrects the published design: a wrong dimension, a broken link, a failing check, an unclear step. Open it against `main`.
-
-A **variant** changes what the box is for: a bigger box that gives 4×5 the full mixing margin, an LED panel instead of a speedlight, a different flattening scheme. A different flash is **not** a variant any more. The enclosure depends on no flash dimension, because the flash lies outside the fully open front. Any hot-shoe flash with manual power control works with the published STLs as they are. For a true variant, start from the dimension chain in [Design § 2](docs/design.md#2-dimension-chain), keep it on its own branch, and state in the pull request which parts changed and what you re-verified.
-
-## Pull requests
-
-Branch from `main`, one topic per branch, named `fix/…`, `docs/…` or `geometry/…`. Title the pull request with what changes, and describe the change in English. The name of the file you touched is not a title.
-
-- [ ] Every number traces to the fact sheet or to `cad/neobox.blend`
-- [ ] English, 简体中文 and 日本語 editions updated together, with no drift between them
-- [ ] Canonical terminology only
-- [ ] Internal links resolve, and each one points at an anchor that exists in the target
-- [ ] `python3 tools/verify_stl.py` run from the repository root and passing (required for any geometry change)
-- [ ] STLs re-exported from `cad/neobox.blend`, never hand-edited
-- [ ] A new numbered `docs/design-log.md` entry added if an alternative was rejected
-- [ ] No claim that any enclosure or optical figure has been measured with instruments
-
----
-
-[Documentation index](README.md#documentation) · [Working with the source](docs/design.md#11-working-with-the-source) · [Design log](docs/design-log.md#design-log)
+Released under the [MIT License](LICENSE).
