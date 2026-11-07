@@ -112,7 +112,7 @@ flowchart LR
 | [物料清单](docs/bom.zh-CN.md#物料清单与采购) | 你准备下单了。零件、工具与耗材，中国／日本／其他地区的采购渠道，以及可直接复制的下单话术。 |
 | [3D 打印](docs/printing.zh-CN.md#3d-打印) | 你准备开印，或者要向打印服务商交代需求。一套参数、每个零件一张卡片、验收检查。 |
 | [装配](docs/assembly.zh-CN.md#装配) | 零件到货了。压入磁铁、堆叠顺序、每一步的检查点，以及镜面调平法。 |
-| [翻拍扫描](docs/scanning.zh-CN.md#翻拍扫描) | 箱子建好了，你想要底片文件。相机、镜头、放大倍率（magnification）、平行度、对焦、曝光、装片、反相。 |
+| [翻拍扫描](docs/scanning.zh-CN.md#翻拍扫描) | 箱子建好了，你想要底片文件。相机、镜头、放大倍率（magnification）、相机筒、平行度、对焦、曝光、装片、反相。 |
 | [故障排查](docs/troubleshooting.zh-CN.md#故障排查) | 出问题了。现象、可能原因和处理办法，覆盖打印、装配、光线和拍摄四类。 |
 | [术语表](docs/glossary.zh-CN.md#术语表) | 文档里的某个词你完全看不懂。每个词一行解释，外加它在这个项目里为什么重要。 |
 | [设计](docs/design.zh-CN.md#设计) | 你想看工程细节：尺寸链、光学决策，以及怎么动 Blender 源文件。 |
@@ -144,6 +144,7 @@ flowchart LR
 | [`tools/export_stl.py`](tools/export_stl.py) | 随仓库提交的导出脚本，从 `cad/neobox.blend` 重新生成十二个 STL 文件 | 源文件 |
 | [`tools/drawings/`](tools/drawings/) | 图纸生成器，重新生成 `drawings/` 下的 18 张 SVG | 源文件 |
 | [`tools/verify_stl.py`](tools/verify_stl.py) | 几何关卡，检查水密性、0.2 mm 的 z 向栅格，以及每一个包围盒 | 源文件 |
+| [`tools/camera_tube.py`](tools/camera_tube.py) | 相机筒生成脚本；根据你量出的四个数生成底座和你那支镜头的载筒 | 源文件 |
 
 ## 换用其他闪光灯
 

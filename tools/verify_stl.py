@@ -2,6 +2,7 @@
 """Verify every exported NeoBox STL against the invariants the design depends on.
 
 Run from the repository root:   python3 tools/verify_stl.py
+or on specific files, e.g. the output of tools/camera_tube.py:   python3 tools/verify_stl.py out/*.stl
 
 Checks, per file:
   1. watertight        every edge shared by exactly two triangles
@@ -87,7 +88,7 @@ def check(path):
 
 def main():
     root = pathlib.Path(__file__).resolve().parent.parent / "stl"
-    files = sorted(root.rglob("*.stl"))
+    files = [pathlib.Path(a) for a in sys.argv[1:]] or sorted(root.rglob("*.stl"))
     if not files:
         print(f"no STL files under {root}", file=sys.stderr)
         return 2
