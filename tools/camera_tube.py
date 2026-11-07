@@ -57,7 +57,8 @@ WALL = 1.2                         # column, spacer and coupon walls
 HOOD_T = 1.0                       # hood wall, measured horizontally
 SEAT_C = 0.4                       # per side, skirt around the cover-stage
 SKIRT_DOWN = 4.0                   # skirt below the deck
-SEAT_CH = 2.4                      # 45-degree seat; its inner face passes through the cover-stage's top edge
+SEAT_CH = 0.8                      # 45-degree seat; its inner face passes through the cover-stage's top edge
+BAND_TOP = 83.4                    # straight band above the seat: clears the 4x5 cover-stage's tray flange (top 83.0)
 SEAT_R = 1.0                       # inner corner radius of the skirt
 CORNER_CUT = 3.4                   # the seat is cut back at the corners: the hood rests on the four straight edges
 SLOT_W, SLOT_TOP = 70.0, 87.0      # film slots in both end walls, up to world z 87
@@ -70,7 +71,7 @@ RIB_N, RIB_W, RIB_H = 6, 1.2, 0.3  # crush ribs on the spigot: 0.1 mm interferen
                                    # turns only by hand and focusing cannot turn it
 COUPON_X = -250.0                  # where the joint test pieces are parked
 SEGS = 128
-BASE_WD_MIN = 54.0                 # below this the hood's corners overhang more than 45 degrees
+BASE_WD_MIN = 58.4                 # below this the hood's corners overhang more than 45 degrees
 
 
 def g(z):
@@ -222,11 +223,13 @@ def build_hood(base_wd=60.0, name="camera-tube-base"):
     cod, bore = J["collar_od"], J["bore_d"]; cid = cod - 2 * T
     ri, ro = SEAT_R, SEAT_R + T
     a1, b1 = a - SEAT_CH, b - SEAT_CH
+    z_band = g(BAND_TOP)
     body = loft([rrect(2 * a + 2 * T, 2 * b + 2 * T, ro, z_skirt), rrect(2 * a + 2 * T, 2 * b + 2 * T, ro, z_s0),
-                 rrect(2 * a1 + 2 * T, 2 * b1 + 2 * T, ro, z_s1),
+                 rrect(2 * a1 + 2 * T, 2 * b1 + 2 * T, ro, z_s1), rrect(2 * a1 + 2 * T, 2 * b1 + 2 * T, ro, z_band),
                  rrect(cod, cod, cod / 2, z_collar), rrect(cod, cod, cod / 2, z_top)], name)
     cavity = loft([rrect(2 * a, 2 * b, ri, z_skirt - 1), rrect(2 * a, 2 * b, ri, z_s0),
-                   rrect(2 * a1, 2 * b1, ri, z_s1), rrect(cid, cid, cid / 2, z_collar)], "_cut_cavity")
+                   rrect(2 * a1, 2 * b1, ri, z_s1), rrect(2 * a1, 2 * b1, ri, z_band),
+                   rrect(cid, cid, cid / 2, z_collar)], "_cut_cavity")
     boolean(body, cavity, "DIFFERENCE")
     boolean(body, lathe([(0, z_collar - 1), (bore / 2, z_collar - 1), (bore / 2, z_top - MOUTH_CH),
                          (bore / 2 + MOUTH_CH, z_top), (bore / 2 + MOUTH_CH, z_top + 1), (0, z_top + 1)],
@@ -295,10 +298,11 @@ def build_spacer(length, z_rest, name=None):
     fun_h = wi - sp_i
     assert length >= J["collar_h"] + fun_h + J["flange_t"] + 1.2, f"spacer shorter than {J['collar_h'] + fun_h + J['flange_t'] + 1.2:.1f}"
     z0 = g(z_rest); zt = g(z0 + length)
-    prof = [(sp_i, g(z0 - J["spigot_h"])), (sp_o, g(z0 - J["spigot_h"])), (sp_o, z0), (fl, z0), (fl, zt), (bore, zt),
-            (bore, g(zt - J["collar_h"])), (wi, g(zt - J["collar_h"])), (wi, g(z0 + J["flange_t"] + fun_h)),
+    prof = [(sp_i, g(z0 - J["spigot_h"])), (sp_o, g(z0 - J["spigot_h"])), (sp_o, z0), (fl, z0), (fl, zt),
+            (bore + MOUTH_CH, zt), (bore, zt - MOUTH_CH), (bore, g(zt - J["collar_h"])), (wi, g(zt - J["collar_h"])), (wi, g(z0 + J["flange_t"] + fun_h)),
             (sp_i, g(z0 + J["flange_t"]))]
     sp = lathe(prof, name)
+    _add_ribs(sp, sp_o, g(z0 - J["spigot_h"]), z0)
     _finish(sp)
     return sp, dict(name=name, length=length, z_rest=z0, z_top=zt)
 
