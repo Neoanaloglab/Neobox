@@ -2,7 +2,7 @@
 
 **English** · [简体中文](bom.zh-CN.md) · [日本語](bom.ja.md)
 
-> Everything you have to buy for a NeoBox. The v1 list is short, because the build needs no tools and no fasteners; each part comes with the specification that stops you buying the wrong version, plus copy-paste ordering text for shops in China, Japan and everywhere else.
+> Everything you have to buy for a NeoBox. The v1 list is short, because the build needs no tools and no fasteners. Each part comes with the specification that stops you buying the wrong version, plus copy-paste ordering text for shops in China, Japan and everywhere else.
 
 **Contents:** [What it costs](#what-it-costs) · [What this repo does not buy for you](#what-this-repo-does-not-buy-for-you) · [Tools and consumables](#tools-and-consumables) · [Printed parts](#printed-parts) · [Parts you buy](#parts-you-buy) · [Magnets](#magnets) · [Getting the right part](#getting-the-right-part) · [Light source](#light-source) · [Ordering sequence](#ordering-sequence) · [Vendor scripts](#vendor-scripts) · [When the parts arrive](#when-the-parts-arrive)
 
@@ -20,7 +20,7 @@ Prices are indicative, in CNY, from Chinese marketplaces (Taobao / 1688) as of A
 | **Whole build, excluding the flash** | everything above, once | **CNY 65–140 · JPY 1,500–3,000** |
 
 > [!NOTE]
-> Added line by line, the extremes bracket exactly CNY 65–140, and the print order is most of it. That is roughly a third of what the printed prototype (internal revision 4) cost (CNY 250–420): the studs, nuts, heat-set inserts, foam, grommets and paint are all gone, and every printed part shrank. If you own a prototype, re-cutting its diffuser takes the acrylic line to zero. The JPY figure is the same build expressed in yen, not a quote for buying every line inside Japan.
+> Add up the lowest and the highest figure of each line and you get exactly CNY 65–140. The print order is most of it. That is roughly a third of what the printed prototype (internal revision 4) cost (CNY 250–420). The studs, nuts, heat-set inserts, foam, grommets and paint are all gone, and every printed part shrank. If you own a prototype, re-cutting its diffuser takes the acrylic line to zero. The JPY figure is the same build expressed in yen. It is not a quote for buying every line inside Japan.
 
 The two optional upgrades are priced separately and never inside that total: [anti-Newton glass](#parts-you-buy) at CNY 15–30 and the [flocking sheet](#parts-you-buy) at CNY 5–10. Both together come to about CNY 20–40.
 
@@ -28,14 +28,14 @@ The two optional upgrades are priced separately and never inside that total: [an
 
 ## What this repo does not buy for you
 
-NeoBox is a light source. It is one half of a [camera scanning](glossary.md#camera-scanning) setup (photographing film with a digital camera instead of running it through a scanner), and the other half is yours.
+NeoBox is a light source. It is one half of a [camera scanning](glossary.md#camera-scanning) setup. Camera scanning means photographing film with a digital camera instead of running it through a scanner. The other half of the setup is yours to provide.
 
 | You must already own or buy | What it does |
 |---|---|
 | Camera body | any body with manual exposure and raw files |
-| Macro-capable lens | you photograph a frame as small as 24 × 36 mm; an ordinary lens will not focus that close |
+| Macro-capable lens | you photograph a frame as small as 24 × 36 mm, and an ordinary lens will not focus that close |
 | Copy stand, or a tripod with a horizontal or reversible column | holds the camera square above the film at a repeatable height |
-| Flash and trigger set | any hot-shoe flash with manual power control; the reference pair is specified and priced under [Light source](#light-source) |
+| Flash and trigger set | any hot-shoe flash with manual power control. The reference pair is specified and priced under [Light source](#light-source) |
 | Trigger transmitter for the camera hot shoe | supplied with the reference trigger set, but that set is not in the build cost |
 | Remote release | so you do not push the camera while it exposes |
 | Inversion software | turns the raw negative into a positive image |
@@ -43,22 +43,22 @@ NeoBox is a light source. It is one half of a [camera scanning](glossary.md#came
 > [!IMPORTANT]
 > CNY 65–140 buys the box and nothing else. It excludes the flash and trigger (CNY 350–550 together for the reference pair) and every camera-side item above. Read [what you must already own](getting-started.md#what-you-must-already-own) before you order anything.
 
-Choosing and using the camera side is [scanning.md](scanning.md#camera-side-equipment). This document stops at the parts that make the box.
+How to choose and use the camera side is covered in [scanning.md](scanning.md#camera-side-equipment). This document stops at the parts that make the box.
 
 ---
 
 ## Tools and consumables
 
-For the first time, this section lists no requirements. The v1 build has no screws, no glue, no paint and no tools: the magnets press in by hand and everything else drops into place. What stays on the desk is for using the box, not building it.
+For the first time, this section lists no requirements. The v1 build needs no screws, glue, paint or tools. The magnets press in by hand, and everything else drops into place. The items below are for using the box. None of them is needed to build it.
 
 | Tool or consumable | What it is for | Specification |
 |---|---|---|
-| Rocket blower | dusting the diffuser, the inserts and the [film gate](glossary.md#film-gate), and the AN glass before it goes in, if you bought one | a bulb blower, not canned air |
-| Small flat mirror, about 30 mm | the parallelism method: it sits on the stage while you centre the lens's own reflection in the viewfinder | any flat mirror offcut |
+| Rocket blower | dusting the diffuser, the inserts and the [film gate](glossary.md#film-gate). If you bought AN glass, dust that too before it goes in | a rubber bulb blower. Do not use canned air |
+| Small flat mirror, about 30 mm | the parallelism method: it sits on the stage while you centre the reflection of your own lens in the viewfinder | any flat mirror offcut |
 | Cotton gloves, or clean hands | handling film by its edges | — |
 | Steel rule or calipers | the arrival checks at the foot of this page | 200 mm reaches across the 154.8 mm parts |
 
-Thirty-two small, strong magnets still want reading about before you start: [Tools and safety](assembly.md#tools-and-safety).
+Thirty-two small, strong magnets deserve a read before you start: [Tools and safety](assembly.md#tools-and-safety).
 
 ---
 
@@ -66,7 +66,7 @@ Thirty-two small, strong magnets still want reading about before you start: [Too
 
 ![One-page manufacturing overview: a section through the box, every printed part with its size and print orientation, and the bought parts](../drawings/manufacturing-overview.svg)
 
-The build is **12 printed parts**: 3 white, 9 black; the 6×6 mask, the slide plate and the two 4×5 parts are optional, and all of them are support-free.
+The build is **12 printed parts**: 3 white, 9 black. The 6×6 mask, the slide plate and the two 4×5 parts are optional. All of them print without supports.
 
 | File | Colour | Footprint (mm) | What it is |
 |---|---|---|---|
@@ -80,18 +80,18 @@ The build is **12 printed parts**: 3 white, 9 black; the 6×6 mask, the slide pl
 | pressure-window-120.stl | black | 64 × 95 × 2 | 120 pressure-window insert |
 | mask-6x6.stl | black | 94 × 80 × 1 | 6×6 mask, sits under the 120 base |
 | slide-plate-135.stl | black | 94 × 120 × 5 | slide plate for mounted 135 slides, stands in the tray in place of the 135 holder |
-| cover-stage-4x5.stl | white | 124.8 × 154.8 × 10.0 | 4×5 cover-stage, replaces cover-stage.stl on the same main body; takes the larger acrylic |
+| cover-stage-4x5.stl | white | 124.8 × 154.8 × 10.0 | 4×5 cover-stage. It replaces cover-stage.stl on the same main body and takes the larger acrylic |
 | sheet-plate-4x5.stl | black | 112 × 138 × 5 | 4×5 sheet plate, stands in the 4×5 cover-stage's tray |
 
-The print spec, written straight into the order: ordinary PLA, 0.2 mm layers on every file, 15 % infill, no [supports](glossary.md#supports) on any file. Every part prints flat face down except the two holder lids, which print top face down. Layer height, [infill](glossary.md#infill) and the per-part cards are in [printing.md](printing.md#print-settings); this page only tells you what to order.
+The print spec goes straight into the order: ordinary PLA, 0.2 mm layers on every file, 15 % infill, no [supports](glossary.md#supports) on any file. Every part prints flat face down. The only exceptions are the two holder lids, which print top face down. Layer height, [infill](glossary.md#infill) and the per-part cards are in [printing.md](printing.md#print-settings). This page only tells you what to order.
 
 > [!IMPORTANT]
-> Every file fits a **160 × 160 mm** [bed](glossary.md#bed-size): the largest footprint in the build is 154.8 mm. The prototype's 280 × 300 mm requirement is gone, and so are the old warnings about 220 mm beds. Any common hobby printer prints the whole set at home.
+> Every file fits a **160 × 160 mm** [bed](glossary.md#bed-size), the printer's build plate. The largest footprint in the build is 154.8 mm. The prototype's 280 × 300 mm requirement is gone, and so are the old warnings about 220 mm beds. Any common hobby printer prints the whole set at home.
 
 > [!WARNING]
-> White filament must be **matte**. The two white parts are the diffusion cavity: the flash bounces off those walls several times before it reaches the diffuser, and silk or glossy white reproduces the flash head as a hot spot. The inside is never painted or coated, so a glossy part cannot be fixed after it is printed, only reprinted in matte. Tell the shop this is a requirement, not a preference: "matte preferred" gets you whatever is already loaded on the machine.
+> White filament must be **matte**. The two white parts are the diffusion cavity. The flash bounces off those walls several times before it reaches the diffuser, and silk or glossy white reproduces the flash head as a hot spot. The inside is never painted or coated, so a glossy part cannot be fixed after printing. It can only be reprinted in matte. Tell the shop this is a hard requirement. If you say "matte preferred", you get whatever is already loaded on the machine.
 
-White and black in one order is normal: one shop, one order, two colours. Ask before you pay whether the filament change is charged separately. mask-6x6.stl is only used when shooting 6×6, but at a gram of filament there is no reason to leave it out of the order. slide-plate-135.stl is optional too: order it if you have mounted slides. cover-stage-4x5.stl and sheet-plate-4x5.stl are the 4×5 pair: order them, with the larger acrylic below, only if you shoot sheet film.
+White and black in one order is normal. One shop, one order, two colours. Ask before you pay whether the filament change is charged separately. mask-6x6.stl is only used when shooting 6×6, but it is a gram of filament, so there is no reason to leave it out of the order. slide-plate-135.stl is optional too. Order it if you have mounted slides. cover-stage-4x5.stl and sheet-plate-4x5.stl are the 4×5 pair. Order them only if you shoot sheet film, together with the larger acrylic listed below.
 
 ---
 
@@ -104,17 +104,17 @@ White and black in one order is normal: one shop, one order, two colours. Ask be
 | Opal acrylic diffuser | 2 mm, cut 68 × 118 mm | 1 (order 2) | 5–10 |
 | Neodymium magnet | Ø8 × 2 mm, N35, plain axially-magnetised disc | 32 (order a few spares) | 8–15 |
 | Steel shim | 10 × 10 × 1 mm square, or Ø10 × 1 mm round | 4 | 2–5 |
-| Anti-Newton glass (optional) | 64 × 95 × 2 mm, one face AN; one sheet serves both formats | 1 | 15–30 |
+| Anti-Newton glass (optional) | 64 × 95 × 2 mm, one face AN. One sheet serves both formats | 1 | 15–30 |
 | Black flocking sheet (optional) | self-adhesive, A5 | 1 | 5–10 |
-| Opal acrylic diffuser, 4×5 (optional) | 2 mm, cut 106 × 130 mm; only the 4×5 cover-stage uses it | 1 | 8–15 |
+| Opal acrylic diffuser, 4×5 (optional) | 2 mm, cut 106 × 130 mm. Only the 4×5 cover-stage uses it | 1 | 8–15 |
 
-The first three lines are the entire bought-parts list of the default build, with nothing threaded anywhere. The last three are optional: the AN glass replaces the two printed pressure-window inserts with one sheet that serves both formats, the flocking sheet kills glare on the stage surface around the window, and the larger opal sheet is the diffuser of the 4×5 cover-stage.
+The first three lines are the whole bought-parts list of the default build. Nothing is threaded anywhere. The last three are optional. The AN glass replaces the two printed pressure-window inserts with one sheet that serves both formats. The flocking sheet kills glare on the cover-stage surface around the window. The larger opal sheet is the diffuser of the 4×5 cover-stage.
 
-Two ordering notes. **Order 2 diffusers**: opal acrylic chips at the cut edges in transit, it sits directly in the optical path, and a second cut costs almost nothing while a second shipping cycle costs a week. And if you are upgrading from a prototype, its 110 × 130 mm diffuser is the same 2 mm opal; any acrylic shop will trim it to 68 × 118 mm, and the line drops out of the order. **Order a few spare magnets**: press-fitting is unforgiving of a chipped edge, and N35 discs cost pennies each.
+Two ordering notes. **Order 2 diffusers**: opal acrylic chips at the cut edges in transit, and the sheet sits directly in the optical path. A second cut costs almost nothing, while a second shipping cycle costs a week. If you are upgrading from a prototype, its 110 × 130 mm diffuser is the same 2 mm opal. Any acrylic shop will trim it to 68 × 118 mm, and the line drops out of the order. **Order a few spare magnets**: a chipped edge ruins a press-fit, and N35 discs cost pennies each.
 
 ### Search terms by region
 
-The same part is unfindable with the wrong words, so each row carries all three.
+With the wrong words you will not find the part, so each row gives the search term for all three regions.
 
 | Item | China (Taobao / 1688) | Japan (Amazon.jp / Monotaro / Yodobashi) | Elsewhere (English) |
 |---|---|---|---|
@@ -129,31 +129,31 @@ The same part is unfindable with the wrong words, so each row carries all three.
 
 ## Magnets
 
-Thirty-two Ø8 × 2 mm N35 magnets, eight in each of the four holder parts: both bases, both lids. They press into their pockets by hand, interference-fit, with no glue anywhere.
+Thirty-two Ø8 × 2 mm N35 magnets, eight in each of the four holder parts: both bases, both lids. They press into their pockets by hand as an interference fit, which means the pocket is slightly smaller than the magnet and grips it. There is no glue anywhere.
 
 | What they do | How |
 |---|---|
 | Hold each holder shut | the 8 lid magnets face the 8 base magnets: 8 attracting pairs per holder |
-| Hold the holder on the cover-stage | the base magnets pull, through the holder floor, on the 4 steel shims sitting flush in the cover-stage; lift and it pops free, so the format swap takes seconds |
+| Hold the holder on the cover-stage | the base magnets pull through the holder floor on the 4 steel shims that sit flush in the cover-stage. Lift the holder and it pops free, so a format swap takes seconds |
 
-CNY 8–15 buys all 32 with spares. What the base magnets grip is the [4 steel shims](#parts-you-buy), so the two lines belong in one order: skip the shims and nothing holds the holder to the stage.
+CNY 8–15 buys all 32 with spares. The base magnets grip the [4 steel shims](#parts-you-buy), so the two lines belong in one order. Skip the shims and nothing holds the holder to the stage.
 
 > [!WARNING]
-> Two of these magnets meeting across a fold of skin pinch hard, and loose neodymium magnets are a serious swallowing hazard for children and pets. Keep the spares in a closed container. Polarity is not marked, and a press-fit is not much easier to undo than glue: pair each base magnet with its lid magnet, confirm they attract, and mark the up-face of each **before** pressing any of them home. A magnet pressed in the wrong way round pushes the lid off instead of holding it shut, and digging it out usually wrecks the pocket. The procedure is [Step 1 — Press in the magnets](assembly.md#step-1--press-in-the-magnets).
+> Two of these magnets snapping together across a fold of skin pinch hard, and loose neodymium magnets are a serious swallowing hazard for children and pets. Keep the spares in a closed container. Polarity is not marked, and a pressed-in magnet is not much easier to remove than a glued one. So pair each base magnet with its lid magnet, confirm they attract, and mark the up-face of each **before** pressing any of them home. A magnet pressed in the wrong way round pushes the lid off instead of holding it shut, and digging it out usually wrecks the pocket. The procedure is [Step 1 — Press in the magnets](assembly.md#step-1--press-in-the-magnets).
 
 ---
 
 ## Getting the right part
 
-Six ways to spend the money and receive something that does not work.
+Five ways to spend the money and receive a part that does not work.
 
 | Part | The mistake | What to specify |
 |---|---|---|
-| [Opal](glossary.md#opal) acrylic diffuser | Buying frosted acrylic | Opal is milky right through and scatters inside the sheet. Frosted is clear acrylic with one surface roughened, and it will show the flash head. Say "opal, light-diffusing, 2 mm" and give the 68 × 118 mm cut size. A denser grade costs light and buys evenness; the flash has power to spare. |
-| Neodymium magnet | Buying the wrong thickness | The pockets fit Ø8 × 2 mm plain, axially magnetised discs. A 3 mm disc stands proud and holds the lid open; a 1 mm disc sits too deep to grip. N35 is the ordinary grade and is enough; N52 costs more and adds pull you do not need. |
-| Steel shim | Buying stainless | Most stainless is barely magnetic, and these four exist only to give the magnets something to grip. Carbon steel or zinc-plated, 1 mm thick and no more: the counterbore is 1 mm deep and the shim must sit flush. 10 × 10 mm square or Ø10 mm round both fit. |
-| Anti-Newton glass | Buying ground or frosted glass | AN glass is a scanner and enlarger part: one face carries an etch so faint you can barely see it, which stops Newton's rings without diffusing the image. Ground or frosted glass is a diffuser and destroys sharpness. Specify single-side anti-Newton, 64 × 95 × 2 mm. |
-| Black flocking sheet | Buying felt or glossy vinyl | Flocking is a velvet-surfaced self-adhesive sheet; felt is too thick and vinyl is shiny. Matte black, self-adhesive; one A5 sheet covers the stage surface around the window. |
+| [Opal](glossary.md#opal) acrylic diffuser | Buying frosted acrylic | Opal is milky right through and scatters light inside the sheet. Frosted is clear acrylic with one surface roughened, and it will show the flash head. Say "opal, light-diffusing, 2 mm" and give the 68 × 118 mm cut size. A denser grade loses some light but lights more evenly, and the flash has power to spare. |
+| Neodymium magnet | Buying the wrong thickness | The pockets fit Ø8 × 2 mm plain, axially magnetised discs. A 3 mm disc stands proud and holds the lid open. A 1 mm disc sits too deep to grip. N35 is the ordinary grade and is enough. N52 costs more and adds pull you do not need. |
+| Steel shim | Buying stainless | Most stainless steel is barely magnetic, and these four shims exist only to give the magnets something to grip. Specify carbon steel or zinc-plated steel, 1 mm thick and no more. The counterbore is 1 mm deep and the shim must sit flush. 10 × 10 mm square or Ø10 mm round both fit. |
+| Anti-Newton glass | Buying ground or frosted glass | AN glass is a scanner and enlarger part. One face carries an etch so faint you can barely see it, which stops Newton's rings without diffusing the image. Ground or frosted glass is a diffuser and destroys sharpness. Specify single-side anti-Newton, 64 × 95 × 2 mm. |
+| Black flocking sheet | Buying felt or glossy vinyl | Flocking is a self-adhesive sheet with a velvet surface. Felt is too thick and vinyl is shiny. Specify matte black and self-adhesive. One A5 sheet covers the cover-stage surface around the window. |
 
 ---
 
@@ -161,15 +161,15 @@ Six ways to spend the money and receive something that does not work.
 
 | Item | Specification | Price (CNY) |
 |---|---|---|
-| Hot-shoe flash, any brand (reference: NEEWER TT560) | manual power control is the only hard requirement; the reference TT560: [GN38](glossary.md#guide-number), [manual 1/1–1/128](glossary.md#manual-power-fraction) in full stops, ≈ 5600 K | 200–300 |
+| Hot-shoe flash, any brand (reference: NEEWER TT560) | manual power control is the only hard requirement. The reference TT560: [GN38](glossary.md#guide-number), [manual 1/1–1/128](glossary.md#manual-power-fraction) in full stops, ≈ 5600 K | 200–300 |
 | ZENIKO T1 trigger set, or any 2.4 GHz set | transmitter + receiver | 150–250 |
 
-The flash never goes inside the box. It lies flat on the desk with its head against the fully open front of the main body and fires into the white cavity; the receiver stays on it, outside. That placement is why the old constraints are gone: the radio signal is unobstructed, batteries change without touching the box, and power changes are made on the flash itself, in the open.
+The flash never goes inside the box. It lies flat on the desk with its head against the fully open front of the main body and fires into the white cavity. The receiver stays on the flash, outside the box. That placement is why the old constraints are gone. The radio signal is unobstructed, batteries change without touching the box, and power changes are made on the flash itself, in the open.
 
-Only one thing matters when you choose a flash: **manual power control**. [TTL](glossary.md#ttl) and [HSS](glossary.md#hss) do nothing here, so do not pay for them. And the prototype's second requirement, a head that turns 90°, went away with the enclosure: the flash fires level, lying flat.
+Only one thing matters when you choose a flash: **manual power control**. [TTL](glossary.md#ttl) and [HSS](glossary.md#hss) do nothing here, so do not pay for them. The prototype's second requirement, a head that turns 90°, went away with the enclosure. The flash fires level, lying flat.
 
 > [!NOTE]
-> The prototype-era warning that "the published STL files fit the TT560 and nothing else" is gone. No dimension of the box depends on the flash body, so there is no length or thickness limit to check. The TT560 stays in the table as a cheap, widely available reference, not a requirement; use whatever manual flash you own.
+> The prototype-era warning that "the published STL files fit the TT560 and nothing else" is gone. No dimension of the box depends on the flash body, so there is no length or thickness limit to check. The TT560 stays in the table only as a cheap, widely available reference. Use whatever manual flash you own.
 
 ---
 
@@ -187,12 +187,12 @@ flowchart TD
 
 | Order | Typical lead time | When to place it |
 |---|---|---|
-| 1: the twelve STLs | 2–5 days plus shipping | first; it is the long pole |
+| 1: the twelve STLs | 2–5 days plus shipping | first. It takes the longest |
 | 2: opal acrylic, cut to size | 3–7 days | the same day, in parallel |
 | 3: magnets and shims | next day to a few days | any time |
-| AN glass and flocking (optional) | 3–7 days | with orders 2 and 3, or after the box works; the printed inserts are the default |
+| AN glass and flocking (optional) | 3–7 days | with orders 2 and 3, or after the box works. The printed inserts are the default |
 
-Nothing gates anything: the prototype's measure-first rule for heat-set inserts vanished with the inserts themselves. Outsourcing and want insurance anyway? Have the shop run one 135 holder base and lid first and check that a film strip slides: [Print one 135 holder first](printing.md#print-one-135-holder-first). With parts this small it is a nicety, not the gate it used to be.
+Nothing has to wait for anything else. The prototype's measure-first rule for heat-set inserts vanished with the inserts themselves. If you use a print service and want some insurance anyway, have the shop run one 135 holder base and lid first and check that a film strip slides: [Print one 135 holder first](printing.md#print-one-135-holder-first). With parts this small it is a nicety. It is no longer the gate it used to be.
 
 Three questions to ask a print shop before you pay:
 
@@ -201,15 +201,15 @@ Three questions to ask a print shop before you pay:
 - [ ] White and black in one order: is the filament change charged separately?
 
 > [!TIP]
-> Packing still matters. Ask for bubble wrap around the printed parts (the walls are 2.4 mm), and ask for the acrylic to travel sandwiched between them, because opal acrylic chips at the edges.
+> Packing still matters. Ask for bubble wrap around the printed parts, because the walls are 2.4 mm thick. Ask for the acrylic to travel sandwiched between them, because opal acrylic chips at the edges.
 
 ---
 
 ## Vendor scripts
 
-Copy-paste briefs, each written in the language the shop reads. They agree with [Ordering from a print service](printing.md#ordering-from-a-print-service), which carries the same instructions as a per-part reference; change a setting in one place and change it in the other.
+Copy-paste briefs, each written in the language the shop reads. They agree with [Ordering from a print service](printing.md#ordering-from-a-print-service), which carries the same instructions as a per-part reference. If you change a setting in one place, change it in the other.
 
-All twelve files print support-free, and the only non-obvious placement is the two holder lids: finished top face down on the plate. Every brief below says so; slicers will not place parts for you.
+All twelve files print without supports. The only non-obvious placement is the two holder lids, which go finished top face down on the plate. Every brief below says so. Slicers will not place parts for you.
 
 <details>
 <summary>3D printing brief: China (Taobao / 1688), in Chinese</summary>
@@ -240,7 +240,7 @@ All twelve files print support-free, and the only non-obvious placement is the t
 最大件 154.8mm，160×160 打印床即可，不需要大尺寸机器。
 ```
 
-店家嫌啰嗦时，只需咬住这两句：
+店家嫌啰嗦的话，只需咬住这两句：
 
 ```
 层高 0.2、填充 15%、全部免支撑、平面朝下
@@ -380,7 +380,7 @@ one piece cut to 64 x 95 mm.
 Scanner / enlarger AN glass - not ground or frosted glass.
 ```
 
-No drawing is needed for any of these; the cut size is the whole specification.
+No drawing is needed for any of these. The cut size is the whole specification.
 
 </details>
 
@@ -390,25 +390,25 @@ No drawing is needed for any of these; the cut size is the whole specification.
 |---|---|---|
 | "I only have glossy white in stock" | The finish becomes a hot spot on every frame | Wait for matte, or move the two white parts to another shop. Black parts are unaffected. |
 | "Shall I hollow it out / thin the walls to save material?" | An unrequested model edit | No. Walls are 2.4 mm and the floor is 3.0 mm by design. |
-| "0.12 or 0.16 layers will look nicer" | A silent spec change | 0.2 mm on every file: the design's height grid is 0.2 mm, and coarser layers land the steps between boundaries. Nothing else changes. |
+| "0.12 or 0.16 layers will look nicer" | A silent spec change | 0.2 mm on every file. The design's height grid is 0.2 mm, and coarser layers land the steps between boundaries. Nothing else changes. |
 | "Supports everywhere, to be safe" | Scars on the film-facing surfaces | No supports on any file. Every part is designed to print support-free. |
 
 ---
 
 ## When the parts arrive
 
-Check these before you press in a single magnet. The commonest print-service accident is still a slicer left on "scale to fit the plate", and a steel rule catches it.
+Check these before you press in a single magnet. The commonest print-service accident is still a slicer left on "scale to fit the plate". A steel rule catches it.
 
-- [ ] **Main body**: outside 124.8 × 154.8 mm, 75.6 mm from the floor to the wall tops. If it is short, the file was scaled: reject the whole print.
+- [ ] **Main body**: outside 124.8 × 154.8 mm, 75.6 mm from the floor to the wall tops. If it is short, the file was scaled. Reject the whole print.
 - [ ] **Cover-stage**: 124.8 × 154.8 mm, and it drops onto the wall tops with the four locating tenons finding their notches without force.
 - [ ] **Holders**: each lid sits flat on its base, and a strip of film slides through the base [channel](glossary.md#channel).
 - [ ] **Pressure-window inserts**: each drops onto the element ledge in its holder base and sits flat.
-- [ ] **Diffuser**: evenly milky right through, with no clear window and no bright patch; it fits the recess on the underside of the cover-stage. Leave the protective film on until assembly, then peel it from **both** faces.
-- [ ] **Steel shims**: a magnet sticks to them (if not, they are stainless: return them), and each sits flush in its counterbore, not proud of the stage surface.
+- [ ] **Diffuser**: evenly milky right through, with no clear window and no bright patch. It fits the recess on the underside of the cover-stage. Leave the protective film on until assembly, then peel it from **both** faces.
+- [ ] **Steel shims**: a magnet sticks to them. If not, they are stainless, so return them. Each sits flush in its counterbore and does not stand proud of the cover-stage surface.
 - [ ] **Magnets**: pair each base magnet with a lid magnet, confirm they attract, and mark the up-face of each before pressing any of them in.
 - [ ] **AN glass, if bought**: 64 × 95 mm, and one face carries the faint matte AN sheen.
 
-Anything that fails one of these belongs in [Troubleshooting](troubleshooting.md#printing) before it goes anywhere near the build. With every box ticked, go on to [printing](printing.md#check-each-part-before-you-assemble) if you are printing at home, or straight to assembly if you are not.
+Anything that fails one of these belongs in [Troubleshooting](troubleshooting.md#printing) before it goes anywhere near the build. With every box ticked, go on to [printing](printing.md#check-each-part-before-you-assemble) if you are printing at home. If you are not, go straight to assembly.
 
 ---
 
