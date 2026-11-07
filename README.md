@@ -24,6 +24,16 @@ The flash never enters the box, so any brand works and the box stays small. The 
 | Light | Any hot-shoe flash with manual power. The reference is a NEEWER TT560 with a ZENIKO T1 trigger set |
 | Status | v1, printed and in use by the author and friends. The evenness and flatness figures are design values from the CAD, not instrument measurements |
 
+## Why a flash
+
+The flash pulse is the exposure. At working power it lasts 1/1,000 to 1/20,000 s, so vibration and shutter shock do not matter, and the camera stays at base ISO and f/8.
+
+Film is picky about the spectrum. Colour negative is three dye layers, and the cyan layer and the orange mask both work at the red end. A xenon tube gives a continuous spectrum of about 5600 K with strong deep red. A white LED has a dip near 480 nm and rolls off past about 630 nm, exactly where those two need light. The gaps show up after inversion as crossed colour curves and casts that no white balance removes.
+
+![Spectrum and timing of a flash pulse against a white LED](drawings/spectral-response.svg)
+
+A manual flash at a fixed power also gives every frame the same light, so one inversion profile fits a roll.
+
 ## What you need
 
 | Printed, 12 STL files | Bought | Your own camera gear |

@@ -102,7 +102,7 @@ The windows are about 0.5 mm larger per side than the nominal frame, to absorb c
 - **The insert platform.** Pressure strips, a glass lid lifted for every frame and a foam-loaded element were all considered. The ledge-and-element design was kept because the operator's cost lands once per session, never once per frame, and a part that is never handled cannot drift.
 - **A separate slide plate.** A pocket cut into the 135 base would remove the land, which is the whole flattening system.
 - **4×5 as an experiment.** Two parts and one acrylic cut find out what the existing body can do before a bigger body is derived.
-- **Why a flash.** The pulse is the exposure, 1/1,000 to 1/20,000 s at working power, so vibration and shutter shock stop mattering and the camera stays at base ISO and f/8. A xenon tube gives a continuous spectrum of about 5600 K. White LEDs have a dip near 480 nm and roll off past about 630 nm, exactly where the cyan layer and the orange mask of colour negative need light. A manual flash at a fixed power also gives every frame the same light, so one inversion profile fits a roll.
+- **Why a flash.** The pulse is the shutter, the spectrum is continuous, and every frame gets the same light. The README carries the spectrum argument and its figure.
 - **Rejected.** An LED panel would make the box about 4 litres, but it loses the effective-shutter and the spectrum arguments. A top cover fused to the body cannot be printed without supports across a 202 × 267 ceiling. Ventilation holes are light leaks, and a speedlight at low duty needs none.
 
 ## 6. Flash and exposure
