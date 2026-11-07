@@ -123,7 +123,7 @@ The stack is held by gravity and magnets only. Move the pieces separately, never
 
 **Afterwards.** Shoot one empty frame at the same settings and use it for flat-field correction. Then set the white balance on the clear film base, invert, and crop the rebate. One profile normally fits the whole roll. RawTherapee, darktable and Negative Lab Pro all do this.
 
-**Camera tube.** A printed hood that sits on the box top and holds the lens by its filter thread is in development. It fixes the camera to the box itself, not to the film holder. `tools/camera_tube.py` builds it from four numbers you measure. See [Design](docs/design.md#7-camera-tube).
+**Camera tube.** A printed hood that sits on the box top and holds the lens by its filter thread, so the camera is fixed to the box itself, not to the film holder. It has not been printed yet. The hood and two joint test pieces are in `stl/camera-tube/`, black PLA, printed top face down without supports. Print the test pieces first and check that the spigot turns by hand but stays put. The column for your lens comes from `tools/camera_tube.py` and four numbers you measure. See [Design](docs/design.md#7-camera-tube).
 
 ## When something is wrong
 
@@ -145,6 +145,6 @@ The stack is held by gravity and magnets only. Move the pieces separately, never
 
 ## Files and licence
 
-`cad/neobox.blend` is the only source of geometry. `tools/export_stl.py` regenerates the 12 STL files from it and `tools/verify_stl.py` checks them. The drawings come from `tools/drawings/`. [Design](docs/design.md) holds every dimension and the reasons behind it. [CONTRIBUTING](CONTRIBUTING.md) explains how to send a change.
+`cad/neobox.blend` is the only source of geometry. `tools/export_stl.py` regenerates the 12 box STL files from it, `tools/camera_tube.py` writes the camera-tube parts, and `tools/verify_stl.py` checks them all. The drawings come from `tools/drawings/`. [Design](docs/design.md) holds every dimension and the reasons behind it. [CONTRIBUTING](CONTRIBUTING.md) explains how to send a change.
 
 Designed by [Neo Analog Lab Inc.](https://github.com/Neoanaloglab), released under the [MIT License](LICENSE).

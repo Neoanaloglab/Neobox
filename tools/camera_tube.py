@@ -32,6 +32,9 @@ Run headless from the repository root (any Blender 4.x/5.x):
 
 then  python3 tools/verify_stl.py out/*.stl
 
+The base and the two coupons are the same for every lens and are published in stl/camera-tube/,
+written by:  ... --python tools/camera_tube.py -- --base-only --coupon --out stl/camera-tube
+
 Inside a running Blender that has cad/neobox.blend open, exec() this file with a global ARGS
 holding the same arguments as a list; the parts are then built in the open scene as well.
 """
@@ -406,10 +409,10 @@ def lens_from(a):
 
 def parse(argv):
     ap = argparse.ArgumentParser(prog="camera_tube.py", description=__doc__.split("\n\n")[1])
-    ap.add_argument("--ring", required=True, help="step-up ring as lens-thread-larger-thread, e.g. 46-52")
-    ap.add_argument("--ring-od", type=float, required=True, help="ring body outside diameter, mm")
-    ap.add_argument("--ring-h", type=float, required=True, help="ring body height below its shoulder, mm")
-    ap.add_argument("--wd", type=float, required=True, help="working distance at your magnification, mm")
+    ap.add_argument("--ring", help="step-up ring as lens-thread-larger-thread, e.g. 46-52")
+    ap.add_argument("--ring-od", type=float, help="ring body outside diameter, mm")
+    ap.add_argument("--ring-h", type=float, help="ring body height below its shoulder, mm")
+    ap.add_argument("--wd", type=float, help="working distance at your magnification, mm")
     ap.add_argument("--base-wd", type=float, default=60.0, help="working distance of the bare base (default 60)")
     ap.add_argument("--spacer", type=float, default=None, help="also build a spacer of this length, mm")
     ap.add_argument("--coupon", action="store_true",
@@ -418,6 +421,8 @@ def parse(argv):
     ap.add_argument("--lens-len", type=float, default=80.0, help="lens length for the mock, mm")
     ap.add_argument("--mock", action="store_true", help="also build the (unprinted) ring, lens and camera mocks")
     ap.add_argument("--no-base", action="store_true", help="skip the base")
+    ap.add_argument("--base-only", action="store_true",
+                    help="build only the base (and the coupons with --coupon): the parts that are the same for every lens")
     ap.add_argument("--no-export", action="store_true", help="build in the scene only")
     ap.add_argument("--out", default="camera-tube", help="output directory for the STL files")
     return ap.parse_args(argv)
@@ -425,12 +430,17 @@ def parse(argv):
 
 def main(argv):
     a = parse(argv)
+    if not a.base_only:
+        missing = [f"--{k.replace('_', '-')}" for k in ("ring", "ring_od", "ring_h", "wd") if getattr(a, k) is None]
+        assert not missing, f"a column needs {', '.join(missing)} (or use --base-only)"
     for k in ("wd", "base_wd"):
         v = getattr(a, k)
+        if v is None:
+            continue
         if abs(v - g(v)) > 1e-6:
             print(f"note: --{k.replace('_', '-')} {v} snapped to the 0.2 mm grid: {g(v)}"); setattr(a, k, g(v))
     check_blend()
-    L = lens_from(a)
+    L = None if a.base_only else lens_from(a)
     parts = []
     base, rb = build_hood(a.base_wd)
     print("base:", rb)
@@ -446,6 +456,14 @@ def main(argv):
     if a.coupon:
         for ob, z_bed, rk in build_coupon(rb["z_top"]):
             print("coupon:", rk); parts.append((ob, z_bed))
+    if a.base_only:
+        ok = all([selfcheck(ob, z) for ob, z in parts])
+        if not a.no_export:
+            os.makedirs(a.out, exist_ok=True)
+            for ob, _ in parts:
+                export_stl(ob, os.path.join(a.out, ob.name + ".stl"))
+            print("wrote", ", ".join(ob.name + ".stl" for ob, _ in parts), "to", a.out)
+        return ok
     H = g(a.wd - a.base_wd - riser)
     assert H >= 0, f"--wd {a.wd} is below the base ({a.base_wd} + spacer {riser}); lower --base-wd (min {BASE_WD_MIN})"
     col, rc = build_column(L, H, z_rest); print("column:", rc)
