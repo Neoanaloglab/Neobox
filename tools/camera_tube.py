@@ -15,9 +15,9 @@ describe the LENS:
 Parts (binary STL in assembly world space, every face on the 0.2 mm layer grid; print them top
 face down, no supports):
 
-    camera-tube-base.stl          the same for every lens: skirt around the lid, bearing ring,
-                                  eight magnet pockets, the joint on top.  60 mm of working
-                                  distance with nothing on it (--base-wd)
+    camera-tube-base.stl          the same for every lens: the hood, seated on the cover-stage's
+                                  top edge, film slots at both ends, the joint on top.  60 mm of
+                                  working distance with nothing on it (--base-wd)
     lens-column-46-52-h36.stl     one per lens: the ring pocket on top of a riser, H = wd - base
     lens-carrier-46-52.stl        the same with no riser (H = 0): for wd equal to the base
     camera-tube-spacer-35.stl     optional riser under the column (--spacer), for a second
@@ -49,27 +49,28 @@ LAYER = 0.2
 PLA = 1.24e-3                      # g per mm3
 
 # --- the box side, from cad/neobox.blend (checked against the lid object at run time) -----------
-LID_TOP, FILM_PLANE = 87.0, 83.2   # world z, desk = 0
-LID_W, LID_L = 94.0, 120.0
-MAGNET_XY = [(sx * 41.0, sy * y) for sx in (1, -1) for sy in (1, -1) for y in (12.0, 42.0)]
-MAGNET_SQ, MAGNET_DEPTH = 8.6, 2.2  # the lid's square pockets, Ø8 x 2 N35 magnets
+FILM_PLANE = 83.2                  # world z, desk = 0
+STAGE_W, STAGE_L, DECK = 124.8, 154.8, 79.0   # cover-stage outline and deck (checked against the .blend at run time)
 
 # --- the tube ------------------------------------------------------------------------------------
-WALL = 1.2
-CLEARANCE = 0.4                    # per side, skirt around the lid
-SKIRT = 3.4                        # skirt below the bearing ring
-RING, RING_IN = 1.0, 3.0           # bearing ring on the lid: thickness, width inward from the skirt
-CHAMFER = 3.0                      # 45-degree transition above the ring
-NOTCH_W = 70.0                     # film pass-through notches in the end skirts
-CORNER_R, ARC_SEGS = 0.4, 16
-BOSS_FLOOR, BOSS_WALL = 0.6, 1.2   # magnet bosses under the chamfer
+WALL = 1.2                         # column, spacer and coupon walls
+HOOD_T = 1.0                       # hood wall, measured horizontally
+SEAT_C = 0.4                       # per side, skirt around the cover-stage
+SKIRT_DOWN = 4.0                   # skirt below the deck
+SEAT_CH = 2.4                      # 45-degree seat; its inner face passes through the cover-stage's top edge
+SEAT_R = 1.0                       # inner corner radius of the skirt
+CORNER_CUT = 3.4                   # the seat is cut back at the corners: the hood rests on the four straight edges
+SLOT_W, SLOT_TOP = 70.0, 87.0      # film slots in both end walls, up to world z 87
+ARC_SEGS = 16
 JOINT = dict(bore_d=84.0, collar_od=94.0, collar_h=4.4, spigot_od=83.6, spigot_h=4.0, flange_t=1.2)
 LIP_T, RING_FIT = 1.2, 0.4         # lip under the ring pocket; diametral clearance of the pocket
 MOUTH_CH = 0.6                     # 45-degree chamfer at the two bores that print on the bed (the base's socket,
                                    # the column's ring pocket): elephant foot would otherwise close their 0.2 fit
+RIB_N, RIB_W, RIB_H = 6, 1.2, 0.3  # crush ribs on the spigot: 0.1 mm interference in the bore, so the column
+                                   # turns only by hand and focusing cannot turn it
 COUPON_X = -250.0                  # where the joint test pieces are parked
 SEGS = 128
-BASE_WD_MIN = 45.0                 # corner overhang reaches 45 degrees here
+BASE_WD_MIN = 54.0                 # below this the hood's corners overhang more than 45 degrees
 
 
 def g(z):
@@ -195,48 +196,61 @@ def boolean(target, cutter, op):
 
 
 # --- parts ---------------------------------------------------------------------------------------
-def build_base(base_wd=60.0, name="camera-tube-base"):
-    """Frustum on the lid: skirt, bearing ring, magnet bosses, film notches, the joint on top."""
-    assert base_wd >= BASE_WD_MIN, f"--base-wd below {BASE_WD_MIN}: the corner overhang exceeds 45 degrees"
-    J = JOINT
-    inner_w, inner_l = LID_W + 2 * CLEARANCE, LID_L + 2 * CLEARANCE
-    outer_w, outer_l = inner_w + 2 * WALL, inner_l + 2 * WALL
-    ring_w, ring_l = inner_w - 2 * RING_IN, inner_l - 2 * RING_IN
-    lid = LID_TOP; z_bot = g(lid - SKIRT); z_ring_top = g(lid + RING); z_chamfer_top = g(z_ring_top + CHAMFER)
+def _rotate_z(ob, ang_deg):
+    c, s_ = math.cos(math.radians(ang_deg)), math.sin(math.radians(ang_deg))
+    for v in ob.data.vertices:
+        x, y = v.co.x, v.co.y
+        v.co.x, v.co.y = c * x - s_ * y, s_ * x + c * y
+    return ob
+
+
+def _move(ob, dx, dy):
+    for v in ob.data.vertices:
+        v.co.x += dx; v.co.y += dy
+    return ob
+
+
+def build_hood(base_wd=60.0, name="camera-tube-base"):
+    """The base: a hood over the box top.  A 45-degree seat rests on the cover-stage's top edge all round,
+    a short skirt hangs over the plate edge, slots in both end walls let the film through, and the joint
+    on top takes any column."""
+    assert base_wd >= BASE_WD_MIN, f"--base-wd below {BASE_WD_MIN}: the hood's corners would overhang more than 45 degrees"
+    J, T = JOINT, HOOD_T
+    a, b = STAGE_W / 2 + SEAT_C, STAGE_L / 2 + SEAT_C
+    z_skirt = g(DECK - SKIRT_DOWN); z_s0 = round(DECK - SEAT_C, 2); z_s1 = round(z_s0 + SEAT_CH, 2)
     z_shoulder = g(FILM_PLANE + base_wd); z_top = g(z_shoulder - J["flange_t"]); z_collar = g(z_top - J["collar_h"])
-    ri, ro = CORNER_R, CORNER_R + WALL
-    cod, cid, bore = J["collar_od"], J["collar_od"] - 2 * WALL, J["bore_d"]
-    body = loft([rrect(outer_w, outer_l, ro, z_bot), rrect(outer_w, outer_l, ro, z_chamfer_top),
+    cod, bore = J["collar_od"], J["bore_d"]; cid = cod - 2 * T
+    ri, ro = SEAT_R, SEAT_R + T
+    a1, b1 = a - SEAT_CH, b - SEAT_CH
+    body = loft([rrect(2 * a + 2 * T, 2 * b + 2 * T, ro, z_skirt), rrect(2 * a + 2 * T, 2 * b + 2 * T, ro, z_s0),
+                 rrect(2 * a1 + 2 * T, 2 * b1 + 2 * T, ro, z_s1),
                  rrect(cod, cod, cod / 2, z_collar), rrect(cod, cod, cod / 2, z_top)], name)
-    cavity = loft([rrect(inner_w, inner_l, ri, z_bot - 1), rrect(inner_w, inner_l, ri, lid),
-                   rrect(ring_w, ring_l, ri, lid), rrect(ring_w, ring_l, ri, z_ring_top),
-                   rrect(inner_w, inner_l, ri, z_chamfer_top), rrect(cid, cid, cid / 2, z_collar)], "_cut_cavity")
+    cavity = loft([rrect(2 * a, 2 * b, ri, z_skirt - 1), rrect(2 * a, 2 * b, ri, z_s0),
+                   rrect(2 * a1, 2 * b1, ri, z_s1), rrect(cid, cid, cid / 2, z_collar)], "_cut_cavity")
     boolean(body, cavity, "DIFFERENCE")
     boolean(body, lathe([(0, z_collar - 1), (bore / 2, z_collar - 1), (bore / 2, z_top - MOUTH_CH),
                          (bore / 2 + MOUTH_CH, z_top), (bore / 2 + MOUTH_CH, z_top + 1), (0, z_top + 1)],
                         "_cut_bore"), "DIFFERENCE")
-    for sy, tag in ((1, "1"), (-1, "2")):
-        y0, y1 = sorted((sy * (inner_l / 2 - 1), sy * (outer_l / 2 + 1)))
-        boolean(body, box("_cut_notch" + tag, -NOTCH_W / 2, NOTCH_W / 2, y0, y1, z_bot - 1, lid), "DIFFERENCE")
-    half = MAGNET_SQ / 2
-    z_boss = g(lid + MAGNET_DEPTH + BOSS_FLOOR)
-    for (px, py) in MAGNET_XY:                        # a block under the chamfer, wedge back at 45 degrees
-        sx = 1 if px > 0 else -1
-        x_in = abs(px) - half - BOSS_WALL
-        x_out = inner_w / 2 + WALL / 2
-        pts = [(sx * x_in, lid), (sx * x_out, lid), (sx * x_out, z_boss + (x_out - x_in)), (sx * x_in, z_boss)]
-        if sx < 0: pts = list(reversed(pts))
-        boolean(body, prism_xz(f"_add_boss{px:+.0f}{py:+.0f}", pts, py - half - BOSS_WALL, py + half + BOSS_WALL), "UNION")
-    for (px, py) in MAGNET_XY:                        # the pocket, opening downward onto the lid's magnet
-        boolean(body, box(f"_cut_pocket{px:+.0f}{py:+.0f}", px - half, px + half, py - half, py + half,
-                          lid - 1, lid + MAGNET_DEPTH), "DIFFERENCE")
+    for sy, tag in ((1, "r"), (-1, "f")):
+        y0, y1 = sorted((sy * (b1 - 6.0), sy * (b + T + 1)))
+        boolean(body, box("_cut_slot" + tag, -SLOT_W / 2, SLOT_W / 2, y0, y1, z_skirt - 1, SLOT_TOP), "DIFFERENCE")
+    for sx in (1, -1):                                # the corners never touch: no twisted 45-degree corner facets
+        for sy in (1, -1):
+            x0, x1 = sorted((sx * (STAGE_W / 2 - CORNER_CUT), sx * (a + T + 1)))
+            y0, y1 = sorted((sy * (STAGE_L / 2 - CORNER_CUT), sy * (b + T + 1)))
+            boolean(body, box(f"_cut_corner{sx:+d}{sy:+d}", x0, x1, y0, y1, z_skirt - 1, g(z_s1 + 0.2)), "DIFFERENCE")
     _finish(body)
-    h = z_collar - z_chamfer_top
-    lean = tuple(round(math.degrees(math.atan2(d, h)), 1) for d in
-                 ((outer_w - cod) / 2, (outer_l - cod) / 2, math.hypot(outer_w / 2, outer_l / 2) - cod / 2))
-    return body, dict(name=name, base_wd=base_wd, foot=(outer_w, outer_l), z_bot=z_bot, z_collar=z_collar,
-                      z_top=z_top, z_shoulder=z_shoulder, height=round(z_top - z_bot, 1), lean_deg=lean,
-                      joint=(bore, cod, J["collar_h"]), magnets=(len(MAGNET_XY), MAGNET_SQ, MAGNET_DEPTH))
+    return body, dict(name=name, base_wd=base_wd, outline=(round(2 * a + 2 * T, 1), round(2 * b + 2 * T, 1)),
+                      z_skirt=z_skirt, seat=(z_s0, z_s1), z_collar=z_collar, z_top=z_top, z_shoulder=z_shoulder,
+                      height=round(z_top - z_skirt, 1), joint=(bore, cod, J["collar_h"]))
+
+
+def _add_ribs(ob, r0, z0, z1):
+    """Crush ribs on a spigot of radius r0, from 0.4 above its bottom (a lead-in) up to z1."""
+    for k in range(RIB_N):
+        rib = _rotate_z(box(f"_add_rib{k}", r0 - 0.4, r0 + RIB_H, -RIB_W / 2, RIB_W / 2, g(z0 + 0.4), z1), 360.0 * k / RIB_N)
+        boolean(ob, rib, "UNION")
+    return ob
 
 
 def build_column(L, H, z_rest, name=None):
@@ -267,6 +281,7 @@ def build_column(L, H, z_rest, name=None):
                 (hole, z_pk), (hole, z_lip), (pw_o, z_lip), (pw_o, z_plate), (wi, z_plate), (wi, z_fun),
                 (sp_i, g(z_fl + J["flange_t"]))]
     col = lathe(prof, name)
+    _add_ribs(col, sp_o, z_sp, z_fl)
     _finish(col)
     return col, dict(name=name, H=H, z_rest=z_rest, z_shoulder=z_sh, pocket=(round(2 * pk, 1), round(pk_depth, 1)),
                      lip=(LIP_T, L["lip_hole_d"]), rim_seat=rim_seat, z_bottom=min(z_sp, z_lip))
@@ -302,6 +317,7 @@ def build_coupon(z_rest):
     z_fun = g(z_in + (wi - sp_i)); z_up = g(z_fun + 1.2)
     spig = lathe([(sp_i, z_sp), (sp_o, z_sp), (sp_o, z_fl), (fl, z_fl), (fl, z_up), (wi, z_up), (wi, z_fun),
                   (sp_i, z_in)], "camera-tube-coupon-spigot")
+    _add_ribs(spig, sp_o, z_sp, z_fl)
     out = []
     for ob, z_bed, z_far in ((sock, z_top, z_bot), (spig, z_up, z_sp)):
         for v in ob.data.vertices:
@@ -341,12 +357,18 @@ def selfcheck(ob, z_top):
             planes[round(z_top - f.verts[0].co.z, 2)] += f.calc_area()
     bm.free()
     off = sorted(z for z, a in planes.items() if a > 1.0 and abs(z / LAYER - round(z / LAYER)) > 1e-3)
+    bm2 = bmesh.new(); bm2.from_mesh(ob.data)        # printed top face down: a world-up face is a print overhang
+    below = [f for f in bm2.faces if min(v.co.z for v in f.verts) < z_top - 0.01]
+    over = sum(f.calc_area() for f in below if 0.766 < f.normal.z <= 0.99)    # slopes steeper than 50 degrees
+    ledge = sum(f.calc_area() for f in below if f.normal.z > 0.99)           # flat ceilings: short ledges only
+    bm2.free()
     xs = [v.co.x for v in ob.data.vertices]; ys = [v.co.y for v in ob.data.vertices]; zs = [v.co.z for v in ob.data.vertices]
     dims = tuple(round(max(c) - min(c), 1) for c in (xs, ys, zs))
-    ok = nonman == 0 and not off and vol > 0
+    ok = nonman == 0 and not off and vol > 0 and over < 1.0
     print(f"{'ok  ' if ok else 'FAIL'}  {ob.name:28s} {dims[0]:6.1f} x {dims[1]:6.1f} x {dims[2]:5.1f}  "
           f"{vol / 1000:5.1f} cm3  {vol * PLA:4.0f} g" + ("" if nonman == 0 else f"  nonmanifold={nonman}")
-          + ("" if not off else f"  OFF-GRID at {off}"))
+          + ("" if not off else f"  OFF-GRID at {off}") + ("" if over < 1.0 else f"  OVERHANG>50deg {over:.0f} mm2")
+          + ("" if ledge < 1.0 else f"  (flat ledge {ledge:.0f} mm2)"))
     return ok
 
 
@@ -359,14 +381,14 @@ def export_stl(ob, path):
 
 
 def check_blend():
-    lid = bpy.data.objects.get("film-holder-135-lid")
-    if lid is None:
-        print("warning: film-holder-135-lid not found; is cad/neobox.blend open?"); return
-    pts = [lid.matrix_world @ Vector(c) for c in lid.bound_box]
+    cs = bpy.data.objects.get("cover-stage")
+    if cs is None:
+        print("warning: cover-stage not found; is cad/neobox.blend open?"); return
+    pts = [cs.matrix_world @ Vector(c) for c in cs.bound_box]
     w = max(p.x for p in pts) - min(p.x for p in pts); l = max(p.y for p in pts) - min(p.y for p in pts)
-    top = max(p.z for p in pts)
-    assert abs(w - LID_W) < 0.05 and abs(l - LID_L) < 0.05 and abs(top - LID_TOP) < 0.05, \
-        f"lid in the .blend is {w:.1f} x {l:.1f}, top at {top:.1f}; this script expects {LID_W} x {LID_L}, {LID_TOP}"
+    bottom = min(p.z for p in pts)
+    assert abs(w - STAGE_W) < 0.05 and abs(l - STAGE_L) < 0.05 and abs(bottom + 6.0 - DECK) < 0.05, \
+        f"cover-stage in the .blend is {w:.1f} x {l:.1f}, deck at {bottom + 6.0:.1f}; this script expects {STAGE_W} x {STAGE_L}, {DECK}"
 
 
 def lens_from(a):
@@ -406,7 +428,7 @@ def main(argv):
     check_blend()
     L = lens_from(a)
     parts = []
-    base, rb = build_base(a.base_wd)
+    base, rb = build_hood(a.base_wd)
     print("base:", rb)
     z_rest = rb["z_top"]
     if a.no_base:
