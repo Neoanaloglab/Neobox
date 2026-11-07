@@ -2,7 +2,7 @@
 
 A few rules keep the repository consistent.
 
-**Source of truth.** `cad/neobox.blend` is the only geometry source. The STL files, the drawings and every number in the documents are generated or read from it. Never hand-edit an STL. Export with `tools/export_stl.py` and run `tools/verify_stl.py`, which must report all 12 files passing. If you change a published dimension on purpose, update the `EXPECTED` table in the verifier in the same commit.
+**Source of truth.** `cad/neobox.blend` is the only geometry source. The STL files, the drawings and every number in the documents are generated or read from it. Never hand-edit an STL. Export the box parts with `tools/export_stl.py`, the camera-tube parts with `tools/camera_tube.py --base-only --coupon --out stl/camera-tube`, and run `tools/verify_stl.py`, which must report every file passing. If you change a published dimension on purpose, update the `EXPECTED` table in the verifier in the same commit.
 
 **Naming in the .blend.** A printed part is named after its STL file. Anything that is not printed carries the `mock_` prefix. The exporter fails on a mesh that is neither, by design.
 

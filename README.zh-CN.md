@@ -123,7 +123,7 @@ NeoBox 是一个没有前壁的白色箱子。闪光灯平躺在桌面上，灯�
 
 **拍完之后。** 用同样的设置拍一张空白帧，做平场校正。然后用透明片基定白平衡，反相，裁掉片边。一套参数通常整卷通用。RawTherapee、darktable 和 Negative Lab Pro 都能做。
 
-**相机筒。** 一个打印的罩子，扣在盒子顶上，靠滤镜螺纹托住镜头，还在开发中。它把相机固定在盒子本身上，而不是胶片夹上。`tools/camera_tube.py` 根据你量的四个数生成它。见[设计](docs/design.zh-CN.md#7-相机筒)。
+**相机筒。** 一个打印的罩子，扣在盒子顶上，靠滤镜螺纹托住镜头，相机因此固定在盒子本身上，而不是胶片夹上。它还没有打印过。罩子和两件接头试片在 `stl/camera-tube/` 里，黑色 PLA，顶面朝下打印，不用支撑。先打试片，确认插头用手能转、松手不动。你镜头用的载筒由 `tools/camera_tube.py` 根据你量的四个数生成。见[设计](docs/design.zh-CN.md#7-相机筒)。
 
 ## 出问题的时候
 
@@ -145,6 +145,6 @@ NeoBox 是一个没有前壁的白色箱子。闪光灯平躺在桌面上，灯�
 
 ## 文件和许可
 
-`cad/neobox.blend` 是唯一的几何来源。`tools/export_stl.py` 从它重新生成 12 个 STL，`tools/verify_stl.py` 负责校验。图纸由 `tools/drawings/` 生成。[设计](docs/design.zh-CN.md)记录每一个尺寸和背后的理由。[CONTRIBUTING](CONTRIBUTING.md) 说明怎么提交修改。
+`cad/neobox.blend` 是唯一的几何来源。`tools/export_stl.py` 从它重新生成箱体的 12 个 STL，`tools/camera_tube.py` 生成相机筒零件，`tools/verify_stl.py` 负责全部校验。图纸由 `tools/drawings/` 生成。[设计](docs/design.zh-CN.md)记录每一个尺寸和背后的理由。[CONTRIBUTING](CONTRIBUTING.md) 说明怎么提交修改。
 
 由 [Neo Analog Lab Inc.（ネオアナログラボ株式会社）](https://github.com/Neoanaloglab)设计，以 [MIT 许可证](LICENSE)发布。

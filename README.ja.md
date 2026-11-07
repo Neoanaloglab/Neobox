@@ -123,7 +123,7 @@ STL 12 ファイル、単位はミリ、1:1。拡大縮小は不可。
 
 **撮影後。** 同じ設定で空のコマを一枚撮り、フラットフィールド補正に使います。次に透明なフィルムベースでホワイトバランスを取り、反転し、縁を切り落とします。ひとつのプロファイルでロール全体が済むのが普通です。RawTherapee、darktable、Negative Lab Pro のどれでもできます。
 
-**カメラ筒。** 箱の上にかぶせ、フィルターねじでレンズを保持するプリント製のフードを開発中です。カメラはフィルムホルダーではなく箱そのものに固定されます。`tools/camera_tube.py` が、あなたが測る四つの数値から生成します。[設計](docs/design.ja.md#7-カメラ筒)を参照してください。
+**カメラ筒。** 箱の上にかぶせ、フィルターねじでレンズを保持するプリント製のフードです。カメラはフィルムホルダーではなく箱そのものに固定されます。まだプリントしていません。フードと継ぎ手の試験片二つは `stl/camera-tube/` にあり、黒 PLA で、上面を下にしてサポートなしでプリントします。まず試験片をプリントし、差し込みが手で回り、手を離すと動かないことを確かめてください。あなたのレンズ用のコラムは `tools/camera_tube.py` が、測った四つの数値から生成します。[設計](docs/design.ja.md#7-カメラ筒)を参照してください。
 
 ## おかしいと感じたら
 
@@ -145,6 +145,6 @@ STL 12 ファイル、単位はミリ、1:1。拡大縮小は不可。
 
 ## ファイルとライセンス
 
-`cad/neobox.blend` が唯一の形状ソースです。`tools/export_stl.py` がそこから 12 個の STL を再生成し、`tools/verify_stl.py` が検証します。図面は `tools/drawings/` から生成します。[設計](docs/design.ja.md)に全寸法とその理由があります。[CONTRIBUTING](CONTRIBUTING.md) に変更の送り方があります。
+`cad/neobox.blend` が唯一の形状ソースです。`tools/export_stl.py` がそこから箱の 12 個の STL を再生成し、`tools/camera_tube.py` がカメラ筒の部品を書き出し、`tools/verify_stl.py` がすべてを検証します。図面は `tools/drawings/` から生成します。[設計](docs/design.ja.md)に全寸法とその理由があります。[CONTRIBUTING](CONTRIBUTING.md) に変更の送り方があります。
 
 [Neo Analog Lab Inc.（ネオアナログラボ株式会社）](https://github.com/Neoanaloglab)が設計し、[MIT ライセンス](LICENSE)で公開しています。

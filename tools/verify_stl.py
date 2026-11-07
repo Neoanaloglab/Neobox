@@ -30,6 +30,10 @@ EXPECTED = {
     "slide-plate-135.stl": (120.0, 94.0, 5.0),
     "cover-stage-4x5.stl": (154.8, 124.8, 10.0),
     "sheet-plate-4x5.stl": (138.0, 112.0, 5.0),
+    # the camera tube's lens-independent parts, written by tools/camera_tube.py --base-only --coupon
+    "camera-tube-base.stl": (157.6, 127.6, 67.0),
+    "camera-tube-coupon-socket.stl": (94.0, 94.0, 6.8),
+    "camera-tube-coupon-spigot.stl": (94.0, 94.0, 11.6),
 }
 LAYER = 0.2
 MIN_STEP = 0.4
