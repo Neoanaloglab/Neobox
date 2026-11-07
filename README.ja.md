@@ -112,7 +112,7 @@ flowchart LR
 | [部品表と調達](docs/bom.ja.md#部品表と調達) | これから買う。部品、工具と消耗品、日本・中国・その他の地域での調達先、コピペで使える発注文面。 |
 | [3D プリント](docs/printing.ja.md#3d-プリント) | これから出力する、またはプリント代行に依頼する。設定は 1 か所に集約、部品ごとのカード、受け入れ検査。 |
 | [組立](docs/assembly.ja.md#組立) | 部品が届いた。マグネットの圧入、積み上げの順序、各手順のチェックポイント、鏡を使った水平出し。 |
-| [スキャン](docs/scanning.ja.md#スキャン) | 箱ができて、ネガをデータにしたい。カメラ、レンズ、撮影倍率（magnification ratio）、平行出し、ピント、露出、フィルムの装填、反転。 |
+| [スキャン](docs/scanning.ja.md#スキャン) | 箱ができて、ネガをデータにしたい。カメラ、レンズ、撮影倍率（magnification ratio）、カメラ筒、平行出し、ピント、露出、フィルムの装填、反転。 |
 | [トラブルシューティング](docs/troubleshooting.ja.md#トラブルシューティング) | うまくいかない。症状・考えられる原因・対処を、出力・組立・光・撮影の 4 領域で。 |
 | [用語集](docs/glossary.ja.md#用語集) | 本ドキュメントに出てくる言葉が分からない。1 行の定義と、本プロジェクトでなぜ効いてくるのか。 |
 | [設計](docs/design.ja.md#設計) | 設計の中身を知りたい。寸法チェーン、光学上の判断、Blender ソースの扱い方。 |
@@ -144,6 +144,7 @@ flowchart LR
 | [`tools/export_stl.py`](tools/export_stl.py) | コミット済みの書き出しスクリプト。`cad/neobox.blend` から STL 12 点を再生成する | ソース |
 | [`tools/drawings/`](tools/drawings/) | 図面ジェネレーター。`drawings/` 配下の SVG 18 点を再生成する | ソース |
 | [`tools/verify_stl.py`](tools/verify_stl.py) | ジオメトリのゲート。水密性、0.2 mm の z グリッド、全バウンディングボックスを検査 | ソース |
+| [`tools/camera_tube.py`](tools/camera_tube.py) | カメラ筒の生成スクリプト。測った四つの数値からベースとあなたのレンズのコラムを作る | ソース |
 
 ## 別のストロボに合わせる
 

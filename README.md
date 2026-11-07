@@ -112,7 +112,7 @@ flowchart LR
 | [Bill of materials](docs/bom.md#bill-of-materials-and-sourcing) | You are about to buy. Parts, tools and consumables, sourcing in China, Japan and elsewhere, and copy-paste vendor scripts. |
 | [3D printing](docs/printing.md#printing) | You are about to print, or to brief a print service. One settings block, a card per part, and acceptance checks. |
 | [Assembly](docs/assembly.md#assembly) | The parts have arrived. Pressing in the magnets, the stack order, a checkpoint at every step, and the mirror levelling trick. |
-| [Scanning](docs/scanning.md#scanning) | The box is built and you want negatives. Camera, lens, magnification, parallelism, focus, exposure, loading film, inversion. |
+| [Scanning](docs/scanning.md#scanning) | The box is built and you want negatives. Camera, lens, magnification, the camera tube, parallelism, focus, exposure, loading film, inversion. |
 | [Troubleshooting](docs/troubleshooting.md#troubleshooting) | Something is wrong. Symptom, likely cause and fix, across printing, assembly, light and capture. |
 | [Glossary](docs/glossary.md#glossary) | A word in these documents means nothing to you. One line per term, plus why it matters here. |
 | [Design](docs/design.md#design) | You want the engineering: the dimension chain, the optical decisions, and how to work with the Blender source. |
@@ -144,6 +144,7 @@ flowchart LR
 | [`tools/export_stl.py`](tools/export_stl.py) | The committed exporter; regenerates the twelve STL files from `cad/neobox.blend` | Source |
 | [`tools/drawings/`](tools/drawings/) | The drawing generators; regenerate the 18 SVG files under `drawings/` | Source |
 | [`tools/verify_stl.py`](tools/verify_stl.py) | The geometry gate; checks watertightness, the 0.2 mm z-grid and every bounding box | Source |
+| [`tools/camera_tube.py`](tools/camera_tube.py) | The camera-tube generator; builds the base and a lens column for your lens from four measured numbers | Source |
 
 ## Adapting to a different flash
 

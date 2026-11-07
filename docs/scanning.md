@@ -4,7 +4,7 @@
 
 > The camera half of the project: what to put above the box, how to square the camera to the film, how to focus and expose, how to load and advance film, and what to do with the raw files afterwards.
 
-**Contents:** [Before you start](#before-you-start) · [Camera-side equipment](#camera-side-equipment) · [Magnification and lens choice](#magnification-and-lens-choice) · [Camera height and the stand](#camera-height-and-the-stand) · [Parallelism](#parallelism) · [Focus](#focus) · [Exposure](#exposure) · [Loading film](#loading-film) · [Mounted slides](#mounted-slides) · [4×5 sheets](#45-sheets) · [Shooting a roll](#shooting-a-roll) · [Flat-field and inversion](#flat-field-and-inversion) · [When something looks wrong](#when-something-looks-wrong)
+**Contents:** [Before you start](#before-you-start) · [Camera-side equipment](#camera-side-equipment) · [Magnification and lens choice](#magnification-and-lens-choice) · [Camera height and the stand](#camera-height-and-the-stand) · [The camera tube](#the-camera-tube) · [Parallelism](#parallelism) · [Focus](#focus) · [Exposure](#exposure) · [Loading film](#loading-film) · [Mounted slides](#mounted-slides) · [4×5 sheets](#45-sheets) · [Shooting a roll](#shooting-a-roll) · [Flat-field and inversion](#flat-field-and-inversion) · [When something looks wrong](#when-something-looks-wrong)
 
 ## Before you start
 
@@ -80,6 +80,59 @@ lens front to desk = 83.2 mm + the lens's working distance at the magnification 
 | The lens axis can reach the centre of the light window without the column fouling the box | A reversible-column tripod often puts a leg exactly where the box wants to be |
 
 Once the height is right, register it so you can return to it: mark the box's footprint on the desk or mat (two locating pins, or simply tape) and write down the column height for each format. Only magnification changes between formats; the film plane does not move. And if you have to move the box, lift it level: the assembled stack is held together by gravity and magnets, not fasteners.
+
+## The camera tube
+
+A printed alternative to the stand, for 135 and 120. The tube stands on the 135 holder lid, is held down by the lid's own 8 magnets, and carries the lens by its filter thread at the working distance your magnification needs. The camera never touches it, so the tube does not care whether the body is a Sony, a Canon, a Nikon or a Fujifilm. It cares about the lens, and about only two things on the lens: the filter thread, and the [working distance](glossary.md#working-distance) at the [magnification](#magnification-and-lens-choice) you scan at.
+
+> [!NOTE]
+> The tube is a design in progress: modelled and checked, not yet printed. Its geometry lives in the Blender source, and `tools/camera_tube.py` generates the parts from four numbers you measure. No tube STL is published yet.
+
+Three printed parts, every face on the 0.2 mm layer grid, printed top face down without supports:
+
+| Part | What it is | Who prints it |
+|---|---|---|
+| `camera-tube-base` | A skirt that wraps the lid, 8 magnet pockets right above the lid's magnets, and a 58.4 mm frustum up to a Ø84 socket. On its own it gives 60 mm of working distance | Everyone, once |
+| `lens-column-<ring>-h<H>` | A Ø94 tube with a spigot that turns in the socket and the ring pocket on top. H = working distance − 60 | One per lens |
+| `camera-tube-spacer-<L>` | A riser with the same joint at both ends, for a second magnification with the same lens | Optional |
+
+The lens is held by two bought step-up rings: the first screws into the lens and sits in the column's pocket, the second screws into the first from below and clamps the column's 1.2 mm lip between them. Nothing threads into plastic, and the column still turns in the base, so you square the frame to the sensor by turning the lens, not the box. The height is built in, so there is nothing to register; check parallelism with the mirror all the same.
+
+**Measure, do not look up.** Working distance at a given magnification is a property of the lens, and spec sheets rarely state it. Mount the lens, set the magnification with a ruler in the viewfinder (36 mm fills the long side for 135, 56 mm fills the short side for 120), then measure from the front rim of the lens to the ruler. That number minus 60 is the column height. For orientation, the lenses people scan with, at the magnification 135 needs on that body, from maker specifications and reviews:
+
+| Body | Lens | Filter | Working distance, mm | Column H |
+|---|---|---|---|---|
+| Sony E, full frame, 1.0× | FE 90 mm F2.8 Macro G | 62 | 130 – 132 | 70 |
+| | Sigma 105 mm F2.8 DG DN Macro Art | 62 | 141 | 81 |
+| | Tamron 90 mm F/2.8 Di III Macro VXD | 67 | 86 – 90 | 26 – 30 |
+| | Laowa 100 mm f/2.8 2× Ultra Macro | 67 | 100 | 40 |
+| | Voigtländer 110 mm f/2.5 Macro APO-Lanthar | 58 | 170 | 110 |
+| | FE 50 mm F2.8 Macro | 55 | 45 | below the base: about 0.8× on the bare base, or a base printed at 50 |
+| Canon RF, full frame, 1.0× | RF 100 mm F2.8 L Macro | 67 | 86 at 1.4×, 1:1 not published, measure | about 45 – 50 |
+| | EF 100 mm f/2.8L Macro on the adapter | 67 | 133 | 73 |
+| Nikon Z, full frame, 1.0× | Z MC 105 mm f/2.8 VR S | 62 | 130 – 134 | 70 – 74 |
+| | Z MC 50 mm f/2.8 | 46 | 56 – 57 | 0: a column with no riser on the bare base, about 0.95× |
+| | Tamron 90 mm F/2.8 Di III Macro VXD | 67 | 86 | 26 |
+| | AF-S Micro 105 mm f/2.8G VR on the FTZ | 62 | 139 – 151, sources disagree, measure | about 80 – 90 |
+| | AF-S Micro 60 mm f/2.8G on the FTZ | 62 | 48 – 50 | below the base, as the FE 50 |
+| Fujifilm X, APS-C, 0.65× | XF 80 mm F2.8 R LM OIS WR Macro | 62 | 102 at 1:1, about 140 at 0.65×, measure | about 80 |
+| | Laowa 65 mm f/2.8 2× Ultra Macro | 52 | 52 at 2×, about 115 at 0.65×, measure | about 55 |
+| | XF 30 mm F2.8 R LM WR Macro | 43 | 12 at 1:1, about 25 at 0.65× | too short for any base |
+| Leica M and others, full frame, 1.0× | Laowa 85 mm f/5.6 2× Ultra Macro APO | 46 | 96, measured | 36 |
+
+An APS-C body on any of these mounts needs 0.65× instead of 1.0×, which adds roughly 40 – 55 mm to every working distance above. A 120 frame on full frame needs 0.43× and adds about 100 – 130 mm, which is what the spacer is for.
+
+What the tube cannot do: a lens whose working distance is below 60 mm cannot reach its full magnification on the bare base, though it still scans at a lower one, and the base can be printed shorter, down to 45 mm, with `--base-wd`. Columns start at H = 6.4 mm; ring bodies up to Ø86 fit, which covers filter threads to 77 mm. Every 100 mm of column lowers the push that tips the box by about 30 %, so above about 150 mm of column the stand is the better tool, with the box as its light source.
+
+To generate your column, measure the step-up ring's body with callipers and run, from the repository root:
+
+```
+/Applications/Blender.app/Contents/MacOS/Blender --background cad/neobox.blend \
+    --python tools/camera_tube.py -- --ring 62-67 --ring-od 69 --ring-h 4.5 --wd 141 --out out/
+python3 tools/verify_stl.py out/*.stl
+```
+
+`--ring` names the step-up ring, lens thread first; `--ring-od` and `--ring-h` are the outside diameter and the height of its body below the shoulder; `--wd` is your measured working distance. The script writes the base and your column, checks that both are watertight and on the layer grid, and prints their mass.
 
 ## Parallelism
 
