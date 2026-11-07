@@ -22,6 +22,8 @@ face down, no supports):
     lens-carrier-46-52.stl        the same with no riser (H = 0): for wd equal to the base
     camera-tube-spacer-35.stl     optional riser under the column (--spacer), for a second
                                   magnification with the same lens
+    camera-tube-coupon-socket.stl the turning joint on its own (--coupon): the base's socket and the
+    camera-tube-coupon-spigot.stl column's spigot, about 10 g each, to prove the fit before the base
 
 Run headless from the repository root (any Blender 4.x/5.x):
 
@@ -63,6 +65,9 @@ CORNER_R, ARC_SEGS = 0.4, 16
 BOSS_FLOOR, BOSS_WALL = 0.6, 1.2   # magnet bosses under the chamfer
 JOINT = dict(bore_d=84.0, collar_od=94.0, collar_h=4.4, spigot_od=83.6, spigot_h=4.0, flange_t=1.2)
 LIP_T, RING_FIT = 1.2, 0.4         # lip under the ring pocket; diametral clearance of the pocket
+MOUTH_CH = 0.6                     # 45-degree chamfer at the two bores that print on the bed (the base's socket,
+                                   # the column's ring pocket): elephant foot would otherwise close their 0.2 fit
+COUPON_X = -250.0                  # where the joint test pieces are parked
 SEGS = 128
 BASE_WD_MIN = 45.0                 # corner overhang reaches 45 degrees here
 
@@ -207,7 +212,9 @@ def build_base(base_wd=60.0, name="camera-tube-base"):
                    rrect(ring_w, ring_l, ri, lid), rrect(ring_w, ring_l, ri, z_ring_top),
                    rrect(inner_w, inner_l, ri, z_chamfer_top), rrect(cid, cid, cid / 2, z_collar)], "_cut_cavity")
     boolean(body, cavity, "DIFFERENCE")
-    boolean(body, cylinder("_cut_bore", bore / 2, z_collar - 1, z_top + 1), "DIFFERENCE")
+    boolean(body, lathe([(0, z_collar - 1), (bore / 2, z_collar - 1), (bore / 2, z_top - MOUTH_CH),
+                         (bore / 2 + MOUTH_CH, z_top), (bore / 2 + MOUTH_CH, z_top + 1), (0, z_top + 1)],
+                        "_cut_bore"), "DIFFERENCE")
     for sy, tag in ((1, "1"), (-1, "2")):
         y0, y1 = sorted((sy * (inner_l / 2 - 1), sy * (outer_l / 2 + 1)))
         boolean(body, box("_cut_notch" + tag, -NOTCH_W / 2, NOTCH_W / 2, y0, y1, z_bot - 1, lid), "DIFFERENCE")
@@ -239,6 +246,7 @@ def build_column(L, H, z_rest, name=None):
     pk, hole = (L["ring_od"] + RING_FIT) / 2, L["lip_hole_d"] / 2
     pw_o = pk + WALL
     pk_depth = math.floor(L["ring_h"] / LAYER + 1e-9) * LAYER         # on the grid; the ring stands proud by < 0.2
+    assert pk_depth >= MOUTH_CH + LAYER, f"--ring-h {L['ring_h']}: too shallow a pocket for its {MOUTH_CH} mm mouth chamfer"
     sp_o, sp_i, fl, wi = J["spigot_od"] / 2, J["spigot_od"] / 2 - WALL, J["collar_od"] / 2, J["collar_od"] / 2 - WALL
     z_fl = g(z_rest); z_sp = g(z_fl - J["spigot_h"]); z_sh = g(z_rest + J["flange_t"] + H)
     z_pk = g(z_sh - pk_depth); z_lip = g(z_pk - LIP_T)
@@ -248,14 +256,14 @@ def build_column(L, H, z_rest, name=None):
         assert pw_o < sp_i - 1.0, f"ring OD {L['ring_od']} too large for a carrier (max {2 * (sp_i - 1.0 - WALL) - RING_FIT:.1f}); use a column"
         assert L["retainer_od"] / 2 < sp_i - 0.2, "the clamp ring must pass the spigot bore"
         prof = [(hole, z_lip), (pw_o, z_lip), (pw_o, z_fl), (sp_i, z_fl), (sp_i, z_sp), (sp_o, z_sp), (sp_o, z_fl),
-                (fl, z_fl), (fl, z_sh), (pk, z_sh), (pk, z_pk), (hole, z_pk)]
+                (fl, z_fl), (fl, z_sh), (pk + MOUTH_CH, z_sh), (pk, z_sh - MOUTH_CH), (pk, z_pk), (hole, z_pk)]
     else:
         name = name or f"lens-column-{L['ring']}-h{H:g}"
         assert H >= 6.4, f"H = {H}: a column needs H >= 6.4; print the base at --base-wd {L['wd']:g} and use the carrier"
         assert pw_o < wi - 1.0, f"ring OD {L['ring_od']} too large (max {2 * (wi - 1.0 - WALL) - RING_FIT:.1f})"
         assert L["retainer_od"] / 2 < wi - 0.5, "the clamp ring must fit inside the column"
         z_plate = g(z_sh - J["flange_t"]); z_fun = g(z_fl + J["flange_t"] + (wi - sp_i))
-        prof = [(sp_i, z_sp), (sp_o, z_sp), (sp_o, z_fl), (fl, z_fl), (fl, z_sh), (pk, z_sh), (pk, z_pk),
+        prof = [(sp_i, z_sp), (sp_o, z_sp), (sp_o, z_fl), (fl, z_fl), (fl, z_sh), (pk + MOUTH_CH, z_sh), (pk, z_sh - MOUTH_CH), (pk, z_pk),
                 (hole, z_pk), (hole, z_lip), (pw_o, z_lip), (pw_o, z_plate), (wi, z_plate), (wi, z_fun),
                 (sp_i, g(z_fl + J["flange_t"]))]
     col = lathe(prof, name)
@@ -278,6 +286,29 @@ def build_spacer(length, z_rest, name=None):
     sp = lathe(prof, name)
     _finish(sp)
     return sp, dict(name=name, length=length, z_rest=z0, z_top=zt)
+
+
+def build_coupon(z_rest):
+    """The turning joint on its own, parked at x = COUPON_X, to prove the fit on a printer before a base is spent
+    on it: the base's socket (collar top on the bed, as the base prints) and the column's flange, spigot and
+    funnel (upper face on the bed, as the column prints)."""
+    J = JOINT
+    bore, fl, wi = J["bore_d"] / 2, J["collar_od"] / 2, J["collar_od"] / 2 - WALL
+    sp_o, sp_i = J["spigot_od"] / 2, J["spigot_od"] / 2 - WALL
+    z_top = g(z_rest); z_col = g(z_top - J["collar_h"]); z_bot = g(z_col - 2.4)
+    sock = lathe([(bore + MOUTH_CH, z_top), (fl, z_top), (fl, z_bot), (wi, z_bot), (wi, z_col), (bore, z_col),
+                  (bore, z_top - MOUTH_CH)], "camera-tube-coupon-socket")
+    z_fl = g(z_rest); z_sp = g(z_fl - J["spigot_h"]); z_in = g(z_fl + J["flange_t"])
+    z_fun = g(z_in + (wi - sp_i)); z_up = g(z_fun + 1.2)
+    spig = lathe([(sp_i, z_sp), (sp_o, z_sp), (sp_o, z_fl), (fl, z_fl), (fl, z_up), (wi, z_up), (wi, z_fun),
+                  (sp_i, z_in)], "camera-tube-coupon-spigot")
+    out = []
+    for ob, z_bed, z_far in ((sock, z_top, z_bot), (spig, z_up, z_sp)):
+        for v in ob.data.vertices:
+            v.co.x += COUPON_X
+        _finish(ob)
+        out.append((ob, z_bed, dict(name=ob.name, bed_face_z=z_bed, height=round(abs(z_bed - z_far), 1), x=COUPON_X)))
+    return out
 
 
 def build_mocks(L, z_shoulder):
@@ -355,6 +386,8 @@ def parse(argv):
     ap.add_argument("--wd", type=float, required=True, help="working distance at your magnification, mm")
     ap.add_argument("--base-wd", type=float, default=60.0, help="working distance of the bare base (default 60)")
     ap.add_argument("--spacer", type=float, default=None, help="also build a spacer of this length, mm")
+    ap.add_argument("--coupon", action="store_true",
+                    help="also build the two joint test pieces (socket and spigot), to check the turning fit before the base")
     ap.add_argument("--rim-od", type=float, default=None, help="lens front rim diameter, mm (mock and seat check)")
     ap.add_argument("--lens-len", type=float, default=80.0, help="lens length for the mock, mm")
     ap.add_argument("--mock", action="store_true", help="also build the (unprinted) ring, lens and camera mocks")
@@ -384,6 +417,9 @@ def main(argv):
     if a.spacer:
         sp, rs = build_spacer(a.spacer, z_rest); print("spacer:", rs)
         parts.append((sp, rs["z_top"])); z_rest = rs["z_top"]; riser = a.spacer
+    if a.coupon:
+        for ob, z_bed, rk in build_coupon(rb["z_top"]):
+            print("coupon:", rk); parts.append((ob, z_bed))
     H = g(a.wd - a.base_wd - riser)
     assert H >= 0, f"--wd {a.wd} is below the base ({a.base_wd} + spacer {riser}); lower --base-wd (min {BASE_WD_MIN})"
     col, rc = build_column(L, H, z_rest); print("column:", rc)

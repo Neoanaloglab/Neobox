@@ -8,20 +8,20 @@
 
 ## A–Z
 
-Two vocabularies meet in this project: film photography and 3D printing. A reader is rarely fluent in both, so every entry below is written for someone fluent in neither.
+This project uses words from two fields: film photography and 3D printing. Few readers know both, so every entry below is written for someone who knows neither.
 
 > [!TIP]
-> Part names are a separate matter. Every part is named once and never renamed. Printed: **main body**, **cover-stage**, **film holder** (**holder base** / **holder lid**, one pair per format), **pressure window inserts**, **6×6 mask**, **slide plate**, **4×5 cover-stage** and **sheet plate**. Bought: **diffuser**, **magnets**, **steel shims**, and optionally **anti-Newton glass**. The printed prototype's **top cover** and **film stage** are merged into the cover-stage since v1, and the **access panel**, **studs** and **nuts** are gone: v1 has no fasteners at all. If you cannot match a name to a shape in front of you, see [Part vocabulary](printing.md#part-vocabulary), which ties each one to a feature you can see.
+> Part names are a separate matter. Every part is named once and never renamed. Printed: **main body**, **cover-stage**, **film holder** (**holder base** / **holder lid**, one pair per format), **pressure window inserts**, **6×6 mask**, **slide plate**, **4×5 cover-stage** and **sheet plate**. Bought: **diffuser**, **magnets**, **steel shims**, and optionally **anti-Newton glass**. The printed prototype's **top cover** and **film stage** have been merged into the cover-stage since v1, and the **access panel**, **studs** and **nuts** are gone. v1 has no fasteners at all. If you cannot match a name to a shape in front of you, see [Part vocabulary](printing.md#part-vocabulary), which ties each one to a feature you can see.
 
 ### Anti-Newton glass
 
-Glass with one finely matted face, made so that film pressed against it cannot form [Newton rings](#newton-rings). NeoBox's optional flatness upgrade is one 64 × 95 × 2 mm single-side AN sheet, shared by both formats.
+Glass with one face finely matted, so that film pressed against it cannot form [Newton rings](#newton-rings). NeoBox's optional flatness upgrade is one 64 × 95 × 2 mm single-side AN sheet, shared by both formats.
 
-**Why it matters:** dropped onto the [element ledge](#element-ledge) in place of the printed [pressure window insert](#pressure-window-insert), it caps the whole frame continuously and holds every point of the film within 0.28 mm of flat. Matte face down, against the glossy base side of the film; the emulsion side faces the open window below and touches nothing. Its underside sits only 0.2 mm from the focal plane, so dust on it lands in the picture. Blow it clean before loading.
+**Why it matters:** dropped onto the [element ledge](#element-ledge) in place of the printed [pressure window insert](#pressure-window-insert), it covers the whole frame with one continuous surface and holds every point of the film within 0.28 mm of flat. The matte face goes down, against the glossy base side of the film. The emulsion side faces the open window below and touches nothing. The underside of the glass sits only 0.2 mm from the focal plane, so dust on it lands in the picture. Blow it clean before loading.
 
 ### Base ISO
 
-The lowest true sensitivity of a camera's sensor, usually ISO 100, where it has the most dynamic range and the least noise.
+The lowest true sensitivity of a camera's sensor, usually ISO 100. At base ISO the sensor has the most dynamic range and the least noise.
 
 **Why it matters:** the flash has power to spare inside the box, so there is no reason ever to leave base ISO. Metering starts at ISO 100 and f/5.6–f/8. See [Exposure](scanning.md#exposure).
 
@@ -29,55 +29,55 @@ The lowest true sensitivity of a camera's sensor, usually ISO 100, where it has 
 
 The printable area of an FDM printer's build plate, quoted as X × Y.
 
-**Why it matters:** it is a go/no-go, not a preference, though in v1 an easy one. The largest parts, the main body and the cover-stage, are 124.8 × 154.8 mm, so a 160 × 160 mm bed prints everything; the old prototype-era warnings about 280 mm beds are obsolete. See [Will it fit your printer?](printing.md#will-it-fit-your-printer).
+**Why it matters:** a part either fits your bed or it does not, so this is a go/no-go check. In v1 it is an easy one. The largest parts, the main body and the cover-stage, are 124.8 × 154.8 mm, so a 160 × 160 mm bed prints everything. The old prototype-era warnings about 280 mm beds are obsolete. See [Will it fit your printer?](printing.md#will-it-fit-your-printer).
 
 ### Bridging
 
-Extruding filament straight across an unsupported gap between two anchored points, so it spans in air and cools before it can droop.
+Printing filament straight across a gap with nothing under it, from one anchored point to another, so that it hangs in the air and cools before it can droop.
 
-**Why it matters:** v1 has nothing to bridge. The front of the main body is not a spanned opening but a missing wall, the [open front](#open-front), and every one of the twelve parts prints flat face down without [supports](#supports).
+**Why it matters:** v1 has nothing to bridge. The front of the main body is a missing wall, the [open front](#open-front), so there is no opening to span. Every one of the twelve parts prints flat face down without [supports](#supports).
 
 ### Camera scanning
 
 Photographing a negative with a digital camera on a stand, instead of feeding it through a flatbed or drum scanner. Also called DSLR scanning, whatever camera you use.
 
-**Why it matters:** NeoBox is the light source for this method and nothing else. It does not hold a camera, and the camera, lens and stand are yours to provide. See [What camera scanning is](getting-started.md#what-camera-scanning-is).
+**Why it matters:** NeoBox is the light source for this method and nothing else. It does not hold a camera. The camera, lens and stand are yours to provide. See [What camera scanning is](getting-started.md#what-camera-scanning-is).
 
 ### Channel
 
-The 0.4 mm high slot the film strip slides along inside the film holder: 35.4 mm wide in the 135 holder, 62.0 mm in the 120 holder. Its floor is the [lands](#land), its sides are the [rails](#rail), and its ceiling is the underside of the pressure element (the [pressure window insert](#pressure-window-insert) or the [anti-Newton glass](#anti-newton-glass)) sitting on its [ledge](#element-ledge).
+The 0.4 mm high slot the film strip slides along inside the film holder: 35.4 mm wide in the 135 holder, 62.0 mm in the 120 holder. Its floor is the [lands](#land) and its sides are the [rails](#rail). Its ceiling is the underside of the pressure element sitting on its [ledge](#element-ledge), either the [pressure window insert](#pressure-window-insert) or the [anti-Newton glass](#anti-newton-glass).
 
-**Why it matters:** film is loaded and advanced by pulling the strip sideways through the channel; the holder is never opened and the pressure element never moves mid-roll. A bowed frame is pressed flat against the ceiling as it slides in. The 0.4 mm figure is also why the holder parts are the ones worth printing at the finer [layer height](#layer-height).
+**Why it matters:** film is loaded and advanced by pulling the strip sideways through the channel. The holder is never opened, and the pressure element never moves mid-roll. A bowed frame is pressed flat against the ceiling as it slides in. The 0.4 mm figure is also why the holder parts are the ones worth printing at the finer [layer height](#layer-height).
 
 ### Copy stand
 
-A vertical column on a baseboard that holds a camera pointing straight down at an adjustable height. A tripod with a horizontal or reversible centre column does the same job.
+A vertical column on a baseboard that holds a camera pointing straight down, at a height you can adjust. A tripod with a horizontal or reversible centre column does the same job.
 
-**Why it matters:** the film plane sits 83.2 mm above the desk, and the stand must clear that plus the [working distance](#working-distance) of your lens while holding the sensor parallel to the film. See [Camera height and the stand](scanning.md#camera-height-and-the-stand).
+**Why it matters:** the film plane sits 83.2 mm above the desk. The stand must reach that height plus the [working distance](#working-distance) of your lens, and hold the sensor parallel to the film. See [Camera height and the stand](scanning.md#camera-height-and-the-stand).
 
 ### Cover-stage
 
-The single white part that closes the top of the box, the prototype's top cover and film stage merged into one 124.8 × 154.8 × 10 mm piece. Its 6 mm plate rests on the box walls, located by four notches over the body's [tenons](#locating-tenon-and-notch); a raised flange rings the 94.6 × 120.6 mm holder seat, and the plate carries the 62 × 95 mm light window, a hidden slot for the [diffuser](#diffuser) and four flush steel shims for the holder's magnets to grab. The optional 4×5 version, `cover-stage-4x5.stl`, keeps the outline and notches and carries a 102 × 126 mm window, a recess for a 106 × 130 × 2 mm sheet and a 112.6 × 138.6 mm tray for the [sheet plate](#sheet-plate).
+The single white part that closes the top of the box. It is the prototype's top cover and film stage merged into one 124.8 × 154.8 × 10 mm piece. Its 6 mm plate rests on the box walls, located by four notches over the body's [tenons](#locating-tenon-and-notch). A raised flange rings the 94.6 × 120.6 mm holder seat. The plate carries the 62 × 95 mm light window, a hidden slot for the [diffuser](#diffuser) and four flush steel shims for the holder's magnets to grab. The optional 4×5 version, `cover-stage-4x5.stl`, keeps the outline and notches. It carries a 102 × 126 mm window, a recess for a 106 × 130 × 2 mm sheet and a 112.6 × 138.6 mm tray for the [sheet plate](#sheet-plate).
 
-**Why it matters:** merging cover and stage removed a whole stack of parts and the tolerances between them: nothing to level, nothing to bolt. The whole piece lifts off by its flange, holders snap on and off it magnetically in seconds, and the flange top runs 0.2 mm below the film plane, so film running out of the holder rides over it instead of jamming against it.
+**Why it matters:** merging cover and stage removed a whole stack of parts and the tolerances between them. There is nothing to level and nothing to bolt. The whole piece lifts off by its flange. Holders snap on and off it magnetically in seconds. The flange top runs 0.2 mm below the film plane, so film running out of the holder rides over it and does not jam against it.
 
 ### Diffuser
 
-A translucent sheet that scatters light passing through it into an even glow. In NeoBox there is exactly one: an [opal](#opal) acrylic sheet, 68 × 118 × 2 mm, sitting in a shallow slot inside the [cover-stage](#cover-stage) beneath the light window.
+A translucent sheet that scatters the light passing through it into an even glow. In NeoBox there is exactly one: an [opal](#opal) acrylic sheet, 68 × 118 × 2 mm, sitting in a shallow slot inside the [cover-stage](#cover-stage) beneath the light window.
 
-**Why it matters:** it is the glowing surface itself, the last diffuse stage before 4.6 mm of air and the film. Because it emits diffusely, dust on it does not image: wipe it now and then rather than ritually. To take it out, lift the holder off and push the sheet up through the light window from inside the box.
+**Why it matters:** it is the glowing surface itself, the last diffusing layer before the film. Only 4.6 mm of air separates the two. Because it glows diffusely, dust on it does not show in the picture. Wipe it now and then. There is no need to clean it before every session. To take it out, lift the holder off and push the sheet up through the light window from inside the box.
 
 ### EFCS
 
 Electronic first-curtain shutter: the exposure begins electronically at the sensor and ends with the mechanical rear curtain.
 
-**Why it matters:** EFCS still fires a flash, and it removes the shock of the opening curtain. A *fully* electronic (silent) shutter is a different setting and usually will not fire a flash at all. See [Exposure](scanning.md#exposure).
+**Why it matters:** EFCS still fires a flash, and it removes the shock of the opening curtain. A *fully* electronic (silent) shutter is a different setting, and it usually will not fire a flash at all. See [Exposure](scanning.md#exposure).
 
 ### Element ledge
 
-The 4.6 mm high step on the outer rails of each holder base that carries the pressure element (the [pressure window insert](#pressure-window-insert) or the [anti-Newton glass](#anti-newton-glass)), with an outer lip standing 0.4 mm higher to keep it from wandering. The ledge is identical in the 135 and 120 holders, which is why one sheet of glass serves both.
+The 4.6 mm high step on the outer rails of each holder base. It carries the pressure element, either the [pressure window insert](#pressure-window-insert) or the [anti-Newton glass](#anti-newton-glass). An outer lip stands 0.4 mm higher to keep the element from wandering. The ledge is identical in the 135 and 120 holders, which is why one sheet of glass serves both.
 
-**Why it matters:** it fixes the element's underside at exactly 4.6 mm, which is 0.4 mm above the 4.2 mm [land](#land) the film rides on, and that difference *is* the film [channel](#channel). The element is set on the ledge once and never handled again; frames advance by pulling the strip underneath it.
+**Why it matters:** it fixes the underside of the element at exactly 4.6 mm. That is 0.4 mm above the 4.2 mm [land](#land) the film rides on, and that difference *is* the film [channel](#channel). The element is set on the ledge once and never handled again. Frames advance by pulling the strip underneath it.
 
 ### Elephant foot
 
@@ -89,73 +89,73 @@ The slight outward bulge of the first few layers of a print, squashed wider by t
 
 Exposure value. One EV is one stop: a doubling or halving of the light reaching the sensor.
 
-**Why it matters:** the evenness of the light and the consistency of exposure are both judged in it, corner to corner and frame to frame, always after [flat-field correction](#flat-field-correction).
+**Why it matters:** the evenness of the light, corner to corner, and the consistency of exposure, frame to frame, are both judged in EV, and always after [flat-field correction](#flat-field-correction).
 
 ### Film gate
 
 The rectangular opening that defines the exposed area of a frame: the metal aperture in a film camera, and by extension the [window](#window) in the film holder that you photograph through here.
 
-**Why it matters:** camera gates vary slightly between bodies, so the holder windows are cut about 0.5 mm oversize per side to swallow that variation and printer XY tolerance. It also names the surface you blow clean every session, along with the [anti-Newton glass](#anti-newton-glass) if you shoot with one.
+**Why it matters:** camera gates vary slightly between bodies, so the holder windows are cut about 0.5 mm oversize per side to absorb that variation and the printer's XY tolerance. The term also names the surface you blow clean every session, along with the [anti-Newton glass](#anti-newton-glass) if you shoot with one.
 
 ### Flat-field correction
 
-Photographing the evenly lit surface on its own, with no film in place, and then dividing your real frames by that reference so that lens vignetting and any unevenness in the light cancel out.
+Photographing the evenly lit surface on its own, with no film in place, and then dividing your real frames by that reference image. Lens vignetting and any unevenness in the light then cancel out.
 
-**Why it matters:** it comes first, before any judgement about the box. Nothing else separates lens vignetting from real unevenness in the source, and the box's evenness is judged on what is left afterwards. See [Flat-field and inversion](scanning.md#flat-field-and-inversion).
+**Why it matters:** it comes first, before any judgement about the box. Nothing else separates lens vignetting from real unevenness in the source. The box's evenness is judged on what is left afterwards. See [Flat-field and inversion](scanning.md#flat-field-and-inversion).
 
 ### Guide number
 
 A flash's power rating: guide number = aperture × distance for a correct exposure at ISO 100. The reference NEEWER TT560 is GN38, in metres.
 
-**Why it matters:** it is the figure printed on the box, and inside NeoBox it tells you almost nothing, because the flash fires from the [open front](#open-front) and light reaches the film only after several diffuse bounces. Start metering at ISO 100 and f/5.6–f/8, and expect to give back several stops to the enclosure.
+**Why it matters:** it is the figure printed on the flash's packaging, and inside NeoBox it tells you almost nothing. The flash fires from the [open front](#open-front), and light reaches the film only after several diffuse bounces. Start metering at ISO 100 and f/5.6–f/8, and expect the enclosure to cost you several stops.
 
 ### HSS
 
 High-speed sync: the flash fires a rapid train of small pulses so it can be used at shutter speeds above the camera's [sync speed](#sync-speed).
 
-**Why it matters:** it is useless here, and you may be asked to pay for it. Working by flash in a dim room, you shoot at or below sync speed by choice.
+**Why it matters:** it is useless here, and you may be asked to pay extra for it. Working by flash in a dim room, you shoot at or below sync speed by choice.
 
 ### Infill
 
-The internal lattice that fills the space between a part's [perimeters](#perimeters), given as a percentage of solid.
+The lattice that fills the inside of a part, between its [perimeters](#perimeters), given as a percentage of solid.
 
-**Why it matters:** 15 % is the spec for all twelve parts. Nothing in v1 hangs a load on infill any more. What keeps the walls opaque is perimeters, not infill. See [Print settings](printing.md#print-settings).
+**Why it matters:** 15 % is the spec for all twelve parts. Nothing in v1 hangs a load on infill any more. Perimeters are what keep the walls opaque. Infill plays no part in that. See [Print settings](printing.md#print-settings).
 
 ### Integrating cavity
 
-A closed volume with matte white walls in which light bounces many times until its direction and brightness even out. The laboratory version is the integrating sphere.
+A closed space with matte white walls, in which light bounces many times until its direction and brightness even out. The laboratory version is the integrating sphere.
 
-**Why it matters:** NeoBox is one: a 120 × 150 × 70 mm white cavity with one open side. The flash lies on the desk at the [open front](#open-front), firing horizontally into it, and nothing is aimed at the film: the evenness comes from the bounces off the white walls and ceiling, not from the diffuser alone. This is also why the interior is left as bare white filament and must not be painted. See [How the light works](../README.md#how-the-light-works).
+**Why it matters:** NeoBox is one: a 120 × 150 × 70 mm white cavity with one open side. The flash lies on the desk at the [open front](#open-front), firing horizontally into it, and nothing is aimed at the film. The evenness comes from the bounces off the white walls and ceiling. The diffuser alone does not produce it. This is also why the interior is left as bare white filament and must not be painted. See [How the light works](../README.md#how-the-light-works).
 
 ### Inversion
 
 Turning a captured negative into a positive image: inverting the tones, removing the orange mask of colour negative film, and setting contrast and colour.
 
-**Why it matters:** this is the last step of the workflow, and the one where a constant light source pays off: every frame on the roll gets the same flash output, so one inversion profile fits the whole roll. See [Flat-field and inversion](scanning.md#flat-field-and-inversion).
+**Why it matters:** this is the last step of the workflow, and the one where a constant light source pays off. Every frame on the roll gets the same flash output, so one inversion profile fits the whole roll. See [Flat-field and inversion](scanning.md#flat-field-and-inversion).
 
 ### Land
 
-The raised seat inside the holder base that the edges of the film rest on, standing 0.4 mm proud of the surrounding floor at a height of 4.2 mm.
+The raised seat inside the holder base that the edges of the film rest on. It stands 0.4 mm above the surrounding floor, at a height of 4.2 mm.
 
-**Why it matters:** the top face of the land *is* the film plane. Only the edges of the strip touch it; the image area floats over the open window, capped 0.4 mm overhead by the pressure element on its [ledge](#element-ledge).
+**Why it matters:** the top face of the land *is* the film plane. Only the edges of the strip touch it. The image area floats over the open window, with the pressure element on its [ledge](#element-ledge) 0.4 mm overhead.
 
 ### Layer height
 
-The thickness of one printed layer. It quantises every horizontal feature in the part: a feature that is not a whole number of layers cannot be printed at its designed size.
+The thickness of one printed layer. Every height in a part is built from whole layers, so a height that is not a whole number of layers cannot be printed at its designed size.
 
 **Why it matters:** every height in the design sits on a 0.2 mm grid, and every exposed step is 0.4 mm or more. The print spec is 0.2 mm on every part, so each height lands exactly on a layer boundary. See [Print settings](printing.md#print-settings).
 
 ### Locating tenon and notch
 
-A tenon is a small raised block, a notch its matching recess. Four tenons, 2.4 × 12 × 2.6 mm, stand on the top edges of the main body's side walls and engage four notches in the underside of the [cover-stage](#cover-stage).
+A tenon is a small raised block, and a notch is its matching recess. Four tenons, 2.4 × 12 × 2.6 mm, stand on the top edges of the main body's side walls and engage four notches in the underside of the [cover-stage](#cover-stage).
 
-**Why it matters:** they are the only alignment feature in the box: v1 has no fasteners of any kind, so gravity holds the stack and the tenons stop it shifting, registering the light window over the cavity every time. It is also why the assembled box is lifted straight up and never carried tilted, and why [elephant foot](#elephant-foot) compensation matters at the notch mouths.
+**Why it matters:** they are the only alignment feature in the box. v1 has no fasteners of any kind, so gravity holds the stack and the tenons stop it shifting. That puts the light window over the cavity in the same place every time. It is also why the assembled box is lifted straight up and never carried tilted, and why [elephant foot](#elephant-foot) compensation matters at the notch mouths.
 
 ### Magnification ratio
 
 How large the subject appears on the sensor, divided by its real size. 1:1, written 1.0×, means the frame is projected onto the sensor at life size.
 
-**Why it matters:** it decides which lens you need. A 135 frame on full frame needs 1.0×; a 6×6 frame on full frame needs 0.43×. Any 1:1 macro lens covers every format NeoBox handles, because the larger formats need *less* magnification. See [Magnification and lens choice](scanning.md#magnification-and-lens-choice).
+**Why it matters:** it decides which lens you need. A 135 frame on a full-frame sensor needs 1.0×, and a 6×6 frame needs 0.43×. Any 1:1 macro lens covers every format NeoBox handles, because the larger formats need *less* magnification. See [Magnification and lens choice](scanning.md#magnification-and-lens-choice).
 
 ### Manual power fraction
 
@@ -167,43 +167,43 @@ The flash's output set by hand as a fraction of full power: 1/1, 1/2, 1/4 and so
 
 Squaring the camera to the film by eye: lay a small mirror flat at the film position, look through the viewfinder, and move the camera until the reflection of its own lens sits centred. A centred reflection means the sensor is parallel to the film plane.
 
-**Why it matters:** it replaced every piece of levelling hardware in the prototype: rods, nuts, all of it. Aligning at the camera also absorbs the printed box's tolerances, because you square up to the film plane that actually exists, not to the box that ought to be under it. See [Camera height and the stand](scanning.md#camera-height-and-the-stand).
+**Why it matters:** it replaced all the levelling hardware in the prototype: the rods and the nuts. Aligning at the camera also absorbs the printed box's tolerances, because you square up to the film plane that actually exists. The box that ought to be under it plays no part. See [Camera height and the stand](scanning.md#camera-height-and-the-stand).
 
 ### Newton rings
 
-Irregular coloured interference fringes that appear where film is pressed against a smooth surface such as glass or acrylic.
+Irregular coloured fringes that appear where film is pressed against a smooth surface such as glass or acrylic. They are an interference effect.
 
-**Why it matters:** the design gives them nothing to form on. With the printed [insert](#pressure-window-insert), nothing smooth touches the image area at all; with the glass upgrade, the face against the film is deliberately matted, which is the "anti-Newton" in [anti-Newton glass](#anti-newton-glass), and the emulsion side faces an open window.
+**Why it matters:** the design gives them nothing to form on. With the printed [insert](#pressure-window-insert), nothing smooth touches the image area at all. With the glass upgrade, the face against the film is deliberately matted, which is the "anti-Newton" in [anti-Newton glass](#anti-newton-glass), and the emulsion side faces an open window.
 
 ### Opal
 
-Milky-white translucent acrylic that scatters light through its whole thickness, rather than at a textured surface.
+Milky-white translucent acrylic. It scatters light inside its whole thickness, with no textured surface involved.
 
-**Why it matters:** opal is not the same product as frosted, which is clear sheet with a matte face, and ordering the wrong one is an easy mistake. NeoBox needs one 2 mm opal sheet cut to 68 × 118 mm; a prototype-era 110 × 130 sheet can be cut down to it. See [Getting the right part](bom.md#getting-the-right-part).
+**Why it matters:** opal and frosted are different products. Frosted is clear sheet with a matte face, and ordering the wrong one is an easy mistake. NeoBox needs one 2 mm opal sheet cut to 68 × 118 mm. A prototype-era 110 × 130 sheet can be cut down to that size. See [Getting the right part](bom.md#getting-the-right-part).
 
 ### Open front
 
-The main body has no front wall at all: the whole front of the box is open, and the flash lies flat on the desk outside with its head at the opening, firing horizontally into the cavity.
+The main body has no front wall at all. The whole front of the box is open, and the flash lies flat on the desk outside with its head at the opening, firing horizontally into the cavity.
 
-**Why it matters:** it decouples the box from any particular flash: any brand and size fits, and the TT560 is only the reference. The radio receiver stays outside too, where its signal is clean and its batteries reachable without opening anything. Ambient light does get in: work in a dim room and keep ceiling light off the opening, and the flash pulse dwarfs whatever remains.
+**Why it matters:** it frees the box from any particular flash. Any brand and size fits, and the TT560 is only the reference. The radio receiver stays outside too, where its signal is clean and its batteries can be reached without opening anything. Ambient light does get in. Work in a dim room and keep ceiling light off the opening. The flash pulse is far stronger than whatever remains.
 
 ### Perimeters
 
 The solid outlines the printer traces around the edge of every layer, also called walls or shells.
 
-**Why it matters:** use at least 3 everywhere. The box walls are only 2.4 mm thick and their job is to be opaque; a wall that is mostly [infill](#infill) leaks light.
+**Why it matters:** use at least 3 everywhere. The box walls are only 2.4 mm thick, and their job is to be opaque. A wall that is mostly [infill](#infill) leaks light.
 
 ### Pressure window insert
 
-A printed frame, 64 × 95 × 2 mm, with a film-gate window in it: 25 × 37 mm in the 135 version, 57 × 85 mm in the 120 version. It sits on the [element ledge](#element-ledge), and its underside is the ceiling of the film [channel](#channel). The default pressure element.
+A printed frame, 64 × 95 × 2 mm, with a film-gate window in it: 25 × 37 mm in the 135 version, 57 × 85 mm in the 120 version. It sits on the [element ledge](#element-ledge), and its underside is the ceiling of the film [channel](#channel). It is the default pressure element.
 
-**Why it matters:** it hard-limits the film around all four sides of the window, holding any bow inside the window to 0.28 mm, comfortably within the roughly ±0.4 mm depth of field at 1:1 and f/8. It goes in once and stays; frames advance by pulling the strip underneath it. The insert is the only pressure element that comes in two formats; the [glass](#anti-newton-glass) is one sheet for both.
+**Why it matters:** it holds the film down hard around all four sides of the window, so any bow inside the window stays within 0.28 mm. That is comfortably within the roughly ±0.4 mm depth of field at 1:1 and f/8. It goes in once and stays. Frames advance by pulling the strip underneath it. The insert is the only pressure element that comes in two formats. The [glass](#anti-newton-glass) is one sheet for both.
 
 ### Rail
 
 The raised guiding walls in the holder base, standing 0.8 mm above the [land](#land). The inner rails set the width of the [channel](#channel): 35.4 mm for 135 film, with a short 12 mm guide at each end, and 62.0 mm for 120. The outer rails, further out, carry the [element ledge](#element-ledge).
 
-**Why it matters:** the inner rails steer the strip as you pull it through. The outer ones never touch film; they hold the pressure element. Deburr the channel mouths with a hobby knife before loading film.
+**Why it matters:** the inner rails steer the strip as you pull it through. The outer ones never touch film. Their job is to hold the pressure element. Trim any burrs off the channel mouths with a hobby knife before loading film.
 
 ### Raw
 
@@ -213,35 +213,35 @@ The camera's unprocessed sensor data, saved before any in-camera white balance, 
 
 ### Run-out corridor
 
-The clear strip along the film's path: everything within 31 mm either side of the centre line, where nothing may rise anywhere near film height, including beyond the ends of the holder.
+The strip of clear space along the film's path: everything within 31 mm either side of the centre line. Nothing in it may rise anywhere near film height, and that includes the space beyond the ends of the holder.
 
-**Why it matters:** film longer than the 120 mm holder leaves it at both ends. Inside the holder the corridor is guaranteed by the [rails](#rail); outside it, the [cover-stage](#cover-stage)'s flange top runs 0.2 mm below the film plane, so the tail rides over it: supported, not blocked. Steady the far end of a long strip by hand. The 31 mm is a half-width; 120 film is about 62 mm wide.
+**Why it matters:** film longer than the 120 mm holder leaves it at both ends. Inside the holder, the [rails](#rail) guarantee the corridor. Outside it, the [cover-stage](#cover-stage)'s flange top runs 0.2 mm below the film plane, so the tail rides over it. The flange supports the tail and does not block it. Steady the far end of a long strip by hand. The 31 mm is a half-width. 120 film is about 62 mm wide.
 
 ### Sheet plate
 
-The one-piece holder for 4×5 sheet film, `sheet-plate-4x5.stl`: a 112 × 138 × 5 mm plate with a 102.2 × 127.6 mm pocket 2.0 mm deep, a 97 × 121 mm window through the pocket floor and two edge notches. It stands in the tray of the 4×5 [cover-stage](#cover-stage), which replaces the standard one and carries its own 106 × 130 × 2 mm opal sheet.
+The one-piece holder for 4×5 sheet film, `sheet-plate-4x5.stl`: a 112 × 138 × 5 mm plate. It has a 102.2 × 127.6 mm pocket 2.0 mm deep, a 97 × 121 mm window through the pocket floor and two edge notches. It stands in the tray of the 4×5 [cover-stage](#cover-stage), which replaces the standard one and carries its own 106 × 130 × 2 mm opal sheet.
 
-**Why it matters:** it is the whole 4×5 route on the unchanged main body: two printed parts and one acrylic cut. There is no pressure element because at 4×5 magnification, about 0.25×, the depth of field at f/8 is roughly 8 – 10 mm and a sheet's curl is invisible. Its mixing margin is a third of v1's, which is why the 4×5 stage is published as an experiment.
+**Why it matters:** it is the whole 4×5 route on the unchanged main body: two printed parts and one acrylic cut. There is no pressure element, because at 4×5 magnification, about 0.25×, the depth of field at f/8 is roughly 8 – 10 mm. A sheet's curl is invisible at that depth. Its mixing margin is a third of v1's, which is why the 4×5 stage is published as an experiment.
 
 ### Slide plate
 
-The one-piece holder for mounted 135 slides, `slide-plate-135.stl`: a 94 × 120 × 5 mm plate with a 51.4 mm square pocket 2.0 mm deep, a 26 × 38 mm window through the pocket floor and two finger wells. It stands in the [cover-stage](#cover-stage) tray in place of the 135 holder set.
+The one-piece holder for mounted 135 slides, `slide-plate-135.stl`: a 94 × 120 × 5 mm plate. It has a 51.4 mm square pocket 2.0 mm deep, a 26 × 38 mm window through the pocket floor and two finger wells. It stands in the [cover-stage](#cover-stage) tray in place of the 135 holder set.
 
-**Why it matters:** a mount is many times thicker than the 0.4 mm [channel](#channel), so it can never enter a holder. The plate has no lid, no magnets and no pressure element: the mount is rigid and the box is horizontal, so the pocket locates it and gravity holds it. Refocus when you switch to it; the film in a mount sits within about half a millimetre of the strip film plane.
+**Why it matters:** a mount is many times thicker than the 0.4 mm [channel](#channel), so it can never enter a holder. The plate has no lid, magnets or pressure element. The mount is rigid and the box is horizontal, so the pocket locates it and gravity holds it. Refocus when you switch to it. The film in a mount sits within about half a millimetre of the strip film plane.
 
 ### Supports
 
-Sacrificial printed scaffolding under an overhang, snapped off after the print.
+Throwaway scaffolding printed under an overhang and snapped off after the print.
 
-**Why it matters:** none of the twelve parts needs them: every one prints support-free, flat face down, with the two holder lids printed top face down. Enabling supports anyway will scar the surfaces the film slides against. See [The twelve parts](printing.md#the-twelve-parts).
+**Why it matters:** none of the twelve parts needs them. Every one prints support-free, flat face down, and the two holder lids print top face down. Enabling supports anyway will scar the surfaces the film slides against. See [The twelve parts](printing.md#the-twelve-parts).
 
 ### Sync speed
 
-The fastest shutter speed at which the sensor is fully uncovered at one instant, so a flash can expose the whole frame rather than a band of it.
+The fastest shutter speed at which the whole sensor is uncovered at one instant. At that speed or slower, a flash exposes the whole frame. Any faster, and it exposes only a band of it.
 
-Most modern mirrorless and DSLR bodies sync at **1/160 – 1/250 s**; many older and medium-format bodies at 1/125 s or slower; a leaf shutter syncs at any speed. Your camera's own figure is in its manual and spec sheet, usually written "X-sync" or "flash sync".
+Most modern mirrorless and DSLR bodies sync at **1/160 – 1/250 s**. Many older and medium-format bodies sync at 1/125 s or slower, and a leaf shutter syncs at any speed. Your camera's own figure is in its manual and spec sheet, usually written "X-sync" or "flash sync".
 
-**Why it matters:** **set 1/125 s and leave it.** That is at or below almost every camera's limit, and it leaves margin for the delay a cheap 2.4 GHz radio trigger adds; the *usable* sync speed with one is often a step below the rated one. Going slower costs nothing here, because in the dim room you shoot in, the pulse is effectively the whole exposure. Get it wrong and part of the frame is exposed while the rest is a clean dark band: the curtain was still crossing the sensor when the flash fired.
+**Why it matters:** **set 1/125 s and leave it.** That is at or below almost every camera's limit, and it leaves margin for the delay a cheap 2.4 GHz radio trigger adds. With a trigger, the *usable* sync speed is often a step below the rated one. Going slower costs nothing here. In the dim room you shoot in, the pulse is effectively the whole exposure. Get it wrong and part of the frame is exposed while the rest is a clean dark band. The curtain was still crossing the sensor when the flash fired.
 
 Do not rely on the camera capping the shutter for you. Many bodies only do that when they recognise a flash on the hot shoe, and a radio transmitter often is not recognised as one.
 
@@ -249,19 +249,19 @@ Do not rely on the camera capping the shutter for you. Many bodies only do that 
 
 Through-the-lens flash metering: the camera fires a pre-flash, measures it and sets the flash power automatically.
 
-**Why it matters:** it is the wrong tool here and you should not pay for it. You want *identical* output on every frame so that one [inversion](#inversion) profile fits the whole roll, which means manual power, set once during calibration.
+**Why it matters:** it is the wrong tool here, and you should not pay for it. You want *identical* output on every frame, so that one [inversion](#inversion) profile fits the whole roll. That means manual power, set once during calibration.
 
 ### Window
 
-The hole in the holder base and lid that you photograph through: 25 × 37 mm in the 135 holder, 57 × 85 mm in the 120 holder. The slide-in 6×6 mask narrows the 120 view to 56.5 × 56.5 mm, the slide plate's window is 26 × 38 mm, and the sheet plate's 97 × 121 mm.
+The hole in the holder base and lid that you photograph through: 25 × 37 mm in the 135 holder, 57 × 85 mm in the 120 holder. The slide-in 6×6 mask narrows the 120 view to 56.5 × 56.5 mm. The slide plate's window is 26 × 38 mm, and the sheet plate's is 97 × 121 mm.
 
-**Why it matters:** each window is deliberately about 0.5 mm oversize per side against the nominal frame, to absorb [film gate](#film-gate) variation between cameras and printer tolerance. You will see a sliver of film edge around the image; crop it in post.
+**Why it matters:** each window is deliberately about 0.5 mm oversize per side against the nominal frame, to absorb [film gate](#film-gate) variation between cameras and printer tolerance. You will see a sliver of film edge around the image. Crop it out afterwards.
 
 ### Working distance
 
 The gap between the front of the lens and the subject, at a given [magnification ratio](#magnification-ratio). It shrinks as magnification rises.
 
-**Why it matters:** it sets how tall your stand has to be. The film plane sits 83.2 mm above the desk, and the camera must sit that far up plus the working distance of your lens, still square to the film. See [Camera height and the stand](scanning.md#camera-height-and-the-stand).
+**Why it matters:** it sets how tall your stand has to be. The film plane sits 83.2 mm above the desk. The camera must sit that high plus the working distance of your lens, and still square to the film. See [Camera height and the stand](scanning.md#camera-height-and-the-stand).
 
 ---
 

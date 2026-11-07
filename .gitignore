@@ -3,6 +3,9 @@
 *.blend2
 *.blend@
 
+# python bytecode
+__pycache__/
+
 # slicer output
 *.gcode
 *.3mf
