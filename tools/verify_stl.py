@@ -36,6 +36,9 @@ EXPECTED = {
     "camera-tube-coupon-spigot.stl": (94.0, 94.0, 11.6),
     # the Laowa 85 at 1:1 on a typical 46-52 step-up ring (54.5 across, 3.5 body): --ring 46-52 --ring-od 54.5 --ring-h 3.5 --wd 96
     "lens-column-46-52-h36.stl": (94.0, 94.0, 41.2),
+    # the same lens for 4x5 at working distance 350 (0.23-0.24x): --wd 350 --spacer 145, same ring
+    "camera-tube-spacer-145.stl": (149.0, 94.0, 94.0),
+    "lens-column-46-52-h145.stl": (150.2, 94.0, 94.0),
 }
 LAYER = 0.2
 MIN_STEP = 0.4
