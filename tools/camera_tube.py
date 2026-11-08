@@ -67,7 +67,9 @@ CORNER_CUT = 3.4                   # the seat is cut back at the corners: the ho
 SLOT_W, SLOT_TOP = 70.0, 87.0      # film slots in both end walls, up to world z 87
 ARC_SEGS = 16
 JOINT = dict(bore_d=84.0, collar_od=94.0, collar_h=4.4, spigot_od=83.6, spigot_h=4.0, flange_t=1.2)
-LIP_T, RING_FIT = 1.2, 0.4         # lip under the ring pocket; diametral clearance of the pocket
+LIP_T = 1.2                        # lip under the ring pocket
+POCKET_PLUS, LIP_FLAT = 4.4, 2.0   # ring pocket = larger thread + 4.4; flat lip out to larger thread + 2.0, then a
+                                   # 45-degree seat, so any step-up ring from +2.0 to +4.0 across centres itself
 MOUTH_CH = 0.6                     # 45-degree chamfer at the two bores that print on the bed (the base's socket,
                                    # the column's ring pocket): elephant foot would otherwise close their 0.2 fit
 RIB_N, RIB_W, RIB_H = 6, 1.2, 0.3  # crush ribs on the spigot: 0.1 mm interference in the bore, so the column
@@ -259,38 +261,49 @@ def _add_ribs(ob, r0, z0, z1):
     return ob
 
 
+def _seat(L, z_sh):
+    """The ring pocket for a step-up ring whose shoulder should be at z_sh: a flat lip round the clamp ring's
+    thread, a 45-degree seat that centres the ring on its outer edge, and a straight pocket above."""
+    r_hole, r_lip, r_pk = L["lip_hole_d"] / 2, (L["step"] + LIP_FLAT) / 2, (L["step"] + POCKET_PLUS) / 2
+    c = max(0.0, L["ring_od"] / 2 - r_lip)              # how far up the seat the ring's outer edge rests
+    assert L["ring_od"] < 2 * r_pk - 0.3, f"--ring-od {L['ring_od']}: wider than the {2 * r_pk:.1f} pocket"
+    z_lt = g(z_sh - L["ring_h"] - c); z_lb = g(z_lt - LIP_T); z_ct = round(z_lt + (r_pk - r_lip), 2)
+    assert z_ct <= z_sh - MOUTH_CH - LAYER, f"--ring-h {L['ring_h']}: the seat would rise above the column top"
+    return dict(r_hole=r_hole, r_lip=r_lip, r_pk=r_pk, c=c, z_lt=z_lt, z_lb=z_lb, z_ct=z_ct, z_ring=round(z_lt + c, 2))
+
+
 def build_column(L, H, z_rest, name=None):
     """Lens column (H >= 6.4) or carrier (H == 0): spigot + flange resting on a collar top at z_rest,
     the ring pocket and lip at the top.  shoulder = z_rest + flange_t + H."""
     J = JOINT
-    pk, hole = (L["ring_od"] + RING_FIT) / 2, L["lip_hole_d"] / 2
-    pw_o = pk + WALL
-    pk_depth = math.floor(L["ring_h"] / LAYER + 1e-9) * LAYER         # on the grid; the ring stands proud by < 0.2
-    assert pk_depth >= MOUTH_CH + LAYER, f"--ring-h {L['ring_h']}: too shallow a pocket for its {MOUTH_CH} mm mouth chamfer"
     sp_o, sp_i, fl, wi = J["spigot_od"] / 2, J["spigot_od"] / 2 - WALL, J["collar_od"] / 2, J["collar_od"] / 2 - WALL
     z_fl = g(z_rest); z_sp = g(z_fl - J["spigot_h"]); z_sh = g(z_rest + J["flange_t"] + H)
-    z_pk = g(z_sh - pk_depth); z_lip = g(z_pk - LIP_T)
+    S = _seat(L, z_sh)
+    hole, rl, pk, z_lt, z_lb, z_ct = S["r_hole"], S["r_lip"], S["r_pk"], S["z_lt"], S["z_lb"], S["z_ct"]
+    pw_o = pk + WALL
+    pocket = [(fl, z_sh), (pk + MOUTH_CH, z_sh), (pk, z_sh - MOUTH_CH), (pk, z_ct), (rl, z_lt), (hole, z_lt)]
     rim_seat = "ring shoulder" if L["rim_od"] <= 2 * pk else "column top face"
     if H == 0:
         name = name or f"lens-carrier-{L['ring']}"
-        assert pw_o < sp_i - 1.0, f"ring OD {L['ring_od']} too large for a carrier (max {2 * (sp_i - 1.0 - WALL) - RING_FIT:.1f}); use a column"
+        if 0 < z_lb - z_sp < 2 * LAYER:                  # no single-layer step between the lip and the spigot bottom
+            z_lb = z_sp
+        assert pw_o < sp_i - 1.0, f"pocket {2 * pk:.1f} too large for a carrier; use a column"
         assert L["retainer_od"] / 2 < sp_i - 0.2, "the clamp ring must pass the spigot bore"
-        prof = [(hole, z_lip), (pw_o, z_lip), (pw_o, z_fl), (sp_i, z_fl), (sp_i, z_sp), (sp_o, z_sp), (sp_o, z_fl),
-                (fl, z_fl), (fl, z_sh), (pk + MOUTH_CH, z_sh), (pk, z_sh - MOUTH_CH), (pk, z_pk), (hole, z_pk)]
+        prof = [(hole, z_lb), (pw_o, z_lb), (pw_o, z_fl), (sp_i, z_fl), (sp_i, z_sp), (sp_o, z_sp), (sp_o, z_fl),
+                (fl, z_fl)] + pocket
     else:
         name = name or f"lens-column-{L['ring']}-h{H:g}"
         assert H >= 6.4, f"H = {H}: a column needs H >= 6.4; print the base at --base-wd {L['wd']:g} and use the carrier"
-        assert pw_o < wi - 1.0, f"ring OD {L['ring_od']} too large (max {2 * (wi - 1.0 - WALL) - RING_FIT:.1f})"
+        assert pw_o < wi - 1.0, f"pocket {2 * pk:.1f} too large for the column"
         assert L["retainer_od"] / 2 < wi - 0.5, "the clamp ring must fit inside the column"
         z_plate = g(z_sh - J["flange_t"]); z_fun = g(z_fl + J["flange_t"] + (wi - sp_i))
-        prof = [(sp_i, z_sp), (sp_o, z_sp), (sp_o, z_fl), (fl, z_fl), (fl, z_sh), (pk + MOUTH_CH, z_sh), (pk, z_sh - MOUTH_CH), (pk, z_pk),
-                (hole, z_pk), (hole, z_lip), (pw_o, z_lip), (pw_o, z_plate), (wi, z_plate), (wi, z_fun),
-                (sp_i, g(z_fl + J["flange_t"]))]
+        prof = [(sp_i, z_sp), (sp_o, z_sp), (sp_o, z_fl), (fl, z_fl)] + pocket + [
+                (hole, z_lb), (pw_o, z_lb), (pw_o, z_plate), (wi, z_plate), (wi, z_fun), (sp_i, g(z_fl + J["flange_t"]))]
     col = lathe(prof, name)
     _add_ribs(col, sp_o, z_sp, z_fl)
     _finish(col)
-    return col, dict(name=name, H=H, z_rest=z_rest, z_shoulder=z_sh, pocket=(round(2 * pk, 1), round(pk_depth, 1)),
-                     lip=(LIP_T, L["lip_hole_d"]), rim_seat=rim_seat, z_bottom=min(z_sp, z_lip))
+    return col, dict(name=name, H=H, z_rest=z_rest, z_shoulder=z_sh, pocket=round(2 * pk, 1), seat=(round(2 * rl, 1), z_lt),
+                     ring_rests=S["z_ring"], lip=(LIP_T, L["lip_hole_d"]), rim_seat=rim_seat, z_bottom=min(z_sp, z_lb))
 
 
 def build_spacer(length, z_rest, name=None):
@@ -336,14 +349,15 @@ def build_coupon(z_rest):
 
 def build_mocks(L, z_shoulder):
     """Not printed: the two rings, the lens and a camera body, for renders and sanity checks."""
-    pk_depth = math.floor(L["ring_h"] / LAYER + 1e-9) * LAYER
-    z_pk = g(z_shoulder - pk_depth); z_lip = g(z_pk - LIP_T)
+    S = _seat(L, z_shoulder)
+    z_ring, z_lb = S["z_ring"], S["z_lb"]
     r_od, t_i = L["ring_od"] / 2, L["thread"] / 2 - 1.0
     ret = L["retainer_od"] / 2
-    out = [lathe([(t_i, z_pk), (r_od, z_pk), (r_od, z_shoulder), (t_i + 1, z_shoulder),
+    out = [lathe([(t_i, z_ring), (r_od, z_ring), (r_od, z_shoulder), (t_i + 1, z_shoulder),
                   (t_i + 1, z_shoulder + 3.5), (t_i, z_shoulder + 3.5)], "mock_ring"),
-           lathe([(ret - 2.5, z_lip - L["retainer_h"]), (ret, z_lip - L["retainer_h"]), (ret, z_lip),
-                  (ret - 1.5, z_lip), (ret - 1.5, z_pk + 2.5), (ret - 2.5, z_pk + 2.5)], "mock_retainer"),
+           lathe([(L["step"] / 2 - 1.1, z_lb - L["retainer_h"]), (ret, z_lb - L["retainer_h"]), (ret, z_lb),
+                  (L["step"] / 2 - 0.1, z_lb), (L["step"] / 2 - 0.1, z_ring + 2.0), (L["step"] / 2 - 1.1, z_ring + 2.0)],
+                 "mock_retainer"),
            lathe([(0, z_shoulder), (L["rim_od"] / 2, z_shoulder), (L["rim_od"] / 2, z_shoulder + L["lens_len"]),
                   (0, z_shoulder + L["lens_len"])], "mock_lens", segs=64),
            box("mock_camera-body", -40, 40, -82.5, 56.5, z_shoulder + L["lens_len"], z_shoulder + L["lens_len"] + 38.5)]
