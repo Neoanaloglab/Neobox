@@ -123,7 +123,7 @@ The stack is held by gravity and magnets only. Move the pieces separately, never
 
 **Afterwards.** Shoot one empty frame at the same settings and use it for flat-field correction. Then set the white balance on the clear film base, invert, and crop the rebate. One profile normally fits the whole roll. RawTherapee, darktable and Negative Lab Pro all do this.
 
-**Camera tube.** A printed hood that sits on the box top and holds the lens by its filter thread, so the camera is fixed to the box itself, not to the film holder. It has not been printed yet. The hood and two joint test pieces are in `stl/camera-tube/`, black PLA, printed top face down without supports. Print the test pieces first and check that the spigot turns by hand but stays put. The column for your lens comes from `tools/camera_tube.py` and four numbers you measure. See [Design](docs/design.md#7-camera-tube).
+**Camera tube.** A printed hood that sits on the box top and holds the lens by its filter thread, so the camera is fixed to the box itself, not to the film holder. It has not been printed yet. The hood, two joint test pieces and the column for the Laowa 85 at 1:1 are in `stl/camera-tube/`, black PLA, printed top face down without supports. Print the test pieces first and check that the spigot turns by hand but stays put. For any other lens, `tools/camera_tube.py` makes the column from four numbers you measure. See [Design](docs/design.md#7-camera-tube).
 
 ## When something is wrong
 
